@@ -1,0 +1,18 @@
+{
+  "name": "book-scroll-component",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./book-scroll.js",
+  "exports": {
+    ".": "./book-scroll.js",
+    "./react": "./BookScroll.jsx"
+  },
+  "files": [
+    "book-scroll.js",
+    "BookScroll.jsx",
+    "book.jpg",
+    "README.md"
+  ],
+  "sideEffects": true
+}
