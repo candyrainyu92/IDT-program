@@ -122,7 +122,7 @@ export const ClientProjectDocumentsModal: React.FC<ClientProjectDocumentsModalPr
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-white/90 backdrop-blur-md"
+        className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-[#EFE8DC]/90 backdrop-blur-md"
         onClick={onClose}
       >
         <motion.div
@@ -131,12 +131,12 @@ export const ClientProjectDocumentsModal: React.FC<ClientProjectDocumentsModalPr
           exit={{ scale: 0.94, opacity: 0, y: 15 }}
           transition={{ type: "spring", stiffness: 350, damping: 25 }}
           onClick={(e) => e.stopPropagation()}
-          className="relative max-w-5xl max-h-[92vh] w-auto aspect-[2420/1668] flex items-center justify-center drop-shadow-[0_25px_50px_rgba(0,0,0,0.15)]"
+          className="relative max-w-5xl max-h-[92vh] w-auto aspect-[2420/1668] flex items-center justify-center drop-shadow-[0_25px_50px_rgba(76,71,71,0.18)]"
         >
           {/* Close Button matching Research Page Yellow Book popup */}
           <button
             onClick={onClose}
-            className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#1D2440]/90 hover:bg-[#1D2440] text-white flex items-center justify-center shadow-xl backdrop-blur-md border border-white/40 transition-all cursor-pointer select-none z-30 hover:scale-110 active:scale-95"
+            className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#4C4747] hover:bg-[#3a3636] text-[#EFE8DC] flex items-center justify-center shadow-xl backdrop-blur-md border border-[#EFE8DC]/40 transition-all cursor-pointer select-none z-30 hover:scale-110 active:scale-95"
             aria-label="Close Document Modal"
           >
             <X className="w-5 h-5" />

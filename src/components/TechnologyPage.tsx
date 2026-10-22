@@ -4,6 +4,8 @@ import laptopImg from '../assets/images/Untitled_Artwork_3.png';
 import tornImg from '../assets/images/torn.png';
 import tornJpg from '../assets/images/torn.jpg';
 import { PaperTear } from './PaperTear';
+import { BookScroll } from './BookScroll';
+import { TechnologyDocumentsModal, TechDocumentType } from './TechnologyDocumentsModal';
 import { ArrowLeft, ArrowRight, Home, ChevronLeft, ChevronRight, Layers } from 'lucide-react';
 
 interface TechnologyPageProps {
@@ -158,6 +160,9 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
   const [activePopupTool, setActivePopupTool] = useState<string | null>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [hoveredCardIdx, setHoveredCardIdx] = useState<number | null>(null);
+  const [isBookOpen, setIsBookOpen] = useState(false);
+  const [isDocModalOpen, setIsDocModalOpen] = useState(false);
+  const [selectedDoc, setSelectedDoc] = useState<TechDocumentType>('executive-summary');
 
   const handleScroll = (direction: 'left' | 'right') => {
     if (scrollContainerRef.current) {
@@ -287,21 +292,21 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
-      className="w-full min-h-screen bg-[#1D2440] text-white flex flex-col items-center pt-24 sm:pt-28 pb-0 selection:bg-[#FF9BB4] selection:text-[#1D2440]"
+      className="w-full min-h-screen bg-[#EFE8DC] text-[#4C4747] flex flex-col items-center pt-24 sm:pt-28 pb-0 selection:bg-[#DC9BB5] selection:text-[#4C4747]"
     >
-      {/* 1. Page Main Title: "How I build" split into "How I" (bottom layer), laptop icon (middle layer), and "build" (top layer) */}
+      {/* 1. Page Main Title: "How I Integrate Tech" matching Design page's single-line title format */}
       <div 
         id="technology-title-hero-section"
-        className="relative w-full max-w-5xl mx-auto px-6 h-[72vh] min-h-[460px] max-h-[640px] flex flex-col items-center justify-center text-center -translate-y-[6vh]"
+        className="relative w-full max-w-7xl mx-auto px-6 h-[72vh] min-h-[460px] max-h-[640px] flex flex-col items-center justify-center text-center -translate-y-[6vh]"
       >
         <h1 
           id="technology-hero-title"
-          className="relative inline-flex items-center justify-center select-none flex-wrap sm:flex-nowrap gap-x-2 sm:gap-x-0"
+          className="relative inline-flex items-center justify-center select-none flex-nowrap gap-x-2 sm:gap-x-0"
         >
           {/* Layer 1: How I (Bottom Layer, z-10) */}
           <span 
             id="technology-title-how-i"
-            className="relative z-10 text-[#FF9BB4] font-black text-5xl sm:text-7xl md:text-[95px] lg:text-[120px] tracking-tight leading-none font-sans mr-2 sm:mr-0"
+            className="relative z-10 text-[#DC9BB5] font-black text-5xl sm:text-7xl md:text-[95px] lg:text-[120px] tracking-tight leading-none font-sans mr-2 sm:mr-0 whitespace-nowrap"
             style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif" }}
           >
             How I
@@ -370,13 +375,13 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
             </motion.div>
           </motion.div>
 
-          {/* Layer 3: build (Top Layer, z-30) */}
+          {/* Layer 3: Integrate Tech (Top Layer, z-30) */}
           <span 
             id="technology-title-build"
-            className="relative z-30 text-[#FF9BB4] font-black text-5xl sm:text-7xl md:text-[95px] lg:text-[120px] tracking-tight leading-none font-sans"
+            className="relative z-30 text-[#DC9BB5] font-black text-5xl sm:text-7xl md:text-[95px] lg:text-[120px] tracking-tight leading-none font-sans ml-2 sm:ml-0 whitespace-nowrap"
             style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif" }}
           >
-            build
+            Integrate Tech
           </span>
         </h1>
       </div>
@@ -392,14 +397,14 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
             id="technology-toolkit-title"
             className="text-2xl sm:text-4xl md:text-[44px] font-extrabold tracking-tight leading-tight mb-3 sm:mb-4 text-center"
           >
-            <span className="text-white font-black">My Technology </span>
-            <span className="text-[#FF9BB4] font-black">Toolkit</span>
+            <span className="text-[#4C4747] font-black">My Technology </span>
+            <span className="text-[#DC9BB5] font-black">Toolkit</span>
           </h2>
 
           {/* Text paragraph: Centered, Inter font, 20px, single line */}
           <p 
             id="technology-toolkit-description"
-            className="text-white text-[20px] font-normal leading-relaxed text-center whitespace-nowrap max-w-none mx-auto"
+            className="text-[#4C4747] text-[20px] font-normal leading-relaxed text-center whitespace-nowrap max-w-none mx-auto"
             style={{ fontFamily: "'Inter', sans-serif", fontSize: '20px' }}
           >
             Turning design decisions into learning experiences through purposeful technology.
@@ -414,7 +419,7 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
       */}
       <section 
         id="technology-interactive-categories-section"
-        className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 my-4 sm:my-6 flex flex-col items-center justify-center relative z-20"
+        className="w-full my-4 sm:my-6 flex flex-col items-center justify-center relative z-20"
       >
         <div className="w-full flex flex-col items-center relative py-1 sm:py-1.5 -translate-y-[3%]">
           {toolkitCategories.map((cat) => {
@@ -442,7 +447,7 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
                 }`}
               >
                 {/* 3-Part Flanking Layout: Symmetrically Balanced 1fr Auto 1fr to Lock Middle Title dead-center */}
-                <div className="w-full max-w-6xl xl:max-w-7xl grid grid-cols-[1fr_auto_1fr] items-center">
+                <div className="w-full max-w-6xl xl:max-w-7xl px-4 sm:px-6 lg:px-8 grid grid-cols-[1fr_auto_1fr] items-center">
                   
                   {/* Left Flanking Icons (grows outwards to the left without shifting center) */}
                   <div className={`flex items-center justify-end pr-2.5 sm:pr-5 md:pr-7 lg:pr-9 transition-all duration-300 ${
@@ -519,9 +524,9 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
                                 </AnimatePresence>
 
                                 {/* Mobile App Icon Squircle Container - Enlarged by 50% */}
-                                <div className={`relative w-20 h-20 sm:w-24 sm:h-24 md:w-[110px] md:h-[110px] lg:w-[126px] lg:h-[126px] aspect-square rounded-[22%] bg-gradient-to-b from-[#2A355A] to-[#1C2340] border ${
-                                  isPopupOpen ? 'border-[#6A9F68] ring-2 ring-[#6A9F68] -translate-y-2 shadow-[0_0_24px_rgba(106,159,104,0.6)]' : 'border-white/30'
-                                } p-2.5 sm:p-3 md:p-3.5 lg:p-4 flex items-center justify-center shadow-[0_12px_28px_rgba(0,0,0,0.5),0_2px_8px_rgba(0,0,0,0.3)] ring-1 ring-inset ring-white/20 overflow-hidden group-hover/tool:scale-110 group-hover/tool:-translate-y-2 group-hover/tool:shadow-[0_20px_42px_rgba(0,0,0,0.7),0_0_28px_rgba(255,155,180,0.4)] group-hover/tool:border-[#FF9BB4]/80 transition-all duration-300`}>
+                                <div className={`relative w-20 h-20 sm:w-24 sm:h-24 md:w-[110px] md:h-[110px] lg:w-[126px] lg:h-[126px] aspect-square rounded-[22%] bg-gradient-to-b from-[#F7F3EB] to-[#E6DEC8] border ${
+                                  isPopupOpen ? 'border-[#6A9F68] ring-2 ring-[#6A9F68] -translate-y-2 shadow-[0_0_24px_rgba(106,159,104,0.6)]' : 'border-[#4C4747]/20'
+                                } p-2.5 sm:p-3 md:p-3.5 lg:p-4 flex items-center justify-center shadow-[0_12px_28px_rgba(76,71,71,0.16),0_2px_8px_rgba(76,71,71,0.1)] ring-1 ring-inset ring-white/50 overflow-hidden group-hover/tool:scale-110 group-hover/tool:-translate-y-2 group-hover/tool:shadow-[0_20px_42px_rgba(76,71,71,0.22),0_0_28px_rgba(220,155,181,0.4)] group-hover/tool:border-[#DC9BB5] transition-all duration-300`}>
                                   <img 
                                     src={icon.src} 
                                     alt={icon.name} 
@@ -529,10 +534,10 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
                                     className="w-full h-full object-contain filter drop-shadow-md select-none pointer-events-none rounded-[16%]" 
                                   />
                                   {/* Mobile App Icon Glossy Specular Light Overlay */}
-                                  <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-black/15 pointer-events-none rounded-[22%]" />
+                                  <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-black/5 pointer-events-none rounded-[22%]" />
                                 </div>
                                 <span className={`text-xs sm:text-[13px] md:text-sm ${
-                                  isPopupOpen ? 'text-[#A1DC9E] font-bold' : 'text-slate-200 font-medium opacity-85 group-hover/tool:opacity-100 group-hover/tool:text-white'
+                                  isPopupOpen ? 'text-[#568754] font-bold' : 'text-[#9D988F] font-medium group-hover/tool:text-[#4C4747]'
                                 } mt-2 tracking-tight whitespace-nowrap transition-colors text-center`}>
                                   {icon.name}
                                 </span>
@@ -549,8 +554,8 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
                     <span
                       className={`leading-none transition-all duration-200 ${
                         isHovered
-                          ? 'text-white text-3xl sm:text-4xl md:text-[42px] lg:text-[46px] tracking-tight font-extrabold'
-                          : 'text-white/95 text-3xl sm:text-4xl md:text-[44px] lg:text-5xl uppercase tracking-wider font-normal'
+                          ? 'text-[#4C4747] text-3xl sm:text-4xl md:text-[42px] lg:text-[46px] tracking-tight font-extrabold'
+                          : 'text-[#4C4747]/95 text-3xl sm:text-4xl md:text-[44px] lg:text-5xl uppercase tracking-wider font-normal'
                       }`}
                       style={{
                         fontFamily: isHovered
@@ -564,8 +569,8 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
                     <span
                       className={`mt-1 sm:mt-1.5 transition-all duration-200 ${
                         isHovered
-                          ? 'text-[#FF9BB4] text-sm sm:text-base md:text-lg font-semibold tracking-normal'
-                          : 'text-white/60 text-xs sm:text-sm md:text-base uppercase tracking-widest font-normal'
+                          ? 'text-[#DC9BB5] text-sm sm:text-base md:text-lg font-semibold tracking-normal'
+                          : 'text-[#9D988F] text-xs sm:text-sm md:text-base uppercase tracking-widest font-normal'
                       }`}
                       style={{
                         fontFamily: isHovered
@@ -652,9 +657,9 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
                                 </AnimatePresence>
 
                                 {/* Mobile App Icon Squircle Container - Enlarged by 50% */}
-                                <div className={`relative w-20 h-20 sm:w-24 sm:h-24 md:w-[110px] md:h-[110px] lg:w-[126px] lg:h-[126px] aspect-square rounded-[22%] bg-gradient-to-b from-[#2A355A] to-[#1C2340] border ${
-                                  isPopupOpen ? 'border-[#6A9F68] ring-2 ring-[#6A9F68] -translate-y-2 shadow-[0_0_24px_rgba(106,159,104,0.6)]' : 'border-white/30'
-                                } p-2.5 sm:p-3 md:p-3.5 lg:p-4 flex items-center justify-center shadow-[0_12px_28px_rgba(0,0,0,0.5),0_2px_8px_rgba(0,0,0,0.3)] ring-1 ring-inset ring-white/20 overflow-hidden group-hover/tool:scale-110 group-hover/tool:-translate-y-2 group-hover/tool:shadow-[0_20px_42px_rgba(0,0,0,0.7),0_0_28px_rgba(255,155,180,0.4)] group-hover/tool:border-[#FF9BB4]/80 transition-all duration-300`}>
+                                <div className={`relative w-20 h-20 sm:w-24 sm:h-24 md:w-[110px] md:h-[110px] lg:w-[126px] lg:h-[126px] aspect-square rounded-[22%] bg-gradient-to-b from-[#F7F3EB] to-[#E6DEC8] border ${
+                                  isPopupOpen ? 'border-[#6A9F68] ring-2 ring-[#6A9F68] -translate-y-2 shadow-[0_0_24px_rgba(106,159,104,0.6)]' : 'border-[#4C4747]/20'
+                                } p-2.5 sm:p-3 md:p-3.5 lg:p-4 flex items-center justify-center shadow-[0_12px_28px_rgba(76,71,71,0.16),0_2px_8px_rgba(76,71,71,0.1)] ring-1 ring-inset ring-white/50 overflow-hidden group-hover/tool:scale-110 group-hover/tool:-translate-y-2 group-hover/tool:shadow-[0_20px_42px_rgba(76,71,71,0.22),0_0_28px_rgba(220,155,181,0.4)] group-hover/tool:border-[#DC9BB5] transition-all duration-300`}>
                                   <img 
                                     src={icon.src} 
                                     alt={icon.name} 
@@ -662,10 +667,10 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
                                     className="w-full h-full object-contain filter drop-shadow-md select-none pointer-events-none rounded-[16%]" 
                                   />
                                   {/* Mobile App Icon Glossy Specular Light Overlay */}
-                                  <div className="absolute inset-0 bg-gradient-to-b from-white/20 via-transparent to-black/15 pointer-events-none rounded-[22%]" />
+                                  <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-black/5 pointer-events-none rounded-[22%]" />
                                 </div>
                                 <span className={`text-xs sm:text-[13px] md:text-sm ${
-                                  isPopupOpen ? 'text-[#A1DC9E] font-bold' : 'text-slate-200 font-medium opacity-85 group-hover/tool:opacity-100 group-hover/tool:text-white'
+                                  isPopupOpen ? 'text-[#568754] font-bold' : 'text-[#9D988F] font-medium group-hover/tool:text-[#4C4747]'
                                 } mt-2 tracking-tight whitespace-nowrap transition-colors text-center`}>
                                   {icon.name}
                                 </span>
@@ -695,13 +700,13 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
             id="from-tools-to-product-title"
             className="text-2xl sm:text-4xl md:text-[44px] font-extrabold tracking-tight leading-tight mb-2 sm:mb-3 text-center"
           >
-            <span className="text-white font-black">From Tools to </span>
-            <span className="text-[#FF9BB4] font-black">Product</span>
+            <span className="text-[#4C4747] font-black">From Tools to </span>
+            <span className="text-[#DC9BB5] font-black">Product</span>
           </h2>
 
           <p 
             id="from-tools-to-product-subtitle"
-            className="text-white text-[20px] font-normal leading-relaxed text-center max-w-3xl mx-auto"
+            className="text-[#4C4747] text-[20px] font-normal leading-relaxed text-center max-w-3xl mx-auto"
             style={{ fontFamily: "'Inter', sans-serif", fontSize: '20px' }}
           >
             Tools are selected as needed by the project.
@@ -712,17 +717,17 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
             <button
               onClick={() => handleScroll('left')}
               aria-label="Scroll left"
-              className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-md"
+              className="w-9 h-9 rounded-full bg-[#4C4747]/10 hover:bg-[#4C4747]/20 border border-[#4C4747]/15 text-[#4C4747] flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-sm"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
-            <span className="text-xs font-semibold text-slate-300 uppercase tracking-widest px-2">
+            <span className="text-xs font-semibold text-[#9D988F] uppercase tracking-widest px-2">
               8-Step Workflow
             </span>
             <button
               onClick={() => handleScroll('right')}
               aria-label="Scroll right"
-              className="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 border border-white/15 text-white flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-md"
+              className="w-9 h-9 rounded-full bg-[#4C4747]/10 hover:bg-[#4C4747]/20 border border-[#4C4747]/15 text-[#4C4747] flex items-center justify-center transition-all hover:scale-105 active:scale-95 shadow-sm"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
@@ -732,7 +737,7 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
         {/* Horizontally Arranged Overlapping & Staggered Cards Container */}
         <div 
           ref={scrollContainerRef}
-          className="w-full overflow-x-auto overflow-y-visible py-12 px-6 sm:px-12 scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent select-none"
+          className="w-full overflow-x-auto overflow-y-visible py-12 px-6 sm:px-12 scrollbar-thin scrollbar-thumb-[#4C4747]/20 scrollbar-track-transparent select-none"
           style={{ scrollBehavior: 'smooth' }}
         >
           <div className="flex flex-row flex-nowrap items-center min-w-max pb-8 pt-6 -translate-y-[10%]">
@@ -751,47 +756,47 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
                   }}
                   className={`relative w-[300px] sm:w-[335px] shrink-0 rounded-2xl p-6 sm:p-7 transition-all duration-300 ease-out cursor-pointer -mr-6 sm:-mr-8 md:-mr-10 last:mr-0 ${
                     isHovered
-                      ? 'bg-gradient-to-b from-[#2F3B66] to-[#1E2545] border-2 border-[#FF9BB4] shadow-[0_24px_50px_rgba(0,0,0,0.8),0_0_35px_rgba(255,155,180,0.35)]'
-                      : 'bg-gradient-to-b from-[#242D4D]/95 to-[#192038]/95 border border-white/20 shadow-[0_16px_36px_rgba(0,0,0,0.5)] backdrop-blur-md hover:border-white/40'
+                      ? 'bg-[#F7F3EB] border-2 border-[#DC9BB5] shadow-[0_24px_50px_rgba(76,71,71,0.22),0_0_35px_rgba(220,155,181,0.3)]'
+                      : 'bg-[#F7F3EB]/95 border border-[#4C4747]/15 shadow-[0_16px_36px_rgba(76,71,71,0.12)] backdrop-blur-md hover:border-[#4C4747]/35'
                   }`}
                 >
                   {/* Top Step Badge */}
                   <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FF9BB4]/15 border border-[#FF9BB4]/35 text-[#FF9BB4] text-xs font-black tracking-wider uppercase">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#FF9BB4]" />
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#DC9BB5]/20 border border-[#DC9BB5]/45 text-[#DC9BB5] text-xs font-black tracking-wider uppercase">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#DC9BB5]" />
                       {step.step}
                     </span>
 
-                    <span className="text-[11px] font-semibold text-white/50 tracking-widest uppercase">
+                    <span className="text-[11px] font-semibold text-[#9D988F] tracking-widest uppercase">
                       Phase 0{idx + 1}
                     </span>
                   </div>
 
                   {/* Title & Subtitle */}
-                  <h3 className="text-2xl sm:text-[26px] font-black tracking-tight text-white leading-none mb-1">
+                  <h3 className="text-2xl sm:text-[26px] font-black tracking-tight text-[#4C4747] leading-none mb-1">
                     {step.title}
                   </h3>
 
-                  <p className="text-xs sm:text-[13px] font-semibold text-[#FF9BB4] uppercase tracking-wide mb-3.5">
+                  <p className="text-xs sm:text-[13px] font-semibold text-[#DC9BB5] uppercase tracking-wide mb-3.5">
                     {step.subtitle}
                   </p>
 
                   {/* Divider line */}
-                  <div className="w-full h-px bg-white/10 mb-3.5" />
+                  <div className="w-full h-px bg-[#4C4747]/15 mb-3.5" />
 
                   {/* Description */}
-                  <p className="text-xs sm:text-[13px] text-slate-300 font-normal leading-relaxed mb-5 min-h-[66px]">
+                  <p className="text-xs sm:text-[13px] text-[#9D988F] font-normal leading-relaxed mb-5 min-h-[66px]">
                     {step.description}
                   </p>
 
                   {/* Metadata Chips: Tools, AI-Assisted, Output */}
-                  <div className="space-y-3 pt-1 border-t border-white/10">
+                  <div className="space-y-3 pt-1 border-t border-[#4C4747]/15">
                     {/* TOOLS */}
                     <div>
-                      <span className="text-[10px] font-bold text-slate-400 tracking-wider uppercase block mb-1">
+                      <span className="text-[10px] font-bold text-[#9D988F] tracking-wider uppercase block mb-1">
                         TOOLS
                       </span>
-                      <div className="text-xs font-medium text-slate-100 bg-white/[0.07] border border-white/10 rounded-lg px-2.5 py-1.5 leading-relaxed">
+                      <div className="text-xs font-medium text-[#4C4747] bg-[#EFE8DC] border border-[#4C4747]/15 rounded-lg px-2.5 py-1.5 leading-relaxed">
                         {step.tools}
                       </div>
                     </div>
@@ -799,10 +804,10 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
                     {/* AI-ASSISTED */}
                     {step.aiAssisted && (
                       <div>
-                        <span className="text-[10px] font-bold text-[#A1DC9E] tracking-wider uppercase block mb-1">
+                        <span className="text-[10px] font-bold text-[#568754] tracking-wider uppercase block mb-1">
                           AI-ASSISTED
                         </span>
-                        <div className="text-xs font-medium text-emerald-100 bg-[#6A9F68]/20 border border-[#6A9F68]/40 rounded-lg px-2.5 py-1.5 leading-relaxed">
+                        <div className="text-xs font-medium text-[#4C4747] bg-[#6A9F68]/15 border border-[#6A9F68]/40 rounded-lg px-2.5 py-1.5 leading-relaxed">
                           {step.aiAssisted}
                         </div>
                       </div>
@@ -810,10 +815,10 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
 
                     {/* OUTPUT */}
                     <div>
-                      <span className="text-[10px] font-bold text-[#FF9BB4] tracking-wider uppercase block mb-1">
+                      <span className="text-[10px] font-bold text-[#DC9BB5] tracking-wider uppercase block mb-1">
                         OUTPUT
                       </span>
-                      <div className="text-xs font-semibold text-pink-100 bg-[#FF9BB4]/15 border border-[#FF9BB4]/35 rounded-lg px-2.5 py-1.5 leading-relaxed">
+                      <div className="text-xs font-semibold text-[#4C4747] bg-[#DC9BB5]/20 border border-[#DC9BB5]/45 rounded-lg px-2.5 py-1.5 leading-relaxed">
                         {step.output}
                       </div>
                     </div>
@@ -826,12 +831,12 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
       </section>
 
       {/* 5. Dynamic WebGL Paper Tear Transition */}
-      <div className="w-full relative bg-[#2B2B2B] mt-12 sm:mt-16 overflow-hidden">
+      <div className="w-full relative bg-[#E6DEC8] mt-12 sm:mt-16 overflow-hidden">
         <div className="w-full">
           <PaperTear 
             image={tornJpg}
-            color="#1D2440"
-            background="#2B2B2B"
+            color="#EFE8DC"
+            background="#E6DEC8"
             edgeOpacity={0.9}
             start={1}
             end={0.12}
@@ -847,27 +852,30 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
           />
         </div>
 
-        {/* Full-width #2B2B2B background zone for Tools follow Purpose */}
+        {/* Full-width #E6DEC8 background zone for Tools follow Purpose */}
         <div 
-          className="w-full bg-[#2B2B2B] text-white pt-8 sm:pt-12 pb-8 sm:pb-10 relative -mt-16 sm:-mt-24"
+          className="w-full bg-[#E6DEC8] text-[#4C4747] pt-8 sm:pt-12 pb-8 sm:pb-10 relative -mt-16 sm:-mt-24"
         >
           <section 
             id="technology-tools-follow-purpose-section"
-            className="w-full max-w-5xl mx-auto px-6 sm:px-8 lg:px-12"
+            className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
           >
             {/* Title: Tools follow Purpose */}
             <h2 
               id="tools-follow-purpose-title"
-              className="text-3xl sm:text-5xl md:text-[52px] font-black text-center mb-10 sm:mb-14 tracking-tight leading-tight"
+              className="text-3xl sm:text-5xl md:text-[52px] font-black text-center mb-3 sm:mb-4 tracking-tight leading-tight text-[#4C4747]"
               style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif" }}
             >
-              Tools follow <span className="text-[#FF9BB4]">Purpose</span>
+              Tools follow <span className="text-[#DC9BB5]">Purpose</span>
             </h2>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold font-inter text-[#DC9BB5] text-center mb-8 sm:mb-10">
+              My Reflection on Technology
+            </h3>
 
-            {/* Text Box, Inter font, 20px */}
-            <div className="max-w-4xl mx-auto">
+            {/* Reflection Text (box removed, keeping only text) */}
+            <div className="max-w-6xl mx-auto mb-12">
               <div 
-                className="bg-white/[0.05] border border-white/15 rounded-2xl py-8 px-7 sm:px-12 shadow-xl space-y-6 text-slate-100 font-normal leading-relaxed text-left"
+                className="space-y-6 text-[#4C4747] font-normal leading-relaxed text-left"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 <p className="text-[17px] sm:text-[19px] md:text-[20px] leading-relaxed">
@@ -880,30 +888,100 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
             </div>
           </section>
 
+          {/* Book & Statement Text Container (Symmetrically aligned 2-column grid when closed, centers & fades out text when open) */}
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative min-h-[560px] lg:min-h-[740px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+              {/* Left Column: 3D Interactive Notebook (Glides smoothly to screen center when open) */}
+              <div 
+                className={`w-full flex items-center justify-center relative transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.4,1)] ${
+                  isBookOpen 
+                    ? 'lg:translate-x-[calc(50%+1.5rem)] z-40' 
+                    : 'lg:translate-x-0 z-10'
+                }`}
+              >
+                <div className="w-full">
+                  <BookScroll 
+                    openWidth={75} 
+                    background="#E6DEC8" 
+                    scrollHeight={300}
+                    coverSrc="/book.jpg"
+                    showLabels={false}
+                    title="Technology Artifacts"
+                    leafTitle="Attached Letter"
+                    author="Yu Liu"
+                    textColor="#5E2B3B"
+                    mode="letter"
+                    coverTheme="rose"
+                    isOpen={isBookOpen}
+                    onToggle={setIsBookOpen}
+                    onGalleryClick={(project) => {
+                      if (!project || project === 'letter' || project === 'executive-summary') {
+                        setSelectedDoc('executive-summary');
+                        setIsDocModalOpen(true);
+                      } else if (project === 'methodology' || project === 'delivery-plan') {
+                        setSelectedDoc('delivery-plan');
+                        setIsDocModalOpen(true);
+                      } else if (project === 'evidence' || project === 'assessment-plan') {
+                        setSelectedDoc('assessment-plan');
+                        setIsDocModalOpen(true);
+                      }
+                    }}
+                  />
+                </div>
+              </div>
+
+              {/* Right Column: Artifacts Statement Text Box (Swapped to right, fades out when book opens) */}
+              <div 
+                className={`w-full relative z-10 transition-opacity duration-500 ease-in-out ${
+                  isBookOpen 
+                    ? 'opacity-0 pointer-events-none select-none' 
+                    : 'opacity-100 pointer-events-auto'
+                }`}
+                aria-hidden={isBookOpen}
+              >
+                <p className="text-base sm:text-lg md:text-xl text-[#4C4747] font-normal leading-relaxed bg-[#F7F3EB]/85 border border-[#4C4747]/15 rounded-2xl py-6 px-7 sm:px-10 shadow-md text-left">
+                  <span className="block mb-4">
+                    I developed a self-paced e-learning course for Nissan sales consultants using Articulate Rise, transforming provided training resources into three interactive modules focused on the 2026 Nissan Z Heritage Edition.
+                  </span>
+                  <span className="block">
+                    The course integrates storytelling, multimedia, gamification, and scenario-based activities to help sales consultants communicate vehicle features, compare competitors, and recommend suitable options to customers. SME review and pilot testing provided feedback on the course's usability, engagement, and practical relevance.
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+
           {/* 6. Bottom Navigation Buttons */}
           <section 
             id="technology-bottom-nav-section"
             className="w-full max-w-4xl mx-auto px-6 mt-12 sm:mt-14 mb-2 flex flex-wrap items-center justify-center gap-4 z-10"
           >
             <button
-              id="technology-to-design-btn"
-              onClick={() => onNavigate?.('design')}
-              className="px-8 py-2.5 bg-[#FF9BB4] hover:bg-[#ff85a3] text-[#1D2440] font-inter font-bold text-sm sm:text-base rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.35)] transition-all cursor-pointer select-none active:scale-95 inline-flex items-center gap-2"
+              id="technology-to-research-btn"
+              onClick={() => onNavigate?.('research')}
+              className="px-8 py-2.5 bg-[#DC9BB5] hover:bg-[#d188a6] text-[#4C4747] font-inter font-bold text-sm sm:text-base rounded-full shadow-[0_8px_24px_rgba(76,71,71,0.18)] transition-all cursor-pointer select-none active:scale-95 inline-flex items-center gap-2"
             >
-              <ArrowLeft className="w-4 h-4 text-[#1D2440]" />
-              <span>Explore Design</span>
+              <ArrowLeft className="w-4 h-4 text-[#4C4747]" />
+              <span>Explore Research</span>
             </button>
 
             <button
               id="technology-back-home-bottom-btn"
               onClick={onBackToHome}
-              className="px-8 py-2.5 bg-white text-[#1D2440] hover:bg-slate-100 font-inter font-bold text-sm sm:text-base rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.35)] transition-all cursor-pointer select-none active:scale-95"
+              className="px-8 py-2.5 bg-[#F7F3EB] text-[#4C4747] border border-[#4C4747]/15 hover:bg-[#EFE8DC] font-inter font-bold text-sm sm:text-base rounded-full shadow-[0_8px_24px_rgba(76,71,71,0.15)] transition-all cursor-pointer select-none active:scale-95"
             >
               Back To Home
             </button>
           </section>
         </div>
       </div>
+
+      {/* Technology Deliverable Document Preview Modal */}
+      <TechnologyDocumentsModal
+        isOpen={isDocModalOpen}
+        onClose={() => setIsDocModalOpen(false)}
+        initialDoc={selectedDoc}
+      />
     </motion.div>
   );
 };

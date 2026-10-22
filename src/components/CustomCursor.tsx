@@ -93,7 +93,7 @@ export const CustomCursor: React.FC = () => {
           animate={{ scale: 1, opacity: 1, y: 0 }}
           exit={{ scale: 0.7, opacity: 0 }}
           transition={{ type: 'spring', stiffness: 450, damping: 26 }}
-          className="px-5 py-2 bg-white text-[#1D2440] font-inter font-medium text-sm rounded-full shadow-[0_12px_32px_rgba(0,0,0,0.45)] border border-white/80 flex items-center justify-center gap-1.5 whitespace-nowrap cursor-none"
+          className="px-5 py-2 bg-[#F7F3EB] text-[#4C4747] font-inter font-medium text-sm rounded-full shadow-[0_12px_32px_rgba(76,71,71,0.2)] border border-[#DC9BB5]/60 flex items-center justify-center gap-1.5 whitespace-nowrap cursor-none"
         >
           <span>{badgeText || 'Foundation'}</span>
         </motion.div>
@@ -106,7 +106,7 @@ export const CustomCursor: React.FC = () => {
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.7, opacity: 0 }}
           transition={{ type: 'spring', stiffness: 420, damping: 25 }}
-          className="px-4 py-1.5 bg-white/95 backdrop-blur-md text-[#1D2440] font-inter font-bold text-xs tracking-wider rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.35)] flex items-center gap-2 uppercase cursor-none"
+          className="px-4 py-1.5 bg-[#F7F3EB]/95 backdrop-blur-md text-[#4C4747] font-inter font-bold text-xs tracking-wider rounded-full shadow-[0_8px_24px_rgba(76,71,71,0.18)] border border-[#4C4747]/15 flex items-center gap-2 uppercase cursor-none"
         >
           <span className="text-sm leading-none font-sans">‹</span>
           <span>DRAG</span>

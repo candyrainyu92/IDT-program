@@ -67,10 +67,10 @@ export const TornPaperStickyReveal: React.FC<TornPaperStickyRevealProps> = ({ to
           {/* Floating Sticky Hint (随滑动淡出的交互提示) */}
           <motion.div
             style={{ opacity: hintOpacity, y: hintTranslateY }}
-            className="absolute -top-10 left-1/2 -translate-x-1/2 z-40 flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm text-slate-200 pointer-events-none shadow-lg"
+            className="absolute -top-10 left-1/2 -translate-x-1/2 z-40 flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#F7F3EB]/90 backdrop-blur-md border border-[#4C4747]/15 text-xs sm:text-sm text-[#9D988F] pointer-events-none shadow-lg"
           >
             <span>向下滑动撕开纸张 · Scroll to peel & reveal</span>
-            <ChevronDown className="w-3.5 h-3.5 text-[#FF9BB4] animate-bounce" />
+            <ChevronDown className="w-3.5 h-3.5 text-[#DC9BB5] animate-bounce" />
           </motion.div>
 
           {/* Paper Frame with Parallax Layering */}
@@ -89,13 +89,13 @@ export const TornPaperStickyReveal: React.FC<TornPaperStickyRevealProps> = ({ to
               />
             </motion.div>
 
-            {/* Layer 2 (Top / Cover): Solid #1D2440 Blue paper that covers the #2B2B2B black area */}
+            {/* Layer 2 (Top / Cover): Solid #EFE8DC paper */}
             <motion.div
               style={{ top: peelTopStyle }}
-              className="absolute left-0 right-0 bottom-0 bg-[#1D2440] z-20 pointer-events-none"
+              className="absolute left-0 right-0 bottom-0 bg-[#EFE8DC] z-20 pointer-events-none"
             >
               {/* Subtle top ambient shadow under the curl */}
-              <div className="w-full h-12 bg-gradient-to-b from-black/50 to-transparent pointer-events-none" />
+              <div className="w-full h-12 bg-gradient-to-b from-black/20 to-transparent pointer-events-none" />
             </motion.div>
 
             {/* Layer 3 (The Curl & Tear Seam): 3D Rolled Paper Edge (卷边撕纸效果) */}

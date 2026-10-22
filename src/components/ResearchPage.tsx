@@ -215,7 +215,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
   return (
     <div
       id="research-page-container"
-      className="w-full min-h-screen bg-[#1D2440] text-white flex flex-col items-center pt-24 sm:pt-28 pb-0 selection:bg-[#FF9BB4] selection:text-[#1D2440]"
+      className="w-full min-h-screen bg-[#EFE8DC] text-[#4C4747] flex flex-col items-center pt-24 sm:pt-28 pb-0 selection:bg-[#DC9BB5] selection:text-[#4C4747]"
     >
       {/* 1. Page Main Title: "What I Investigate" - Exactly matching Foundation's "What I learned" positioning relative to navigation & viewport */}
       <div 
@@ -224,18 +224,18 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
       >
         <h1 
           id="research-hero-title"
-          className="relative inline-flex items-center justify-center select-none flex-wrap sm:flex-nowrap gap-x-2 sm:gap-x-0"
+          className="relative flex flex-col items-center justify-center select-none"
         >
-          {/* Layer 1: What I (Bottom Layer, z-10) */}
+          {/* Layer 1: What Informs (Top Line, Bottom Layer, z-10) */}
           <span 
             id="research-title-what-i"
-            className="relative z-10 text-[#FF9BB4] font-black text-5xl sm:text-7xl md:text-[95px] lg:text-[120px] tracking-tight leading-none font-sans mr-2 sm:mr-0"
+            className="relative z-10 text-[#DC9BB5] font-black text-5xl sm:text-7xl md:text-[95px] lg:text-[120px] tracking-tight leading-none font-sans whitespace-nowrap"
             style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif" }}
           >
-            What I
+            What Informs
           </span>
 
-          {/* Layer 2: Analytics Charts Icon (Middle Layer, z-20, fly-in landing + floating parallax + interactive mouse parallax) */}
+          {/* Layer 2: Analytics Charts Icon (Middle Layer between the two lines, z-20, fly-in landing + floating parallax + interactive mouse parallax) */}
           <motion.div 
             id="research-title-charts"
             initial={{ 
@@ -259,7 +259,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
             }}
             onMouseMove={handleIconMouseMove}
             onMouseLeave={handleIconMouseLeave}
-            className="relative z-20 -mx-4 sm:-mx-6 md:-mx-8 lg:-mx-10 -mt-4 sm:-mt-6 md:-mt-10 lg:-mt-12 translate-x-[13%] translate-y-[12%] w-16 h-16 sm:w-24 sm:h-24 md:w-30 md:h-30 lg:w-34 lg:h-34 pointer-events-auto cursor-pointer filter drop-shadow-[0_12px_28px_rgba(0,0,0,0.5)] flex-shrink-0 origin-center select-none"
+            className="relative -top-2.5 sm:-top-3.5 md:-top-4.5 z-20 -my-3 sm:-my-5 md:-my-7 lg:-my-9 w-16 h-16 sm:w-24 sm:h-24 md:w-30 md:h-30 lg:w-34 lg:h-34 pointer-events-auto cursor-pointer filter drop-shadow-[0_12px_28px_rgba(0,0,0,0.5)] flex-shrink-0 origin-center select-none"
             style={{ perspective: 1000 }}
           >
             {/* Interactive Mouse Parallax Layer (随鼠标晃动而小幅度晃动与倾斜) */}
@@ -298,13 +298,13 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
             </motion.div>
           </motion.div>
 
-          {/* Layer 3: Investigate (Top Layer, z-30) */}
+          {/* Layer 3: My Decisions (Bottom Line, Top Layer, z-30) */}
           <span 
             id="research-title-investigate"
-            className="relative z-30 text-[#FF9BB4] font-black text-5xl sm:text-7xl md:text-[95px] lg:text-[120px] tracking-tight leading-none font-sans"
+            className="relative z-30 -mt-6 sm:-mt-10 md:-mt-14 lg:-mt-16 text-[#DC9BB5] font-black text-5xl sm:text-7xl md:text-[95px] lg:text-[120px] tracking-tight leading-none font-sans whitespace-nowrap"
             style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif" }}
           >
-            Investigate
+            My Decisions
           </span>
         </h1>
       </div>
@@ -318,10 +318,10 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
           {/* Subtitle: "Why do people tend to skip the instructions?" in Inter, one single line, pink highlight */}
           <h2 
             id="research-subtitle-question"
-            className="text-2xl sm:text-3xl md:text-[44px] md:leading-[55px] font-extrabold tracking-tight text-white mb-6 sm:mb-8 sm:whitespace-nowrap relative z-10"
+            className="text-2xl sm:text-3xl md:text-[44px] md:leading-[55px] font-extrabold tracking-tight text-[#4C4747] mb-6 sm:mb-8 sm:whitespace-nowrap relative z-10"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            Why do people tend to <span className="text-[#FF9BB4]">skip the instructions?</span>
+            Why do people tend to <span className="text-[#DC9BB5]">skip the instructions?</span>
           </h2>
 
           {/* Floating assumption buttons popping in on scroll around the question */}
@@ -396,7 +396,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                   ease: "easeInOut",
                   repeatType: "mirror",
                 }}
-                className="bg-white text-black font-bold text-xs sm:text-sm md:text-[15px] px-4 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-[0_10px_25px_rgba(0,0,0,0.32)] border border-slate-100/90 whitespace-nowrap select-none hover:scale-105 hover:shadow-[0_14px_30px_rgba(0,0,0,0.4)] transition-transform duration-200 cursor-default flex items-center justify-center"
+                className="bg-[#F7F3EB] text-[#4C4747] font-bold text-xs sm:text-sm md:text-[15px] px-4 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-[0_10px_25px_rgba(76,71,71,0.14)] border border-[#4C4747]/15 whitespace-nowrap select-none hover:scale-105 hover:shadow-[0_14px_30px_rgba(76,71,71,0.2)] transition-transform duration-200 cursor-default flex items-center justify-center"
               >
                 {badge.text}
               </motion.div>
@@ -406,7 +406,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
           {/* Framing Text: Aligned with the left edge of the card below */}
           <div 
             ref={framingContainerRef}
-            className="w-full text-slate-200 text-left text-[20px] leading-[32.5px] mt-[40vh]"
+            className="w-full text-[#4C4747] text-left text-[20px] leading-[32.5px] mt-[40vh]"
             style={
               framingAlignOffset !== null
                 ? { transform: `translateX(${framingAlignOffset}px)` }
@@ -414,14 +414,14 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
             }
           >
             <p 
-              className={`font-normal text-slate-200 tracking-normal relative -top-[2vh] ${
+              className={`font-normal text-[#4C4747] tracking-normal relative -top-[2vh] ${
                 framingAlignOffset === null ? '-translate-x-[40px] sm:-translate-x-[75px] lg:-translate-x-[128px]' : ''
               }`}
             >
-              <span className="block font-medium text-slate-100">
+              <span className="block font-medium text-[#4C4747]">
                 Different purposes call for different approaches to inquiry.
               </span>
-              <span className="block text-slate-300 font-normal">
+              <span className="block text-[#9D988F] font-normal">
                 Their differences lie not only in purpose, but also in the researcher&apos;s role, scope, process, and relationship to action.
               </span>
             </p>
@@ -436,20 +436,20 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
           {/* LEFT COLUMN: Traditional Research */}
           <div 
             id="traditional-research-card"
-            className="bg-[#242C4C]/90 border border-white/15 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl flex flex-col justify-between relative overflow-hidden"
+            className="bg-[#F7F3EB]/95 border border-[#4C4747]/15 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl flex flex-col justify-between relative overflow-hidden"
           >
             {/* Top Badge & Titles */}
             <div>
               <div className="flex items-center justify-between gap-4 mb-4 flex-wrap sm:flex-nowrap">
                 <div 
-                  className="inline-flex items-center gap-2.5 sm:gap-3 bg-[#4A5D94] text-white font-black text-2xl sm:text-3xl uppercase tracking-tight px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl shadow-md"
+                  className="inline-flex items-center gap-2.5 sm:gap-3 bg-[#4C4747] text-[#F7F3EB] font-black text-2xl sm:text-3xl uppercase tracking-tight px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl shadow-md"
                   style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif" }}
                 >
                   <Search className="w-6 h-6 sm:w-7 sm:h-7" />
                   Traditional Research
                 </div>
                 <div 
-                  className="font-semibold text-slate-400 tracking-wide uppercase text-left text-[14px]"
+                  className="font-semibold text-[#9D988F] tracking-wide uppercase text-left text-[14px]"
                   style={{ textAlign: 'left', fontSize: '14px' }}
                 >
                   Academic &amp; Empirical
@@ -457,12 +457,12 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
               </div>
 
               <h3 
-                className="text-[25px] font-black text-white tracking-tight uppercase mb-1"
+                className="text-[25px] font-black text-[#4C4747] tracking-tight uppercase mb-1"
                 style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif", fontSize: '25px' }}
               >
                 UNDERSTAND THE PHENOMENON
               </h3>
-              <p className="text-[#FF9BB4] text-xs sm:text-sm font-semibold mb-6">
+              <p className="text-[#DC9BB5] text-xs sm:text-sm font-semibold mb-6">
                 Aiming for generalized insight, theoretical depth, and transferable knowledge.
               </p>
 
@@ -472,12 +472,12 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15, margin: "0px 0px -40px 0px" }}
                 transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.05 }}
-                className="bg-[#1D2440]/90 border border-white/20 rounded-xl p-4 sm:p-5 mb-8 shadow-inner"
+                className="bg-[#EFE8DC] border border-[#4C4747]/15 rounded-xl p-4 sm:p-5 mb-8 shadow-inner"
               >
-                <span className="text-[11px] font-bold text-[#FF9BB4] uppercase tracking-widest block mb-1">
+                <span className="text-[11px] font-bold text-[#DC9BB5] uppercase tracking-widest block mb-1">
                   Research Question
                 </span>
-                <p className="text-base sm:text-lg font-bold text-white italic">
+                <p className="text-base sm:text-lg font-bold text-[#4C4747] italic">
                   “What factors influence whether people read or skip instructions?”
                 </p>
               </motion.div>
@@ -490,13 +490,13 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.15, margin: "0px 0px -40px 0px" }}
                   transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
-                  className="p-4 rounded-xl bg-white/[0.04] border border-white/10"
+                  className="p-4 rounded-xl bg-[#4C4747]/[0.04] border border-[#4C4747]/10"
                 >
                   <div className="flex items-center gap-2.5 mb-1.5">
-                    <span className="text-xs font-black px-2 py-0.5 rounded bg-white/15 text-[#FF9BB4]">01</span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-300">PURPOSE</span>
+                    <span className="text-xs font-black px-2 py-0.5 rounded bg-[#4C4747]/10 text-[#DC9BB5]">01</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#9D988F]">PURPOSE</span>
                   </div>
-                  <p className="text-sm text-slate-100 font-medium pl-8">
+                  <p className="text-sm text-[#4C4747] font-medium pl-8">
                     Understand patterns and factors associated with instruction-reading behavior.
                   </p>
                 </motion.div>
@@ -509,13 +509,13 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.15, margin: "0px 0px -40px 0px" }}
                   transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
-                  className="p-4 rounded-xl bg-white/[0.04] border border-white/10"
+                  className="p-4 rounded-xl bg-[#4C4747]/[0.04] border border-[#4C4747]/10"
                 >
                   <div className="flex items-center gap-2.5 mb-1.5">
-                    <span className="text-xs font-black px-2 py-0.5 rounded bg-white/15 text-[#FF9BB4]">02</span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-300">STARTING POINT</span>
+                    <span className="text-xs font-black px-2 py-0.5 rounded bg-[#4C4747]/10 text-[#DC9BB5]">02</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#9D988F]">STARTING POINT</span>
                   </div>
-                  <p className="text-sm text-slate-100 font-medium pl-8">
+                  <p className="text-sm text-[#4C4747] font-medium pl-8">
                     A research question or gap in existing knowledge.
                   </p>
                 </motion.div>
@@ -528,13 +528,13 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.15, margin: "0px 0px -40px 0px" }}
                   transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
-                  className="p-4 rounded-xl bg-white/[0.04] border border-white/10"
+                  className="p-4 rounded-xl bg-[#4C4747]/[0.04] border border-[#4C4747]/10"
                 >
                   <div className="flex items-center gap-2.5 mb-1.5">
-                    <span className="text-xs font-black px-2 py-0.5 rounded bg-white/15 text-[#FF9BB4]">03</span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-300">RESEARCHER ROLE</span>
+                    <span className="text-xs font-black px-2 py-0.5 rounded bg-[#4C4747]/10 text-[#DC9BB5]">03</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#9D988F]">RESEARCHER ROLE</span>
                   </div>
-                  <p className="text-sm text-slate-100 font-medium pl-8">
+                  <p className="text-sm text-[#4C4747] font-medium pl-8">
                     The researcher systematically studies participants and their behavior from an objective stance.
                   </p>
                 </motion.div>
@@ -547,13 +547,13 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.15, margin: "0px 0px -40px 0px" }}
                   transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
-                  className="p-4 rounded-xl bg-white/[0.04] border border-white/10"
+                  className="p-4 rounded-xl bg-[#4C4747]/[0.04] border border-[#4C4747]/10"
                 >
                   <div className="flex items-center gap-2.5 mb-1.5">
-                    <span className="text-xs font-black px-2 py-0.5 rounded bg-white/15 text-[#FF9BB4]">04</span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-300">SCOPE</span>
+                    <span className="text-xs font-black px-2 py-0.5 rounded bg-[#4C4747]/10 text-[#DC9BB5]">04</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#9D988F]">SCOPE</span>
                   </div>
-                  <p className="text-sm text-slate-100 font-medium pl-8">
+                  <p className="text-sm text-[#4C4747] font-medium pl-8">
                     The study may include participants across different contexts to develop a broader understanding.
                   </p>
                 </motion.div>
@@ -566,12 +566,12 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.15, margin: "0px 0px -40px 0px" }}
                   transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
-                  className="p-5 rounded-xl bg-white/[0.05] border border-white/15"
+                  className="p-5 rounded-xl bg-[#4C4747]/[0.04] border border-[#4C4747]/15"
                 >
                   <div className="flex items-center gap-2.5 mb-3">
-                    <span className="text-xs font-black px-2 py-0.5 rounded bg-white/15 text-[#FF9BB4]">05</span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-300">PROCESS</span>
-                    <span className="text-[11px] text-slate-400 italic ml-auto">Linear Pipeline</span>
+                    <span className="text-xs font-black px-2 py-0.5 rounded bg-[#4C4747]/10 text-[#DC9BB5]">05</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#9D988F]">PROCESS</span>
+                    <span className="text-[11px] text-[#9D988F] italic ml-auto">Linear Pipeline</span>
                   </div>
 
                   {/* Vertical Flow Diagram */}
@@ -585,11 +585,11 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                       'Findings / Claims',
                     ].map((step, idx, arr) => (
                       <React.Fragment key={idx}>
-                        <div className="w-full sm:w-4/5 py-1.5 px-3 rounded-lg bg-[#1D2440] border border-white/15 text-center text-xs sm:text-sm font-semibold text-slate-200 shadow-sm">
+                        <div className="w-full sm:w-4/5 py-1.5 px-3 rounded-lg bg-[#EFE8DC] border border-[#4C4747]/15 text-center text-xs sm:text-sm font-semibold text-[#4C4747] shadow-sm">
                           {step}
                         </div>
                         {idx < arr.length - 1 && (
-                          <div className="text-slate-400/80">
+                          <div className="text-[#9D988F]/80">
                             <ArrowDown className="w-3.5 h-3.5" />
                           </div>
                         )}
@@ -598,7 +598,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                   </div>
                 </motion.div>
 
-                <div className="flex justify-center text-slate-400 py-0.5">
+                <div className="flex justify-center text-[#9D988F] py-0.5">
                   <ArrowDown className="w-4 h-4 opacity-60" />
                 </div>
 
@@ -608,13 +608,13 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.15, margin: "0px 0px -40px 0px" }}
                   transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
-                  className="p-4 rounded-xl bg-[#6A9F68]/20 border border-[#6A9F68]/50 shadow-md"
+                  className="p-4 rounded-xl bg-[#6A9F68]/15 border border-[#6A9F68]/45 shadow-md"
                 >
                   <div className="flex items-center gap-2.5 mb-1.5">
-                    <span className="text-xs font-black px-2 py-0.5 rounded bg-[#6A9F68] text-white">06</span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#9ED99C]">OUTCOME</span>
+                    <span className="text-xs font-black px-2 py-0.5 rounded bg-[#6A9F68] text-[#F7F3EB]">06</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#568754]">OUTCOME</span>
                   </div>
-                  <p className="text-sm sm:text-base text-white font-bold pl-8">
+                  <p className="text-sm sm:text-base text-[#4C4747] font-bold pl-8">
                     New or strengthened understanding of why people read or skip instructions.
                   </p>
                 </motion.div>
@@ -623,31 +623,30 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
           </div>
 
           {/* RIGHT COLUMN: Action Research */}
-          <div className="bg-[#263152]/90 border-2 border-[#FF9BB4]/40 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl flex flex-col justify-between relative overflow-hidden">
+          <div className="bg-[#F7F3EB]/95 border-2 border-[#DC9BB5]/50 rounded-3xl p-6 sm:p-8 lg:p-10 shadow-xl flex flex-col justify-between relative overflow-hidden">
             {/* Top Badge & Titles */}
             <div>
               <div className="flex items-center justify-between gap-4 mb-4 flex-wrap sm:flex-nowrap">
                 <div 
-                  className="inline-flex items-center gap-2.5 sm:gap-3 bg-[#FF9BB4] text-[#1D2440] font-black text-2xl sm:text-3xl uppercase tracking-tight px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl shadow-md"
+                  className="inline-flex items-center gap-2.5 sm:gap-3 bg-[#DC9BB5] text-[#4C4747] font-black text-2xl sm:text-3xl uppercase tracking-tight px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl shadow-md"
                   style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif" }}
                 >
                   <Wrench className="w-6 h-6 sm:w-7 sm:h-7" />
                   Action Research
                 </div>
-                <div className="text-xs sm:text-sm font-semibold text-[#FF9BB4] tracking-wide uppercase">
+                <div className="text-xs sm:text-sm font-semibold text-[#DC9BB5] tracking-wide uppercase">
                   Practitioner &amp; Design Iteration
                 </div>
               </div>
 
               <h3 
-                className="text-[25px] font-black text-white tracking-tight uppercase mb-1"
+                className="text-[25px] font-black text-[#4C4747] tracking-tight uppercase mb-1"
                 style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif", fontSize: '25px' }}
               >
                 Improve the Practice
               </h3>
               <p 
-                className="text-xs sm:text-sm font-semibold mb-6 text-[#c6ff9b]"
-                style={{ color: '#c6ff9b' }}
+                className="text-xs sm:text-sm font-semibold mb-6 text-[#568754]"
               >
                 Aiming for immediate intervention, practical problem-solving, and continuous refinement.
               </p>
@@ -658,15 +657,14 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.15, margin: "0px 0px -40px 0px" }}
                 transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.12 }}
-                className="bg-[#1D2440]/90 border border-[#FF9BB4]/30 rounded-xl p-4 sm:p-5 mb-8 shadow-inner"
+                className="bg-[#EFE8DC] border border-[#DC9BB5]/40 rounded-xl p-4 sm:p-5 mb-8 shadow-inner"
               >
                 <span 
-                  className="text-[11px] font-bold uppercase tracking-widest block mb-1 text-[#c6ff9b]"
-                  style={{ color: '#c6ff9b' }}
+                  className="text-[11px] font-bold uppercase tracking-widest block mb-1 text-[#568754]"
                 >
                   Research Question
                 </span>
-                <p className="text-base sm:text-lg font-bold text-white italic">
+                <p className="text-base sm:text-lg font-bold text-[#4C4747] italic">
                   “How can I redesign these instructions to better support users in this context?”
                 </p>
               </motion.div>
@@ -679,13 +677,13 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.15, margin: "0px 0px -40px 0px" }}
                   transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-                  className="p-4 rounded-xl bg-white/[0.04] border border-white/10"
+                  className="p-4 rounded-xl bg-[#4C4747]/[0.04] border border-[#4C4747]/10"
                 >
                   <div className="flex items-center gap-2.5 mb-1.5">
-                    <span className="text-xs font-black px-2 py-0.5 rounded bg-[#FF9BB4] text-[#1D2440]">01</span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-300">PURPOSE</span>
+                    <span className="text-xs font-black px-2 py-0.5 rounded bg-[#DC9BB5] text-[#4C4747]">01</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#9D988F]">PURPOSE</span>
                   </div>
-                  <p className="text-sm text-slate-100 font-medium pl-8">
+                  <p className="text-sm text-[#4C4747] font-medium pl-8">
                     Improve my design and instructional practice directly.
                   </p>
                 </motion.div>
@@ -698,13 +696,13 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.15, margin: "0px 0px -40px 0px" }}
                   transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-                  className="p-4 rounded-xl bg-white/[0.04] border border-white/10"
+                  className="p-4 rounded-xl bg-[#4C4747]/[0.04] border border-[#4C4747]/10"
                 >
                   <div className="flex items-center gap-2.5 mb-1.5">
-                    <span className="text-xs font-black px-2 py-0.5 rounded bg-[#FF9BB4] text-[#1D2440]">02</span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-300">STARTING POINT</span>
+                    <span className="text-xs font-black px-2 py-0.5 rounded bg-[#DC9BB5] text-[#4C4747]">02</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#9D988F]">STARTING POINT</span>
                   </div>
-                  <p className="text-sm text-slate-100 font-medium pl-8">
+                  <p className="text-sm text-[#4C4747] font-medium pl-8">
                     A practical problem occurring in my own design context.
                   </p>
                 </motion.div>
@@ -717,13 +715,13 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.15, margin: "0px 0px -40px 0px" }}
                   transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-                  className="p-4 rounded-xl bg-white/[0.04] border border-white/10"
+                  className="p-4 rounded-xl bg-[#4C4747]/[0.04] border border-[#4C4747]/10"
                 >
                   <div className="flex items-center gap-2.5 mb-1.5">
-                    <span className="text-xs font-black px-2 py-0.5 rounded bg-[#FF9BB4] text-[#1D2440]">03</span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-300">RESEARCHER ROLE</span>
+                    <span className="text-xs font-black px-2 py-0.5 rounded bg-[#DC9BB5] text-[#4C4747]">03</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#9D988F]">RESEARCHER ROLE</span>
                   </div>
-                  <p className="text-sm text-slate-100 font-medium pl-8">
+                  <p className="text-sm text-[#4C4747] font-medium pl-8">
                     I am both the designer/practitioner and the investigator.
                   </p>
                 </motion.div>
@@ -736,13 +734,13 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.15, margin: "0px 0px -40px 0px" }}
                   transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-                  className="p-4 rounded-xl bg-white/[0.04] border border-white/10"
+                  className="p-4 rounded-xl bg-[#4C4747]/[0.04] border border-[#4C4747]/10"
                 >
                   <div className="flex items-center gap-2.5 mb-1.5">
-                    <span className="text-xs font-black px-2 py-0.5 rounded bg-[#FF9BB4] text-[#1D2440]">04</span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-300">SCOPE</span>
+                    <span className="text-xs font-black px-2 py-0.5 rounded bg-[#DC9BB5] text-[#4C4747]">04</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#9D988F]">SCOPE</span>
                   </div>
-                  <p className="text-sm text-slate-100 font-medium pl-8">
+                  <p className="text-sm text-[#4C4747] font-medium pl-8">
                     This particular onboarding experience and its users.
                   </p>
                 </motion.div>
@@ -755,12 +753,12 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.15, margin: "0px 0px -40px 0px" }}
                   transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-                  className="p-5 rounded-xl bg-white/[0.05] border border-[#FF9BB4]/30 shadow-md"
+                  className="p-5 rounded-xl bg-[#4C4747]/[0.04] border border-[#DC9BB5]/40 shadow-md"
                 >
                   <div className="flex items-center gap-2.5 mb-3">
-                    <span className="text-xs font-black px-2 py-0.5 rounded bg-[#FF9BB4] text-[#1D2440]">05</span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-slate-300">PROCESS</span>
-                    <span className="text-[11px] text-[#FF9BB4] font-bold ml-auto flex items-center gap-1">
+                    <span className="text-xs font-black px-2 py-0.5 rounded bg-[#DC9BB5] text-[#4C4747]">05</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#9D988F]">PROCESS</span>
+                    <span className="text-[11px] text-[#DC9BB5] font-bold ml-auto flex items-center gap-1">
                       <RotateCw className="w-3.5 h-3.5" /> Circular Iterative Loop
                     </span>
                   </div>
@@ -768,42 +766,41 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                   {/* Circular Diagram Graphic with SVG Curved Flow Arrows */}
                   <div 
                     className="relative w-full max-w-[300px] h-[260px] mx-auto my-3 flex items-center justify-center"
-                    style={{ color: '#c6ff9b' }}
+                    style={{ color: '#568754' }}
                   >
                     {/* SVG Circular Arrows Track */}
                     <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 300 260">
                       <defs>
                         <marker id="arrow-cw" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-                          <polygon points="0 0, 6 3, 0 6" fill="#FF9BB4" />
+                          <polygon points="0 0, 6 3, 0 6" fill="#DC9BB5" />
                         </marker>
                       </defs>
 
                       {/* Dashed background orbit circle */}
-                      <circle cx="150" cy="130" r="75" fill="none" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="1.5" strokeDasharray="4 4" />
+                      <circle cx="150" cy="130" r="75" fill="none" stroke="rgba(76, 71, 71, 0.18)" strokeWidth="1.5" strokeDasharray="4 4" />
 
                       {/* Top to Right Arc (PLAN -> ACT) */}
-                      <path d="M 175 62 A 75 75 0 0 1 218 105" fill="none" stroke="#FF9BB4" strokeWidth="2" markerEnd="url(#arrow-cw)" />
+                      <path d="M 175 62 A 75 75 0 0 1 218 105" fill="none" stroke="#DC9BB5" strokeWidth="2" markerEnd="url(#arrow-cw)" />
 
                       {/* Right to Bottom Arc (ACT -> OBSERVE) */}
-                      <path d="M 218 155 A 75 75 0 0 1 175 198" fill="none" stroke="#FF9BB4" strokeWidth="2" markerEnd="url(#arrow-cw)" />
+                      <path d="M 218 155 A 75 75 0 0 1 175 198" fill="none" stroke="#DC9BB5" strokeWidth="2" markerEnd="url(#arrow-cw)" />
 
                       {/* Bottom to Left Arc (OBSERVE -> REFLECT) */}
-                      <path d="M 125 198 A 75 75 0 0 1 82 155" fill="none" stroke="#FF9BB4" strokeWidth="2" markerEnd="url(#arrow-cw)" />
+                      <path d="M 125 198 A 75 75 0 0 1 82 155" fill="none" stroke="#DC9BB5" strokeWidth="2" markerEnd="url(#arrow-cw)" />
 
                       {/* Left to Top Arc (REFLECT -> PLAN) */}
-                      <path d="M 82 105 A 75 75 0 0 1 125 62" fill="none" stroke="#FF9BB4" strokeWidth="2" markerEnd="url(#arrow-cw)" />
+                      <path d="M 82 105 A 75 75 0 0 1 125 62" fill="none" stroke="#DC9BB5" strokeWidth="2" markerEnd="url(#arrow-cw)" />
                     </svg>
 
                     {/* Center Icon: Gentle Rotating Loop Indicator */}
-                    <div className="w-11 h-11 rounded-full bg-[#FF9BB4]/15 border border-[#FF9BB4]/40 flex items-center justify-center text-[#FF9BB4] z-10 shadow-md">
+                    <div className="w-11 h-11 rounded-full bg-[#DC9BB5]/20 border border-[#DC9BB5]/50 flex items-center justify-center text-[#DC9BB5] z-10 shadow-md">
                       <RotateCw className="w-5 h-5 animate-spin" style={{ animationDuration: '24s' }} />
                     </div>
 
                     {/* Top Node: PLAN */}
                     <div className="absolute top-2 left-1/2 -translate-x-1/2 z-20">
                       <div 
-                        className="px-4 py-1 rounded-md bg-[#FF9BB4] font-black text-xs shadow-md tracking-wider"
-                        style={{ color: '#000000' }}
+                        className="px-4 py-1 rounded-md bg-[#DC9BB5] font-black text-xs shadow-md tracking-wider text-[#4C4747]"
                       >
                         PLAN
                       </div>
@@ -811,29 +808,29 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
 
                     {/* Right Node: ACT */}
                     <div className="absolute right-2 top-1/2 -translate-y-1/2 z-20">
-                      <div className="px-4 py-1 rounded-md bg-[#FF9BB4] text-[#1D2440] font-black text-xs shadow-md tracking-wider">
+                      <div className="px-4 py-1 rounded-md bg-[#DC9BB5] text-[#4C4747] font-black text-xs shadow-md tracking-wider">
                         ACT
                       </div>
                     </div>
 
                     {/* Bottom Node: OBSERVE */}
                     <div className="absolute bottom-2 left-1/2 -translate-x-1/2 z-20">
-                      <div className="px-3.5 py-1 rounded-md bg-[#FF9BB4] text-[#1D2440] font-black text-xs shadow-md tracking-wider">
+                      <div className="px-3.5 py-1 rounded-md bg-[#DC9BB5] text-[#4C4747] font-black text-xs shadow-md tracking-wider">
                         OBSERVE
                       </div>
                     </div>
 
                     {/* Left Node: REFLECT */}
                     <div className="absolute left-2 top-1/2 -translate-y-1/2 z-20">
-                      <div className="px-3.5 py-1 rounded-md bg-[#FF9BB4] text-[#1D2440] font-black text-xs shadow-md tracking-wider">
+                      <div className="px-3.5 py-1 rounded-md bg-[#DC9BB5] text-[#4C4747] font-black text-xs shadow-md tracking-wider">
                         REFLECT
                       </div>
                     </div>
                   </div>
 
                   {/* Real World Concrete Sequence Chip Pipeline */}
-                  <div className="mt-3 pt-3 border-t border-white/10">
-                    <span className="text-[11px] uppercase tracking-wider text-slate-400 font-bold block mb-2 text-center">
+                  <div className="mt-3 pt-3 border-t border-[#4C4747]/10">
+                    <span className="text-[11px] uppercase tracking-wider text-[#9D988F] font-bold block mb-2 text-center">
                       Action Micro-Cycle in Practice:
                     </span>
                     <div className="flex flex-wrap items-center justify-center gap-1.5 text-xs">
@@ -849,13 +846,13 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                         <React.Fragment key={i}>
                           <span className={`px-2.5 py-1 rounded-full font-medium ${
                             i === a.length - 1 
-                              ? 'bg-[#FF9BB4] text-[#1D2440] font-bold' 
-                              : 'bg-white/10 text-slate-200 border border-white/10'
+                              ? 'bg-[#DC9BB5] text-[#4C4747] font-bold' 
+                              : 'bg-[#4C4747]/5 text-[#4C4747] border border-[#4C4747]/15'
                           }`}>
                             {chip}
                           </span>
                           {i < a.length - 1 && (
-                            <span className="text-slate-400 text-[10px]">→</span>
+                            <span className="text-[#9D988F] text-[10px]">→</span>
                           )}
                         </React.Fragment>
                       ))}
@@ -863,7 +860,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                   </div>
                 </motion.div>
 
-                <div className="flex justify-center text-slate-400 py-0.5">
+                <div className="flex justify-center text-[#9D988F] py-0.5">
                   <ArrowDown className="w-4 h-4 opacity-60" />
                 </div>
 
@@ -873,13 +870,13 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, amount: 0.15, margin: "0px 0px -40px 0px" }}
                   transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1], delay: 0.15 }}
-                  className="p-4 rounded-xl bg-[#6A9F68]/20 border border-[#6A9F68]/50 shadow-md"
+                  className="p-4 rounded-xl bg-[#6A9F68]/15 border border-[#6A9F68]/45 shadow-md"
                 >
                   <div className="flex items-center gap-2.5 mb-1.5">
-                    <span className="text-xs font-black px-2 py-0.5 rounded bg-[#6A9F68] text-white">06</span>
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#9ED99C]">OUTCOME</span>
+                    <span className="text-xs font-black px-2 py-0.5 rounded bg-[#6A9F68] text-[#F7F3EB]">06</span>
+                    <span className="text-xs font-bold uppercase tracking-wider text-[#568754]">OUTCOME</span>
                   </div>
-                  <p className="text-sm sm:text-base text-white font-bold pl-8">
+                  <p className="text-sm sm:text-base text-[#4C4747] font-bold pl-8">
                     An improved design + evidence-informed understanding of what works in this context.
                   </p>
                 </motion.div>
@@ -902,7 +899,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
         {/* Section Header */}
         <div className="text-center mb-10 pt-[10vh]">
           <motion.h2 
-            className="text-3xl sm:text-5xl md:text-[52px] font-black tracking-tight text-white mb-4 overflow-visible"
+            className="text-3xl sm:text-5xl md:text-[52px] font-black tracking-tight text-[#4C4747] mb-4 overflow-visible"
             style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif" }}
             initial="hidden"
             whileInView="visible"
@@ -937,7 +934,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                     },
                   }),
                 }}
-                className={`inline-block mr-2.5 sm:mr-3.5 ${word.highlight ? 'text-[#FF9BB4]' : 'text-white'}`}
+                className={`inline-block mr-2.5 sm:mr-3.5 ${word.highlight ? 'text-[#DC9BB5]' : 'text-[#4C4747]'}`}
               >
                 {word.text}
               </motion.span>
@@ -949,8 +946,8 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.7 }}
             transition={{ duration: 0.8, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
-            className="text-white w-fit mx-auto text-[20px] leading-[32px] text-left"
-            style={{ fontSize: '20px', lineHeight: '32px', textAlign: 'left', color: '#ffffff' }}
+            className="text-[#4C4747] w-fit mx-auto text-[20px] leading-[32px] text-left"
+            style={{ fontSize: '20px', lineHeight: '32px', textAlign: 'left', color: '#4C4747' }}
           >
             Whether investigating broad psychological patterns or diagnosing an onboarding friction point,
             <br className="hidden md:inline" />
@@ -958,13 +955,13 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
           </motion.p>
 
           {/* Toggle between Card Comparison and Clean Matrix */}
-          <div className="inline-flex items-center p-1 rounded-full bg-white/10 border border-white/20 mt-6 shadow-inner translate-y-[15vh]">
+          <div className="inline-flex items-center p-1 rounded-full bg-[#4C4747]/10 border border-[#4C4747]/20 mt-6 shadow-inner translate-y-[15vh]">
             <button
               onClick={() => setEvidenceView('cards')}
               className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                 evidenceView === 'cards'
-                  ? 'bg-[#FF9BB4] text-[#1D2440] shadow'
-                  : 'text-slate-300 hover:text-white'
+                  ? 'bg-[#DC9BB5] text-[#4C4747] shadow'
+                  : 'text-[#9D988F] hover:text-[#4C4747]'
               }`}
             >
               At A Glance
@@ -973,8 +970,8 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
               onClick={() => setEvidenceView('table')}
               className={`px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition-all cursor-pointer ${
                 evidenceView === 'table'
-                  ? 'bg-[#FF9BB4] text-[#1D2440] shadow'
-                  : 'text-slate-300 hover:text-white'
+                  ? 'bg-[#DC9BB5] text-[#4C4747] shadow'
+                  : 'text-[#9D988F] hover:text-[#4C4747]'
               }`}
             >
               Comparative Matrix
@@ -985,18 +982,18 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
         {/* Render switched views: 'cards' tab renders the comparison matrix table, 'table' tab (Comparative Matrix) renders the two cards */}
         {evidenceView === 'table' ? (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
-            {/* Quantitative Card (Pink #FF9BB4 - Swapped to Left) */}
-            <div className="bg-[#242D4F]/85 border border-[#FF9BB4]/40 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden translate-y-[15vh]">
-              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-white/15">
-                <div className="w-10 h-10 rounded-xl bg-[#FF9BB4]/20 text-[#FF9BB4] flex items-center justify-center shadow-inner">
+            {/* Quantitative Card (Pink #DC9BB5 - Swapped to Left) */}
+            <div className="bg-[#F7F3EB]/95 border border-[#DC9BB5]/50 rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden translate-y-[15vh]">
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-[#4C4747]/15">
+                <div className="w-10 h-10 rounded-xl bg-[#DC9BB5]/20 text-[#DC9BB5] flex items-center justify-center shadow-inner">
                   <BarChart3 className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-[11px] font-bold uppercase tracking-widest text-[#FF9BB4] block">
+                  <span className="text-[11px] font-bold uppercase tracking-widest text-[#DC9BB5] block">
                     Structured &amp; Measurable
                   </span>
                   <h3 
-                    className="text-2xl sm:text-3xl font-black text-white tracking-tight"
+                    className="text-2xl sm:text-3xl font-black text-[#4C4747] tracking-tight"
                     style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif" }}
                   >
                     Quantitative
@@ -1006,11 +1003,11 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
 
               <div className="space-y-5">
                 {evidenceDimensions.map((item, idx) => (
-                  <div key={idx} className="p-3.5 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[#FF9BB4]/40 transition-colors">
-                    <div className="text-[11px] font-bold uppercase tracking-wider text-[#FF9BB4] mb-1">
+                  <div key={idx} className="p-3.5 rounded-xl bg-[#4C4747]/[0.03] border border-[#4C4747]/10 hover:border-[#DC9BB5]/50 transition-colors">
+                    <div className="text-[11px] font-bold uppercase tracking-wider text-[#DC9BB5] mb-1">
                       {item.dimension}
                     </div>
-                    <div className="text-sm font-semibold text-slate-100 leading-snug">
+                    <div className="text-sm font-semibold text-[#4C4747] leading-snug">
                       {item.quant}
                     </div>
                   </div>
@@ -1019,8 +1016,8 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
             </div>
 
             {/* Qualitative Card (Green #6A9F68 - Swapped to Right) */}
-            <div className="bg-[#242D4F]/85 border border-[#6A9F68]/40 rounded-3xl p-6 sm:p-8 shadow-2xl relative overflow-hidden translate-y-[15vh]">
-              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-white/15">
+            <div className="bg-[#F7F3EB]/95 border border-[#6A9F68]/45 rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden translate-y-[15vh]">
+              <div className="flex items-center gap-3 mb-6 pb-4 border-b border-[#4C4747]/15">
                 <div className="w-10 h-10 rounded-xl bg-[#6A9F68]/20 text-[#6A9F68] flex items-center justify-center shadow-inner">
                   <Users className="w-5 h-5" />
                 </div>
@@ -1029,7 +1026,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                     Interpretive &amp; Experiential
                   </span>
                   <h3 
-                    className="text-2xl sm:text-3xl font-black text-white tracking-tight"
+                    className="text-2xl sm:text-3xl font-black text-[#4C4747] tracking-tight"
                     style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif" }}
                   >
                     Qualitative
@@ -1039,11 +1036,11 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
 
               <div className="space-y-5">
                 {evidenceDimensions.map((item, idx) => (
-                  <div key={idx} className="p-3.5 rounded-xl bg-white/[0.03] border border-white/10 hover:border-[#6A9F68]/40 transition-colors">
+                  <div key={idx} className="p-3.5 rounded-xl bg-[#4C4747]/[0.03] border border-[#4C4747]/10 hover:border-[#6A9F68]/45 transition-colors">
                     <div className="text-[11px] font-bold uppercase tracking-wider text-[#6A9F68] mb-1">
                       {item.dimension}
                     </div>
-                    <div className="text-sm font-semibold text-slate-100 leading-snug">
+                    <div className="text-sm font-semibold text-[#4C4747] leading-snug">
                       {item.qual}
                     </div>
                   </div>
@@ -1057,7 +1054,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
             {/* Center Fine Divider Line on Desktop - draws down from top as user scrolls */}
             <motion.div 
               style={{ scaleY: centerLineScaleY, transformOrigin: 'top' }}
-              className="hidden lg:block absolute left-1/2 top-2 bottom-6 w-px bg-white/40 -translate-x-1/2 pointer-events-none" 
+              className="hidden lg:block absolute left-1/2 top-2 bottom-6 w-px bg-[#4C4747]/30 -translate-x-1/2 pointer-events-none" 
             />
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch relative">
@@ -1067,8 +1064,8 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                 <div className="w-full flex flex-col items-center">
                   
                   {/* Subtle Sub-header Indicator */}
-                  <div className="inline-flex items-center gap-2 mb-8 text-[#FF9BB4] font-mono text-xs uppercase tracking-widest">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#FF9BB4] animate-pulse" />
+                  <div className="inline-flex items-center gap-2 mb-8 text-[#DC9BB5] font-mono text-xs uppercase tracking-widest">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#DC9BB5] animate-pulse" />
                     Quantitative Inquiry
                   </div>
 
@@ -1088,31 +1085,31 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                       >
                         <svg className="w-full max-w-[200px] h-28 overflow-visible" viewBox="0 0 180 100">
                           {/* Dotted horizontal baseline and guidelines */}
-                          <line x1="10" y1="85" x2="170" y2="85" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" strokeDasharray="3 3" />
-                          <line x1="10" y1="50" x2="170" y2="50" stroke="rgba(255,255,255,0.1)" strokeWidth="1" strokeDasharray="2 2" />
-                          <line x1="10" y1="15" x2="170" y2="15" stroke="rgba(255,255,255,0.06)" strokeWidth="1" />
+                          <line x1="10" y1="85" x2="170" y2="85" stroke="rgba(76,71,71,0.22)" strokeWidth="1.5" strokeDasharray="3 3" />
+                          <line x1="10" y1="50" x2="170" y2="50" stroke="rgba(76,71,71,0.12)" strokeWidth="1" strokeDasharray="2 2" />
+                          <line x1="10" y1="15" x2="170" y2="15" stroke="rgba(76,71,71,0.08)" strokeWidth="1" />
 
                           {/* Bar 1 (42% - Medium-Light Pink) */}
-                          <rect x="22" y="38" width="22" height="47" rx="3" fill="#FFB8C9" />
-                          <text x="33" y="30" fill="#FFB8C9" fontSize="10" fontFamily="monospace" fontWeight="bold" textAnchor="middle">42%</text>
+                          <rect x="22" y="38" width="22" height="47" rx="3" fill="#E8B8CB" />
+                          <text x="33" y="30" fill="#B5728D" fontSize="10" fontFamily="monospace" fontWeight="bold" textAnchor="middle">42%</text>
 
                           {/* Bar 2 (68% - Deep Vibrant Pink) */}
-                          <rect x="58" y="24" width="22" height="61" rx="3" fill="#FF7A99" />
-                          <text x="69" y="16" fill="#FF7A99" fontSize="10" fontFamily="monospace" fontWeight="bold" textAnchor="middle">68%</text>
+                          <rect x="58" y="24" width="22" height="61" rx="3" fill="#C97F9C" />
+                          <text x="69" y="16" fill="#C97F9C" fontSize="10" fontFamily="monospace" fontWeight="bold" textAnchor="middle">68%</text>
 
                           {/* Bar 3 (31% - Soft Pastel Pink) */}
-                          <rect x="94" y="48" width="22" height="37" rx="3" fill="#FFD6E0" />
-                          <text x="105" y="40" fill="#FFD6E0" fontSize="10" fontFamily="monospace" fontWeight="bold" textAnchor="middle">31%</text>
+                          <rect x="94" y="48" width="22" height="37" rx="3" fill="#DDB0C2" />
+                          <text x="105" y="40" fill="#9D988F" fontSize="10" fontFamily="monospace" fontWeight="bold" textAnchor="middle">31%</text>
 
                           {/* Bar 4 (89% - Signature Highlight Pink) */}
-                          <rect x="130" y="12" width="24" height="73" rx="4" fill="#FF9BB4" filter="drop-shadow(0 0 8px rgba(255,155,180,0.5))" />
-                          <text x="142" y="5" fill="#ffffff" fontSize="11" fontFamily="monospace" fontWeight="bold" textAnchor="middle">89%</text>
+                          <rect x="130" y="12" width="24" height="73" rx="4" fill="#DC9BB5" filter="drop-shadow(0 0 8px rgba(220,155,181,0.45))" />
+                          <text x="142" y="5" fill="#4C4747" fontSize="11" fontFamily="monospace" fontWeight="bold" textAnchor="middle">89%</text>
 
                           {/* Upward trend curve linking peaks */}
-                          <path d="M 33 27 Q 69 12 105 36 T 142 3" fill="none" stroke="#ffffff" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.8" />
-                          <circle cx="142" cy="3" r="3.5" fill="#ffffff" />
+                          <path d="M 33 27 Q 69 12 105 36 T 142 3" fill="none" stroke="#4C4747" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.8" />
+                          <circle cx="142" cy="3" r="3.5" fill="#4C4747" />
                         </svg>
-                        <span className="text-[11px] font-mono text-[#FF9BB4]/90 mt-1 uppercase tracking-wider">
+                        <span className="text-[11px] font-mono text-[#DC9BB5] mt-1 uppercase tracking-wider font-semibold">
                           Distribution &amp; Variance
                         </span>
                       </motion.div>
@@ -1127,23 +1124,23 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                       >
                         <svg className="w-24 h-24 overflow-visible -rotate-90" viewBox="0 0 100 100">
                           {/* Track */}
-                          <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(255,255,255,0.12)" strokeWidth="8" />
+                          <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(76,71,71,0.14)" strokeWidth="8" />
                           {/* Value Arc (84%) */}
                           <circle 
                             cx="50" 
                             cy="50" 
                             r="40" 
                             fill="none" 
-                            stroke="#FF9BB4" 
+                            stroke="#DC9BB5" 
                             strokeWidth="8" 
                             strokeDasharray="210 251.2" 
                             strokeLinecap="round" 
-                            filter="drop-shadow(0 0 6px rgba(255,155,180,0.6))"
+                            filter="drop-shadow(0 0 6px rgba(220,155,181,0.5))"
                           />
                         </svg>
                         <div className="absolute top-[48px] right-[24px] sm:right-[36px] flex flex-col items-center pointer-events-none">
-                          <span className="text-xl sm:text-2xl font-black font-mono text-white leading-none">84.6%</span>
-                          <span className="text-[9px] font-mono uppercase tracking-wider text-[#FF9BB4] mt-0.5">Reliability</span>
+                          <span className="text-xl sm:text-2xl font-black font-mono text-[#4C4747] leading-none">84.6%</span>
+                          <span className="text-[9px] font-mono uppercase tracking-wider text-[#DC9BB5] mt-0.5 font-semibold">Reliability</span>
                         </div>
                       </motion.div>
 
@@ -1152,7 +1149,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                     {/* CENTER HEADLINE: MEASURE */}
                     <div className="my-6 relative">
                       <h3 
-                        className="text-5xl sm:text-6xl md:text-7xl font-black text-white tracking-tight drop-shadow-[0_10px_25px_rgba(0,0,0,0.5)] select-none"
+                        className="text-5xl sm:text-6xl md:text-7xl font-black text-[#4C4747] tracking-tight drop-shadow-[0_6px_16px_rgba(76,71,71,0.12)] select-none"
                         style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif" }}
                       >
                         MEASURE
@@ -1168,29 +1165,29 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                       className="w-full flex items-center justify-center gap-3 sm:gap-5 flex-wrap pt-2 translate-y-8 sm:translate-y-9"
                     >
                       {/* Floating Metric 1 */}
-                      <div className="flex items-center gap-1.5 text-[#FF9BB4] font-mono text-sm sm:text-base font-bold bg-[#FF9BB4]/15 px-3 py-1 rounded-full border border-[#FF9BB4]/40 shadow">
-                        <TrendingUp className="w-4 h-4 text-[#FF9BB4]" />
+                      <div className="flex items-center gap-1.5 text-[#DC9BB5] font-mono text-sm sm:text-base font-bold bg-[#DC9BB5]/15 px-3 py-1 rounded-full border border-[#DC9BB5]/45 shadow-sm">
+                        <TrendingUp className="w-4 h-4 text-[#DC9BB5]" />
                         <span>Δ = +34.2%</span>
                       </div>
 
                       {/* Floating Metric 2 */}
-                      <div className="flex items-center gap-1.5 text-white font-mono text-sm sm:text-base font-bold bg-white/5 px-3 py-1 rounded-full border border-white/15 shadow">
-                        <span className="text-[#FF9BB4] font-black">n</span>
-                        <span className="text-slate-300">=</span>
+                      <div className="flex items-center gap-1.5 text-[#4C4747] font-mono text-sm sm:text-base font-bold bg-[#F7F3EB] px-3 py-1 rounded-full border border-[#4C4747]/15 shadow-sm">
+                        <span className="text-[#DC9BB5] font-black">n</span>
+                        <span className="text-[#9D988F]">=</span>
                         <span>1,420</span>
                       </div>
 
                       {/* Floating Metric 3 */}
-                      <div className="flex items-center gap-1 text-slate-300 font-mono text-xs sm:text-sm bg-white/5 px-3 py-1 rounded-full border border-white/10 shadow">
-                        <span className="text-[#FF9BB4] font-bold">p</span>
+                      <div className="flex items-center gap-1 text-[#9D988F] font-mono text-xs sm:text-sm bg-[#F7F3EB] px-3 py-1 rounded-full border border-[#4C4747]/10 shadow-sm">
+                        <span className="text-[#DC9BB5] font-bold">p</span>
                         <span>&lt; 0.001</span>
-                        <span className="text-[10px] text-emerald-400 ml-1 font-sans font-bold">✓ Sig.</span>
+                        <span className="text-[10px] text-[#568754] ml-1 font-sans font-bold">✓ Sig.</span>
                       </div>
 
                       {/* Floating Metric 4 */}
-                      <div className="flex items-center gap-1 text-slate-300 font-mono text-xs bg-white/5 px-2.5 py-1 rounded-full border border-white/10 shadow">
-                        <span className="text-slate-400">CI 95%</span>
-                        <span className="text-[#FF9BB4]">[78.2, 91.0]</span>
+                      <div className="flex items-center gap-1 text-[#9D988F] font-mono text-xs bg-[#F7F3EB] px-2.5 py-1 rounded-full border border-[#4C4747]/10 shadow-sm">
+                        <span className="text-[#9D988F]">CI 95%</span>
+                        <span className="text-[#DC9BB5] font-semibold">[78.2, 91.0]</span>
                       </div>
                     </motion.div>
 
@@ -1199,7 +1196,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
 
                 {/* Bottom Required Statement for Quantitative */}
                 <div className="mt-10 max-w-md w-full">
-                  <p className="text-[20px] text-slate-200 font-medium leading-relaxed text-center sm:text-left">
+                  <p className="text-[20px] text-[#4C4747] font-medium leading-relaxed text-center sm:text-left">
                     Uses numerical data to measure patterns, differences, relationships, or outcomes.
                   </p>
                 </div>
@@ -1210,8 +1207,8 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                 <div className="w-full flex flex-col items-center">
                   
                   {/* Subtle Sub-header Indicator */}
-                  <div className="inline-flex items-center gap-2 mb-8 text-white font-mono text-xs uppercase tracking-widest">
-                    <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                  <div className="inline-flex items-center gap-2 mb-8 text-[#4C4747] font-mono text-xs uppercase tracking-widest">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#4C4747] animate-pulse" />
                     Qualitative Inquiry
                   </div>
 
@@ -1231,49 +1228,49 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                       >
                         <svg className="w-full max-w-[210px] h-28 overflow-visible" viewBox="0 0 200 100">
                           {/* Floor / Desk Horizon Line */}
-                          <line x1="15" y1="88" x2="185" y2="88" stroke="rgba(255,255,255,0.2)" strokeWidth="1.5" strokeDasharray="3 3" />
+                          <line x1="15" y1="88" x2="185" y2="88" stroke="rgba(76,71,71,0.22)" strokeWidth="1.5" strokeDasharray="3 3" />
                           
                           {/* Interview Table in Middle */}
-                          <rect x="75" y="60" width="50" height="28" rx="2" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.25)" strokeWidth="1" />
+                          <rect x="75" y="60" width="50" height="28" rx="2" fill="rgba(76,71,71,0.08)" stroke="rgba(76,71,71,0.25)" strokeWidth="1" />
                           {/* Audio recorder / Mic on table */}
-                          <rect x="94" y="56" width="12" height="6" rx="2" fill="#FF9BB4" />
-                          <circle cx="100" cy="53" r="2" fill="#FF9BB4" />
+                          <rect x="94" y="56" width="12" height="6" rx="2" fill="#DC9BB5" />
+                          <circle cx="100" cy="53" r="2" fill="#DC9BB5" />
 
                           {/* LEFT PERSON: Interviewer with Notepad */}
                           <g transform="translate(25, 18)">
                             {/* Head */}
-                            <circle cx="20" cy="14" r="11" fill="#FF9BB4" opacity="0.9" />
+                            <circle cx="20" cy="14" r="11" fill="#DC9BB5" opacity="0.9" />
                             {/* Body / Torso */}
-                            <path d="M 6 52 C 6 34 34 34 34 52 Z" fill="#4A5D94" />
+                            <path d="M 6 52 C 6 34 34 34 34 52 Z" fill="#4C4747" />
                             {/* Arm holding clipboard */}
-                            <path d="M 28 36 L 44 42" stroke="#FF9BB4" strokeWidth="3" strokeLinecap="round" />
+                            <path d="M 28 36 L 44 42" stroke="#DC9BB5" strokeWidth="3" strokeLinecap="round" />
                             {/* Clipboard & pen */}
-                            <rect x="38" y="32" width="16" height="22" rx="2" fill="#F8FAFC" transform="rotate(12 38 32)" />
+                            <rect x="38" y="32" width="16" height="22" rx="2" fill="#F8FAFC" stroke="#CBD5E1" strokeWidth="0.8" transform="rotate(12 38 32)" />
                             <line x1="42" y1="38" x2="50" y2="40" stroke="#334155" strokeWidth="1.5" />
                             <line x1="41" y1="43" x2="49" y2="45" stroke="#334155" strokeWidth="1.5" />
                           </g>
 
                           {/* Sound / Gesture dialogue waves between them */}
-                          <path d="M 85 36 Q 100 30 115 36" fill="none" stroke="#FDE68A" strokeWidth="1.5" strokeDasharray="2 2" />
-                          <path d="M 88 42 Q 100 38 112 42" fill="none" stroke="#FF9BB4" strokeWidth="1.5" strokeDasharray="2 2" />
+                          <path d="M 85 36 Q 100 30 115 36" fill="none" stroke="#9D988F" strokeWidth="1.5" strokeDasharray="2 2" />
+                          <path d="M 88 42 Q 100 38 112 42" fill="none" stroke="#DC9BB5" strokeWidth="1.5" strokeDasharray="2 2" />
 
                           {/* RIGHT PERSON: Participant Gesturing */}
                           <g transform="translate(135, 18)">
                             {/* Head */}
-                            <circle cx="20" cy="14" r="11" fill="#FDE68A" opacity="0.95" />
+                            <circle cx="20" cy="14" r="11" fill="#D4A373" opacity="0.95" />
                             {/* Body / Torso */}
                             <path d="M 6 52 C 6 34 34 34 34 52 Z" fill="#6A9F68" />
                             {/* Expressive hand gesture towards interviewer */}
-                            <path d="M 12 36 L -4 28" stroke="#FDE68A" strokeWidth="3" strokeLinecap="round" />
-                            <circle cx="-5" cy="27" r="2.5" fill="#FDE68A" />
+                            <path d="M 12 36 L -4 28" stroke="#D4A373" strokeWidth="3" strokeLinecap="round" />
+                            <circle cx="-5" cy="27" r="2.5" fill="#D4A373" />
                           </g>
                         </svg>
-                        <span className="text-[11px] font-mono text-[#FF9BB4] mt-1 uppercase tracking-wider font-semibold">
+                        <span className="text-[11px] font-mono text-[#DC9BB5] mt-1 uppercase tracking-wider font-semibold">
                           1-on-1 Contextual Inquiry
                         </span>
                       </motion.div>
 
-                      {/* 2. Speech Bubble: "I noticed..." (White Button Bubble, Tilt & Floating Hover) */}
+                      {/* 2. Speech Bubble: "I noticed..." (Warm Card Button Bubble, Tilt & Floating Hover) */}
                       <motion.div 
                         initial={{ opacity: 0, scale: 0.3, y: 24, rotate: -10 }}
                         whileInView={{ opacity: 1, scale: 1, y: 0, rotate: -3 }}
@@ -1281,13 +1278,13 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                         transition={{ type: 'spring', stiffness: 340, damping: 17, delay: 0.52 }}
                         className="flex-1 max-w-[180px] relative"
                       >
-                        <div className="relative cursor-pointer select-none -rotate-3 transition-all duration-300 ease-out hover:-translate-y-2 hover:rotate-0 hover:scale-105 hover:shadow-[0_14px_30px_rgba(255,255,255,0.35)] active:scale-95 active:translate-y-0 bg-white border-2 border-slate-100 px-5 py-3 rounded-2xl sm:rounded-full shadow-[0_10px_25px_rgba(0,0,0,0.35)] text-center group">
-                          <p className="text-sm sm:text-base font-bold italic font-serif text-slate-900 tracking-tight leading-none">
+                        <div className="relative cursor-pointer select-none -rotate-3 transition-all duration-300 ease-out hover:-translate-y-2 hover:rotate-0 hover:scale-105 hover:shadow-[0_14px_30px_rgba(76,71,71,0.2)] active:scale-95 active:translate-y-0 bg-[#F7F3EB] border-2 border-[#4C4747]/15 px-5 py-3 rounded-2xl sm:rounded-full shadow-[0_10px_25px_rgba(76,71,71,0.14)] text-center group">
+                          <p className="text-sm sm:text-base font-bold italic font-serif text-[#4C4747] tracking-tight leading-none">
                             “I noticed...”
                           </p>
                           {/* Speech bubble tail pointing left toward speaker */}
                           <div className="absolute -bottom-2 left-6 w-3 h-3 overflow-hidden pointer-events-none">
-                            <div className="w-3 h-3 bg-white border-r-2 border-b-2 border-slate-100 rotate-45 transform origin-top-left" />
+                            <div className="w-3 h-3 bg-[#F7F3EB] border-r-2 border-b-2 border-[#4C4747]/15 rotate-45 transform origin-top-left" />
                           </div>
                         </div>
                       </motion.div>
@@ -1297,7 +1294,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                     {/* CENTER HEADLINE: EXPLORE */}
                     <div className="my-6 relative">
                       <h3 
-                        className="text-5xl sm:text-6xl md:text-7xl font-black text-white tracking-tight drop-shadow-[0_10px_25px_rgba(0,0,0,0.5)] select-none"
+                        className="text-5xl sm:text-6xl md:text-7xl font-black text-[#4C4747] tracking-tight drop-shadow-[0_6px_16px_rgba(76,71,71,0.12)] select-none"
                         style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif" }}
                       >
                         EXPLORE
@@ -1307,7 +1304,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                     {/* BOTTOM VISUALS: Speech Bubble "I felt..." & Tilted Transcript Notepad Illustration */}
                     <div className="w-full flex items-center justify-between gap-4 pt-2">
                       
-                      {/* Speech Bubble: "I felt..." (White Button Bubble, Tilt & Floating Hover) */}
+                      {/* Speech Bubble: "I felt..." (Warm Card Button Bubble, Tilt & Floating Hover) */}
                       <motion.div 
                         initial={{ opacity: 0, scale: 0.3, y: 24, rotate: 10 }}
                         whileInView={{ opacity: 1, scale: 1, y: 0, rotate: 3 }}
@@ -1315,13 +1312,13 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                         transition={{ type: 'spring', stiffness: 340, damping: 17, delay: 0.22 }}
                         className="flex-1 max-w-[180px] relative"
                       >
-                        <div className="relative cursor-pointer select-none rotate-3 transition-all duration-300 ease-out hover:-translate-y-2 hover:rotate-0 hover:scale-105 hover:shadow-[0_14px_30px_rgba(255,255,255,0.35)] active:scale-95 active:translate-y-0 bg-white border-2 border-slate-100 px-5 py-3 rounded-2xl sm:rounded-full shadow-[0_10px_25px_rgba(0,0,0,0.35)] text-center group">
-                          <p className="text-sm sm:text-base font-bold italic font-serif text-slate-900 tracking-tight leading-none">
+                        <div className="relative cursor-pointer select-none rotate-3 transition-all duration-300 ease-out hover:-translate-y-2 hover:rotate-0 hover:scale-105 hover:shadow-[0_14px_30px_rgba(76,71,71,0.2)] active:scale-95 active:translate-y-0 bg-[#F7F3EB] border-2 border-[#4C4747]/15 px-5 py-3 rounded-2xl sm:rounded-full shadow-[0_10px_25px_rgba(76,71,71,0.14)] text-center group">
+                          <p className="text-sm sm:text-base font-bold italic font-serif text-[#4C4747] tracking-tight leading-none">
                             “I felt...”
                           </p>
                           {/* Speech bubble tail */}
                           <div className="absolute -top-2 right-6 w-3 h-3 overflow-hidden pointer-events-none">
-                            <div className="w-3 h-3 bg-white border-l-2 border-t-2 border-slate-100 rotate-45 transform origin-bottom-right" />
+                            <div className="w-3 h-3 bg-[#F7F3EB] border-l-2 border-t-2 border-[#4C4747]/15 rotate-45 transform origin-bottom-right" />
                           </div>
                         </div>
                       </motion.div>
@@ -1336,11 +1333,11 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                       >
                         <svg className="w-full max-w-[190px] h-28 overflow-visible" viewBox="0 0 160 90">
                           {/* Shadow behind paper */}
-                          <rect x="18" y="8" width="124" height="74" rx="4" fill="rgba(0,0,0,0.4)" transform="rotate(-3 80 45)" />
+                          <rect x="18" y="8" width="124" height="74" rx="4" fill="rgba(76,71,71,0.18)" transform="rotate(-3 80 45)" />
                           
                           {/* Notepad Sheet */}
                           <g transform="rotate(-2 80 45)">
-                            <rect x="16" y="6" width="126" height="74" rx="4" fill="#F8FAFC" stroke="#E2E8F0" strokeWidth="1" />
+                            <rect x="16" y="6" width="126" height="74" rx="4" fill="#F8FAFC" stroke="#CBD5E1" strokeWidth="1" />
                             {/* Binder holes at top */}
                             <circle cx="28" cy="12" r="2" fill="#94A3B8" />
                             <circle cx="80" cy="12" r="2" fill="#94A3B8" />
@@ -1364,7 +1361,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                             <line x1="22" y1="6" x2="22" y2="80" stroke="#FCA5A5" strokeWidth="0.8" strokeOpacity="0.8" />
                           </g>
                         </svg>
-                        <span className="text-[11px] font-mono text-[#FF9BB4] mt-1 uppercase tracking-wider font-semibold">
+                        <span className="text-[11px] font-mono text-[#DC9BB5] mt-1 uppercase tracking-wider font-semibold">
                           Field Notes &amp; Coded Themes
                         </span>
                       </motion.div>
@@ -1376,7 +1373,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
 
                 {/* Bottom Required Statement for Qualitative */}
                 <div className="mt-10 max-w-md w-full">
-                  <p className="text-[20px] text-slate-200 font-medium leading-relaxed text-center sm:text-left">
+                  <p className="text-[20px] text-[#4C4747] font-medium leading-relaxed text-center sm:text-left">
                     Uses non-numerical data to explore meanings, experiences, processes, and context.
                   </p>
                 </div>
@@ -1388,11 +1385,11 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
       </section>
 
       {/* 4. Realistic WebGL Torn Paper Section Transition */}
-      <div className="w-full relative bg-[#2B2B2B]">
+      <div className="w-full relative bg-[#EAE4D8]">
         <PaperTear 
           image={tornJpg}
-          color="#1D2440"
-          background="#2B2B2B"
+          color="#EFE8DC"
+          background="#EAE4D8"
           edgeOpacity={0.9}
           start={1}
           end={0.12}
@@ -1407,18 +1404,21 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
           }
         />
 
-        {/* 5. Bottom Section in #2B2B2B (From Knowing to Doing) */}
+        {/* 5. Bottom Section in #EAE4D8 (From Knowing to Doing) */}
         <div 
-          className="w-full bg-[#2B2B2B] text-white pt-8 sm:pt-12 pb-8 sm:pb-10 relative -mt-8 sm:-mt-12"
+          className="w-full bg-[#EAE4D8] text-[#4C4747] pt-8 sm:pt-12 pb-8 sm:pb-10 relative -mt-8 sm:-mt-12"
         >
-          <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-2">
             {/* Subtitle: "From Knowing to Doing" */}
             <h2 
-              className="text-3xl sm:text-5xl md:text-[50px] font-black text-center mb-8 tracking-tight"
+              className="text-3xl sm:text-5xl md:text-[50px] font-black text-center mb-3 sm:mb-4 tracking-tight text-[#4C4747]"
               style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif" }}
             >
-              From Knowing <span className="text-[#FF9BB4]">to Doing</span>
+              From Knowing <span className="text-[#DC9BB5]">to Doing</span>
             </h2>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold font-inter text-[#DC9BB5]">
+              My Reflection on Research
+            </h3>
           </section>
 
           {/* Group container for the statement box and all subsequent elements (adjusted up by 2% to 3%) */}
@@ -1426,16 +1426,21 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
             className="w-full relative translate-y-[3%]"
             style={{ transform: 'translateY(3%)' }}
           >
-            <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-              {/* Text Box Statement */}
-              <div className="max-w-4xl mx-auto text-left mb-12">
-                <p className="text-base sm:text-lg md:text-xl text-slate-100 font-normal leading-relaxed bg-white/[0.05] border border-white/15 rounded-2xl py-6 px-7 sm:px-10 shadow-lg text-left">
-                  These artifacts show how I began applying research thinking to questions, evidence, analysis, and inquiry.
-                </p>
+            <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+              {/* Research Reflection Text (Swapped to top, box removed, keeping only text) */}
+              <div className="max-w-6xl mx-auto text-left mb-12">
+                <div className="text-base sm:text-lg md:text-xl text-[#4C4747] font-normal leading-relaxed space-y-5 text-left">
+                  <p>
+                    Experience can help me recognize possible explanations, but even a reasonable explanation is still an assumption until it is examined through evidence.
+                  </p>
+                  <p>
+                    For me, research is not separate from design, and it strengthens the decisions behind the design. In my future practice as an instructional designer, I want to bring this research mindset into the design process.
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Book & Reflection Text Container (Symmetrically aligned 2-column grid when closed, centers & fades out text when open) */}
+            {/* Book & Statement Text Container (Symmetrically aligned 2-column grid when closed, centers & fades out text when open) */}
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative min-h-[560px] lg:min-h-[740px]">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 {/* Left Column: 3D Interactive Notebook (Glides smoothly to screen center when open) */}
@@ -1449,7 +1454,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                   <div className="w-full">
                     <BookScroll 
                       openWidth={75} 
-                      background="#2B2B2B" 
+                      background="#EAE4D8" 
                       scrollHeight={300}
                       coverSrc="/book.jpg"
                       showLabels={false}
@@ -1465,7 +1470,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                   </div>
                 </div>
 
-                {/* Right Column: Two Reflection Paragraphs (In-place fade-in / fade-out without moving) */}
+                {/* Right Column: Artifacts Statement Text Box (Swapped to right, fades out when book opens) */}
                 <div 
                   className={`w-full relative z-10 transition-opacity duration-500 ease-in-out ${
                     isBookOpen 
@@ -1474,28 +1479,17 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                   }`}
                   aria-hidden={isBookOpen}
                 >
-                  <div className="bg-white/[0.04] border border-white/15 rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl backdrop-blur-md">
-                    <div className="flex items-center gap-2.5 mb-6">
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#FF9BB4] animate-pulse" />
-                      <span className="text-[#FF9BB4] font-mono text-xs sm:text-sm font-bold tracking-widest uppercase">
-                        Research Reflection
-                      </span>
-                    </div>
-
-                    <div className="space-y-6 text-left">
-                      <div className="relative pl-5 border-l-2 border-[#FF9BB4]">
-                        <p className="text-base sm:text-lg lg:text-xl text-slate-100 font-normal leading-relaxed">
-                          Experience can help me recognize possible explanations, but even a reasonable explanation is still an assumption until it is examined through evidence.
-                        </p>
-                      </div>
-
-                      <div className="relative pl-5 border-l-2 border-white/20">
-                        <p className="text-base sm:text-lg lg:text-xl text-slate-200 font-normal leading-relaxed">
-                          For me, research is not separate from design, and it strengthens the decisions behind the design. In my future practice as an instructional designer, I want to bring this research mindset into the design process.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  <p className="text-base sm:text-lg md:text-xl text-[#4C4747] font-normal leading-relaxed bg-[#F7F3EB]/85 border border-[#4C4747]/15 rounded-2xl py-6 px-7 sm:px-10 shadow-md text-left">
+                    <span className="block mb-4">
+                      This research project examined whether AI-generated feedback could improve adult ESL learners’ writing performance compared to traditional instructor feedback.
+                    </span>
+                    <span className="block mb-4">
+                      With support from an online learning platform, 800 adult ESL learners were recruited and randomly assigned to two feedback groups. The study compared changes in writing performance and explored whether AI feedback worked differently across English proficiency levels.
+                    </span>
+                    <span className="block">
+                      These artifacts show how I began applying research thinking to questions, evidence, analysis, and inquiry.
+                    </span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -1507,29 +1501,29 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                 style={{ transform: 'translateY(-7vh)' }}
               >
                 <button
-                  id="research-to-foundation-btn"
-                  onClick={() => onNavigate?.('foundation')}
-                  className="px-8 py-2.5 bg-[#FF9BB4] hover:bg-[#ff85a3] text-[#1D2440] font-inter font-bold text-sm sm:text-base rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.35)] transition-all cursor-pointer select-none active:scale-95 inline-flex items-center gap-2"
+                  id="research-to-design-btn"
+                  onClick={() => onNavigate?.('design')}
+                  className="px-8 py-2.5 bg-[#DC9BB5] hover:bg-[#cf87a4] text-[#4C4747] font-inter font-bold text-sm sm:text-base rounded-full shadow-[0_8px_24px_rgba(76,71,71,0.18)] transition-all cursor-pointer select-none active:scale-95 inline-flex items-center gap-2"
                 >
-                  <ArrowLeft className="w-4 h-4 text-[#1D2440]" />
-                  <span>Explore Foundation</span>
+                  <ArrowLeft className="w-4 h-4 text-[#4C4747]" />
+                  <span>Explore Design</span>
                 </button>
 
                 <button
                   id="research-back-home-bottom-btn"
                   onClick={onBackToHome}
-                  className="px-8 py-2.5 bg-white text-[#1D2440] hover:bg-slate-100 font-inter font-bold text-sm sm:text-base rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.35)] transition-all cursor-pointer select-none active:scale-95"
+                  className="px-8 py-2.5 bg-[#4C4747] text-[#F7F3EB] hover:bg-[#3d3838] font-inter font-bold text-sm sm:text-base rounded-full shadow-[0_8px_24px_rgba(76,71,71,0.18)] transition-all cursor-pointer select-none active:scale-95"
                 >
                   Back To Home
                 </button>
 
                 <button
-                  id="research-to-design-btn"
-                  onClick={() => onNavigate?.('design')}
-                  className="px-8 py-2.5 bg-[#FF9BB4] hover:bg-[#ff85a3] text-[#1D2440] font-inter font-bold text-sm sm:text-base rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.35)] transition-all cursor-pointer select-none active:scale-95 inline-flex items-center gap-2"
+                  id="research-to-tech-btn"
+                  onClick={() => onNavigate?.('technology')}
+                  className="px-8 py-2.5 bg-[#DC9BB5] hover:bg-[#cf87a4] text-[#4C4747] font-inter font-bold text-sm sm:text-base rounded-full shadow-[0_8px_24px_rgba(76,71,71,0.18)] transition-all cursor-pointer select-none active:scale-95 inline-flex items-center gap-2"
                 >
-                  <span>Explore Design</span>
-                  <ArrowRight className="w-4 h-4 text-[#1D2440]" />
+                  <span>Explore Technology</span>
+                  <ArrowRight className="w-4 h-4 text-[#4C4747]" />
                 </button>
               </div>
             </section>
@@ -1544,7 +1538,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-white/90 backdrop-blur-md"
+            className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-[#EFE8DC]/90 backdrop-blur-md"
             onClick={() => setIsLetterModalOpen(false)}
           >
             <motion.div
@@ -1558,7 +1552,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
               {/* Close Button */}
               <button
                 onClick={() => setIsLetterModalOpen(false)}
-                className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#1D2440]/90 hover:bg-[#1D2440] text-white flex items-center justify-center shadow-xl backdrop-blur-md border border-white/40 transition-all cursor-pointer select-none z-30 hover:scale-110 active:scale-95"
+                className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-[#4C4747]/95 hover:bg-[#4C4747] text-[#F7F3EB] flex items-center justify-center shadow-xl backdrop-blur-md border border-[#F7F3EB]/40 transition-all cursor-pointer select-none z-30 hover:scale-110 active:scale-95"
                 aria-label="Close Worksheet Modal"
               >
                 <X className="w-5 h-5" />
@@ -1594,7 +1588,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                           }}
                           className={`text-left transition-all duration-200 cursor-pointer select-none text-[9px] sm:text-[11px] md:text-[12px] lg:text-[13px] leading-tight block w-full truncate ${
                             isSelected
-                              ? 'bg-[#FF9BB4] text-[#1D2440] font-bold px-2 py-1 sm:py-1.5 rounded-lg shadow-md scale-102'
+                              ? 'bg-[#DC9BB5] text-[#4C4747] font-bold px-2 py-1 sm:py-1.5 rounded-lg shadow-md scale-102'
                               : 'text-white/90 hover:text-white font-medium px-2 py-1 sm:py-1.5 bg-transparent border-none'
                           }`}
                           title={sec.label}
@@ -1619,7 +1613,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                           }}
                           className={`text-left transition-all duration-200 cursor-pointer select-none text-[9px] sm:text-[11px] md:text-[12px] lg:text-[13px] leading-tight block w-full truncate ${
                             isSelected
-                              ? 'bg-[#FF9BB4] text-[#1D2440] font-bold px-2 py-1 sm:py-1.5 rounded-lg shadow-md scale-102'
+                              ? 'bg-[#DC9BB5] text-[#4C4747] font-bold px-2 py-1 sm:py-1.5 rounded-lg shadow-md scale-102'
                               : 'text-white/90 hover:text-white font-medium px-2 py-1 sm:py-1.5 bg-transparent border-none'
                           }`}
                           title={sec.label}
@@ -1644,7 +1638,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                           }}
                           className={`text-left transition-all duration-200 cursor-pointer select-none text-[9px] sm:text-[11px] md:text-[12px] lg:text-[13px] leading-tight block w-full truncate ${
                             isSelected
-                              ? 'bg-[#FF9BB4] text-[#1D2440] font-bold px-2 py-1 sm:py-1.5 rounded-lg shadow-md scale-102'
+                              ? 'bg-[#DC9BB5] text-[#4C4747] font-bold px-2 py-1 sm:py-1.5 rounded-lg shadow-md scale-102'
                               : 'text-white/90 hover:text-white font-medium px-2 py-1 sm:py-1.5 bg-transparent border-none'
                           }`}
                           title={sec.label}
@@ -1669,7 +1663,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                           }}
                           className={`text-left transition-all duration-200 cursor-pointer select-none text-[9px] sm:text-[11px] md:text-[12px] lg:text-[13px] leading-tight block w-full truncate ${
                             isSelected
-                              ? 'bg-[#FF9BB4] text-[#1D2440] font-bold px-2 py-1 sm:py-1.5 rounded-lg shadow-md scale-102'
+                              ? 'bg-[#DC9BB5] text-[#4C4747] font-bold px-2 py-1 sm:py-1.5 rounded-lg shadow-md scale-102'
                               : 'text-white/90 hover:text-white font-medium px-2 py-1 sm:py-1.5 bg-transparent border-none'
                           }`}
                           title={sec.label}
@@ -3081,7 +3075,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#4C4747]/65 backdrop-blur-md"
             onClick={() => setIsGalleryModalOpen(false)}
           >
             <motion.div
@@ -3090,12 +3084,12 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
               exit={{ scale: 0.94, opacity: 0, y: 15 }}
               transition={{ type: "spring", stiffness: 350, damping: 25 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-[#1D2440] border border-white/20 rounded-3xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto"
+              className="bg-[#F7F3EB] border border-[#4C4747]/15 rounded-3xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto"
             >
               {/* Close Button */}
               <button
                 onClick={() => setIsGalleryModalOpen(false)}
-                className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all cursor-pointer select-none"
+                className="absolute top-5 right-5 w-9 h-9 rounded-full bg-[#4C4747]/10 hover:bg-[#4C4747]/20 text-[#4C4747] flex items-center justify-center transition-all cursor-pointer select-none"
                 aria-label="Close Gallery Modal"
               >
                 <X className="w-5 h-5" />
@@ -3103,17 +3097,17 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
 
               {/* Modal Header */}
               <div className="flex items-center gap-2 mb-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#FF9BB4] animate-pulse" />
-                <span className="text-xs font-mono font-bold tracking-widest text-[#FF9BB4] uppercase">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#DC9BB5] animate-pulse" />
+                <span className="text-xs font-mono font-bold tracking-widest text-[#DC9BB5] uppercase">
                   Project Gallery Mode
                 </span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-6">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#4C4747] tracking-tight mb-6">
                 Featured Case Studies
               </h3>
 
               {/* Project Tabs */}
-              <div className="flex flex-wrap gap-2 mb-6 border-b border-white/10 pb-4">
+              <div className="flex flex-wrap gap-2 mb-6 border-b border-[#4C4747]/10 pb-4">
                 {caseStudies.map((cs) => {
                   const isActive = activeGalleryProjectId === cs.id;
                   return (
@@ -3122,8 +3116,8 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                       onClick={() => setActiveGalleryProjectId(cs.id)}
                       className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                         isActive
-                          ? 'bg-[#FF9BB4] text-[#1D2440] shadow-md scale-102 font-bold'
-                          : 'bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white'
+                          ? 'bg-[#DC9BB5] text-[#4C4747] shadow-md scale-102 font-bold'
+                          : 'bg-[#4C4747]/5 text-[#9D988F] hover:bg-[#4C4747]/10 hover:text-[#4C4747]'
                       }`}
                     >
                       {cs.title.split(' ')[0]} {cs.title.split(' ')[1]}
@@ -3138,29 +3132,29 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                 return (
                   <div className="space-y-6 text-left">
                     <div>
-                      <span className="text-xs font-mono text-[#FF9BB4] tracking-wider uppercase block mb-1">
+                      <span className="text-xs font-mono text-[#DC9BB5] tracking-wider uppercase block mb-1">
                         {current.category}
                       </span>
-                      <h4 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                      <h4 className="text-xl sm:text-2xl font-bold text-[#4C4747] mb-2">
                         {current.title}
                       </h4>
-                      <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                      <p className="text-sm sm:text-base text-[#9D988F] leading-relaxed">
                         {current.summary}
                       </p>
                     </div>
 
                     {/* Deliverables */}
                     <div>
-                      <h5 className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider mb-2">
+                      <h5 className="text-xs font-mono font-bold text-[#9D988F] uppercase tracking-wider mb-2">
                         Key Deliverables
                       </h5>
                       <div className="flex flex-wrap gap-2">
                         {current.deliverables.map((d, i) => (
                           <span 
                             key={i} 
-                            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/5 border border-white/10 text-xs text-slate-200"
+                            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-[#4C4747]/5 border border-[#4C4747]/10 text-xs text-[#4C4747]"
                           >
-                            <CheckCircle2 className="w-3.5 h-3.5 text-[#A1DC9E]" />
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#6A9F68]" />
                             {d}
                           </span>
                         ))}
@@ -3169,19 +3163,19 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
 
                     {/* Impact Callout */}
                     <div className="bg-[#6A9F68]/15 border border-[#6A9F68]/30 rounded-2xl p-4 sm:p-5">
-                      <span className="text-[11px] font-mono font-bold text-[#A1DC9E] tracking-wider uppercase block mb-1">
+                      <span className="text-[11px] font-mono font-bold text-[#568754] tracking-wider uppercase block mb-1">
                         Evidence of Impact
                       </span>
-                      <p className="text-xs sm:text-sm text-emerald-100 font-medium leading-relaxed">
+                      <p className="text-xs sm:text-sm text-[#4C4747] font-medium leading-relaxed">
                         {current.impact}
                       </p>
                     </div>
 
                     {/* Tags & Action */}
-                    <div className="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-white/10">
+                    <div className="flex flex-wrap items-center justify-between gap-4 pt-2 border-t border-[#4C4747]/10">
                       <div className="flex flex-wrap gap-1.5">
                         {current.tags.map((tag, i) => (
-                          <span key={i} className="px-2.5 py-0.5 rounded-full bg-white/5 text-[11px] text-slate-400 font-mono">
+                          <span key={i} className="px-2.5 py-0.5 rounded-full bg-[#4C4747]/5 text-[11px] text-[#9D988F] font-mono">
                             #{tag}
                           </span>
                         ))}
@@ -3192,7 +3186,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
                           setIsGalleryModalOpen(false);
                           if (onNavigate) onNavigate('design');
                         }}
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#FF9BB4] hover:bg-[#ff85a3] text-[#1D2440] font-bold text-xs sm:text-sm shadow-md transition-all hover:scale-105 active:scale-95 cursor-pointer"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#DC9BB5] hover:bg-[#cf87a4] text-[#4C4747] font-bold text-xs sm:text-sm shadow-md transition-all hover:scale-105 active:scale-95 cursor-pointer"
                       >
                         <span>Explore Design Page</span>
                         <ArrowRight className="w-4 h-4" />

@@ -39,7 +39,7 @@ const ADDIE_STEPS: StepItem[] = [
       'Identify constraints',
       'Clarify goals'
     ],
-    color: '#FF9BB4'
+    color: '#DC9BB5'
   },
   {
     id: 'design',
@@ -145,7 +145,7 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
 
   // Section 2: Staircase and Strategy Comparison
   const [expandedStepId, setExpandedStepId] = useState<string | null>(null);
-  const [activeModel, setActiveModel] = useState<'backward' | 'sam' | null>(null);
+  const [activeModel, setActiveModel] = useState<'backward' | 'sam' | null>('sam');
 
   const handleSelectModel = (model: 'backward' | 'sam') => {
     setActiveModel((prev) => (prev === model ? null : model));
@@ -576,7 +576,7 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
-      className="w-full min-h-screen bg-[#1D2440] text-white flex flex-col items-center pt-24 sm:pt-28 pb-0 selection:bg-[#FF9BB4] selection:text-[#1D2440]"
+      className="w-full min-h-screen bg-[#EFE8DC] text-[#4C4747] flex flex-col items-center pt-24 sm:pt-28 pb-0 selection:bg-[#DC9BB5] selection:text-[#4C4747]"
     >
       {/* ========================================================================= */}
       {/* 1. Page Main Title: "What I can do" (Exact same structure & physics as Foundation) */}
@@ -589,13 +589,13 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
           id="design-hero-title"
           className="relative inline-flex items-center justify-center select-none flex-wrap sm:flex-nowrap gap-x-2 sm:gap-x-0"
         >
-          {/* Layer 1: What I (Bottom Layer, z-10) */}
+          {/* Layer 1: How I (Bottom Layer, z-10) */}
           <span 
             id="design-title-what-i"
-            className="relative z-10 text-[#FF9BB4] font-black text-5xl sm:text-7xl md:text-[95px] lg:text-[120px] tracking-tight leading-none font-sans mr-2 sm:mr-0"
+            className="relative z-10 text-[#DC9BB5] font-black text-5xl sm:text-7xl md:text-[95px] lg:text-[120px] tracking-tight leading-none font-sans mr-2 sm:mr-0"
             style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif" }}
           >
-            What I
+            How I
           </span>
 
           {/* Layer 2: Green Folder Icon (Middle Layer, z-20, fly-in landing + floating parallax + interactive mouse parallax) */}
@@ -661,13 +661,13 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
             </motion.div>
           </motion.div>
 
-          {/* Layer 3: can do (Top Layer, z-30) */}
+          {/* Layer 3: Design (Top Layer, z-30) */}
           <span 
             id="design-title-can-do"
-            className="relative z-30 text-[#FF9BB4] font-black text-5xl sm:text-7xl md:text-[95px] lg:text-[120px] tracking-tight leading-none font-sans ml-2 sm:ml-0"
+            className="relative z-30 text-[#DC9BB5] font-black text-5xl sm:text-7xl md:text-[95px] lg:text-[120px] tracking-tight leading-none font-sans ml-2 sm:ml-0"
             style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif" }}
           >
-            can do
+            Design
           </span>
         </h1>
       </div>
@@ -686,8 +686,8 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
               id="design-definition-title"
               className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-extrabold text-center mb-8 md:mb-12 tracking-tight leading-tight flex flex-row items-center justify-center gap-x-2 sm:gap-x-3.5 flex-nowrap whitespace-nowrap"
             >
-              <span className="text-white font-black">What is</span>
-              <span className="text-[#FF9BB4] font-black">instructional design?</span>
+              <span className="text-[#4C4747] font-black">What is</span>
+              <span className="text-[#DC9BB5] font-black">instructional design?</span>
             </h2>
 
             {/* Two Manila Kraft Folder Quote Cards */}
@@ -726,7 +726,7 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                   <div className="absolute inset-0 px-[14%] sm:px-[16%] py-[12%] flex flex-col items-center justify-center text-center translate-y-[5%]">
                     <blockquote 
                       id="design-quote-left-blockquote"
-                      className="text-[20px] font-bold leading-[28px] tracking-normal font-sans text-white drop-shadow-sm select-text"
+                      className="text-[20px] font-bold leading-[28px] tracking-normal font-sans text-[#4C4747] drop-shadow-sm select-text"
                     >
                       “Instructional design is a system of procedures for developing education and training materials consistently and reliably.”
                     </blockquote>
@@ -752,7 +752,7 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                   <blockquote 
                     id="design-quote-card-right-text"
                     style={{ fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif' }}
-                    className="text-[26px] font-bold leading-[38.6px] tracking-normal text-black select-text antialiased"
+                    className="text-[26px] font-bold leading-[38.6px] tracking-normal text-[#4C4747] select-text antialiased"
                   >
                     “Instructional design is a learner-centered process that uses creativity and evidence to create meaningful, measurable, and continuously improved learning experiences.”
                   </blockquote>
@@ -773,7 +773,7 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
 
             {/* Subtle Downward Indicator Chevron */}
             <div className="relative z-30 flex justify-center mt-6 sm:mt-8 translate-y-[190%] pointer-events-none">
-              <ChevronDown className="w-6 h-6 sm:w-7 sm:h-7 text-slate-400/80 animate-bounce filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]" />
+              <ChevronDown className="w-6 h-6 sm:w-7 sm:h-7 text-[#9D988F] animate-bounce filter drop-shadow-[0_2px_8px_rgba(76,71,71,0.15)]" />
             </div>
           </section>
         </div>
@@ -788,14 +788,14 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
         <div className="w-full mb-10 sm:mb-14 flex items-center justify-center text-center -translate-y-6 sm:-translate-y-8">
           <h2 
             id="design-strategies-title"
-            className="font-black text-white tracking-tight text-center whitespace-nowrap flex flex-row items-center justify-center gap-x-2 sm:gap-x-3.5 flex-nowrap"
+            className="font-black text-[#4C4747] tracking-tight text-center whitespace-nowrap flex flex-row items-center justify-center gap-x-2 sm:gap-x-3.5 flex-nowrap"
             style={{ 
               fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif",
               fontSize: 'clamp(28px, 4vw, 44px)',
               lineHeight: '1.2'
             }}
           >
-            <span>One Process,</span> <span className="text-[#FF9BB4]">Multiple Design Strategies</span>
+            <span>One Process,</span> <span className="text-[#DC9BB5]">Multiple Design Strategies</span>
           </h2>
         </div>
 
@@ -814,22 +814,22 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
 
               return (
                 <g key={line.id}>
-                  {/* Thin 0.5px Pure White Line */}
+                  {/* Thin 0.5px Line */}
                   <motion.path
                     d={pathD}
                     fill="none"
-                    stroke="#FFFFFF"
-                    strokeWidth="0.5"
+                    stroke="#4C4747"
+                    strokeWidth="0.75"
                     strokeLinecap="round"
                     initial={{ pathLength: 0 }}
                     animate={{ pathLength: 1 }}
                     transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
                   />
-                  {/* Clean White Anchor Pins */}
-                  <circle cx={line.x1} cy={line.y1} r="2" fill="#FFFFFF" />
-                  <circle cx={line.x2} cy={line.y2} r="2" fill="#FFFFFF" />
+                  {/* Clean Anchor Pins */}
+                  <circle cx={line.x1} cy={line.y1} r="2" fill="#4C4747" />
+                  <circle cx={line.x2} cy={line.y2} r="2" fill="#4C4747" />
 
-                  {/* Small White Label Text on connecting line */}
+                  {/* Small Label Text on connecting line */}
                   {line.label && (
                     <motion.text
                       x={midX}
@@ -837,11 +837,8 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                       transform={Math.abs(angle) > 2 ? `rotate(${angle.toFixed(1)}, ${midX}, ${midY})` : undefined}
                       dy={line.labelOffsetY !== undefined ? 0 : -6}
                       textAnchor="middle"
-                      fill="#FFFFFF"
-                      className="text-[10px] sm:text-[10.5px] font-medium tracking-tight fill-white select-none pointer-events-none"
-                      style={{
-                        filter: 'drop-shadow(0px 1px 3px rgba(0,0,0,0.9))',
-                      }}
+                      fill="#4C4747"
+                      className="text-[10px] sm:text-[10.5px] font-medium tracking-tight fill-[#4C4747] select-none pointer-events-none"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       transition={{ duration: 0.3, delay: 0.1 }}
@@ -887,7 +884,7 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                     const stepTop = (4 - stepIndex) * stepHeight;
 
                     return (
-                      <motion.div 
+                      <div 
                         key={step.id} 
                         className="absolute"
                         style={{ 
@@ -895,33 +892,11 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                           top: `${stepTop}px`,
                           width: `${stepWidth}px`,
                           height: `${stepHeight}px`,
-                          transformOrigin: 'bottom center',
-                        }}
-                        initial={{ 
-                          opacity: 0, 
-                          rotateX: -75, 
-                          scaleY: 0.15,
-                          y: 36,
-                        }}
-                        whileInView={{ 
-                          opacity: 1, 
-                          rotateX: 0, 
-                          scaleY: 1,
-                          y: 0,
-                        }}
-                        viewport={{ once: false, amount: 0.2 }}
-                        transition={{ 
-                          duration: 0.6, 
-                          delay: stepIndex * 0.12, 
-                          ease: [0.22, 1, 0.36, 1] 
-                        }}
-                        onAnimationComplete={() => {
-                          updateConnectingLines();
                         }}
                       >
                         {/* Step Letter Above the Pink Block (紧贴粉色色块的上边，左方与粉色色块左方对齐，20号 Impact 字体) */}
                         <span 
-                          className="absolute bottom-full left-0 mb-0 translate-y-[2px] z-20 text-[20px] text-white select-none leading-none pointer-events-none drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]"
+                          className="absolute bottom-full left-0 mb-0 translate-y-[2px] z-20 text-[20px] text-[#4C4747] select-none leading-none pointer-events-none"
                           style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif" }}
                         >
                           {step.letter}
@@ -931,24 +906,24 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                         <div
                           ref={assignRef}
                           onClick={() => setExpandedStepId(isExpanded ? null : step.id)}
-                          className={`w-full h-full bg-[#FF9BB4] border border-[#FF80A0] shadow-md flex flex-col items-center justify-center p-2 cursor-pointer select-none transition-all duration-200 relative z-10 ${
+                          className={`w-full h-full bg-[#DC9BB5] border border-[#c8829e] shadow-md flex flex-col items-center justify-center p-2 cursor-pointer select-none transition-all duration-200 relative z-10 ${
                             isExpanded 
-                              ? 'ring-2 ring-white shadow-[0_0_20px_rgba(255,155,180,0.6)] brightness-105' 
+                              ? 'ring-2 ring-[#4C4747] shadow-[0_0_20px_rgba(220,155,181,0.6)] brightness-105' 
                               : 'hover:brightness-105 hover:shadow-lg'
                           }`}
                         >
-                          {/* Step Name in bold dark navy text for high contrast */}
-                          <span className="font-black text-sm sm:text-base text-[#1D2440] tracking-wide text-center leading-tight">
+                          {/* Step Name in bold dark text for high contrast */}
+                          <span className="font-black text-sm sm:text-base text-[#4C4747] tracking-wide text-center leading-tight">
                             {step.title}
                           </span>
 
                           {/* Key Tasks Sub-label with Toggle Chevron */}
-                          <div className="flex items-center gap-1 mt-1 text-[10px] font-bold text-[#1D2440]/75">
+                          <div className="flex items-center gap-1 mt-1 text-[10px] font-bold text-[#4C4747]">
                             <span>{isExpanded ? 'Close' : 'Key Tasks'}</span>
                             {isExpanded ? (
-                              <ChevronUp className="w-3 h-3 text-[#1D2440]" />
+                              <ChevronUp strokeWidth={3.25} className="w-3.5 h-3.5 text-[#4C4747] animate-bounce" />
                             ) : (
-                              <ChevronDown className="w-3 h-3 text-[#1D2440]" />
+                              <ChevronDown strokeWidth={3.25} className="w-3.5 h-3.5 text-[#4C4747] animate-bounce" />
                             )}
                           </div>
                         </div>
@@ -961,10 +936,10 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                               animate={{ opacity: 1, y: 0, scale: 1 }}
                               exit={{ opacity: 0, y: 8, scale: 0.96 }}
                               transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
-                              className="absolute bottom-full left-0 mb-2 w-[270px] sm:w-[290px] bg-[#1A2035] border-2 border-[#FF9BB4] rounded-2xl p-4 shadow-[0_16px_36px_rgba(0,0,0,0.65)] z-40 backdrop-blur-md"
+                              className="absolute bottom-full left-0 mb-2 w-[270px] sm:w-[290px] bg-[#F7F3EB] border-2 border-[#DC9BB5] rounded-2xl p-4 shadow-[0_16px_36px_rgba(76,71,71,0.22)] z-40 backdrop-blur-md"
                             >
-                              <div className="flex items-center justify-between border-b border-white/10 pb-2 mb-2.5">
-                                <span className="text-xs font-mono font-bold text-[#FF9BB4] uppercase tracking-wider">
+                              <div className="flex items-center justify-between border-b border-[#4C4747]/15 pb-2 mb-2.5">
+                                <span className="text-xs font-mono font-bold text-[#DC9BB5] uppercase tracking-wider">
                                   {step.name} Key Tasks
                                 </span>
                                 <button
@@ -973,15 +948,15 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                                     e.stopPropagation();
                                     setExpandedStepId(null);
                                   }}
-                                  className="text-slate-400 hover:text-white text-xs font-mono px-1.5 py-0.5 rounded bg-white/5 cursor-pointer"
+                                  className="text-[#9D988F] hover:text-[#4C4747] text-xs font-mono px-1.5 py-0.5 rounded bg-[#4C4747]/5 cursor-pointer"
                                 >
                                   ✕
                                 </button>
                               </div>
                               <ul className="space-y-1.5 text-left">
                                 {step.items.map((item, i) => (
-                                  <li key={i} className="flex items-start gap-2 text-xs sm:text-[13px] text-slate-100 font-medium leading-snug">
-                                    <CheckCircle2 className="w-3.5 h-3.5 text-[#FF9BB4] flex-shrink-0 mt-0.5" />
+                                  <li key={i} className="flex items-start gap-2 text-xs sm:text-[13px] text-[#4C4747] font-medium leading-snug">
+                                    <CheckCircle2 className="w-3.5 h-3.5 text-[#DC9BB5] flex-shrink-0 mt-0.5" />
                                     <span>{item}</span>
                                   </li>
                                 ))}
@@ -989,39 +964,35 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                             </motion.div>
                           )}
                         </AnimatePresence>
-                      </motion.div>
+                      </div>
                     );
                   })}
 
                 </div>
 
                 {/* ADDIE Model Card (Placed directly below Analyze, left-aligned with Analyze) */}
-                <motion.div 
-                  className="absolute left-0 transition-all duration-150"
+                <div 
+                  className="absolute left-0"
                   style={{ top: buttonsTop !== null ? `calc(${buttonsTop}px + 3%)` : 'calc(480px + 3%)' }}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: false, amount: 0.2 }}
-                  transition={{ duration: 0.5, delay: 0.05, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <div
                     id="card-addie-model"
-                    className="px-2.5 sm:px-3.5 py-1.5 rounded-lg border border-white/20 bg-transparent flex flex-col justify-center text-left relative transition-all duration-300 min-w-[200px] sm:min-w-[220px]"
+                    className="px-2.5 sm:px-3.5 py-1.5 rounded-lg border border-[#4C4747]/20 bg-transparent flex flex-col justify-center text-left relative transition-all duration-300 min-w-[200px] sm:min-w-[220px]"
                   >
                     <span 
-                      className="font-extrabold text-white tracking-tight truncate block"
+                      className="font-extrabold text-[#4C4747] tracking-tight truncate block"
                       style={{ fontSize: '20px', lineHeight: '26px' }}
                     >
                       ADDIE Model
                     </span>
                     <span 
-                      className="font-bold text-[#FF9BB4] mt-0.5 truncate block"
+                      className="font-bold text-[#DC9BB5] mt-0.5 truncate block"
                       style={{ fontSize: '16px', lineHeight: '20px' }}
                     >
                       Structure the Process
                     </span>
                   </div>
-                </motion.div>
+                </div>
               </div>
 
             </div>
@@ -1047,12 +1018,12 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.45, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
                       style={{ top: stagePositions ? `${stagePositions.stage3Top}px` : '415px' }}
-                      className="absolute left-0 w-fit max-w-[85%] h-[50px] px-4 sm:px-5 py-2.5 rounded-2xl bg-[#252E4D]/90 border border-white/20 shadow-lg text-left transition-all hover:border-[#FFD166]/60 flex items-center gap-3 sm:gap-3.5"
+                      className="absolute left-0 w-fit max-w-[85%] h-[50px] px-4 sm:px-5 py-2.5 rounded-2xl bg-[#F7F3EB]/95 border border-[#4C4747]/20 shadow-md text-left transition-all hover:border-[#D99B26]/60 flex items-center gap-3 sm:gap-3.5"
                     >
-                      <span className="px-2.5 py-1 rounded bg-[#FFD166]/15 border border-[#FFD166]/40 text-[#FFD166] font-mono text-xs font-bold uppercase tracking-wider shrink-0">
+                      <span className="px-2.5 py-1 rounded bg-[#FFD166]/30 border border-[#D99B26]/40 text-[#4C4747] font-mono text-xs font-bold uppercase tracking-wider shrink-0">
                         Stage 3
                       </span>
-                      <h4 className="text-sm sm:text-base font-bold text-white leading-snug whitespace-nowrap">
+                      <h4 className="text-sm sm:text-base font-bold text-[#4C4747] leading-snug whitespace-nowrap">
                         Plan Learning Experiences and Instruction
                       </h4>
                     </motion.div>
@@ -1064,12 +1035,12 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.45, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
                       style={{ top: stagePositions ? `${stagePositions.stage2Top}px` : '494px' }}
-                      className="absolute left-0 w-fit max-w-[85%] h-[50px] px-4 sm:px-5 py-2.5 rounded-2xl bg-[#252E4D]/90 border border-white/20 shadow-lg text-left transition-all hover:border-[#A1DC9E]/60 flex items-center gap-3 sm:gap-3.5"
+                      className="absolute left-0 w-fit max-w-[85%] h-[50px] px-4 sm:px-5 py-2.5 rounded-2xl bg-[#F7F3EB]/95 border border-[#4C4747]/20 shadow-md text-left transition-all hover:border-[#6A9F68]/60 flex items-center gap-3 sm:gap-3.5"
                     >
-                      <span className="px-2.5 py-1 rounded bg-[#A1DC9E]/15 border border-[#A1DC9E]/40 text-[#A1DC9E] font-mono text-xs font-bold uppercase tracking-wider shrink-0">
+                      <span className="px-2.5 py-1 rounded bg-[#6A9F68]/20 border border-[#6A9F68]/40 text-[#4C4747] font-mono text-xs font-bold uppercase tracking-wider shrink-0">
                         Stage 2
                       </span>
-                      <h4 className="text-sm sm:text-base font-bold text-white leading-snug whitespace-nowrap">
+                      <h4 className="text-sm sm:text-base font-bold text-[#4C4747] leading-snug whitespace-nowrap">
                         Determine Acceptable Evidence
                       </h4>
                     </motion.div>
@@ -1081,12 +1052,12 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.45, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
                       style={{ top: stagePositions ? `${stagePositions.stage1Top}px` : '572px' }}
-                      className="absolute left-0 w-fit max-w-[85%] h-[50px] px-4 sm:px-5 py-2.5 rounded-2xl bg-[#252E4D]/90 border border-white/20 shadow-lg text-left transition-all hover:border-[#FF9BB4]/60 flex items-center gap-3 sm:gap-3.5"
+                      className="absolute left-0 w-fit max-w-[85%] h-[50px] px-4 sm:px-5 py-2.5 rounded-2xl bg-[#F7F3EB]/95 border border-[#4C4747]/20 shadow-md text-left transition-all hover:border-[#DC9BB5]/60 flex items-center gap-3 sm:gap-3.5"
                     >
-                      <span className="px-2.5 py-1 rounded bg-[#FF9BB4]/15 border border-[#FF9BB4]/40 text-[#FF9BB4] font-mono text-xs font-bold uppercase tracking-wider shrink-0">
+                      <span className="px-2.5 py-1 rounded bg-[#DC9BB5]/25 border border-[#DC9BB5]/50 text-[#DC9BB5] font-mono text-xs font-bold uppercase tracking-wider shrink-0">
                         Stage 1
                       </span>
-                      <h4 className="text-sm sm:text-base font-bold text-white leading-snug whitespace-nowrap">
+                      <h4 className="text-sm sm:text-base font-bold text-[#4C4747] leading-snug whitespace-nowrap">
                         Identify Desired Results
                       </h4>
                     </motion.div>
@@ -1114,7 +1085,7 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                       left: samPositions?.phase3Left !== undefined ? `${samPositions.phase3Left}px` : 'calc(50% + 8px)',
                       width: samPositions?.phase3Width ? `${samPositions.phase3Width}px` : 'calc(50% - 8px)',
                     }}
-                    className="absolute h-[116px] px-2 py-2 rounded-2xl bg-[#252E4D]/90 border border-white/20 shadow-lg flex flex-col justify-center transition-all hover:border-[#FFD166]/60 overflow-hidden"
+                    className="absolute h-[116px] px-2 py-2 rounded-2xl bg-[#F7F3EB]/95 border border-[#4C4747]/20 shadow-md flex flex-col justify-center transition-all hover:border-[#D99B26]/60 overflow-hidden"
                   >
                     {/* 2x2 Clockwise Circular Loop in Yellow */}
                     <div 
@@ -1128,59 +1099,59 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                       <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 286 92">
                         <defs>
                           <marker id="arrow-p3-r" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto">
-                            <polygon points="0 0, 5 2.5, 0 5" fill="#FFD166" />
+                            <polygon points="0 0, 5 2.5, 0 5" fill="#D99B26" />
                           </marker>
                           <marker id="arrow-p3-d" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto">
-                            <polygon points="0 0, 5 2.5, 0 5" fill="#FFD166" />
+                            <polygon points="0 0, 5 2.5, 0 5" fill="#D99B26" />
                           </marker>
                           <marker id="arrow-p3-l" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto">
-                            <polygon points="0 0, 5 2.5, 0 5" fill="#FFD166" />
+                            <polygon points="0 0, 5 2.5, 0 5" fill="#D99B26" />
                           </marker>
                           <marker id="arrow-p3-u" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto">
-                            <polygon points="0 0, 5 2.5, 0 5" fill="#FFD166" />
+                            <polygon points="0 0, 5 2.5, 0 5" fill="#D99B26" />
                           </marker>
                         </defs>
                         {/* Top: Develop -> Implement */}
-                        <line x1="72" y1="11" x2="200" y2="11" stroke="#FFD166" strokeWidth="1.5" strokeDasharray="3 2" markerEnd="url(#arrow-p3-r)" />
+                        <line x1="72" y1="11" x2="200" y2="11" stroke="#D99B26" strokeWidth="1.5" strokeDasharray="3 2" markerEnd="url(#arrow-p3-r)" />
                         {/* Right: Implement -> Evaluate */}
-                        <line x1="247" y1="26" x2="247" y2="66" stroke="#FFD166" strokeWidth="1.5" strokeDasharray="3 2" markerEnd="url(#arrow-p3-d)" />
+                        <line x1="247" y1="26" x2="247" y2="66" stroke="#D99B26" strokeWidth="1.5" strokeDasharray="3 2" markerEnd="url(#arrow-p3-d)" />
                         {/* Bottom: Evaluate -> Revise */}
-                        <line x1="210" y1="81" x2="64" y2="81" stroke="#FFD166" strokeWidth="1.5" strokeDasharray="3 2" markerEnd="url(#arrow-p3-l)" />
+                        <line x1="210" y1="81" x2="64" y2="81" stroke="#D99B26" strokeWidth="1.5" strokeDasharray="3 2" markerEnd="url(#arrow-p3-l)" />
                         {/* Left: Revise -> Develop */}
-                        <line x1="30" y1="66" x2="30" y2="26" stroke="#FFD166" strokeWidth="1.5" strokeDasharray="3 2" markerEnd="url(#arrow-p3-u)" />
+                        <line x1="30" y1="66" x2="30" y2="26" stroke="#D99B26" strokeWidth="1.5" strokeDasharray="3 2" markerEnd="url(#arrow-p3-u)" />
                       </svg>
 
                       {/* Node 1: Develop (Top-Left) */}
                       <div className="absolute top-0 left-0">
-                        <span className="px-2.5 py-0.5 rounded-md bg-[#FFD166] text-[#1D2440] font-black text-[11px] shadow-sm tracking-wider">
+                        <span className="px-2.5 py-0.5 rounded-md bg-[#FFD166] text-[#4C4747] font-black text-[11px] shadow-sm tracking-wider">
                           Develop
                         </span>
                       </div>
 
                       {/* Node 2: Implement (Top-Right) */}
                       <div className="absolute top-0 right-0">
-                        <span className="px-2.5 py-0.5 rounded-md bg-[#FFD166] text-[#1D2440] font-black text-[11px] shadow-sm tracking-wider">
+                        <span className="px-2.5 py-0.5 rounded-md bg-[#FFD166] text-[#4C4747] font-black text-[11px] shadow-sm tracking-wider">
                           Implement
                         </span>
                       </div>
 
                       {/* Node 3: Evaluate (Bottom-Right) */}
                       <div className="absolute bottom-0 right-0">
-                        <span className="px-2.5 py-0.5 rounded-md bg-[#FFD166] text-[#1D2440] font-black text-[11px] shadow-sm tracking-wider">
+                        <span className="px-2.5 py-0.5 rounded-md bg-[#FFD166] text-[#4C4747] font-black text-[11px] shadow-sm tracking-wider">
                           Evaluate
                         </span>
                       </div>
 
                       {/* Node 4: Revise (Bottom-Left) */}
                       <div className="absolute bottom-0 left-0">
-                        <span className="px-2.5 py-0.5 rounded-md bg-[#FFD166] text-[#1D2440] font-black text-[11px] shadow-sm tracking-wider">
+                        <span className="px-2.5 py-0.5 rounded-md bg-[#FFD166] text-[#4C4747] font-black text-[11px] shadow-sm tracking-wider">
                           Revise
                         </span>
                       </div>
 
                       {/* Center: Phase 3 — Iterative Development */}
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 px-3 py-1 rounded-lg bg-[#1D2440] border border-[#FFD166]/50 shadow-md text-center whitespace-nowrap">
-                        <span className="text-[11px] font-bold text-white tracking-wide block">
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 px-3 py-1 rounded-lg bg-[#EFE8DC] border border-[#D99B26]/50 shadow-sm text-center whitespace-nowrap">
+                        <span className="text-[11px] font-bold text-[#4C4747] tracking-wide block">
                           Phase 3 — Iterative Development
                         </span>
                       </div>
@@ -1197,82 +1168,82 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                       top: samPositions ? `${samPositions.phase2Top}px` : '230px',
                       left: samPositions?.phase2Left !== undefined ? `${samPositions.phase2Left}px` : '96px',
                     }}
-                    className="absolute w-fit min-w-[310px] max-w-[340px] h-[116px] p-2.5 rounded-2xl bg-[#252E4D]/90 border border-white/20 shadow-lg flex flex-col justify-center transition-all hover:border-[#A1DC9E]/60"
+                    className="absolute w-fit min-w-[310px] max-w-[340px] h-[116px] p-2.5 rounded-2xl bg-[#F7F3EB]/95 border border-[#4C4747]/20 shadow-md flex flex-col justify-center transition-all hover:border-[#6A9F68]/60"
                   >
                     {/* 2x2 Clockwise Circular Loop in Green */}
                     <div className="relative w-[286px] h-[92px] mx-auto select-none">
                       <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 286 92">
                         <defs>
                           <marker id="arrow-p2-r" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto">
-                            <polygon points="0 0, 5 2.5, 0 5" fill="#A1DC9E" />
+                            <polygon points="0 0, 5 2.5, 0 5" fill="#6A9F68" />
                           </marker>
                           <marker id="arrow-p2-d" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto">
-                            <polygon points="0 0, 5 2.5, 0 5" fill="#A1DC9E" />
+                            <polygon points="0 0, 5 2.5, 0 5" fill="#6A9F68" />
                           </marker>
                           <marker id="arrow-p2-l" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto">
-                            <polygon points="0 0, 5 2.5, 0 5" fill="#A1DC9E" />
+                            <polygon points="0 0, 5 2.5, 0 5" fill="#6A9F68" />
                           </marker>
                           <marker id="arrow-p2-u" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto">
-                            <polygon points="0 0, 5 2.5, 0 5" fill="#A1DC9E" />
+                            <polygon points="0 0, 5 2.5, 0 5" fill="#6A9F68" />
                           </marker>
                         </defs>
                         {/* Top: Design -> Prototype */}
-                        <line x1="68" y1="11" x2="202" y2="11" stroke="#A1DC9E" strokeWidth="1.5" strokeDasharray="3 2" markerEnd="url(#arrow-p2-r)" />
+                        <line x1="68" y1="11" x2="202" y2="11" stroke="#6A9F68" strokeWidth="1.5" strokeDasharray="3 2" markerEnd="url(#arrow-p2-r)" />
                         {/* Right: Prototype -> Review */}
-                        <line x1="247" y1="26" x2="247" y2="66" stroke="#A1DC9E" strokeWidth="1.5" strokeDasharray="3 2" markerEnd="url(#arrow-p2-d)" />
+                        <line x1="247" y1="26" x2="247" y2="66" stroke="#6A9F68" strokeWidth="1.5" strokeDasharray="3 2" markerEnd="url(#arrow-p2-d)" />
                         {/* Bottom: Review -> Revise */}
-                        <line x1="210" y1="81" x2="64" y2="81" stroke="#A1DC9E" strokeWidth="1.5" strokeDasharray="3 2" markerEnd="url(#arrow-p2-l)" />
+                        <line x1="210" y1="81" x2="64" y2="81" stroke="#6A9F68" strokeWidth="1.5" strokeDasharray="3 2" markerEnd="url(#arrow-p2-l)" />
                         {/* Left: Revise -> Design */}
-                        <line x1="30" y1="66" x2="30" y2="26" stroke="#A1DC9E" strokeWidth="1.5" strokeDasharray="3 2" markerEnd="url(#arrow-p2-u)" />
+                        <line x1="30" y1="66" x2="30" y2="26" stroke="#6A9F68" strokeWidth="1.5" strokeDasharray="3 2" markerEnd="url(#arrow-p2-u)" />
                       </svg>
 
                       {/* Node 1: Design (Top-Left) */}
                       <div className="absolute top-0 left-0">
-                        <span className="px-2.5 py-0.5 rounded-md bg-[#A1DC9E] text-[#1D2440] font-black text-[11px] shadow-sm tracking-wider">
+                        <span className="px-2.5 py-0.5 rounded-md bg-[#A1DC9E] text-[#4C4747] font-black text-[11px] shadow-sm tracking-wider">
                           Design
                         </span>
                       </div>
 
                       {/* Node 2: Prototype (Top-Right) */}
                       <div className="absolute top-0 right-0">
-                        <span className="px-2.5 py-0.5 rounded-md bg-[#A1DC9E] text-[#1D2440] font-black text-[10px] shadow-sm tracking-wider">
+                        <span className="px-2.5 py-0.5 rounded-md bg-[#A1DC9E] text-[#4C4747] font-black text-[10px] shadow-sm tracking-wider">
                           Prototype
                         </span>
                       </div>
 
                       {/* Node 3: Review (Bottom-Right) */}
                       <div className="absolute bottom-0 right-0">
-                        <span className="px-2.5 py-0.5 rounded-md bg-[#A1DC9E] text-[#1D2440] font-black text-[11px] shadow-sm tracking-wider">
+                        <span className="px-2.5 py-0.5 rounded-md bg-[#A1DC9E] text-[#4C4747] font-black text-[11px] shadow-sm tracking-wider">
                           Review
                         </span>
                       </div>
 
                       {/* Node 4: Revise (Bottom-Left) */}
                       <div className="absolute bottom-0 left-0">
-                        <span className="px-2.5 py-0.5 rounded-md bg-[#A1DC9E] text-[#1D2440] font-black text-[11px] shadow-sm tracking-wider">
+                        <span className="px-2.5 py-0.5 rounded-md bg-[#A1DC9E] text-[#4C4747] font-black text-[11px] shadow-sm tracking-wider">
                           Revise
                         </span>
                       </div>
 
                       {/* Center: Phase 2 — Iterative Design */}
-                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 px-3 py-1 rounded-lg bg-[#1D2440] border border-[#A1DC9E]/50 shadow-md text-center whitespace-nowrap">
-                        <span className="text-[11px] font-bold text-white tracking-wide block">
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 px-3 py-1 rounded-lg bg-[#EFE8DC] border border-[#6A9F68]/50 shadow-sm text-center whitespace-nowrap">
+                        <span className="text-[11px] font-bold text-[#4C4747] tracking-wide block">
                           Phase 2 — Iterative Design
                         </span>
                       </div>
                     </div>
                   </motion.div>
 
-                  {/* Phase 1: Preparation Phase (White Text, placed at Analyze step) */}
+                  {/* Phase 1: Preparation Phase (Placed at Analyze step) */}
                   <motion.div
                     ref={samPhase1_Ref}
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.45, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
                     style={{ top: samPositions ? `${samPositions.phase1Top}px` : '496px' }}
-                    className="absolute left-0 w-fit max-w-[340px] h-[46px] px-4 py-2.5 rounded-2xl bg-[#252E4D]/90 border border-white/20 shadow-lg flex items-center transition-all hover:border-white/40"
+                    className="absolute left-0 w-fit max-w-[340px] h-[46px] px-4 py-2.5 rounded-2xl bg-[#F7F3EB]/95 border border-[#4C4747]/20 shadow-md flex items-center transition-all hover:border-[#4C4747]/40"
                   >
-                    <span className="text-sm sm:text-base font-bold text-white tracking-wide whitespace-nowrap">
+                    <span className="text-sm sm:text-base font-bold text-[#4C4747] tracking-wide whitespace-nowrap">
                       Phase 1---Preparation Phase
                     </span>
                   </motion.div>
@@ -1293,18 +1264,18 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                   onClick={() => handleSelectModel('backward')}
                   className={`px-2.5 sm:px-3.5 py-1.5 rounded-lg border transition-all duration-300 cursor-pointer flex flex-col justify-center text-left relative ${
                     activeModel === 'backward'
-                      ? 'bg-transparent border-[#FF9BB4] ring-2 ring-[#FF9BB4]/50 shadow-[0_4px_20px_rgba(255,155,180,0.25)] scale-[1.02]'
-                      : 'bg-transparent hover:bg-white/5 border-white/20 hover:border-white/40'
+                      ? 'bg-[#F7F3EB] border-[#DC9BB5] ring-2 ring-[#DC9BB5]/50 shadow-[0_4px_20px_rgba(220,155,181,0.25)] scale-[1.02]'
+                      : 'bg-transparent hover:bg-[#4C4747]/5 border-[#4C4747]/20 hover:border-[#4C4747]/40'
                   }`}
                 >
                   <span 
-                    className="font-extrabold text-white tracking-tight truncate block"
+                    className="font-extrabold text-[#4C4747] tracking-tight truncate block"
                     style={{ fontSize: '20px', lineHeight: '26px' }}
                   >
                     Backward Design
                   </span>
                   <span 
-                    className="font-bold text-[#FF9BB4] mt-0.5 truncate block"
+                    className="font-bold text-[#DC9BB5] mt-0.5 truncate block"
                     style={{ fontSize: '16px', lineHeight: '20px' }}
                   >
                     Strengthen Alignment
@@ -1319,18 +1290,18 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                   onClick={() => handleSelectModel('sam')}
                   className={`px-2.5 sm:px-3.5 py-1.5 rounded-lg border transition-all duration-300 cursor-pointer flex flex-col justify-center text-left relative ${
                     activeModel === 'sam'
-                      ? 'bg-transparent border-[#FF9BB4] ring-2 ring-[#FF9BB4]/50 shadow-[0_4px_20px_rgba(255,155,180,0.25)] scale-[1.02]'
-                      : 'bg-transparent hover:bg-white/5 border-white/20 hover:border-white/40'
+                      ? 'bg-[#F7F3EB] border-[#DC9BB5] ring-2 ring-[#DC9BB5]/50 shadow-[0_4px_20px_rgba(220,155,181,0.25)] scale-[1.02]'
+                      : 'bg-transparent hover:bg-[#4C4747]/5 border-[#4C4747]/20 hover:border-[#4C4747]/40'
                   }`}
                 >
                   <span 
-                    className="font-extrabold text-white tracking-tight truncate block"
+                    className="font-extrabold text-[#4C4747] tracking-tight truncate block"
                     style={{ fontSize: '20px', lineHeight: '26px' }}
                   >
                     SAM Model
                   </span>
                   <span 
-                    className="font-bold text-[#FF9BB4] mt-0.5 truncate block"
+                    className="font-bold text-[#DC9BB5] mt-0.5 truncate block"
                     style={{ fontSize: '16px', lineHeight: '20px' }}
                   >
                     Make the Process Iterative
@@ -1348,23 +1319,26 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
 
       {/* 3. Transition Statement before Torn Paper */}
       <section 
-        className="w-full max-w-5xl mx-auto px-6 sm:px-8 mt-12 sm:mt-16 mb-4 z-10"
+        className="w-full max-w-5xl mx-auto px-6 sm:px-8 mt-20 sm:mt-28 mb-10 sm:mb-14 z-10 text-center"
       >
+        <div className="inline-block bg-[#6A9F68] text-white font-black text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 rounded-lg shadow-xl border border-[#568754] select-none rotate-[-1deg] hover:rotate-0 transition-transform">
+          No single model fits every project.
+        </div>
         <p 
-          className="text-white font-normal leading-relaxed text-center sm:text-left max-w-4xl mx-auto"
+          className="text-[#4C4747] font-normal leading-relaxed text-left max-w-4xl mx-auto mt-10 sm:mt-14"
           style={{ fontFamily: "'Inter', sans-serif", fontSize: '20px', lineHeight: '36px' }}
         >
-          No single model fits every project. Models provide structure, but the learner, problem, context, and constraints should guide how the process is applied.
+          Models provide structure, but the learner, problem, context, and constraints should guide how the process is applied.
         </p>
       </section>
 
       {/* 4. Realistic WebGL Torn Paper Section Transition */}
-      <div className="w-full relative bg-[#2B2B2B] mt-12 sm:mt-16 overflow-hidden">
+      <div className="w-full relative bg-[#E6DEC8] mt-12 sm:mt-16 overflow-hidden">
         <div className="w-full">
           <PaperTear 
             image={tornJpg}
-            color="#1D2440"
-            background="#2B2B2B"
+            color="#EFE8DC"
+            background="#E6DEC8"
             edgeOpacity={0.9}
             start={1}
             end={0.12}
@@ -1380,19 +1354,22 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
           />
         </div>
 
-        {/* 5. Bottom Section in #2B2B2B (From Model to Practice) */}
+        {/* 5. Bottom Section in #E6DEC8 (From Model to Practice) */}
         <div 
-          className="w-full bg-[#2B2B2B] text-white pt-8 sm:pt-12 pb-8 sm:pb-10 relative -mt-16 sm:-mt-24"
+          className="w-full bg-[#E6DEC8] text-[#4C4747] pt-8 sm:pt-12 pb-8 sm:pb-10 relative -mt-16 sm:-mt-24"
         >
-          <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-2">
             {/* H2 Title: "From Model to Practice" */}
             <h2 
               id="design-from-model-to-practice-title"
-              className="text-3xl sm:text-5xl md:text-[50px] font-black text-center mb-8 tracking-tight"
+              className="text-3xl sm:text-5xl md:text-[50px] font-black text-center mb-3 sm:mb-4 tracking-tight text-[#4C4747]"
               style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif" }}
             >
-              From Model <span className="text-[#FF9BB4]">to Practice</span>
+              From Model <span className="text-[#DC9BB5]">to Practice</span>
             </h2>
+            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold font-inter text-[#DC9BB5]">
+              My Reflection on Instructional Design
+            </h3>
           </section>
 
           {/* Group container for the statement box and all subsequent elements */}
@@ -1400,19 +1377,21 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
             className="w-full relative translate-y-[3%]"
             style={{ transform: 'translateY(3%)' }}
           >
-            <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-              {/* Text Box Statement */}
-              <div className="max-w-4xl mx-auto text-left mb-12">
-                <p 
-                  className="text-base sm:text-lg md:text-xl text-slate-100 font-normal leading-relaxed bg-white/[0.05] border border-white/15 rounded-2xl py-6 px-7 sm:px-10 shadow-lg text-left"
-                  style={{ fontFamily: "'Inter', sans-serif" }}
-                >
-                  The projects below show how I applied instructional design principles to analyze needs, align goals and learning experiences, develop solutions, and refine them through feedback and evaluation.
-                </p>
+            <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4 sm:-mt-6">
+              {/* Design Practice Reflection Text */}
+              <div className="max-w-6xl mx-auto text-left mb-12">
+                <div className="text-base sm:text-lg md:text-xl text-[#4C4747] font-normal leading-relaxed space-y-5 text-left">
+                  <p>
+                    Instructional design changed how I think about models. I no longer see them as fixed procedures to follow step by step, but as frameworks and strategies that help me make intentional design decisions.
+                  </p>
+                  <p>
+                    In my future practice, I want to adapt the design process to the learner, problem, context, and available evidence rather than force every project into the same model. For me, effective instructional design is not about following a model perfectly, but knowing how and why to use it.
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Book & Reflection Text Container (Symmetrically aligned 2-column grid when closed, centers & fades out text when open) */}
+            {/* Book & Statement Text Container (Symmetrically aligned 2-column grid when closed, centers & fades out text when open) */}
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative min-h-[560px] lg:min-h-[740px]">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
                 {/* Left Column: 3D Interactive Notebook (Glides smoothly to screen center when open) */}
@@ -1426,11 +1405,11 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                   <div className="w-full">
                     <BookScroll 
                       openWidth={75} 
-                      background="#2B2B2B" 
+                      background="#E6DEC8" 
                       scrollHeight={300}
                       coverSrc={notebookCoverImg}
                       showLabels={false}
-                      title="Design Projects"
+                      title="Design Project"
                       leafTitle="Project Gallery"
                       author="Yu Liu"
                       textColor="#709A02"
@@ -1442,7 +1421,7 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                   </div>
                 </div>
 
-                {/* Right Column: Reflection / Insights Text Box (Fades out when book opens) */}
+                {/* Right Column: Projects Statement Text Box (Swapped to right, fades out when book opens) */}
                 <div 
                   className={`w-full relative z-10 transition-opacity duration-500 ease-in-out ${
                     isBookOpen 
@@ -1451,28 +1430,17 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                   }`}
                   aria-hidden={isBookOpen}
                 >
-                  <div className="bg-white/[0.04] border border-white/15 rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl backdrop-blur-md">
-                    <div className="flex items-center gap-2.5 mb-6">
-                      <span className="w-2.5 h-2.5 rounded-full bg-[#FF9BB4] animate-pulse" />
-                      <span className="text-[#FF9BB4] font-mono text-xs sm:text-sm font-bold tracking-widest uppercase">
-                        Design Practice Reflection
-                      </span>
-                    </div>
-
-                    <div className="space-y-6 text-left">
-                      <div className="relative pl-5 border-l-2 border-[#FF9BB4]">
-                        <p className="text-base sm:text-lg lg:text-xl text-slate-100 font-normal leading-relaxed">
-                          Instructional design changed how I think about models. I no longer see them as fixed procedures to follow step by step, but as frameworks and strategies that help me make intentional design decisions.
-                        </p>
-                      </div>
-
-                      <div className="relative pl-5 border-l-2 border-white/20">
-                        <p className="text-base sm:text-lg lg:text-xl text-slate-200 font-normal leading-relaxed">
-                          In my future practice, I want to adapt the design process to the learner, problem, context, and available evidence rather than force every project into the same model. For me, effective instructional design is not about following a model perfectly, but knowing how and why to use it.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  <p 
+                    className="text-base sm:text-lg md:text-xl text-[#4C4747] font-normal leading-relaxed bg-[#F7F3EB]/85 border border-[#4C4747]/15 rounded-2xl py-6 px-7 sm:px-10 shadow-lg text-left"
+                    style={{ fontFamily: "'Inter', sans-serif" }}
+                  >
+                    <span className="block mb-4">
+                      This ETEC 6440 independent project is part of a larger supplementary English e-learning curriculum developed for QiYao, an English education program in China. It focuses on five modules covering three basic verb tenses: simple present, simple past, and simple future.
+                    </span>
+                    <span className="block">
+                      This project shows how I applied instructional design principles to analyze needs, align goals and learning experiences, develop solutions, and refine them through feedback and evaluation.
+                    </span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -1484,29 +1452,29 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                 style={{ transform: 'translateY(-7vh)' }}
               >
                 <button
-                  id="design-to-research-btn"
-                  onClick={() => onNavigate?.('research')}
-                  className="px-8 py-2.5 bg-[#FF9BB4] hover:bg-[#ff85a3] text-[#1D2440] font-inter font-bold text-sm sm:text-base rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.35)] transition-all cursor-pointer select-none active:scale-95 inline-flex items-center gap-2"
+                  id="design-to-foundation-btn"
+                  onClick={() => onNavigate?.('foundation')}
+                  className="px-8 py-2.5 bg-[#DC9BB5] hover:bg-[#d188a6] text-[#4C4747] font-inter font-bold text-sm sm:text-base rounded-full shadow-[0_8px_24px_rgba(76,71,71,0.18)] transition-all cursor-pointer select-none active:scale-95 inline-flex items-center gap-2"
                 >
-                  <ArrowLeft className="w-4 h-4 text-[#1D2440]" />
-                  <span>Explore Research</span>
+                  <ArrowLeft className="w-4 h-4 text-[#4C4747]" />
+                  <span>Explore Foundation</span>
                 </button>
 
                 <button
                   id="design-back-home-bottom-btn"
                   onClick={onBackToHome}
-                  className="px-8 py-2.5 bg-white text-[#1D2440] hover:bg-slate-100 font-inter font-bold text-sm sm:text-base rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.35)] transition-all cursor-pointer select-none active:scale-95"
+                  className="px-8 py-2.5 bg-[#F7F3EB] text-[#4C4747] border border-[#4C4747]/15 hover:bg-[#EFE8DC] font-inter font-bold text-sm sm:text-base rounded-full shadow-[0_8px_24px_rgba(76,71,71,0.15)] transition-all cursor-pointer select-none active:scale-95"
                 >
                   Back To Home
                 </button>
 
                 <button
-                  id="design-to-tech-btn"
-                  onClick={() => onNavigate?.('technology')}
-                  className="px-8 py-2.5 bg-[#FF9BB4] hover:bg-[#ff85a3] text-[#1D2440] font-inter font-bold text-sm sm:text-base rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.35)] transition-all cursor-pointer select-none active:scale-95 inline-flex items-center gap-2"
+                  id="design-to-research-btn"
+                  onClick={() => onNavigate?.('research')}
+                  className="px-8 py-2.5 bg-[#DC9BB5] hover:bg-[#d188a6] text-[#4C4747] font-inter font-bold text-sm sm:text-base rounded-full shadow-[0_8px_24px_rgba(76,71,71,0.18)] transition-all cursor-pointer select-none active:scale-95 inline-flex items-center gap-2"
                 >
-                  <span>Explore Technology</span>
-                  <ArrowRight className="w-4 h-4 text-[#1D2440]" />
+                  <span>Explore Research</span>
+                  <ArrowRight className="w-4 h-4 text-[#4C4747]" />
                 </button>
               </div>
             </section>
@@ -1521,7 +1489,7 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-[#4C4747]/60 backdrop-blur-md"
             onClick={() => setIsGalleryModalOpen(false)}
           >
             <motion.div
@@ -1530,12 +1498,12 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
               exit={{ scale: 0.94, opacity: 0, y: 15 }}
               transition={{ type: "spring", stiffness: 350, damping: 25 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-[#1D2440] border border-white/20 rounded-3xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto"
+              className="bg-[#EFE8DC] border border-[#4C4747]/20 rounded-3xl max-w-3xl w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto"
             >
               {/* Close Button */}
               <button
                 onClick={() => setIsGalleryModalOpen(false)}
-                className="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-all cursor-pointer select-none"
+                className="absolute top-5 right-5 w-9 h-9 rounded-full bg-[#4C4747]/10 hover:bg-[#4C4747]/20 text-[#4C4747] flex items-center justify-center transition-all cursor-pointer select-none"
                 aria-label="Close Gallery Modal"
               >
                 <X className="w-5 h-5" />
@@ -1548,12 +1516,12 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                   Project Gallery Mode
                 </span>
               </div>
-              <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-6">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#4C4747] tracking-tight mb-6">
                 Featured Case Studies
               </h3>
 
               {/* Project Tabs */}
-              <div className="flex flex-wrap gap-2 mb-6 border-b border-white/10 pb-4">
+              <div className="flex flex-wrap gap-2 mb-6 border-b border-[#4C4747]/15 pb-4">
                 {caseStudies.map((cs) => {
                   const isActive = activeGalleryProjectId === cs.id;
                   return (
@@ -1562,8 +1530,8 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                       onClick={() => setActiveGalleryProjectId(cs.id)}
                       className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
                         isActive
-                          ? 'bg-[#709A02] text-[#141712] shadow-md scale-102 font-bold'
-                          : 'bg-white/5 text-slate-300 hover:bg-white/10 hover:text-white'
+                          ? 'bg-[#709A02] text-white shadow-md scale-102 font-bold'
+                          : 'bg-[#F7F3EB] text-[#9D988F] hover:bg-[#E6DEC8] hover:text-[#4C4747]'
                       }`}
                     >
                       {cs.title.split(' ')[0]} {cs.title.split(' ')[1]}
@@ -1581,24 +1549,24 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                       <span className="text-xs font-mono text-[#709A02] tracking-wider uppercase block mb-1">
                         {current.category}
                       </span>
-                      <h4 className="text-xl sm:text-2xl font-bold text-white mb-2">
+                      <h4 className="text-xl sm:text-2xl font-bold text-[#4C4747] mb-2">
                         {current.title}
                       </h4>
-                      <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
+                      <p className="text-sm sm:text-base text-[#9D988F] leading-relaxed">
                         {current.summary}
                       </p>
                     </div>
 
                     {/* Deliverables */}
                     <div>
-                      <h5 className="text-xs font-mono font-bold text-slate-400 uppercase tracking-wider mb-2">
+                      <h5 className="text-xs font-mono font-bold text-[#9D988F] uppercase tracking-wider mb-2">
                         Key Deliverables
                       </h5>
                       <div className="flex flex-wrap gap-2">
                         {current.deliverables.map((deliv, idx) => (
                           <span
                             key={idx}
-                            className="px-3 py-1 rounded-lg bg-white/5 border border-white/15 text-xs text-slate-200 font-medium"
+                            className="px-3 py-1 rounded-lg bg-[#F7F3EB] border border-[#4C4747]/15 text-xs text-[#4C4747] font-medium"
                           >
                             {deliv}
                           </span>
@@ -1611,7 +1579,7 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                       <span className="text-xs font-mono font-bold text-[#709A02] uppercase tracking-wider block mb-1">
                         Measurable Impact
                       </span>
-                      <p className="text-sm sm:text-base font-semibold text-white">
+                      <p className="text-sm sm:text-base font-semibold text-[#4C4747]">
                         {current.impact}
                       </p>
                     </div>
@@ -1625,7 +1593,7 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                           setDocModalTab('client-topic');
                           setIsDocModalOpen(true);
                         }}
-                        className="w-full py-3.5 px-5 rounded-2xl bg-[#709A02] hover:bg-[#5d8102] text-[#141712] font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 shadow-xl transition-all cursor-pointer active:scale-98"
+                        className="w-full py-3.5 px-5 rounded-2xl bg-[#709A02] hover:bg-[#5d8102] text-white font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 shadow-xl transition-all cursor-pointer active:scale-98"
                       >
                         <FileText className="w-4 h-4" />
                         <span>Read Full Documents (Client Report &amp; Model Selection)</span>
@@ -1642,7 +1610,7 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                           setDocModalTab('goals-skills-analysis');
                           setIsDocModalOpen(true);
                         }}
-                        className="w-full py-3.5 px-5 rounded-2xl bg-[#709A02] hover:bg-[#5d8102] text-[#141712] font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 shadow-xl transition-all cursor-pointer active:scale-98"
+                        className="w-full py-3.5 px-5 rounded-2xl bg-[#709A02] hover:bg-[#5d8102] text-white font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 shadow-xl transition-all cursor-pointer active:scale-98"
                       >
                         <FileText className="w-4 h-4" />
                         <span>Read Full Report (Analysis Report)</span>
@@ -1659,7 +1627,7 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                           setDocModalTab('design-report');
                           setIsDocModalOpen(true);
                         }}
-                        className="w-full py-3.5 px-5 rounded-2xl bg-[#709A02] hover:bg-[#5d8102] text-[#141712] font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 shadow-xl transition-all cursor-pointer active:scale-98"
+                        className="w-full py-3.5 px-5 rounded-2xl bg-[#709A02] hover:bg-[#5d8102] text-white font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 shadow-xl transition-all cursor-pointer active:scale-98"
                       >
                         <FileText className="w-4 h-4" />
                         <span>Read Full Report (Design Report: Objectives, Assessment &amp; Flow)</span>
@@ -1676,7 +1644,7 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                           setDocModalTab('presentation-slides');
                           setIsDocModalOpen(true);
                         }}
-                        className="w-full py-3.5 px-5 rounded-2xl bg-[#709A02] hover:bg-[#5d8102] text-[#141712] font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 shadow-xl transition-all cursor-pointer active:scale-98"
+                        className="w-full py-3.5 px-5 rounded-2xl bg-[#709A02] hover:bg-[#5d8102] text-white font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 shadow-xl transition-all cursor-pointer active:scale-98"
                       >
                         <FileText className="w-4 h-4" />
                         <span>View Presentation Slides (ETEC 6440 11-Slide Deck)</span>
@@ -1689,7 +1657,7 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                       {current.tags.map((tag, idx) => (
                         <span
                           key={idx}
-                          className="text-[11px] font-mono px-2.5 py-1 rounded-md bg-white/5 text-[#709A02] border border-[#709A02]/20"
+                          className="text-[11px] font-mono px-2.5 py-1 rounded-md bg-[#F7F3EB] text-[#709A02] border border-[#709A02]/20"
                         >
                           #{tag}
                         </span>

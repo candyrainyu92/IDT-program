@@ -76,20 +76,31 @@ template.innerHTML = `<style>
   transform-origin: 0 50%;
   transform: translate(0%, -50%) rotateZ(0deg) scale(1.255);
 }
-.base, .leaf, .cover, .face {
+.base, .cover {
   position: absolute;
   inset: 0;
   border-radius: 2px 9px 9px 2px;
   transform-style: preserve-3d;
 }
+.leaf, .face {
+  position: absolute;
+  inset: 0;
+  border-radius: 2px 9px 9px 2px;
+  transform-style: flat;
+}
 .base {
   background: #d7c477;
   transform: translateZ(-5px);
   box-shadow: 2px 4px 0 #b2a574, 5px 8px 0 #1e1e1e, 12px 24px 35px #0005;
+  pointer-events: none;
 }
 :host([mode="projects"]) .base {
   background: #7ca878;
   box-shadow: 2px 4px 0 #688f64, 5px 8px 0 #1e1e1e, 12px 24px 35px #0005;
+}
+:host([cover-theme="rose"]) .base {
+  background: #c89aa6;
+  box-shadow: 2px 4px 0 #a37884, 5px 8px 0 #1e1e1e, 12px 24px 35px #0005;
 }
 .leaf {
   inset: 2px 3px 4px 1px;
@@ -108,6 +119,8 @@ template.innerHTML = `<style>
   visibility: visible;
   background: #FFFFFF;
   overflow: hidden;
+  transform: translateZ(2px);
+  z-index: 5;
 }
 .leaf:after {
   content: "";
@@ -115,6 +128,7 @@ template.innerHTML = `<style>
   inset: 0;
   border-radius: inherit;
   box-shadow: inset 0 0 1px #aaa5;
+  pointer-events: none;
 }
 .cover {
   transform-origin: 0 50%;
@@ -124,6 +138,12 @@ template.innerHTML = `<style>
 }
 .book.is-open .cover {
   transform: rotateY(-178deg);
+}
+.book.is-open .front,
+.book.is-open .front .cover-content,
+.book.is-open .front .cover-title,
+.book.is-open .front .cover-hint {
+  pointer-events: none;
 }
 .face {
   backface-visibility: hidden;
@@ -137,10 +157,28 @@ template.innerHTML = `<style>
   transform: translateZ(1px);
   box-shadow: inset -2px 0 3px #9e885033, 0 0 1px #e0cc91;
 }
-:host([mode="projects"]) .front {
+.front-bg {
+  position: absolute;
+  inset: 0;
+  background-size: 121.906% 108.804%;
+  background-position: 60.305% 43.284%;
+  background-repeat: no-repeat;
+  z-index: 0;
+  pointer-events: none;
+}
+:host([mode="projects"]) .front,
+:host([mode="projects"]) .front-bg {
   background-size: 100% 100%;
   background-position: center;
+}
+:host([mode="projects"]) .front {
   box-shadow: inset -2px 0 3px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.1);
+}
+:host([cover-theme="rose"]) .front {
+  box-shadow: inset -2px 0 3px rgba(140, 95, 110, 0.22), 0 0 1px #dfc0c8;
+}
+:host([cover-theme="rose"]) .front-bg {
+  filter: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='r' color-interpolation-filters='sRGB'%3E%3CfeColorMatrix type='matrix' values='0.85 -0.15 0.30 0 0.04 0.20 0.05 0.75 0 0.04 0.40 0.05 0.50 0 0.03 0 0 0 1 0'/%3E%3C/filter%3E%3C/svg%3E#r");
 }
 .front:after {
   content: "";
@@ -148,6 +186,8 @@ template.innerHTML = `<style>
   inset: 0;
   background: linear-gradient(90deg, #65542a33, transparent 7%, transparent 88%, #fff1);
   opacity: 0;
+  z-index: 1;
+  pointer-events: none;
   transition: opacity 1.25s cubic-bezier(0.25, 1, 0.4, 1);
 }
 .book.is-open .front:after {
@@ -199,6 +239,15 @@ template.innerHTML = `<style>
   background: #524b37;
   box-shadow: 1px 0 1px #ffedb9;
 }
+:host([cover-theme="rose"]) .ring {
+  border-color: #967c82;
+  background: linear-gradient(180deg, #fff8, transparent 30%, #382a2e70 60%, #d8c2c76b);
+  box-shadow: 0 2px 2px #0007, inset 0 1px 1px #f5e6ea;
+}
+:host([cover-theme="rose"]) .ring:after {
+  background: #523e43;
+  box-shadow: 1px 0 1px #f5e6ea;
+}
 .cover-content {
   position: absolute;
   inset: 0;
@@ -215,6 +264,7 @@ template.innerHTML = `<style>
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  width: 100%;
 }
 .cover-title {
   color: var(--text-color, #691B1F);
@@ -228,6 +278,18 @@ template.innerHTML = `<style>
   user-select: none;
   transition: transform 0.25s ease, opacity 0.25s ease;
   display: inline-block;
+  max-width: 100%;
+}
+:host([cover-theme="rose"]) .cover-content {
+  padding: 20% 10% 14% 16%;
+}
+:host([cover-theme="rose"]) .cover-title {
+  font-size: clamp(15px, min(2.1vw, 3.6vh), 25px);
+  line-height: 1.08;
+  letter-spacing: 0.025em;
+}
+:host([cover-theme="rose"]) .back-title {
+  font-size: clamp(16px, min(2.2vw, 3.5vh), 26px);
 }
 .cover-title:hover {
   transform: scale(1.04);
@@ -901,11 +963,95 @@ template.innerHTML = `<style>
 }
 
 /* Mode Projects: Inside book font & border colors #709A02 */
+.back-subtitle {
+  display: none;
+  color: #709A02;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(11px, 1.25vw, 15px);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-top: 2px;
+  text-align: left;
+}
+:host([mode="projects"]) .back-subtitle {
+  display: block;
+}
+:host([cover-theme="rose"]) .back-subtitle {
+  display: block;
+  color: #C58997;
+}
+:host([cover-theme="rose"]) .back-divider {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+:host([mode="projects"]) .back-content,
+:host([cover-theme="rose"]) .back-content {
+  padding: 7.5% 8.5% 7% 9%;
+  justify-content: flex-start;
+  gap: clamp(6px, 0.9vh, 10px);
+}
 :host([mode="projects"]) .back-title {
   color: #709A02;
+  font-size: clamp(18px, 2.5vw, 30px);
 }
 :host([mode="projects"]) .back-divider {
   background: linear-gradient(90deg, #709A02 50%, rgba(112, 154, 2, 0.2) 100%);
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+.back-projects-overview {
+  display: none;
+}
+:host([mode="projects"]) .back-projects-overview,
+:host([cover-theme="rose"]) .back-projects-overview {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(7px, 1vh, 11px);
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 6px;
+  color: #4c4747;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  text-align: left;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(76, 71, 71, 0.22) transparent;
+}
+.back-projects-overview::-webkit-scrollbar {
+  width: 4px;
+}
+.back-projects-overview::-webkit-scrollbar-thumb {
+  background: rgba(76, 71, 71, 0.22);
+  border-radius: 4px;
+}
+.back-projects-intro {
+  margin: 0 0 clamp(4px, 0.6vh, 8px) 0;
+  font-size: clamp(10px, 0.96vw, 12.8px);
+  line-height: 1.55;
+  color: #4c4747;
+  font-weight: 400;
+}
+.back-projects-steps {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(7px, 1vh, 11px);
+}
+.back-step-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.back-step-title {
+  font-size: clamp(10.5px, 1vw, 13.2px);
+  font-weight: 700;
+  line-height: 1.45;
+  color: #4c4747;
+}
+.back-step-desc {
+  font-size: clamp(9.8px, 0.92vw, 12.2px);
+  font-weight: 400;
+  line-height: 1.52;
+  color: #4c4747;
 }
 :host([mode="projects"]) .square-card {
   background: #FCFDF8;
@@ -1012,6 +1158,30 @@ template.innerHTML = `<style>
 :host([mode="projects"]) .leaf-author {
   color: #709A02;
 }
+.leaf-projects-view {
+  display: none;
+}
+:host([mode="projects"]) .face.back .back-gallery-grid,
+:host([mode="projects"]) .leaf-header,
+:host([mode="projects"]) .leaf-detail-box,
+:host([cover-theme="rose"]) .face.back .back-gallery-grid,
+:host([cover-theme="rose"]) .leaf-header,
+:host([cover-theme="rose"]) .leaf-detail-box {
+  display: none !important;
+}
+:host([mode="projects"]) .leaf-content,
+:host([cover-theme="rose"]) .leaf-content {
+  padding: 10% 9% 9% 13%;
+  cursor: default;
+}
+:host([mode="projects"]) .leaf-projects-view,
+:host([cover-theme="rose"]) .leaf-projects-view {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
 @media (max-width: 1024px) {
   :host { 
     --w: min(250px, 32vw, 40vh); 
@@ -1080,10 +1250,14 @@ template.innerHTML = `<style>
                 <span>View Full Documents</span> <span class="btn-arrow">↗</span>
               </button>
             </div>
+            <div class="leaf-projects-view">
+              <div class="back-gallery-grid leaf-gallery-grid"></div>
+            </div>
           </div>
         </div>
         <div class="cover">
           <div class="face front">
+            <div class="front-bg" aria-hidden="true"></div>
             <div class="cover-content">
               <div class="cover-header">
                 <div class="cover-title" title="Click to open">My Project</div>
@@ -1099,6 +1273,39 @@ template.innerHTML = `<style>
               <div class="back-header">
                 <div class="back-title">My Project</div>
                 <div class="back-divider"></div>
+                <div class="back-subtitle">ETEC 6440 project</div>
+              </div>
+              <div class="back-projects-overview">
+                <div class="back-projects-steps">
+                  <div class="back-step-item">
+                    <div class="back-step-title">Step 1 — Identify the Problem</div>
+                    <div class="back-step-desc">Students could complete isolated grammar exercises but struggled to select and apply appropriate verb tenses in mixed exercises and writing.</div>
+                  </div>
+                  <div class="back-step-item">
+                    <div class="back-step-title">Step 2 — Determine the Instructional Solution</div>
+                    <div class="back-step-desc">Based on the identified learning gap, I proposed supplementary e-learning modules to strengthen grammar understanding and transfer beyond textbook practice.</div>
+                  </div>
+                  <div class="back-step-item">
+                    <div class="back-step-title">Step 3 — Design the Learning Experience</div>
+                    <div class="back-step-desc">I used Backward Design, Gagné's Nine Events of Instruction, and cognitive and constructivist learning principles to align objectives, assessments, scaffolding, and practice activities.</div>
+                  </div>
+                  <div class="back-step-item">
+                    <div class="back-step-title">Step 4 — Develop a Prototype</div>
+                    <div class="back-step-desc">I created an initial interactive module prototype to demonstrate the instructional sequence, learning activities, and feedback.</div>
+                  </div>
+                  <div class="back-step-item">
+                    <div class="back-step-title">Step 5 — Pilot Test &amp; Revise</div>
+                    <div class="back-step-desc">I tested the prototype with target learners, collected feedback, and revised the design to improve clarity, usability, and learning support.</div>
+                  </div>
+                  <div class="back-step-item">
+                    <div class="back-step-title">Step 6 — Develop the Modules</div>
+                    <div class="back-step-desc">I developed the five supplementary modules based on the revised prototype, incorporating interactive practice and opportunities to apply grammar in context.</div>
+                  </div>
+                  <div class="back-step-item">
+                    <div class="back-step-title">Step 7 — Reflect &amp; Evaluate</div>
+                    <div class="back-step-desc">I reviewed the design decisions, evaluation findings, and project limitations to identify improvements for future modules.</div>
+                  </div>
+                </div>
               </div>
               <div class="back-gallery-grid">
                 <div class="square-card active" data-project="letter" title="Proposal Worksheet">
@@ -1258,7 +1465,7 @@ const RESEARCH_DETAILS = {
 
 export class BookScroll extends HTMLElement {
   static get observedAttributes() {
-    return ['open-width', 'background', 'cover-src', 'title', 'author', 'text-color', 'is-open', 'paragraph1', 'paragraph2', 'mode'];
+    return ['open-width', 'background', 'cover-src', 'title', 'author', 'text-color', 'is-open', 'paragraph1', 'paragraph2', 'mode', 'cover-theme'];
   }
 
   constructor() {
@@ -1308,18 +1515,55 @@ export class BookScroll extends HTMLElement {
       });
     }
 
-    const leafHint = this.$('.leaf-hint');
-    if (leafHint) {
-      leafHint.addEventListener('click', (e) => {
+    const leafHints = this.shadowRoot.querySelectorAll('.leaf-hint');
+    leafHints.forEach((hint) => {
+      hint.addEventListener('click', (e) => {
         e.stopPropagation();
         this.toggleBook(false);
       });
-    }
+    });
 
-    // Clicking anywhere on the book toggles open/close
+    // Clicking anywhere on the book toggles open/close (except interactive cards/buttons)
     const book = this.$('.book');
     if (book) {
-      book.addEventListener('click', () => {
+      book.addEventListener('click', (e) => {
+        let card = e.target && e.target.closest ? e.target.closest('.square-card') : null;
+        if (!card && typeof e.composedPath === 'function') {
+          const path = e.composedPath();
+          card = path.find((el) => el && el.classList && el.classList.contains('square-card')) || null;
+        }
+        if (!card && this.isOpen && typeof e.clientX === 'number' && typeof e.clientY === 'number') {
+          const allCards = this.shadowRoot.querySelectorAll('.square-card');
+          for (const candidate of allCards) {
+            const rect = candidate.getBoundingClientRect();
+            if (
+              rect.width > 0 &&
+              rect.height > 0 &&
+              e.clientX >= rect.left &&
+              e.clientX <= rect.right &&
+              e.clientY >= rect.top &&
+              e.clientY <= rect.bottom
+            ) {
+              card = candidate;
+              break;
+            }
+          }
+        }
+        if (card) {
+          e.stopPropagation();
+          const project = card.getAttribute('data-project') || 'letter';
+          this.dispatchEvent(new CustomEvent('galleryclick', {
+            detail: { project },
+            bubbles: true,
+            composed: true
+          }));
+          return;
+        }
+        const btn = e.target && e.target.closest ? e.target.closest('#leaf-open-full-btn') : null;
+        if (btn) {
+          e.stopPropagation();
+          return;
+        }
         this.toggleBook();
       });
       book.addEventListener('keydown', (e) => {
@@ -1373,11 +1617,11 @@ export class BookScroll extends HTMLElement {
     squareCards.forEach(card => {
       const project = card.getAttribute('data-project') || activeProjectId;
       
-      card.addEventListener('mouseenter', () => {
+      card.onmouseenter = () => {
         updatePreview(project);
-      });
+      };
 
-      card.addEventListener('click', (e) => {
+      card.onclick = (e) => {
         e.stopPropagation();
         updatePreview(project);
         this.dispatchEvent(new CustomEvent('galleryclick', {
@@ -1385,19 +1629,19 @@ export class BookScroll extends HTMLElement {
           bubbles: true,
           composed: true
         }));
-      });
+      };
     });
 
     const openFullBtn = this.$('#leaf-open-full-btn');
     if (openFullBtn) {
-      openFullBtn.addEventListener('click', (e) => {
+      openFullBtn.onclick = (e) => {
         e.stopPropagation();
         this.dispatchEvent(new CustomEvent('galleryclick', {
           detail: { project: activeProjectId },
           bubbles: true,
           composed: true
         }));
-      });
+      };
     }
   }
 
@@ -1446,8 +1690,11 @@ export class BookScroll extends HTMLElement {
     this.style.setProperty('--bg', bg);
 
     const image = this.getAttribute('cover-src') || new URL('./book.jpg', import.meta.url).href;
+    const frontBg = this.$('.front-bg');
     const front = this.$('.front');
-    if (front) {
+    if (frontBg) {
+      frontBg.style.backgroundImage = `url(${JSON.stringify(image)})`;
+    } else if (front) {
       front.style.backgroundImage = `url(${JSON.stringify(image)})`;
     }
 
@@ -1459,8 +1706,11 @@ export class BookScroll extends HTMLElement {
     const coverTitle = this.$('.cover-title');
     if (coverTitle) coverTitle.textContent = title;
 
-    const backTitle = this.$('.back-title');
+    const backTitle = this.$('.back-title:not(.leaf-projects-title)');
     if (backTitle) backTitle.textContent = title;
+
+    const leafProjectsTitle = this.$('.leaf-projects-title');
+    if (leafProjectsTitle) leafProjectsTitle.textContent = title;
 
     const coverAuthor = this.$('.cover-author');
     if (coverAuthor) coverAuthor.textContent = author;
@@ -1475,10 +1725,104 @@ export class BookScroll extends HTMLElement {
     }
 
     const isResearchMode = this.getAttribute('mode') === 'letter' || this.getAttribute('mode') === 'research';
-    const grid = this.$('.back-gallery-grid');
+    const isRoseTheme = this.getAttribute('cover-theme') === 'rose';
+    const backSubtitle = this.$('.back-subtitle');
+    if (backSubtitle) {
+      backSubtitle.textContent = isRoseTheme ? 'ETEC 6480 Project' : 'ETEC 6440 project';
+    }
+    const stepsContainer = this.$('.back-projects-steps');
+    if (stepsContainer) {
+      if (isRoseTheme) {
+        stepsContainer.innerHTML = `
+          <div class="back-step-item">
+            <div class="back-step-title">Step 1 — Analyze Training Content</div>
+            <div class="back-step-desc">Reviewed the provided training materials and identified key product knowledge and sales skills.</div>
+          </div>
+          <div class="back-step-item">
+            <div class="back-step-title">Step 2 — Organize Digital Content</div>
+            <div class="back-step-desc">Structured the content into three modules to create a clear and manageable learning sequence.</div>
+          </div>
+          <div class="back-step-item">
+            <div class="back-step-title">Step 3 — Select Learning Technologies</div>
+            <div class="back-step-desc">Used Articulate Rise to develop a self-paced e-learning course accessible on desktop and mobile devices.</div>
+          </div>
+          <div class="back-step-item">
+            <div class="back-step-title">Step 4 — Integrate Multimedia</div>
+            <div class="back-step-desc">Combined videos, images, and audio resources to present vehicle features and competitor comparisons.</div>
+          </div>
+          <div class="back-step-item">
+            <div class="back-step-title">Step 5 — Build Interactive Activities</div>
+            <div class="back-step-desc">Created interactive hotspots, sorting activities, matching exercises, and scenario-based quizzes to support active learning.</div>
+          </div>
+          <div class="back-step-item">
+            <div class="back-step-title">Step 6 — Add Gamified Elements</div>
+            <div class="back-step-desc">Integrated badges and virtual vehicle upgrades to recognize learner progress and encourage engagement.</div>
+          </div>
+          <div class="back-step-item">
+            <div class="back-step-title">Step 7 — Review and Refine</div>
+            <div class="back-step-desc">Gathered SME and pilot-testing feedback to identify improvements in content clarity, usability, and learner engagement.</div>
+          </div>
+        `;
+      } else {
+        stepsContainer.innerHTML = `
+          <div class="back-step-item">
+            <div class="back-step-title">Step 1 — Identify the Problem</div>
+            <div class="back-step-desc">Students could complete isolated grammar exercises but struggled to select and apply appropriate verb tenses in mixed exercises and writing.</div>
+          </div>
+          <div class="back-step-item">
+            <div class="back-step-title">Step 2 — Determine the Instructional Solution</div>
+            <div class="back-step-desc">Based on the identified learning gap, I proposed supplementary e-learning modules to strengthen grammar understanding and transfer beyond textbook practice.</div>
+          </div>
+          <div class="back-step-item">
+            <div class="back-step-title">Step 3 — Design the Learning Experience</div>
+            <div class="back-step-desc">I used Backward Design, Gagné's Nine Events of Instruction, and cognitive and constructivist learning principles to align objectives, assessments, scaffolding, and practice activities.</div>
+          </div>
+          <div class="back-step-item">
+            <div class="back-step-title">Step 4 — Develop a Prototype</div>
+            <div class="back-step-desc">I created an initial interactive module prototype to demonstrate the instructional sequence, learning activities, and feedback.</div>
+          </div>
+          <div class="back-step-item">
+            <div class="back-step-title">Step 5 — Pilot Test &amp; Revise</div>
+            <div class="back-step-desc">I tested the prototype with target learners, collected feedback, and revised the design to improve clarity, usability, and learning support.</div>
+          </div>
+          <div class="back-step-item">
+            <div class="back-step-title">Step 6 — Develop the Modules</div>
+            <div class="back-step-desc">I developed the five supplementary modules based on the revised prototype, incorporating interactive practice and opportunities to apply grammar in context.</div>
+          </div>
+          <div class="back-step-item">
+            <div class="back-step-title">Step 7 — Reflect &amp; Evaluate</div>
+            <div class="back-step-desc">I reviewed the design decisions, evaluation findings, and project limitations to identify improvements for future modules.</div>
+          </div>
+        `;
+      }
+    }
+    const grid = this.$('.back-gallery-grid:not(.leaf-gallery-grid)');
+    const leafGrid = this.$('.leaf-gallery-grid');
     if (grid) {
       if (isResearchMode) {
-        grid.innerHTML = `
+        const firstCardHtml = isRoseTheme ? `
+          <div class="square-card active" data-project="letter" title="Executive Summary: 2026 Nissan Z Heritage Edition Sales Training">
+            <div class="square-cover">
+              <div class="mini-page">
+                <div class="mini-ws-title">Executive Summary</div>
+                <div class="mini-ws-instruct">2026 Nissan Z Heritage Edition • ETEC 6480</div>
+                <div class="mini-ws-sec">
+                  <span class="mini-num-badge">1</span>
+                  <span class="mini-ws-sec-text">Overview &amp; Learning Objectives</span>
+                </div>
+                <div class="mini-ws-box">Articulate Rise • 3 Gamified Modules</div>
+                <div class="mini-ws-sec">
+                  <span class="mini-num-badge">2</span>
+                  <span class="mini-ws-sec-text">Delivery, SME &amp; Pilot Evaluation</span>
+                </div>
+              </div>
+            </div>
+            <div class="square-bottom-bar">
+              <span class="square-title">Executive Summary</span>
+              <span class="square-arrow">↗</span>
+            </div>
+          </div>
+        ` : `
           <div class="square-card active" data-project="letter" title="Proposal Worksheet">
             <div class="square-cover">
               <div class="mini-page">
@@ -1500,7 +1844,26 @@ export class BookScroll extends HTMLElement {
               <span class="square-arrow">↗</span>
             </div>
           </div>
+        `;
 
+        const secondCardHtml = isRoseTheme ? `
+          <div class="square-card" data-project="methodology" title="E-Learning Delivery Plan: 2026 Nissan Z Heritage Edition Sales Training">
+            <div class="square-cover">
+              <div class="mini-page">
+                <div class="mini-da-tag">Delivery Blueprint</div>
+                <div class="mini-da-title">E-Learning Delivery Plan</div>
+                <div class="mini-da-sub">2026 Nissan Z Heritage Edition • ETEC 6480</div>
+                <div class="mini-da-header">Dual Platform Options</div>
+                <div class="mini-da-p">Option A: Paradiso LMS vs. Option B: Notion + H5P across 3 gamified 15-min modules...</div>
+                <div class="mini-da-box">4-Level Z Badge Progression &amp; 4-Phase Rollout</div>
+              </div>
+            </div>
+            <div class="square-bottom-bar">
+              <span class="square-title">E-Learning Delivery Plan</span>
+              <span class="square-arrow">↗</span>
+            </div>
+          </div>
+        ` : `
           <div class="square-card" data-project="methodology" title="Data Analysis Plan">
             <div class="square-cover">
               <div class="mini-page">
@@ -1517,7 +1880,26 @@ export class BookScroll extends HTMLElement {
               <span class="square-arrow">↗</span>
             </div>
           </div>
+        `;
 
+        const thirdCardHtml = isRoseTheme ? `
+          <div class="square-card" data-project="evidence" title="E-Learning Assessment Plan: 2026 Nissan Z Heritage Edition Sales Training">
+            <div class="square-cover">
+              <div class="mini-page">
+                <div class="mini-da-tag">Quality &amp; Evaluation</div>
+                <div class="mini-da-title">E-Learning Assessment Plan</div>
+                <div class="mini-da-sub">2026 Nissan Z Heritage Edition • ETEC 6480</div>
+                <div class="mini-da-header">Evaluation Rubrics &amp; QA</div>
+                <div class="mini-da-p">QM, CSU Chico ROI &amp; OSCQR rubrics analysis; CSU QLT/OCS alignment; 9 learning objectives &amp; 4-lens teaching effectiveness...</div>
+                <div class="mini-da-box">Selected Rubric: CSU Chico ROI</div>
+              </div>
+            </div>
+            <div class="square-bottom-bar">
+              <span class="square-title">E-Learning Assessment Plan</span>
+              <span class="square-arrow">↗</span>
+            </div>
+          </div>
+        ` : `
           <div class="square-card" data-project="evidence" title="Final Research Report">
             <div class="square-cover">
               <div class="mini-page">
@@ -1542,7 +1924,9 @@ export class BookScroll extends HTMLElement {
               <span class="square-arrow">↗</span>
             </div>
           </div>
+        `;
 
+        const fourthCardHtml = isRoseTheme ? '' : `
           <div class="square-card square-card-all" data-project="letter-all" title="Presentation Slides">
             <div class="square-cover">
               <div class="mini-slide">
@@ -1563,8 +1947,27 @@ export class BookScroll extends HTMLElement {
             </div>
           </div>
         `;
+
+        const cardsHtml = `
+          ${firstCardHtml}
+
+          ${secondCardHtml}
+
+          ${thirdCardHtml}
+
+          ${fourthCardHtml}
+        `;
+        if (isRoseTheme && leafGrid) {
+          grid.innerHTML = '';
+          leafGrid.innerHTML = cardsHtml;
+        } else {
+          if (leafGrid) leafGrid.innerHTML = '';
+          grid.innerHTML = cardsHtml;
+        }
       } else {
-        grid.innerHTML = `
+        grid.innerHTML = '';
+        const targetGrid = leafGrid || grid;
+        targetGrid.innerHTML = `
           <div class="square-card active" data-project="interactive-microlearning" title="Client &amp; Topic Report + Model Selection">
             <div class="square-cover">
               <div class="mini-page">

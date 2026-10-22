@@ -10,8 +10,8 @@ export interface PaperTearProps extends PaperTearOptions {
 
 export const PaperTear: React.FC<PaperTearProps> = ({
   image,
-  color = '#1D2440',
-  background = '#2B2B2B',
+  color = '#EFE8DC',
+  background = '#EFE8DC',
   edgeOpacity = 0.9,
   start = 1,
   end = 0.12,

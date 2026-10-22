@@ -15,6 +15,7 @@ export interface BookScrollProps {
   paragraph2?: string;
   isOpen?: boolean;
   mode?: 'projects' | 'letter' | 'research';
+  coverTheme?: 'rose';
   onToggle?: (isOpen: boolean) => void;
   onGalleryClick?: (project?: string) => void;
   className?: string;
@@ -35,6 +36,7 @@ export const BookScroll: React.FC<BookScrollProps> = ({
   paragraph2,
   isOpen,
   mode,
+  coverTheme,
   onToggle,
   onGalleryClick,
   className = '',
@@ -60,6 +62,11 @@ export const BookScroll: React.FC<BookScrollProps> = ({
     } else {
       element.removeAttribute('mode');
     }
+    if (coverTheme) {
+      element.setAttribute('cover-theme', coverTheme);
+    } else {
+      element.removeAttribute('cover-theme');
+    }
     if (paragraph1) {
       element.setAttribute('paragraph1', paragraph1);
     } else {
@@ -78,7 +85,7 @@ export const BookScroll: React.FC<BookScrollProps> = ({
     } else {
       element.removeAttribute('cover-src');
     }
-  }, [openWidth, background, scrollHeight, coverSrc, showLabels, title, leafTitle, author, textColor, paragraph1, paragraph2, isOpen, mode]);
+  }, [openWidth, background, scrollHeight, coverSrc, showLabels, title, leafTitle, author, textColor, paragraph1, paragraph2, isOpen, mode, coverTheme]);
 
   useEffect(() => {
     const element = host.current;

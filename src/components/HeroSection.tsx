@@ -85,24 +85,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onAboutClick, onNaviga
   return (
     <section 
       id="home" 
-      className="relative w-full min-h-screen flex flex-col justify-between overflow-x-hidden bg-[#1D2440] pt-20 sm:pt-24"
+      className="relative w-full min-h-screen flex flex-col justify-between overflow-x-hidden bg-[#EFE8DC] pt-20 sm:pt-24"
     >
       {/* Top Headline & Category */}
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 pt-2 pb-6 z-20">
         <p 
           id="hero-eyebrow"
-          className="text-[#FF9BB4] text-base sm:text-lg md:text-xl font-bold font-inter tracking-tight mb-2 sm:mb-3"
+          className="text-[#DC9BB5] text-base sm:text-lg md:text-xl font-bold font-inter tracking-tight mb-2 sm:mb-3"
         >
           Instructional Design &amp; Technology
         </p>
         <h1 
           id="hero-title"
-          className="text-white font-extrabold font-inter tracking-tight leading-[1.15] text-[clamp(1.35rem,3.6vw,3.6rem)]"
+          className="text-[#4C4747] font-extrabold font-inter tracking-tight leading-[1.15] text-[clamp(1.35rem,3.6vw,3.6rem)]"
         >
           <span className="block sm:whitespace-nowrap">Behind every effective learning experience</span>
           <span className="block sm:whitespace-nowrap mt-1 sm:mt-2">
             is{' '}
-            <span className="text-[#FF9BB4] border-b-2 sm:border-b-4 border-[#FF9BB4] pb-0.5 inline-block">
+            <span className="text-[#DC9BB5] border-b-2 sm:border-b-4 border-[#DC9BB5] pb-0.5 inline-block">
               intentional design.
             </span>
           </span>
@@ -121,7 +121,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onAboutClick, onNaviga
               opacity: yuOpacity,
               fontFamily: "Impact, 'Arial Black', Haettenschweiler, sans-serif" 
             }}
-            className="absolute right-[50%] mr-20 sm:mr-28 md:mr-36 lg:mr-[175px] bottom-4 sm:bottom-8 md:bottom-10 text-[#FF9BB4] font-impact text-[85px] sm:text-[130px] md:text-[170px] lg:text-[210px] leading-none select-none z-0 tracking-tight pointer-events-none"
+            className="absolute right-[50%] mr-14 sm:mr-24 md:mr-36 lg:mr-[175px] bottom-4 sm:bottom-8 md:bottom-10 text-[#DC9BB5] font-impact text-[76px] sm:text-[130px] md:text-[170px] lg:text-[210px] leading-none select-none z-0 tracking-tight pointer-events-none"
           >
             Yu
           </motion.div>
@@ -134,7 +134,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onAboutClick, onNaviga
               opacity: liuOpacity,
               fontFamily: "Impact, 'Arial Black', Haettenschweiler, sans-serif" 
             }}
-            className="absolute left-[50%] ml-20 sm:ml-28 md:ml-36 lg:ml-[175px] bottom-4 sm:bottom-8 md:bottom-10 text-[#FF9BB4] font-impact text-[85px] sm:text-[130px] md:text-[170px] lg:text-[210px] leading-none select-none z-0 tracking-tight pointer-events-none"
+            className="absolute left-[50%] ml-14 sm:ml-24 md:ml-36 lg:ml-[175px] bottom-4 sm:bottom-8 md:bottom-10 text-[#DC9BB5] font-impact text-[76px] sm:text-[130px] md:text-[170px] lg:text-[210px] leading-none select-none z-0 tracking-tight pointer-events-none"
           >
             Liu
           </motion.div>
@@ -148,7 +148,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onAboutClick, onNaviga
             whileHover={{ scale: 1.08, rotate: -2, y: -4 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 350, damping: 22 }}
-            className="absolute top-2 sm:top-0 left-2 sm:left-10 md:left-16 w-16 h-16 sm:w-[90px] sm:h-[90px] md:w-[115px] md:h-[115px] z-20 cursor-pointer pointer-events-auto"
+            className="absolute top-2 sm:top-0 left-2 sm:left-10 md:left-16 w-16 h-16 sm:w-[90px] sm:h-[90px] md:w-[115px] md:h-[115px] z-20 cursor-pointer pointer-events-auto flex flex-col items-center"
             aria-label="Navigate to Foundation page"
             role="button"
             tabIndex={0}
@@ -159,43 +159,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onAboutClick, onNaviga
               }
             }}
           >
-            <img 
+            <motion.img 
               src={folderImg} 
               alt="Instructional Materials Folder" 
               referrerPolicy="no-referrer"
-              className="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.3)] select-none"
+              animate={{
+                y: [-8, 8, -8],
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 3.2,
+                ease: "easeInOut",
+              }}
+              className="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(76,71,71,0.22)] select-none"
             />
+            <span className="md:hidden block text-[10px] font-mono font-bold tracking-tight text-[#4C4747] bg-[#F7F3EB]/90 border border-[#4C4747]/15 px-2 py-0.5 rounded-full mt-1 text-center shadow-xs whitespace-nowrap">
+              Foundation
+            </span>
           </motion.div>
 
-          {/* 3D Floating Icon 2: Analytics & Media Window (Top-Center-Left) - Shifted 2% upwards */}
-          <motion.div 
-            id="icon-charts-container"
-            data-cursor="badge"
-            data-cursor-text="Research"
-            onClick={() => onNavigate?.('research')}
-            whileHover={{ scale: 1.08, y: -4 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 350, damping: 22 }}
-            className="absolute -top-12 sm:-top-[72px] md:-top-[92px] left-[30%] sm:left-[33%] -translate-x-1/2 w-16 h-16 sm:w-[90px] sm:h-[90px] md:w-[115px] md:h-[115px] z-20 cursor-pointer pointer-events-auto"
-            aria-label="Navigate to Research page"
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                onNavigate?.('research');
-              }
-            }}
-          >
-            <img 
-              src={chartsImg} 
-              alt="Learning Analytics & Video Dashboard" 
-              referrerPolicy="no-referrer"
-              className="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.3)] select-none"
-            />
-          </motion.div>
-
-          {/* 3D Floating Icon 3: Open Book & Pencil (Top-Center-Right) - Shifted 2% upwards */}
+          {/* 3D Floating Icon 2: Open Book & Pencil (Top-Center-Left) - Design */}
           <motion.div 
             id="icon-book-container"
             data-cursor="badge"
@@ -204,7 +187,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onAboutClick, onNaviga
             whileHover={{ scale: 1.08, rotate: 2, y: -4 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 350, damping: 22 }}
-            className="absolute -top-12 sm:-top-[72px] md:-top-[92px] right-[35%] sm:right-[38%] translate-x-1/2 w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 z-20 cursor-pointer pointer-events-auto"
+            className="absolute -top-16 sm:-top-[94px] md:-top-[120px] left-[30%] sm:left-[33%] -translate-x-1/2 w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 z-20 cursor-pointer pointer-events-auto flex flex-col items-center"
             aria-label="Navigate to Design page"
             role="button"
             tabIndex={0}
@@ -215,12 +198,64 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onAboutClick, onNaviga
               }
             }}
           >
-            <img 
+            <motion.img 
               src={bookImg} 
               alt="Learning Foundations Notebook" 
               referrerPolicy="no-referrer"
-              className="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.3)] select-none"
+              animate={{
+                y: [-8, 8, -8],
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 3.2,
+                delay: 0.4,
+                ease: "easeInOut",
+              }}
+              className="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(76,71,71,0.22)] select-none"
             />
+            <span className="md:hidden block text-[10px] font-mono font-bold tracking-tight text-[#4C4747] bg-[#F7F3EB]/90 border border-[#4C4747]/15 px-2 py-0.5 rounded-full mt-1 text-center shadow-xs whitespace-nowrap">
+              Design
+            </span>
+          </motion.div>
+
+          {/* 3D Floating Icon 3: Analytics & Media Window (Top-Center-Right) - Research */}
+          <motion.div 
+            id="icon-charts-container"
+            data-cursor="badge"
+            data-cursor-text="Research"
+            onClick={() => onNavigate?.('research')}
+            whileHover={{ scale: 1.08, y: -4 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 350, damping: 22 }}
+            className="absolute -top-12 sm:-top-[72px] md:-top-[92px] right-[35%] sm:right-[38%] translate-x-1/2 w-16 h-16 sm:w-[90px] sm:h-[90px] md:w-[115px] md:h-[115px] z-20 cursor-pointer pointer-events-auto flex flex-col items-center"
+            aria-label="Navigate to Research page"
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                onNavigate?.('research');
+              }
+            }}
+          >
+            <motion.img 
+              src={chartsImg} 
+              alt="Learning Analytics & Video Dashboard" 
+              referrerPolicy="no-referrer"
+              animate={{
+                y: [-8, 8, -8],
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 3.2,
+                delay: 0.8,
+                ease: "easeInOut",
+              }}
+              className="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(76,71,71,0.22)] select-none"
+            />
+            <span className="md:hidden block text-[10px] font-mono font-bold tracking-tight text-[#4C4747] bg-[#F7F3EB]/90 border border-[#4C4747]/15 px-2 py-0.5 rounded-full mt-1 text-center shadow-xs whitespace-nowrap">
+              Research
+            </span>
           </motion.div>
 
           {/* 3D Floating Icon 4: Laptop with Stickers (Right, above "Liu") */}
@@ -232,7 +267,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onAboutClick, onNaviga
             whileHover={{ scale: 1.08, rotate: -2, y: -4 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 350, damping: 22 }}
-            className="absolute top-2 sm:top-0 right-2 sm:right-10 md:right-16 w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 z-20 cursor-pointer pointer-events-auto"
+            className="absolute top-2 sm:top-0 right-2 sm:right-10 md:right-16 w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 z-20 cursor-pointer pointer-events-auto flex flex-col items-center"
             aria-label="Navigate to Technology page"
             role="button"
             tabIndex={0}
@@ -243,12 +278,24 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onAboutClick, onNaviga
               }
             }}
           >
-            <img 
+            <motion.img 
               src={laptopImg} 
               alt="EdTech & Simulation Laptop" 
               referrerPolicy="no-referrer"
-              className="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(0,0,0,0.3)] select-none"
+              animate={{
+                y: [-8, 8, -8],
+              }}
+              transition={{
+                repeat: Infinity,
+                duration: 3.2,
+                delay: 1.2,
+                ease: "easeInOut",
+              }}
+              className="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(76,71,71,0.22)] select-none"
             />
+            <span className="md:hidden block text-[10px] font-mono font-bold tracking-tight text-[#4C4747] bg-[#F7F3EB]/90 border border-[#4C4747]/15 px-2 py-0.5 rounded-full mt-1 text-center shadow-xs whitespace-nowrap">
+              Technology
+            </span>
           </motion.div>
 
           {/* Central Portrait of Yu Liu with White Sticker Contour */}
@@ -269,16 +316,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onAboutClick, onNaviga
       </div>
 
       {/* Bottom Unified Group: Horizontal Divider Line, "About me" Pill, and Chevron Down Arrow */}
-      {/* Shifted vertically upward as a single entity so the white line overlaps the portrait bottom edge */}
+      {/* Shifted vertically upward as a single entity so the line overlaps the portrait bottom edge */}
       <div className="relative w-full z-20 -mt-[21px] sm:-mt-[24px] md:-mt-[26px] pb-6 pointer-events-none">
         <div className="relative max-w-6xl mx-auto px-4 flex items-center justify-center">
-          {/* The clean white horizontal dividing line overlapping portrait's bottom edge */}
+          {/* The clean horizontal dividing line overlapping portrait's bottom edge */}
           <div 
             id="hero-divider-line"
             className="absolute inset-0 flex items-center" 
             aria-hidden="true"
           >
-            <div className="w-full border-t border-white/80" />
+            <div className="w-full border-t border-[#4C4747]/35" />
           </div>
 
           {/* "About me" Visual Pill (Clickable trigger that smoothly scrolls down to Experience Section) */}
@@ -288,7 +335,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onAboutClick, onNaviga
               id="about-me-badge"
               data-cursor="magnetic"
               onClick={scrollToExperience}
-              className="px-7 sm:px-9 py-2 sm:py-2.5 bg-white hover:bg-slate-100 text-[#1D2440] font-inter font-semibold text-sm sm:text-base rounded-full shadow-lg flex items-center justify-center select-none cursor-pointer transition-all hover:scale-105 active:scale-95 border-none outline-none"
+              className="px-7 sm:px-9 py-2 sm:py-2.5 bg-[#F7F3EB] hover:bg-white text-[#4C4747] border border-[#4C4747]/15 font-inter font-semibold text-sm sm:text-base rounded-full shadow-[0_6px_20px_rgba(76,71,71,0.12)] flex items-center justify-center select-none cursor-pointer transition-all hover:scale-105 active:scale-95 outline-none"
             >
               About me
             </button>
@@ -302,9 +349,9 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onAboutClick, onNaviga
             id="chevron-scroll-indicator"
             aria-label="Scroll down to professional experience"
             onClick={scrollToExperience}
-            className="text-slate-400 hover:text-white p-1 select-none cursor-pointer transition-colors bg-transparent border-none outline-none"
+            className="text-[#9D988F] hover:text-[#4C4747] p-1 select-none cursor-pointer transition-colors bg-transparent border-none outline-none"
           >
-            <ChevronDown className="w-6 h-6 stroke-current animate-bounce filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]" />
+            <ChevronDown className="w-6 h-6 stroke-current animate-bounce filter drop-shadow-[0_2px_6px_rgba(76,71,71,0.15)]" />
           </button>
         </div>
       </div>

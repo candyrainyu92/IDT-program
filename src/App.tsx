@@ -49,7 +49,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#1D2440] text-white flex flex-col selection:bg-[#FF9BB4] selection:text-[#1D2440]">
+    <div className="min-h-screen bg-[#EFE8DC] text-[#4C4747] flex flex-col selection:bg-[#DC9BB5] selection:text-[#4C4747]">
       {/* Contextual & Magnetic Adaptive Custom Cursor for Desktop */}
       <CustomCursor />
 

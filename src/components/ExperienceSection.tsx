@@ -20,140 +20,57 @@ interface ExperienceSectionProps {
   onNavigate?: (sectionId: string) => void;
 }
 
-interface RoleItem {
-  title: string;
-  period: string;
-  highlights: string[];
-}
-
-interface ExperienceItem {
+interface ExperienceEntry {
   id: string;
+  title: string;
   organization: string;
   location: string;
-  overallPeriod?: string;
-  badge: string;
-  accentColor: string;
-  borderAccent: string;
-  bgGradient: string;
-  roles: RoleItem[];
-  tags: string[];
+  period: string;
 }
 
-const EXPERIENCES: ExperienceItem[] = [
+const EXPERIENCES: ExperienceEntry[] = [
   {
-    id: 'turtle-rock',
-    organization: 'Turtle Rock Elementary',
+    id: 'turtle-rock-volunteer',
+    title: 'Volunteer',
+    organization: 'Turtle Rock Elementary School',
     location: 'Irvine, CA, USA',
-    badge: 'Elementary & Digital Inclusion',
-    accentColor: '#FF9BB4',
-    borderAccent: 'border-[#FF9BB4]/30',
-    bgGradient: 'from-[#FF9BB4]/10 via-[#1D2440] to-[#1D2440]',
-    roles: [
-      {
-        title: 'Volunteer',
-        period: '8/2024 – 12/2024',
-        highlights: [
-          'Assisted teachers in integrating digital and interactive learning activities into daily classroom routines.',
-          'Observed classroom practices using California Teaching Performance Expectations (TPEs), focusing on strategies to help students from diverse backgrounds adapt to instruction.',
-          'Supported the organization and execution of the school’s Book Fair Event, coordinating activities and engaging students and families.'
-        ]
-      }
-    ],
-    tags: [
-      'California TPEs',
-      'Digital Learning Activities',
-      'Culturally Responsive Adaptation',
-      'Book Fair Event Coordination'
-    ]
+    period: '8/2024 – 12/2024',
   },
   {
-    id: 'qiyao-edtech',
+    id: 'qiyao-director',
+    title: 'Director of Education',
     organization: 'Zhengzhou QiYao Education and Technology',
     location: 'Zhengzhou, China',
-    overallPeriod: '7/2020 – 7/2023',
-    badge: 'K–12 EdTech & Curriculum Leadership',
-    accentColor: '#709A02',
-    borderAccent: 'border-[#709A02]/30',
-    bgGradient: 'from-[#709A02]/10 via-[#1D2440] to-[#1D2440]',
-    roles: [
-      {
-        title: 'Director of Education',
-        period: '7/2022 – 7/2023',
-        highlights: [
-          'Led curriculum development across Reading, English, Mathematics, and after-school programs using ADDIE and instructional design principles.',
-          'Conducted teacher training in curriculum implementation, digital pedagogy, and data-informed instructional strategies.',
-          'Oversaw school-wide events to engage the community and showcase student learning outcomes.',
-          'Managed teacher recruitment and continuous professional development pipelines.',
-          'Developed STEAM-based digital learning materials and piloted innovative instructional technologies.'
-        ]
-      },
-      {
-        title: 'Manager of English Department',
-        period: '7/2020 – 7/2022',
-        highlights: [
-          'Designed a three-stage immersive English program applying Universal Design for Learning (UDL) principles.',
-          'Upgraded assessment system with adaptive learning applications (Exact Path) to track learner progress and inform instruction.',
-          'Trained teachers to apply curriculum philosophy and leverage digital tools for authentic student evaluation.',
-          'Managed teacher schedules and coordinated instructional delivery while responding promptly to parent feedback.',
-          'Operated and managed the company’s English program Official account, creating multimedia content to promote courses and engage students and parents.'
-        ]
-      }
-    ],
-    tags: [
-      'ADDIE Model',
-      'Universal Design for Learning (UDL)',
-      'Exact Path Adaptive Assessment',
-      'Teacher Professional Development',
-      'STEAM Curriculum Engineering',
-      'Official Channel Operations'
-    ]
+    period: '7/2022 – 7/2023',
   },
   {
-    id: 'henan-kindergarten',
+    id: 'qiyao-manager',
+    title: 'Manager of English Learning Program',
+    organization: 'Zhengzhou QiYao Education and Technology',
+    location: 'Zhengzhou, China',
+    period: '7/2020 – 7/2022',
+  },
+  {
+    id: 'henan-lead-teacher',
+    title: 'Lead Teacher',
     organization: 'Kindergarten of Henan Province',
     location: 'Henan, China',
-    overallPeriod: '2/2016 – 7/2020',
-    badge: 'Early Childhood & Foundational Pedagogy',
-    accentColor: '#FFD166',
-    borderAccent: 'border-[#FFD166]/30',
-    bgGradient: 'from-[#FFD166]/10 via-[#1D2440] to-[#1D2440]',
-    roles: [
-      {
-        title: 'Lead Teacher',
-        period: '9/2018 – 7/2020',
-        highlights: [
-          'Designed and implemented curricula for 3–6-year-olds integrating STEAM methodologies and Chinese traditional culture.',
-          'Partnered with Beijing Normal University on preschool-to-elementary transition research and pilot programs.',
-          'Provided professional development on technology-enhanced instruction and digital learning tools.',
-          'Co-developed Lego Wedo 2.0 math and programming curriculum; guided student teams to compete in the World Robot Olympiad (WRO).'
-        ]
-      },
-      {
-        title: 'Teacher',
-        period: '9/2016 – 7/2018',
-        highlights: [
-          'Delivered multi-subject instruction tailored for children aged 3–6.',
-          'Assisted the Lead Teacher in curriculum development, lesson planning, and classroom digital tools integration.',
-          'Supported inclusive education projects for students with disabilities, fostering an equitable environment.'
-        ]
-      },
-      {
-        title: 'Intern',
-        period: '2/2016 – 7/2016',
-        highlights: [
-          'Assisted in lesson planning, daily instruction, and classroom technology integration.',
-          'Gained hands-on experience in learner-centered curriculum design and early childhood pedagogy.'
-        ]
-      }
-    ],
-    tags: [
-      'Early Childhood STEAM',
-      'Lego Wedo 2.0 & WRO Robotics',
-      'Beijing Normal University Collaboration',
-      'Inclusive Education',
-      'Technology-Enhanced Instruction'
-    ]
-  }
+    period: '9/2018 – 7/2020',
+  },
+  {
+    id: 'henan-teacher',
+    title: 'Teacher',
+    organization: 'Kindergarten of Henan Province',
+    location: 'Henan, China',
+    period: '9/2016 – 7/2018',
+  },
+  {
+    id: 'henan-intern',
+    title: 'Intern',
+    organization: 'Kindergarten of Henan Province',
+    location: 'Henan, China',
+    period: '2/2016 – 7/2016',
+  },
 ];
 
 export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate }) => {
@@ -164,243 +81,135 @@ export const ExperienceSection: React.FC<ExperienceSectionProps> = ({ onNavigate
   return (
     <section 
       id="experience-section"
-      className="relative w-full bg-[#1D2440] text-white pt-16 sm:pt-20 pb-24 sm:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden border-t border-white/10"
+      className="relative w-full bg-[#EFE8DC] text-[#4C4747] pt-16 sm:pt-20 pb-24 sm:pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden"
     >
       {/* Ambient Radial Glowing Backdrops */}
       <div 
         aria-hidden="true" 
-        className="absolute top-10 left-1/4 w-[500px] h-[500px] bg-[#FF9BB4]/5 rounded-full blur-3xl pointer-events-none -translate-x-1/2" 
+        className="absolute top-10 left-1/4 w-[500px] h-[500px] bg-[#DC9BB5]/10 rounded-full blur-3xl pointer-events-none -translate-x-1/2" 
       />
       <div 
         aria-hidden="true" 
-        className="absolute top-1/2 right-10 w-[600px] h-[600px] bg-[#709A02]/5 rounded-full blur-3xl pointer-events-none" 
+        className="absolute top-1/2 right-10 w-[600px] h-[600px] bg-[#709A02]/8 rounded-full blur-3xl pointer-events-none" 
       />
       <div 
         aria-hidden="true" 
-        className="absolute bottom-20 left-10 w-[550px] h-[550px] bg-[#FFD166]/5 rounded-full blur-3xl pointer-events-none" 
+        className="absolute bottom-20 left-10 w-[550px] h-[550px] bg-[#C8963E]/8 rounded-full blur-3xl pointer-events-none" 
       />
 
       <div className="relative max-w-5xl mx-auto z-10">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-14 sm:mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/15 backdrop-blur-md mb-4 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-[#FF9BB4] animate-pulse" />
-            <span className="text-xs sm:text-sm font-mono font-bold uppercase tracking-widest text-[#FF9BB4]">
-              Career Journey &amp; Practice
-            </span>
+        {/* Self-Introduction Block (Below "About me", Above "Professional Experience") */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: "-10%" }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.5 }}
+          className="-mt-6 sm:-mt-8 mb-10 sm:mb-14 pb-4 sm:pb-6 flex flex-col md:flex-row md:items-center justify-between gap-8 md:gap-12"
+        >
+          {/* Left: Self-Introduction Text */}
+          <div className="md:w-7/12 lg:w-[54%] text-left">
+            <p className="text-base sm:text-lg md:text-xl text-[#4C4747] font-medium leading-relaxed font-inter">
+              Hi, I&apos;m an educator with over 8 years of experience in curriculum development, teaching, and educational management. I&apos;m currently pursuing a master&apos;s degree in Instructional Design and Technology at California State University, San Bernardino.
+            </p>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold font-inter tracking-tight text-white mb-4 sm:mb-5">
+          {/* Right (Parallel): Four Button-Styled Tags */}
+          <div className="md:w-5/12 lg:w-[44%] grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
+            {[
+              'Instructional Design',
+              'Curriculum Development',
+              'UI/UX Design',
+              'E-Learning Development',
+            ].map((tag, idx) => (
+              <span
+                key={idx}
+                className="inline-flex items-center justify-center px-4 py-2.5 rounded-xl bg-[#DC9BB5] text-[#4C4747] font-inter font-semibold text-xs sm:text-sm shadow-[0_4px_14px_rgba(220,155,181,0.35)] border border-[#4C4747]/10 text-center whitespace-nowrap transition-transform hover:-translate-y-0.5 select-none"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Section Header */}
+        <div className="mb-8 sm:mb-10">
+          <h2 className="text-3xl sm:text-4xl font-extrabold font-inter tracking-tight text-[#4C4747] text-left">
             Professional Experience
           </h2>
-
-          <p className="text-sm sm:text-base md:text-lg text-slate-300 leading-relaxed font-normal">
-            Bridging instructional design theory, adaptive learning technologies, and curriculum engineering across K–12 and early learning systems in the United States and China.
-          </p>
-
-          {/* Quick Metrics Bar */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 mt-8 pt-6 border-t border-white/10 text-left">
-            <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10">
-              <span className="text-xl sm:text-2xl font-black text-[#FF9BB4] font-inter block">8+ Years</span>
-              <span className="text-xs text-slate-400 font-medium">Educational Practice &amp; ID</span>
-            </div>
-            <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10">
-              <span className="text-xl sm:text-2xl font-black text-[#709A02] font-inter block">Management</span>
-              <span className="text-xs text-slate-400 font-medium">Educational Leadership</span>
-            </div>
-            <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10">
-              <span className="text-xl sm:text-2xl font-black text-[#FFD166] font-inter block">English Learning</span>
-              <span className="text-xs text-slate-400 font-medium">Curricula Development</span>
-            </div>
-            <div className="p-3.5 rounded-2xl bg-white/5 border border-white/10">
-              <span className="text-xl sm:text-2xl font-black text-[#93C5FD] font-inter block">STEAM &amp; Tech</span>
-              <span className="text-xs text-slate-400 font-medium">Curricula &amp; Robotics</span>
-            </div>
-          </div>
         </div>
 
-        {/* Timeline List of Experiences */}
-        <div className="space-y-8 sm:space-y-12">
+        {/* Divider-Separated List of Experiences (No Cards) */}
+        <div className="divide-y divide-[#4C4747]/15 border-t border-b border-[#4C4747]/15">
           {EXPERIENCES.map((exp, expIdx) => (
             <motion.div
               key={exp.id}
-              initial={{ opacity: 0, y: 25 }}
+              initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: expIdx * 0.1 }}
-              className={`relative rounded-3xl bg-gradient-to-br ${exp.bgGradient} border ${exp.borderAccent} p-6 sm:p-8 md:p-10 shadow-[0_12px_40px_rgba(0,0,0,0.35)] backdrop-blur-sm transition-all hover:border-white/30`}
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.4, delay: expIdx * 0.06 }}
+              className="py-6 sm:py-7 flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-6"
             >
-              {/* Card Top Banner */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-6 border-b border-white/15">
-                <div className="space-y-1">
-                  <div className="flex flex-wrap items-center gap-2">
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-extrabold font-inter text-white tracking-tight">
-                      {exp.organization}
-                    </h3>
-                    <span 
-                      style={{ color: exp.accentColor, borderColor: `${exp.accentColor}40`, backgroundColor: `${exp.accentColor}15` }}
-                      className="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold border"
-                    >
-                      {exp.badge}
-                    </span>
-                  </div>
-
-                  <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-slate-300 font-mono">
-                    <span className="inline-flex items-center gap-1.5 text-slate-400">
-                      <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                      {exp.location}
-                    </span>
-                    {exp.overallPeriod && (
-                      <>
-                        <span className="text-white/30">•</span>
-                        <span className="inline-flex items-center gap-1.5 text-slate-300">
-                          <Calendar className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                          Overall: {exp.overallPeriod}
-                        </span>
-                      </>
-                    )}
-                  </div>
-                </div>
+              {/* Left: Job Title & Company Name */}
+              <div className="text-left space-y-1">
+                <h3 className="text-lg sm:text-xl font-bold font-inter text-[#4C4747] tracking-tight">
+                  {exp.title}
+                </h3>
+                <p className="text-sm sm:text-base font-medium font-inter text-[#9D988F]">
+                  {exp.organization}
+                </p>
               </div>
 
-              {/* Roles Under this Organization */}
-              <div className="mt-6 sm:mt-8 space-y-6 sm:space-y-8">
-                {exp.roles.map((role, roleIdx) => (
-                  <div 
-                    key={roleIdx}
-                    className={`relative ${exp.roles.length > 1 && roleIdx > 0 ? 'pt-6 border-t border-white/10' : ''}`}
-                  >
-                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1.5 mb-3.5">
-                      <div className="flex items-center gap-2.5">
-                        <span 
-                          style={{ backgroundColor: exp.accentColor }}
-                          className="w-2.5 h-2.5 rounded-full shrink-0 shadow-[0_0_8px_currentColor]"
-                        />
-                        <h4 className="text-lg sm:text-xl font-bold text-white tracking-tight font-inter">
-                          {role.title}
-                        </h4>
-                      </div>
-                      
-                      <span className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-mono text-slate-300 bg-white/10 px-3 py-1 rounded-full border border-white/15 w-fit">
-                        <Calendar className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                        {role.period}
-                      </span>
-                    </div>
-
-                    <ul className="space-y-2.5 sm:space-y-3 text-xs sm:text-sm md:text-[15px] text-slate-300 leading-relaxed pl-1">
-                      {role.highlights.map((point, pIdx) => (
-                        <li key={pIdx} className="flex items-start gap-2.5">
-                          <span 
-                            style={{ color: exp.accentColor }} 
-                            className="mt-1 font-bold text-sm shrink-0"
-                          >
-                            •
-                          </span>
-                          <span className="text-slate-200">
-                            {point}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-
-              {/* Skill Tags Strip */}
-              <div className="mt-7 pt-5 border-t border-white/15 flex flex-wrap items-center gap-2">
-                <span className="text-[11px] font-mono uppercase tracking-wider text-slate-400 font-semibold mr-1">
-                  Key Competencies:
-                </span>
-                {exp.tags.map((tag, tIdx) => (
-                  <span
-                    key={tIdx}
-                    className="text-xs font-mono px-2.5 py-1 rounded-lg bg-white/5 border border-white/10 text-slate-300 font-medium"
-                  >
-                    #{tag}
-                  </span>
-                ))}
+              {/* Right: Location & Period */}
+              <div className="text-left sm:text-right space-y-1 shrink-0">
+                <p className="text-sm sm:text-base font-medium font-inter text-[#4C4747]">
+                  {exp.location}
+                </p>
+                <p className="text-xs sm:text-sm font-mono text-[#9D988F]">
+                  {exp.period}
+                </p>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Portfolio Chapter Pathways */}
-        <div className="mt-16 sm:mt-24 pt-12 border-t border-white/10">
-          <div className="text-center mb-8">
-            <span className="text-xs font-mono font-bold tracking-widest text-slate-400 uppercase block mb-1">
-              Explore Featured Works
-            </span>
-            <h3 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-              Dive into Yu Liu’s Portfolio
+        {/* Reflection Section: From Experience to Intention */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: 0.5 }}
+          className="mt-16 sm:mt-24 text-left"
+        >
+          <div className="mb-6 sm:mb-8">
+            <h2 className="text-3xl sm:text-4xl font-extrabold font-inter tracking-tight text-[#4C4747] mb-2 sm:mb-3">
+              From Experience to Intention
+            </h2>
+            <h3 className="text-lg sm:text-xl font-semibold font-inter text-[#DC9BB5]">
+              My Reflection on My IDT Learning Journey
             </h3>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <button
-              type="button"
-              onClick={() => onNavigate?.('foundation')}
-              className="group p-5 rounded-2xl bg-white/5 hover:bg-[#FF9BB4]/15 border border-white/10 hover:border-[#FF9BB4]/50 transition-all text-left cursor-pointer"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-xs font-mono font-bold text-[#FF9BB4]">01. FOUNDATION</span>
-                <ArrowRight className="w-4 h-4 text-[#FF9BB4] transition-transform group-hover:translate-x-1" />
-              </div>
-              <h4 className="text-base font-bold text-white mb-1">Learning Theories</h4>
-              <p className="text-xs text-slate-400 leading-normal">Cognitive load, ADDIE, Gagné &amp; constructivist design foundations.</p>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => onNavigate?.('research')}
-              className="group p-5 rounded-2xl bg-white/5 hover:bg-[#FFD166]/15 border border-white/10 hover:border-[#FFD166]/50 transition-all text-left cursor-pointer"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-xs font-mono font-bold text-[#FFD166]">02. RESEARCH</span>
-                <ArrowRight className="w-4 h-4 text-[#FFD166] transition-transform group-hover:translate-x-1" />
-              </div>
-              <h4 className="text-base font-bold text-white mb-1">Empirical Inquiry</h4>
-              <p className="text-xs text-slate-400 leading-normal">Learning analytics, telemetry data, and academic evaluation.</p>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => onNavigate?.('design')}
-              className="group p-5 rounded-2xl bg-white/5 hover:bg-[#709A02]/15 border border-white/10 hover:border-[#709A02]/50 transition-all text-left cursor-pointer"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-xs font-mono font-bold text-[#709A02]">03. DESIGN</span>
-                <ArrowRight className="w-4 h-4 text-[#709A02] transition-transform group-hover:translate-x-1" />
-              </div>
-              <h4 className="text-base font-bold text-white mb-1">Curriculum &amp; Systems</h4>
-              <p className="text-xs text-slate-400 leading-normal">Microlearning, Notion architectures &amp; grammar transfer systems.</p>
-            </button>
-
-            <button
-              type="button"
-              onClick={() => onNavigate?.('technology')}
-              className="group p-5 rounded-2xl bg-white/5 hover:bg-[#6EE7B7]/15 border border-white/10 hover:border-[#6EE7B7]/50 transition-all text-left cursor-pointer"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-xs font-mono font-bold text-[#6EE7B7]">04. TECHNOLOGY</span>
-                <ArrowRight className="w-4 h-4 text-[#6EE7B7] transition-transform group-hover:translate-x-1" />
-              </div>
-              <h4 className="text-base font-bold text-white mb-1">Interactive EdTech</h4>
-              <p className="text-xs text-slate-400 leading-normal">Storyline simulations, web interactivity, and LMS integrations.</p>
-            </button>
+          <div className="space-y-4 sm:space-y-5 text-base sm:text-lg text-[#4C4747] leading-relaxed font-inter">
+            <p>
+              Before studying IDT, I had already spent years working in education, developing curricula, and exploring different ways to make learning more engaging. I enjoyed creating learning experiences, but I often relied on my own experience and intuition to make design decisions.
+            </p>
+            <p>
+              When I started this program, I thought I would mainly learn new design models and technologies. But along the way, I realized that IDT is much more than that. I began to think more deeply about how people learn, why learning problems happen, and how research and evidence can guide my decisions. I also learned that sometimes the best solution is not to create another course.
+            </p>
           </div>
+        </motion.div>
 
-          {/* Back to top button */}
-          <div className="flex justify-center mt-12">
-            <button
-              type="button"
-              onClick={scrollToTop}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-xs sm:text-sm font-medium text-white transition-all cursor-pointer shadow-md hover:scale-105 active:scale-95"
-            >
-              <ChevronUp className="w-4 h-4" />
-              <span>Back to Top</span>
-            </button>
-          </div>
+        {/* Back to top button */}
+        <div className="flex justify-center mt-12 sm:mt-16">
+          <button
+            type="button"
+            onClick={scrollToTop}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#F7F3EB] hover:bg-white border border-[#4C4747]/15 text-xs sm:text-sm font-medium text-[#4C4747] transition-all cursor-pointer shadow-sm hover:scale-105 active:scale-95"
+          >
+            <ChevronUp className="w-4 h-4" />
+            <span>Back to Top</span>
+          </button>
         </div>
 
       </div>

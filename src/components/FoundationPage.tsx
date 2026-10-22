@@ -228,7 +228,7 @@ const TimelineParallaxRow: React.FC<TimelineParallaxRowProps> = ({
 
   return (
     <motion.div 
-      className="absolute inset-x-0 top-0 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 lg:gap-12 items-start"
+      className="absolute inset-x-0 top-0 grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-8 lg:gap-12 items-start"
       style={{
         pointerEvents: rowPointerEvents,
       }}
@@ -238,7 +238,7 @@ const TimelineParallaxRow: React.FC<TimelineParallaxRowProps> = ({
         style={{
           y: yLeft,
         }}
-        className="md:col-span-4 h-[168px] sm:h-[192px] flex flex-col justify-center space-y-2 text-left"
+        className="md:col-span-4 h-auto md:h-[168px] lg:h-[192px] flex flex-col justify-center space-y-1 sm:space-y-2 text-left"
       >
         {/* Line 0: Era */}
         <BlindTextLine
@@ -252,7 +252,7 @@ const TimelineParallaxRow: React.FC<TimelineParallaxRowProps> = ({
         >
           <p 
             style={{ fontFamily: 'Impact, "Arial Black", sans-serif' }}
-            className="text-white text-base sm:text-lg uppercase tracking-wider leading-none"
+            className="text-[#4C4747] text-sm sm:text-base md:text-lg uppercase tracking-wider leading-none"
           >
             {milestone.era}
           </p>
@@ -270,7 +270,7 @@ const TimelineParallaxRow: React.FC<TimelineParallaxRowProps> = ({
         >
           <h3 
             style={{ fontFamily: 'Impact, "Arial Black", sans-serif' }}
-            className="text-white text-xl sm:text-2xl md:text-[1.75rem] leading-tight pt-1 tracking-wide font-normal"
+            className="text-[#4C4747] text-lg sm:text-2xl md:text-[1.75rem] leading-tight pt-0.5 sm:pt-1 tracking-wide font-normal"
           >
             {milestone.title}
           </h3>
@@ -288,7 +288,7 @@ const TimelineParallaxRow: React.FC<TimelineParallaxRowProps> = ({
         >
           <p 
             style={{ fontFamily: 'Impact, "Arial Black", sans-serif' }}
-            className="text-[#FF9BB4] text-base sm:text-lg md:text-xl pt-0.5 tracking-wide font-normal"
+            className="text-[#DC9BB5] text-sm sm:text-lg md:text-xl pt-0.5 tracking-wide font-normal"
           >
             {milestone.pioneer}
           </p>
@@ -301,9 +301,9 @@ const TimelineParallaxRow: React.FC<TimelineParallaxRowProps> = ({
           y: yCenter,
           opacity: imgOpacity,
         }}
-        className="md:col-span-3 flex justify-start md:justify-center"
+        className="md:col-span-3 flex justify-start md:justify-center my-1 md:my-0"
       >
-        <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-xl overflow-hidden shadow-lg border border-white/15 bg-[#252E4D] flex-shrink-0 origin-top-right scale-[1.5] -translate-x-[20%]">
+        <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-xl overflow-hidden shadow-lg border border-[#4C4747]/15 bg-[#E6DEC8] flex-shrink-0 origin-center md:origin-top-right md:scale-[1.2] lg:scale-[1.5] md:-translate-x-[15%] lg:-translate-x-[20%]">
           <motion.img 
             src={milestone.image} 
             alt={milestone.pioneer} 
@@ -321,7 +321,7 @@ const TimelineParallaxRow: React.FC<TimelineParallaxRowProps> = ({
         style={{
           y: yRight,
         }}
-        className="md:col-span-5 h-[168px] sm:h-[192px] flex flex-col justify-center text-left"
+        className="md:col-span-5 h-auto md:h-[168px] lg:h-[192px] flex flex-col justify-center text-left"
       >
         <BlindTextLine
           cursor={cursor}
@@ -332,7 +332,7 @@ const TimelineParallaxRow: React.FC<TimelineParallaxRowProps> = ({
           exitEnd={idx === 5 ? 1.04 : 0.66}
           exitRetractUp={true}
         >
-          <p className="text-slate-200 text-xs sm:text-[13.5px] md:text-sm lg:text-[14.5px] leading-relaxed font-normal">
+          <p className="text-[#4C4747]/90 text-xs sm:text-[13.5px] md:text-sm lg:text-[14.5px] leading-relaxed font-normal">
             {milestone.description}
           </p>
         </BlindTextLine>
@@ -348,7 +348,7 @@ const TimelineParallaxRow: React.FC<TimelineParallaxRowProps> = ({
           }}
           className="col-span-1 md:col-span-12 flex justify-center pointer-events-none mt-2 sm:mt-0"
         >
-          <ChevronDown className="w-6 h-6 sm:w-7 sm:h-7 text-slate-400/80 animate-bounce filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]" />
+          <ChevronDown className="w-6 h-6 sm:w-7 sm:h-7 text-[#9D988F] animate-bounce filter drop-shadow-[0_2px_8px_rgba(76,71,71,0.15)]" />
         </motion.div>
       )}
     </motion.div>
@@ -389,34 +389,34 @@ const LearningTheoryRow: React.FC<{
       {/* Left Theory Name (Vertically centered with right text box) */}
       <div className="md:col-span-4 min-w-0">
         <h3 
-          className="text-[#FF9BB4] text-2xl sm:text-3xl md:text-3xl lg:text-[clamp(1.75rem,2.3vw,2.75rem)] xl:text-[2.75rem] font-extrabold tracking-tight whitespace-nowrap"
+          className="text-[#DC9BB5] text-2xl sm:text-3xl md:text-3xl lg:text-[clamp(1.75rem,2.3vw,2.75rem)] xl:text-[2.75rem] font-extrabold tracking-tight whitespace-nowrap"
           style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" }}
         >
           {theory.name}
         </h3>
       </div>
 
-      {/* Right Structured Breakdown: 0.5px white vertical divider at left 10%, text box shrunk 25% from left with fixed right edge */}
+      {/* Right Structured Breakdown: 0.5px divider at left 10%, text box shrunk 25% from left with fixed right edge */}
       <div className="md:col-span-8 relative">
-        {/* Desktop: 0.5px White vertical divider at 10% with scroll-driven draw-down animation */}
+        {/* Desktop: 0.5px vertical divider at 10% with scroll-driven draw-down animation */}
         <motion.div 
           style={{
             scaleY,
             opacity,
             transformOrigin: 'top',
           }}
-          className="hidden md:block absolute left-[10%] top-0 bottom-0 w-[0.5px] bg-white pointer-events-none origin-top" 
+          className="hidden md:block absolute left-[10%] top-0 bottom-0 w-[0.5px] bg-[#4C4747]/40 pointer-events-none origin-top" 
           aria-hidden="true"
         />
 
-        {/* Mobile: 0.5px White vertical divider at left edge with scroll-driven draw-down animation */}
+        {/* Mobile: 0.5px vertical divider at left edge with scroll-driven draw-down animation */}
         <motion.div 
           style={{
             scaleY,
             opacity,
             transformOrigin: 'top',
           }}
-          className="md:hidden absolute left-0 top-0 bottom-0 w-[0.5px] bg-white pointer-events-none origin-top" 
+          className="md:hidden absolute left-0 top-0 bottom-0 w-[0.5px] bg-[#4C4747]/40 pointer-events-none origin-top" 
           aria-hidden="true"
         />
 
@@ -424,30 +424,30 @@ const LearningTheoryRow: React.FC<{
         <div className="pl-4 md:pl-[25%] space-y-4">
           {/* Core Idea */}
           <div>
-            <h4 className="text-white font-extrabold text-xs tracking-wider uppercase mb-1">
+            <h4 className="text-[#4C4747] font-extrabold text-xs tracking-wider uppercase mb-1">
               CORE IDEA
             </h4>
-            <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
+            <p className="text-[#9D988F] text-sm sm:text-base leading-relaxed">
               {theory.coreIdea}
             </p>
           </div>
 
           {/* Design Implication */}
           <div>
-            <h4 className="text-white font-extrabold text-xs tracking-wider uppercase mb-1">
+            <h4 className="text-[#4C4747] font-extrabold text-xs tracking-wider uppercase mb-1">
               DESIGN IMPLICATION
             </h4>
-            <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
+            <p className="text-[#9D988F] text-sm sm:text-base leading-relaxed">
               {theory.designImplication}
             </p>
           </div>
 
           {/* Key Question */}
           <div>
-            <h4 className="text-white font-extrabold text-xs tracking-wider uppercase mb-1">
+            <h4 className="text-[#4C4747] font-extrabold text-xs tracking-wider uppercase mb-1">
               KEY QUESTION
             </h4>
-            <p className="text-slate-200 text-sm sm:text-base italic leading-relaxed">
+            <p className="text-[#9D988F] text-sm sm:text-base italic leading-relaxed">
               {theory.keyQuestion}
             </p>
           </div>
@@ -493,8 +493,8 @@ const TypingBold: React.FC<TypingBoldProps> = ({ children }) => {
             key={index}
             className={
               isBold
-                ? 'font-bold text-white transition-colors duration-200'
-                : 'font-normal text-gray-400 transition-colors duration-200'
+                ? 'font-bold text-[#4C4747] transition-colors duration-200'
+                : 'font-normal text-[#9D988F] transition-colors duration-200'
             }
           >
             {char}
@@ -540,6 +540,14 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
   };
 
   // Scroll Pinned Animation for Section 2 (What is IDT?)
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const definitionTrackRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress: defScrollProgress } = useScroll({
     target: definitionTrackRef,
@@ -553,89 +561,13 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
   });
 
   // Phase 1: Folder glides across to the right text box along a subtle natural arc (ends at ~0.58)
-  const folderArcX = useTransform(smoothDefProgress, [0.05, 0.58], ["0%", "117%"]);
-  const folderArcY = useTransform(smoothDefProgress, [0.05, 0.32, 0.58], ["0px", "14px", "0px"]);
+  const folderArcX = useTransform(smoothDefProgress, [0.05, 0.58], isMobile ? ["0%", "0%"] : ["0%", "117%"]);
+  const folderArcY = useTransform(smoothDefProgress, [0.05, 0.32, 0.58], isMobile ? ["0px", "45%", "95%"] : ["0px", "14px", "0px"]);
   const folderArcRotate = useTransform(smoothDefProgress, [0.05, 0.58], ["0deg", "-5deg"]);
 
   // Phase 2: After folder arrives on the right, right text and green tag fade in as user continues scrolling
   const rightCardOpacity = useTransform(smoothDefProgress, [0.58, 0.82], [0, 1]);
   const rightCardY = useTransform(smoothDefProgress, [0.58, 0.82], ["10px", "0px"]);
-
-  // Scroll Pinned Animation for Section 8 (Workflow: "From Learning Theory to Design Practice")
-  const workflowTrackRef = useRef<HTMLDivElement>(null);
-
-  // 1. Dedicated Scroll Progress for the Title: Starts 20% earlier as the section enters, finishes before pinning
-  const { scrollYProgress: titleScrollProgress } = useScroll({
-    target: workflowTrackRef,
-    offset: ["start 80%", "start start"],
-  });
-
-  const smoothTitleProgress = useSpring(titleScrollProgress, {
-    stiffness: 160,
-    damping: 24,
-    mass: 0.2,
-  });
-
-  // Center Title: "A Learner Before a Designer" pops up from center 20% BEFORE the screen pins
-  const centerTitleOpacity = useTransform(smoothTitleProgress, [0.05, 0.85], [0, 1]);
-  const centerTitleScale = useTransform(smoothTitleProgress, [0.05, 0.85, 1.0], [0.5, 1.08, 1]);
-
-  // 2. Scroll Progress for the Pinned Cards & Lines (engaged while screen is fixed)
-  const { scrollYProgress: workflowScrollProgress } = useScroll({
-    target: workflowTrackRef,
-    offset: ["start start", "end end"],
-  });
-
-  const smoothWorkflow = useSpring(workflowScrollProgress, {
-    stiffness: 140,
-    damping: 24,
-    mass: 0.2,
-  });
-
-  // Step 01 Card: Fade in from left to right (x: -40 -> 0, opacity: 0 -> 1) [0.02, 0.08]
-  const step1Opacity = useTransform(smoothWorkflow, [0.02, 0.08], [0, 1]);
-  const step1X = useTransform(smoothWorkflow, [0.02, 0.09], [-40, 0]);
-
-  // Line 1 (Step 01 -> Step 02): Fade in / expand from left to right [0.09, 0.15]
-  const line1Opacity = useTransform(smoothWorkflow, [0.09, 0.14], [0, 1]);
-  const line1ScaleX = useTransform(smoothWorkflow, [0.09, 0.15], [0, 1]);
-
-  // Step 02 Card: Fade in from left to right [0.15, 0.22]
-  const step2Opacity = useTransform(smoothWorkflow, [0.15, 0.21], [0, 1]);
-  const step2X = useTransform(smoothWorkflow, [0.15, 0.22], [-40, 0]);
-
-  // Line 2 (Step 02 -> Step 03): Fade in / expand from left to right [0.22, 0.28]
-  const line2Opacity = useTransform(smoothWorkflow, [0.22, 0.27], [0, 1]);
-  const line2ScaleX = useTransform(smoothWorkflow, [0.22, 0.28], [0, 1]);
-
-  // Step 03 Card: Fade in from left to right [0.28, 0.35]
-  const step3Opacity = useTransform(smoothWorkflow, [0.28, 0.34], [0, 1]);
-  const step3X = useTransform(smoothWorkflow, [0.28, 0.35], [-40, 0]);
-
-  // Vertical Line (Step 03 -> Step 04): Fade in / expand from top to bottom [0.35, 0.42]
-  const vertLineOpacity = useTransform(smoothWorkflow, [0.35, 0.40], [0, 1]);
-  const vertLineScaleY = useTransform(smoothWorkflow, [0.35, 0.42], [0, 1]);
-
-  // Step 04 Card: Fade in from top to bottom (y: -40 -> 0, opacity: 0 -> 1) [0.42, 0.49]
-  const step4Opacity = useTransform(smoothWorkflow, [0.42, 0.48], [0, 1]);
-  const step4Y = useTransform(smoothWorkflow, [0.42, 0.49], [-40, 0]);
-
-  // Line 4 (Step 04 -> Step 05): Fade in / expand from right to left [0.49, 0.55]
-  const line4Opacity = useTransform(smoothWorkflow, [0.49, 0.54], [0, 1]);
-  const line4ScaleX = useTransform(smoothWorkflow, [0.49, 0.55], [0, 1]);
-
-  // Step 05 Card: Fade in from right to left (x: 40 -> 0, opacity: 0 -> 1) [0.55, 0.62]
-  const step5Opacity = useTransform(smoothWorkflow, [0.55, 0.61], [0, 1]);
-  const step5X = useTransform(smoothWorkflow, [0.55, 0.62], [40, 0]);
-
-  // Line 5 (Step 05 -> Step 06): Fade in / expand from right to left [0.62, 0.68]
-  const line5Opacity = useTransform(smoothWorkflow, [0.62, 0.67], [0, 1]);
-  const line5ScaleX = useTransform(smoothWorkflow, [0.62, 0.68], [0, 1]);
-
-  // Step 06 Card: Fade in from right to left (x: 40 -> 0, opacity: 0 -> 1) [0.68, 0.72]
-  // [0.72 -> 1.00] provides an extended stationary hold time for reading the complete workflow
-  const step6Opacity = useTransform(smoothWorkflow, [0.68, 0.71], [0, 1]);
-  const step6X = useTransform(smoothWorkflow, [0.68, 0.72], [40, 0]);
 
   // Dynamic horizontal alignment: Align left column subtitles of Section 3 with Section 2's left blockquote
   const leftQuoteRef = useRef<HTMLQuoteElement>(null);
@@ -689,14 +621,6 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
   const historyCursor = useTransform(smoothHistoryProgress, [0.04, 0.88], [0, 5], {
     clamp: true,
   });
-
-  const [isMobile, setIsMobile] = useState(false);
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
 
   const historyRowStep = isMobile ? 320 : 260;
 
@@ -879,7 +803,7 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
-      className="w-full min-h-screen bg-[#1D2440] text-white flex flex-col items-center pt-24 sm:pt-28 pb-0 selection:bg-[#FF9BB4] selection:text-[#1D2440]"
+      className="w-full min-h-screen bg-[#EFE8DC] text-[#4C4747] flex flex-col items-center pt-24 sm:pt-28 pb-0 selection:bg-[#DC9BB5] selection:text-[#4C4747]"
     >
       {/* 1. Page Main Title: "What I learned" split into "What I" (bottom layer), folder icon (middle layer), and "learned" (top layer), proportional across preview and fullscreen */}
       <div 
@@ -893,7 +817,7 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
           {/* Layer 1: What I (Bottom Layer, z-10) */}
           <span 
             id="foundation-title-what-i"
-            className="relative z-10 text-[#FF9BB4] font-black text-5xl sm:text-7xl md:text-[95px] lg:text-[120px] tracking-tight leading-none font-sans mr-2 sm:mr-0"
+            className="relative z-10 text-[#DC9BB5] font-black text-5xl sm:text-7xl md:text-[95px] lg:text-[120px] tracking-tight leading-none font-sans mr-2 sm:mr-0"
             style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif" }}
           >
             What I
@@ -965,7 +889,7 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
           {/* Layer 3: learned (Top Layer, z-30) */}
           <span 
             id="foundation-title-learned"
-            className="relative z-30 text-[#FF9BB4] font-black text-5xl sm:text-7xl md:text-[95px] lg:text-[120px] tracking-tight leading-none font-sans"
+            className="relative z-30 text-[#DC9BB5] font-black text-5xl sm:text-7xl md:text-[95px] lg:text-[120px] tracking-tight leading-none font-sans"
             style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif" }}
           >
             learned
@@ -985,15 +909,15 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
               id="idt-definition-title"
               className="text-2xl sm:text-4xl md:text-[44px] font-extrabold text-center mb-8 md:mb-12 tracking-tight leading-tight"
             >
-              <span className="block text-white mb-2 font-black">What is</span>
-              <span className="block text-[#FF9BB4] font-black">Instructional Design &amp; Technology?</span>
+              <span className="block text-[#4C4747] mb-2 font-black">What is</span>
+              <span className="block text-[#DC9BB5] font-black">Instructional Design &amp; Technology?</span>
             </h2>
 
             {/* Two Manila Kraft Folder Quote Cards */}
-            <div className="grid grid-cols-2 gap-6 sm:gap-8 md:gap-10 items-stretch justify-center w-full mx-auto relative">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-stretch justify-center w-full mx-auto relative">
               
-              {/* Left Definition Column (Shifted upward by 7%) */}
-              <div className="relative flex items-center justify-start -translate-y-[7%]">
+              {/* Left Definition Column */}
+              <div className="relative flex items-center justify-start md:-translate-y-[7%]">
                 
                 {/* Layer 1: Moving Manila Folder Graphic (Moves along arc on scroll) */}
                 <motion.div 
@@ -1005,7 +929,7 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
                   className="absolute inset-0 z-10 flex items-center justify-start origin-top-left pointer-events-none"
                 >
                   <div 
-                    className="relative w-full aspect-[3508/2480] -translate-x-[25%] origin-top-left scale-[1.35] filter drop-shadow-[0_16px_36px_rgba(0,0,0,0.45)]"
+                    className="relative w-full aspect-[3508/2480] origin-center md:origin-top-left scale-100 md:scale-[1.35] md:-translate-x-[25%] filter drop-shadow-[0_16px_36px_rgba(0,0,0,0.45)]"
                   >
                     <img 
                       src={artworkFolderImg} 
@@ -1019,21 +943,21 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
                 {/* Layer 2: Static Quote Text and Green Badge (Stay in place, do not move) */}
                 <div 
                   id="foundation-quote-card-left"
-                  className="relative z-20 w-full aspect-[3508/2480] -translate-x-[25%] origin-top-left scale-[1.35]"
+                  className="relative z-20 w-full aspect-[3508/2480] origin-center md:origin-top-left scale-100 md:scale-[1.35] md:-translate-x-[25%]"
                 >
                   {/* Text Overlay locked to original coordinates */}
                   <div className="absolute top-[26%] left-[16%] right-[16%] bottom-[22%] flex flex-col justify-start">
                     <blockquote 
                       ref={leftQuoteRef}
                       id="foundation-quote-left-blockquote"
-                      className="text-[clamp(12px,1.35vw,18px)] font-bold leading-[1.6] tracking-normal font-sans text-white drop-shadow-sm select-text"
+                      className="text-[clamp(11px,1.35vw,18px)] font-bold leading-[1.5] sm:leading-[1.6] tracking-normal font-sans text-[#4C4747] drop-shadow-sm select-text"
                     >
                       “IDT encompasses the analysis of learning and performance problems and the design, development, implementation, evaluation, and management of instructional and non-instructional processes and resources.”
                     </blockquote>
                   </div>
 
                   {/* Green Tape / Citation Badge locked at bottom right */}
-                  <div className="absolute bottom-[10%] right-[12%] translate-x-[10%] rotate-[-10deg] bg-[#6A9F68] text-white font-bold text-[clamp(9px,0.9vw,12px)] px-3 py-1.5 rounded-sm shadow-md border border-[#568754]/80 select-none">
+                  <div className="absolute bottom-[10%] right-[12%] translate-x-[10%] rotate-[-10deg] bg-[#6A9F68] text-white font-bold text-[clamp(8.5px,0.9vw,12px)] px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-sm shadow-md border border-[#568754]/80 select-none">
                     Reiser, Carr-Chellman, &amp; Dempsey, 2025
                   </div>
                 </div>
@@ -1046,10 +970,10 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
                   opacity: rightCardOpacity,
                   y: rightCardY,
                 }}
-                className="relative z-20 flex flex-col justify-center translate-x-[10%]"
+                className="relative z-20 flex flex-col justify-center translate-x-0 md:translate-x-[10%] mt-4 md:mt-0"
               >
                 {/* Green "Yu Liu" Tape Tag (Scaled up 10%, 100% opaque solid white text) */}
-                <div className="self-start mb-4 rotate-[3deg] scale-[1.1] origin-left bg-[#6A9F68] px-4 py-1.5 rounded-sm shadow-md border border-[#568754]/80 select-none">
+                <div className="self-start mb-3 sm:mb-4 rotate-[3deg] scale-[1.0] sm:scale-[1.1] origin-left bg-[#6A9F68] px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-sm shadow-md border border-[#568754]/80 select-none">
                   <span 
                     className="text-white font-black text-xs sm:text-sm tracking-wide block"
                     style={{ color: '#FFFFFF', opacity: 1 }}
@@ -1061,7 +985,7 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
                 <div className="relative w-full">
                   <blockquote 
                     id="foundation-quote-card-right-text"
-                    className="text-[clamp(16px,1.6vw,23px)] md:text-[23px] font-bold leading-[1.6] tracking-normal font-sans text-black translate-y-[5%] select-text antialiased"
+                    className="text-[clamp(14px,1.6vw,23px)] md:text-[23px] font-bold leading-[1.5] sm:leading-[1.6] tracking-normal font-sans text-[#4C4747] translate-y-[2%] md:translate-y-[5%] select-text antialiased"
                   >
                     “I see IDT as a field that integrates research, learning theory, systematic design processes, and appropriate technology to develop evidence-informed solutions for instructional and non-instructional problems, improving learning experiences and performance.”
                   </blockquote>
@@ -1070,9 +994,9 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
 
             </div>
 
-            {/* Subtle Downward Indicator Chevron (Shifted down total 190%, restored original subtle slate color, elevated z-index above moving folder) */}
+            {/* Subtle Downward Indicator Chevron */}
             <div className="relative z-30 flex justify-center mt-6 sm:mt-8 translate-y-[190%] pointer-events-none">
-              <ChevronDown className="w-6 h-6 sm:w-7 sm:h-7 text-slate-400/80 animate-bounce filter drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]" />
+              <ChevronDown className="w-6 h-6 sm:w-7 sm:h-7 text-[#9D988F] animate-bounce filter drop-shadow-[0_2px_8px_rgba(76,71,71,0.15)]" />
             </div>
           </section>
         </div>
@@ -1088,8 +1012,8 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
           id="foundation-history-section"
           className="sticky top-0 h-screen w-full flex flex-col justify-start pt-14 sm:pt-20 overflow-hidden translate-y-[5%]"
         >
-          <h2 className="text-3xl sm:text-5xl font-extrabold text-center mb-10 sm:mb-14 tracking-tight flex-shrink-0">
-            How did <span className="text-[#FF9BB4]">IDT develop?</span>
+          <h2 className="text-3xl sm:text-5xl font-extrabold text-center mb-10 sm:mb-14 tracking-tight flex-shrink-0 text-[#4C4747]">
+            How did <span className="text-[#DC9BB5]">IDT develop?</span>
           </h2>
 
           {/* Chronological Timeline Grid - 3 Columns with left column flush aligned to previous section blockquote; shifted down 5% from title */}
@@ -1122,8 +1046,8 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
         id="foundation-learning-theories-section"
         className="relative w-full mb-28 -translate-y-[15%]"
       >
-        <h2 className="text-3xl sm:text-5xl font-extrabold text-center mb-20 tracking-tight">
-          How do <span className="text-[#FF9BB4]">people learn?</span>
+        <h2 className="text-3xl sm:text-5xl font-extrabold text-center mb-20 tracking-tight text-[#4C4747]">
+          How do <span className="text-[#DC9BB5]">people learn?</span>
         </h2>
 
         <div 
@@ -1146,10 +1070,10 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
       </section>
 
       {/* 5. Section: "What do I believe about learning?" Manila Folder Card */}
-      <section className="relative w-full max-w-4xl mx-auto px-6 mb-12 sm:mb-16 -translate-y-[50%]">
+      <section className="relative w-full max-w-4xl mx-auto px-4 sm:px-6 mb-12 sm:mb-16 -translate-y-[15%] md:-translate-y-[50%]">
         <motion.div 
-          initial={{ opacity: 0, scale: 1.05 }}
-          whileInView={{ opacity: 1, scale: 1.3 }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: isMobile ? 1.0 : 1.3 }}
           viewport={{ once: false, amount: 0.15 }}
           transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
           style={{ transformOrigin: 'top center' }}
@@ -1178,7 +1102,7 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
             <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 pt-8 sm:pt-12 pb-6 sm:pb-8">
               <p 
                 style={{ transform: 'translate(2%, 3%)' }}
-                className="w-[80%] mx-auto text-xs sm:text-sm md:text-base font-bold leading-relaxed tracking-normal font-sans text-justify sm:text-left text-[#2D2319]"
+                className="w-[80%] mx-auto text-xs sm:text-sm md:text-base font-bold leading-relaxed tracking-normal font-sans text-justify sm:text-left text-[#4C4747]"
               >
                 I believe learning is an active and constructive process. Learners develop deeper understanding by connecting ideas, investigating information, applying knowledge, and reflecting on their experiences. I see learning theories as lenses rather than fixed formulas; different theories can inform different learning needs when applied intentionally. For me, effective learning design begins with understanding the learner, the goals, and the context, and then selecting or combining appropriate approaches to support meaningful learning and performance.
               </p>
@@ -1190,10 +1114,10 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
             <motion.button
               onClick={onNavigateToWork}
               id="foundation-view-work-btn"
-              whileHover={{ scale: 1.08, rotate: -3, backgroundColor: "#FF9BB4" }}
+              whileHover={{ scale: 1.08, rotate: -3, backgroundColor: "#DC9BB5" }}
               whileTap={{ scale: 0.96 }}
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
-              className="px-7 py-2.5 bg-white text-[#1D2440] font-inter font-bold text-sm rounded-full shadow-[0_10px_24px_rgba(0,0,0,0.45)] cursor-pointer select-none origin-center"
+              className="px-7 py-2.5 bg-[#F7F3EB] text-[#4C4747] border border-[#4C4747]/15 font-inter font-bold text-sm rounded-full shadow-[0_10px_24px_rgba(76,71,71,0.18)] cursor-pointer select-none origin-center"
             >
               View My Work
             </motion.button>
@@ -1202,14 +1126,14 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
         </motion.div>
       </section>
 
-      {/* 6. Dynamic WebGL Paper Tear Transition & 7. Section in #2B2B2B */}
+      {/* 6. Dynamic WebGL Paper Tear Transition & 7. Section in #E6DEC8 */}
       <div className="w-full relative">
         {/* Native WebGL Paper Tear Component with diagonal curl, white backside, and fiber edge */}
         <div className="relative z-10 pointer-events-none">
           <PaperTear 
             image={tornJpg}
-            color="#1D2440"
-            background="#2B2B2B"
+            color="#EFE8DC"
+            background="#E6DEC8"
             edgeOpacity={0.9}
             start={1}
             end={0.12}
@@ -1225,11 +1149,11 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
           />
         </div>
 
-        {/* Full-width #2B2B2B background zone extending to the end of the page */}
-        <div className="w-full bg-[#2B2B2B] text-white pt-8 sm:pt-12 pb-8 sm:pb-10 relative z-0">
+        {/* Full-width #E6DEC8 background zone extending to the end of the page */}
+        <div className="w-full bg-[#E6DEC8] text-[#4C4747] pt-8 sm:pt-12 pb-8 sm:pb-10 relative z-0">
           <section className="w-full max-w-4xl mx-auto px-6 overflow-visible">
-            <h2 className="text-3xl sm:text-5xl font-extrabold text-center mb-16 tracking-tight">
-              What is <span className="text-[#FF9BB4]">reshaping IDT now?</span>
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-center mb-16 tracking-tight text-[#4C4747]">
+              What is <span className="text-[#DC9BB5]">reshaping IDT now?</span>
             </h2>
 
             {/* 4 Trends with animated center-expanding divider lines */}
@@ -1244,20 +1168,20 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
                         viewport={{ once: false, margin: "0px 0px -50% 0px" }}
                         transition={{ duration: 1.8, ease: [0.16, 1, 0.3, 1] }}
                         style={{ transformOrigin: 'center' }}
-                        className="relative w-full md:w-[120%] md:-left-[8.333%] h-px bg-white/20 origin-center"
+                        className="relative w-full lg:w-[120%] lg:-left-[8.333%] h-px bg-[#4C4747]/20 origin-center"
                       />
                     </div>
                   )}
                   <div 
                     className="min-h-[180px] sm:min-h-[160px] md:min-h-[170px] py-4 md:py-0 grid grid-cols-1 md:grid-cols-12 gap-6 items-center"
                   >
-                    {/* Left Column: Trend Title in Pink shifted 20% left */}
-                    <div className="md:col-span-5 md:-translate-x-[20%] min-w-0">
-                      <h3 className="text-[#FF9BB4] font-bold text-lg sm:text-xl leading-snug">
+                    {/* Left Column: Trend Title in Pink */}
+                    <div className="md:col-span-5 md:translate-x-0 lg:-translate-x-[10%] xl:-translate-x-[20%] min-w-0">
+                      <h3 className="text-[#DC9BB5] font-bold text-[16px] sm:text-[18px] md:text-[17px] lg:text-[19px] xl:text-[20px] leading-snug tracking-tight">
                         {trend.titleLine1 && trend.titleLine2 ? (
                           <>
-                            <span className="block">{trend.titleLine1}</span>
-                            <span className="block">{trend.titleLine2}</span>
+                            <span className="block whitespace-nowrap">{trend.titleLine1}</span>
+                            <span className="block whitespace-nowrap">{trend.titleLine2}</span>
                           </>
                         ) : (
                           trend.title
@@ -1265,9 +1189,9 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
                       </h3>
                     </div>
 
-                    {/* Right Column: Trend Narrative shifted 20% right */}
-                    <div className="md:col-span-7 md:translate-x-[20%]">
-                      <p className="text-slate-200 text-sm sm:text-base leading-relaxed">
+                    {/* Right Column: Trend Narrative */}
+                    <div className="md:col-span-7 md:translate-x-0 lg:translate-x-[10%] xl:translate-x-[20%]">
+                      <p className="text-[#4C4747] text-sm sm:text-base leading-relaxed">
                         {trend.body}
                       </p>
                     </div>
@@ -1277,327 +1201,48 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
             </div>
           </section>
 
-          {/* 8. Section: "From Learning Theory to Design Practice" Intro Statement */}
-          <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 mt-32 sm:mt-40 mb-24 sm:mb-32">
-            {/* Section Main Title */}
-            <h2 className="text-3xl sm:text-5xl md:text-[46px] font-extrabold text-center mb-10 sm:mb-14 tracking-tight">
-              From Learning Theory <span className="text-[#FF9BB4]">to Design Practice</span>
-            </h2>
-
-            {/* Text Box Statement with generous spacing from title */}
-            <div className="max-w-4xl mx-auto text-left">
-              <p className="text-base sm:text-lg md:text-xl text-slate-100 font-normal leading-relaxed bg-white/[0.05] border border-white/15 rounded-2xl py-6 px-7 sm:px-10 shadow-lg transform translate-y-[15%] text-left">
-                Studying the foundations of IDT taught me to see theories as tools for understanding learning rather than formulas to follow.
-              </p>
+          {/* 8. Section: "From Learning Theory to Design Practice" Reflection */}
+          <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 mt-32 sm:mt-40 mb-14 sm:mb-20">
+            {/* Section Main Title & Subtitle */}
+            <div className="text-center mb-10 sm:mb-12">
+              <h2 className="text-3xl sm:text-5xl md:text-[46px] font-extrabold tracking-tight text-[#4C4747] mb-3 sm:mb-4">
+                From Learning Theory <span className="text-[#DC9BB5]">to Design Practice</span>
+              </h2>
+              <h3 className="text-lg sm:text-xl md:text-2xl font-semibold font-inter text-[#DC9BB5]">
+                Reflection on IDT Foundation
+              </h3>
             </div>
-          </section>
 
-          {/* 9. Pinned Workflow Screen: ONLY title "A Learner Before a Designer" and 6 cards */}
-          <div 
-            ref={workflowTrackRef} 
-            id="foundation-workflow-scroll-track"
-            className="relative w-full h-[380vh]"
-          >
-            <div 
-              style={{ position: 'sticky', top: 0 }}
-              className="sticky top-0 h-screen w-full flex flex-col justify-center items-center overflow-hidden px-4 sm:px-6 z-10"
-            >
-              <div className="w-full max-w-[1240px] mx-auto flex flex-col items-center justify-center">
-                {/* 6-Card Workflow Grid - 3-Row S-Curve with center title between rows and clean white lines (no arrows) */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-y-8 md:gap-y-12 md:gap-x-[92px] relative w-full max-w-[1240px] mx-auto">
-                  {/* Row 1: Step 01 (Col 1 shifted left 10%, fade in left to right) */}
-                  <div className="relative md:col-start-1 md:row-start-1 md:-translate-x-[10%]">
-                    <motion.div 
-                      style={{ opacity: step1Opacity, x: step1X }}
-                      className="bg-[#242424] border border-white/15 hover:border-[#FF9BB4]/50 rounded-2xl px-6 py-4.5 sm:px-7 sm:py-5 min-h-[155px] sm:min-h-[165px] flex flex-col justify-between transition-all select-none shadow-xl"
-                    >
-                      <div>
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="text-xs font-mono font-bold tracking-wider text-[#FF9BB4]">
-                            {workflowSteps[0].step}
-                          </span>
-                          <span className="text-[11px] uppercase font-bold tracking-widest text-slate-300 bg-white/10 px-2 py-0.5 rounded-full">
-                            Step 1
-                          </span>
-                        </div>
-                        <h4 className="text-sm sm:text-base font-black text-[#FF9BB4] tracking-wider uppercase">
-                          {workflowSteps[0].bigTitle}
-                        </h4>
-                        <h5 className="text-xs sm:text-sm font-bold text-white leading-snug mt-1 mb-2">
-                          {workflowSteps[0].subTitle}
-                        </h5>
-                        <p className="text-xs sm:text-[13.5px] text-slate-200 leading-relaxed font-normal">
-                          {workflowSteps[0].body}
-                        </p>
-                      </div>
-                    </motion.div>
-                    {/* Desktop Line: Step 01 -> Step 02 (Fade in / expand from left to right) */}
-                    <motion.div 
-                      style={{ 
-                        opacity: line1Opacity, 
-                        scaleX: line1ScaleX,
-                        originX: 0,
-                        transformOrigin: 'left'
-                      }}
-                      className="hidden md:block absolute left-full top-1/2 -translate-y-1/2 w-[calc(92px+10%)] h-0.5 bg-white/40 pointer-events-none z-20" 
-                    />
-                  </div>
-
-                  {/* Mobile Vertical Line 1 -> 2 */}
-                  <div className="md:hidden flex justify-center py-2">
-                    <motion.div style={{ opacity: line1Opacity }} className="h-8 w-0.5 bg-white/40" />
-                  </div>
-
-                  {/* Row 1: Step 02 (Col 2 center, unshifted, fade in left to right) */}
-                  <div className="relative md:col-start-2 md:row-start-1">
-                    <motion.div 
-                      style={{ opacity: step2Opacity, x: step2X }}
-                      className="bg-[#242424] border border-white/15 hover:border-[#FF9BB4]/50 rounded-2xl px-6 py-4.5 sm:px-7 sm:py-5 min-h-[155px] sm:min-h-[165px] flex flex-col justify-between transition-all select-none shadow-xl"
-                    >
-                      <div>
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="text-xs font-mono font-bold tracking-wider text-[#FF9BB4]">
-                            {workflowSteps[1].step}
-                          </span>
-                          <span className="text-[11px] uppercase font-bold tracking-widest text-slate-300 bg-white/10 px-2 py-0.5 rounded-full">
-                            Step 2
-                          </span>
-                        </div>
-                        <h4 className="text-sm sm:text-base font-black text-[#FF9BB4] tracking-wider uppercase">
-                          {workflowSteps[1].bigTitle}
-                        </h4>
-                        <h5 className="text-xs sm:text-sm font-bold text-white leading-snug mt-1 mb-2">
-                          {workflowSteps[1].subTitle}
-                        </h5>
-                        <p className="text-xs sm:text-[13.5px] text-slate-200 leading-relaxed font-normal">
-                          {workflowSteps[1].body}
-                        </p>
-                      </div>
-                    </motion.div>
-                    {/* Desktop Line: Step 02 -> Step 03 (Fade in / expand from left to right) */}
-                    <motion.div 
-                      style={{ 
-                        opacity: line2Opacity, 
-                        scaleX: line2ScaleX,
-                        originX: 0,
-                        transformOrigin: 'left'
-                      }}
-                      className="hidden md:block absolute left-full top-1/2 -translate-y-1/2 w-[calc(92px+10%)] h-0.5 bg-white/40 pointer-events-none z-20" 
-                    />
-                  </div>
-
-                  {/* Mobile Vertical Line 2 -> 3 */}
-                  <div className="md:hidden flex justify-center py-2">
-                    <motion.div style={{ opacity: line2Opacity }} className="h-8 w-0.5 bg-white/40" />
-                  </div>
-
-                  {/* Row 1: Step 03 (Col 3 shifted right 10%, fade in left to right) */}
-                  <div className="relative md:col-start-3 md:row-start-1 md:translate-x-[10%]">
-                    <motion.div 
-                      style={{ opacity: step3Opacity, x: step3X }}
-                      className="bg-[#242424] border border-white/15 hover:border-[#FF9BB4]/50 rounded-2xl px-6 py-4.5 sm:px-7 sm:py-5 min-h-[155px] sm:min-h-[165px] flex flex-col justify-between transition-all select-none shadow-xl"
-                    >
-                      <div>
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="text-xs font-mono font-bold tracking-wider text-[#FF9BB4]">
-                            {workflowSteps[2].step}
-                          </span>
-                          <span className="text-[11px] uppercase font-bold tracking-widest text-slate-300 bg-white/10 px-2 py-0.5 rounded-full">
-                            Step 3
-                          </span>
-                        </div>
-                        <h4 className="text-sm sm:text-base font-black text-[#FF9BB4] tracking-wider uppercase">
-                          {workflowSteps[2].bigTitle}
-                        </h4>
-                        <h5 className="text-xs sm:text-sm font-bold text-white leading-snug mt-1 mb-2">
-                          {workflowSteps[2].subTitle}
-                        </h5>
-                        <p className="text-xs sm:text-[13.5px] text-slate-200 leading-relaxed font-normal">
-                          {workflowSteps[2].body}
-                        </p>
-                      </div>
-                    </motion.div>
-                  </div>
-
-                  {/* Mobile Vertical Line 3 -> Title */}
-                  <div className="md:hidden flex justify-center py-2">
-                    <motion.div style={{ opacity: vertLineOpacity }} className="h-8 w-0.5 bg-white/40" />
-                  </div>
-
-                  {/* Middle Row: Centered Workflow Main Title between Row 1 and Row 2 (pops up from center) */}
-                  <div className="md:col-start-1 md:col-span-3 md:row-start-2 flex items-center justify-center py-3 relative pointer-events-none">
-                    <motion.h3 
-                      style={{ 
-                        opacity: centerTitleOpacity, 
-                        scale: centerTitleScale 
-                      }}
-                      className="text-2xl sm:text-3xl md:text-[38px] font-extrabold tracking-tight text-center pointer-events-auto origin-center"
-                    >
-                      A Learner <span className="text-[#FF9BB4]">Before a Designer</span>
-                    </motion.h3>
-                  </div>
-
-                  {/* Desktop Connecting Vertical Line between Step 03 and Step 04 (shifted right 10% to match Col 3, expand top-to-bottom) */}
-                  <div className="hidden md:flex md:col-start-3 md:row-start-2 justify-center items-center pointer-events-none z-20 h-full md:translate-x-[10%]">
-                    <motion.div 
-                      style={{ 
-                        opacity: vertLineOpacity, 
-                        scaleY: vertLineScaleY,
-                        originY: 0,
-                        transformOrigin: 'top'
-                      }}
-                      className="w-0.5 h-[calc(100%+4.5rem)] bg-white/40" 
-                    />
-                  </div>
-
-                  {/* Mobile Vertical Line Title -> 4 */}
-                  <div className="md:hidden flex justify-center py-2">
-                    <motion.div style={{ opacity: vertLineOpacity }} className="h-8 w-0.5 bg-white/40" />
-                  </div>
-
-                  {/* Row 2: Step 04 (Col 3 shifted right 10%, fade in top to bottom) */}
-                  <div className="relative md:col-start-3 md:row-start-3 md:translate-x-[10%]">
-                    <motion.div 
-                      style={{ opacity: step4Opacity, y: step4Y }}
-                      className="bg-[#242424] border border-white/15 hover:border-[#FF9BB4]/50 rounded-2xl px-6 py-4.5 sm:px-7 sm:py-5 min-h-[155px] sm:min-h-[165px] flex flex-col justify-between transition-all select-none shadow-xl"
-                    >
-                      <div>
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="text-xs font-mono font-bold tracking-wider text-[#FF9BB4]">
-                            {workflowSteps[3].step}
-                          </span>
-                          <span className="text-[11px] uppercase font-bold tracking-widest text-slate-300 bg-white/10 px-2 py-0.5 rounded-full">
-                            Step 4
-                          </span>
-                        </div>
-                        <h4 className="text-sm sm:text-base font-black text-[#FF9BB4] tracking-wider uppercase">
-                          {workflowSteps[3].bigTitle}
-                        </h4>
-                        <h5 className="text-xs sm:text-sm font-bold text-white leading-snug mt-1 mb-2">
-                          {workflowSteps[3].subTitle}
-                        </h5>
-                        <p className="text-xs sm:text-[13.5px] text-slate-200 leading-relaxed font-normal">
-                          {workflowSteps[3].body}
-                        </p>
-                      </div>
-                    </motion.div>
-                    {/* Desktop Line: Step 04 -> Step 05 (Fade in / expand from right to left) */}
-                    <motion.div 
-                      style={{ 
-                        opacity: line4Opacity, 
-                        scaleX: line4ScaleX,
-                        originX: 1,
-                        transformOrigin: 'right'
-                      }}
-                      className="hidden md:block absolute right-full top-1/2 -translate-y-1/2 w-[calc(92px+10%)] h-0.5 bg-white/40 pointer-events-none z-20" 
-                    />
-                  </div>
-
-                  {/* Mobile Vertical Line 4 -> 5 */}
-                  <div className="md:hidden flex justify-center py-2">
-                    <motion.div style={{ opacity: line4Opacity }} className="h-8 w-0.5 bg-white/40" />
-                  </div>
-
-                  {/* Row 2: Step 05 (Col 2 center, unshifted, fade in right to left) */}
-                  <div className="relative md:col-start-2 md:row-start-3">
-                    <motion.div 
-                      style={{ opacity: step5Opacity, x: step5X }}
-                      className="bg-[#242424] border border-white/15 hover:border-[#FF9BB4]/50 rounded-2xl px-6 py-4.5 sm:px-7 sm:py-5 min-h-[155px] sm:min-h-[165px] flex flex-col justify-between transition-all select-none shadow-xl"
-                    >
-                      <div>
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="text-xs font-mono font-bold tracking-wider text-[#FF9BB4]">
-                            {workflowSteps[4].step}
-                          </span>
-                          <span className="text-[11px] uppercase font-bold tracking-widest text-slate-300 bg-white/10 px-2 py-0.5 rounded-full">
-                            Step 5
-                          </span>
-                        </div>
-                        <h4 className="text-sm sm:text-base font-black text-[#FF9BB4] tracking-wider uppercase">
-                          {workflowSteps[4].bigTitle}
-                        </h4>
-                        <h5 className="text-xs sm:text-sm font-bold text-white leading-snug mt-1 mb-2">
-                          {workflowSteps[4].subTitle}
-                        </h5>
-                        <p className="text-xs sm:text-[13.5px] text-slate-200 leading-relaxed font-normal">
-                          {workflowSteps[4].body}
-                        </p>
-                      </div>
-                    </motion.div>
-                    {/* Desktop Line: Step 05 -> Step 06 (Fade in / expand from right to left) */}
-                    <motion.div 
-                      style={{ 
-                        opacity: line5Opacity, 
-                        scaleX: line5ScaleX,
-                        originX: 1,
-                        transformOrigin: 'right'
-                      }}
-                      className="hidden md:block absolute right-full top-1/2 -translate-y-1/2 w-[calc(92px+10%)] h-0.5 bg-white/40 pointer-events-none z-20" 
-                    />
-                  </div>
-
-                  {/* Mobile Vertical Line 5 -> 6 */}
-                  <div className="md:hidden flex justify-center py-2">
-                    <motion.div style={{ opacity: line5Opacity }} className="h-8 w-0.5 bg-white/40" />
-                  </div>
-
-                  {/* Row 2: Step 06 (Col 1 shifted left 10%, fade in right to left) */}
-                  <div className="relative md:col-start-1 md:row-start-3 md:-translate-x-[10%]">
-                    <motion.div 
-                      style={{ opacity: step6Opacity, x: step6X }}
-                      className="bg-[#242424] border border-white/15 hover:border-[#FF9BB4]/50 rounded-2xl px-6 py-4.5 sm:px-7 sm:py-5 min-h-[155px] sm:min-h-[165px] flex flex-col justify-between transition-all select-none shadow-xl"
-                    >
-                      <div>
-                        <div className="flex items-center justify-between mb-2">
-                          <span className="text-xs font-mono font-bold tracking-wider text-[#FF9BB4]">
-                            {workflowSteps[5].step}
-                          </span>
-                          <span className="text-[11px] uppercase font-bold tracking-widest text-slate-300 bg-white/10 px-2 py-0.5 rounded-full">
-                            Step 6
-                          </span>
-                        </div>
-                        <h4 className="text-sm sm:text-base font-black text-[#FF9BB4] tracking-wider uppercase">
-                          {workflowSteps[5].bigTitle}
-                        </h4>
-                        <h5 className="text-xs sm:text-sm font-bold text-white leading-snug mt-1 mb-2">
-                          {workflowSteps[5].subTitle}
-                        </h5>
-                        <p className="text-xs sm:text-[13.5px] text-slate-200 leading-relaxed font-normal">
-                          {workflowSteps[5].body}
-                        </p>
-                      </div>
-                    </motion.div>
-                  </div>
-                </div>
+            {/* Reflection Text */}
+            <div className="max-w-4xl mx-auto text-left">
+              <div className="text-base sm:text-lg md:text-xl text-[#4C4747] font-normal leading-relaxed space-y-5 text-left">
+                <p>
+                  Studying the foundations of IDT taught me to see theories as tools for understanding learning rather than formulas to follow. As I move into professional practice, I want to carry this same habit into my design work—examining evidence, context, and learner needs before making intentional design decisions.
+                </p>
+                <p>
+                  For me, becoming an instructional designer also means becoming an intentional learner. Working with SMEs may require me to enter unfamiliar domains, make sense of large amounts of information, identify what matters, and connect new knowledge before I can design meaningful learning experiences for others.
+                </p>
               </div>
             </div>
-          </div>
-
-          {/* Concluding Statement after workflow (without redundant subtitle) */}
-          <div className="max-w-5xl lg:max-w-6xl w-full mx-auto text-center mt-12 sm:mt-16 px-4">
-            <p className="text-base sm:text-lg md:text-xl text-slate-100 font-normal leading-relaxed">
-              <span className="block">This workflow is not only how I study IDT.</span>
-              <span className="block md:whitespace-nowrap">it is also a learning practice I want to carry into my professional work as an instructional designer.</span>
-            </p>
-          </div>
+          </section>
 
           {/* Bottom Actions: Back to Home + Explore Research */}
           <div className="flex flex-wrap items-center justify-center gap-4 mt-12 sm:mt-14 mb-2">
             <button
               id="foundation-back-home-bottom-btn"
               onClick={onBackToHome}
-              className="px-8 py-2.5 bg-white text-[#1D2440] hover:bg-slate-100 font-inter font-bold text-sm sm:text-base rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.35)] transition-all cursor-pointer select-none active:scale-95"
+              className="px-8 py-2.5 bg-[#F7F3EB] text-[#4C4747] border border-[#4C4747]/15 hover:bg-[#EFE8DC] font-inter font-bold text-sm sm:text-base rounded-full shadow-[0_8px_24px_rgba(76,71,71,0.15)] transition-all cursor-pointer select-none active:scale-95"
             >
               Back To Home
             </button>
 
             <button
-              id="foundation-to-research-btn"
-              onClick={() => onNavigate?.('research')}
-              className="px-8 py-2.5 bg-[#FF9BB4] hover:bg-[#ff85a3] text-[#1D2440] font-inter font-bold text-sm sm:text-base rounded-full shadow-[0_8px_24px_rgba(0,0,0,0.35)] transition-all cursor-pointer select-none active:scale-95 inline-flex items-center gap-2"
+              id="foundation-to-design-btn"
+              onClick={() => onNavigate?.('design')}
+              className="px-8 py-2.5 bg-[#DC9BB5] hover:bg-[#d188a6] text-[#4C4747] font-inter font-bold text-sm sm:text-base rounded-full shadow-[0_8px_24px_rgba(76,71,71,0.18)] transition-all cursor-pointer select-none active:scale-95 inline-flex items-center gap-2"
             >
-              <span>Explore Research</span>
-              <ArrowRight className="w-4 h-4 text-[#1D2440]" />
+              <span>Explore Design</span>
+              <ArrowRight className="w-4 h-4 text-[#4C4747]" />
             </button>
           </div>
         </div>
