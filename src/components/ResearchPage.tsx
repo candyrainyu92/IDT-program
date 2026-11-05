@@ -30,7 +30,8 @@ import {
   ExternalLink,
   ArrowUpRight,
   Download,
-  Eye
+  Eye,
+  ChevronDown
 } from 'lucide-react';
 
 interface ResearchPageProps {
@@ -44,6 +45,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
 }) => {
   const [evidenceView, setEvidenceView] = useState<'cards' | 'table'>('cards');
   const [isBookOpen, setIsBookOpen] = useState(false);
+  const [isReferenceOpen, setIsReferenceOpen] = useState(false);
   const [isGalleryModalOpen, setIsGalleryModalOpen] = useState(false);
   const [isLetterModalOpen, setIsLetterModalOpen] = useState(false);
   const [activeDocumentType, setActiveDocumentType] = useState<'proposal' | 'data-analysis' | 'report' | 'slides'>('proposal');
@@ -1494,12 +1496,66 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
               </div>
             </div>
 
+            {/* Section: Collapsible Reference (APA 7th Format) */}
+            <section className="w-full max-w-4xl mx-auto px-4 sm:px-6 mb-10 sm:mb-14">
+              <div className="border-t border-b border-[#4C4747]/20 py-4 -mt-[22%] mb-[4%] relative z-20">
+                <button
+                  type="button"
+                  onClick={() => setIsReferenceOpen((prev) => !prev)}
+                  aria-expanded={isReferenceOpen}
+                  className="w-full flex items-center justify-between text-left py-2 cursor-pointer select-none group"
+                >
+                  <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#4C4747] group-hover:text-[#DC9BB5] transition-colors">
+                    Reference
+                  </h3>
+                  <motion.div
+                    animate={{ rotate: isReferenceOpen ? 180 : 0 }}
+                    transition={{ duration: 0.25, ease: 'easeInOut' }}
+                    className="w-8 h-8 rounded-full bg-[#F7F3EB] border border-[#4C4747]/15 flex items-center justify-center text-[#4C4747] group-hover:bg-[#DC9BB5] transition-colors"
+                  >
+                    <ChevronDown className="w-4 h-4" />
+                  </motion.div>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isReferenceOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pt-4 pb-2 space-y-3.5 text-sm sm:text-base text-[#4C4747]/90 leading-relaxed text-left font-normal">
+                        <p className="pl-8 -indent-8">
+                          Brosnan, K., Babakhani, N., &amp; Dolnicar, S. (2019). “I know what you’re going to ask me” Why respondents don’t read survey questions. <em>International Journal of Market Research</em>, <em>61</em>(4), 366–379.{' '}
+                          <a
+                            href="https://doi.org/10.1177/1470785318821025"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline decoration-[#4C4747]/40 hover:text-[#DC9BB5] transition-colors break-all"
+                          >
+                            https://doi.org/10.1177/1470785318821025
+                          </a>
+                        </p>
+
+                        <p className="pl-8 -indent-8">
+                          Creswell, J. W. (2014). <em>Research design: Qualitative, quantitative, and mixed methods approaches</em> (4th ed.). SAGE Publications.
+                        </p>
+
+                        <p className="pl-8 -indent-8">
+                          Kemmis, S., &amp; McTaggart, R. (2000). Participatory action research. In N. K. Denzin &amp; Y. S. Lincoln (Eds.), <em>Handbook of qualitative research</em> (2nd ed., pp. 567–605). SAGE Publications.
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </section>
+
             {/* Bottom Navigation Buttons */}
-            <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-14 mb-2">
-              <div 
-                className="flex flex-wrap items-center justify-center gap-4 -translate-y-[7vh]"
-                style={{ transform: 'translateY(-7vh)' }}
-              >
+            <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-14 pb-10 sm:pb-14">
+              <div className="flex flex-wrap items-center justify-center gap-4">
                 <button
                   id="research-to-design-btn"
                   onClick={() => onNavigate?.('design')}

@@ -6,7 +6,184 @@ import tornJpg from '../assets/images/torn.jpg';
 import { PaperTear } from './PaperTear';
 import { BookScroll } from './BookScroll';
 import { TechnologyDocumentsModal, TechDocumentType } from './TechnologyDocumentsModal';
-import { ArrowLeft, ArrowRight, Home, ChevronLeft, ChevronRight, Layers } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Home, ChevronLeft, ChevronRight, ChevronDown, Layers, X } from 'lucide-react';
+import * as pdfjsLib from 'pdfjs-dist';
+import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
+
+pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
+
+const PdfPageCanvas: React.FC<{
+  pdf: any;
+  pageNumber: number;
+  containerWidth: number;
+}> = ({ pdf, pageNumber, containerWidth }) => {
+  const wrapperRef = useRef<HTMLDivElement | null>(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const [isVisible, setIsVisible] = useState<boolean>(pageNumber <= 4);
+  const [renderedWidth, setRenderedWidth] = useState<number>(0);
+
+  useEffect(() => {
+    if (isVisible) return;
+    const el = wrapperRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') {
+      setIsVisible(true);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '800px 0px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [isVisible]);
+
+  useEffect(() => {
+    if (!isVisible || !pdf || !canvasRef.current || containerWidth <= 0) return;
+    if (renderedWidth === containerWidth) return;
+
+    let isCancelled = false;
+    let renderTask: any = null;
+
+    const renderPage = async () => {
+      try {
+        const page = await pdf.getPage(pageNumber);
+        if (isCancelled || !canvasRef.current) return;
+
+        const unscaledViewport = page.getViewport({ scale: 1 });
+        const dpr = Math.min(window.devicePixelRatio || 1, 2);
+        const fitScale = containerWidth / unscaledViewport.width;
+        const viewport = page.getViewport({ scale: fitScale * dpr });
+
+        const canvas = canvasRef.current;
+        canvas.width = Math.floor(viewport.width);
+        canvas.height = Math.floor(viewport.height);
+        canvas.style.width = `${Math.floor(viewport.width / dpr)}px`;
+        canvas.style.height = `${Math.floor(viewport.height / dpr)}px`;
+
+        const ctx = canvas.getContext('2d');
+        if (!ctx) return;
+
+        renderTask = page.render({
+          canvasContext: ctx,
+          canvas,
+          viewport,
+        });
+        await renderTask.promise;
+        if (!isCancelled) {
+          setRenderedWidth(containerWidth);
+        }
+      } catch {
+        // Ignore cancelled render tasks
+      }
+    };
+
+    renderPage();
+
+    return () => {
+      isCancelled = true;
+      if (renderTask && typeof renderTask.cancel === 'function') {
+        try {
+          renderTask.cancel();
+        } catch {
+          // ignore
+        }
+      }
+    };
+  }, [isVisible, pdf, pageNumber, containerWidth, renderedWidth]);
+
+  const aspectHeight = Math.round(containerWidth * (792 / 612));
+
+  return (
+    <div
+      ref={wrapperRef}
+      style={{ width: `${containerWidth}px`, minHeight: `${aspectHeight}px` }}
+      className="bg-white shadow-[0_8px_28px_rgba(0,0,0,0.35)] rounded-sm flex items-center justify-center shrink-0 overflow-hidden"
+    >
+      <canvas ref={canvasRef} className="block max-w-full" />
+    </div>
+  );
+};
+
+const OriginalPdfCanvasViewer: React.FC<{ url: string }> = ({ url }) => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const [pdfDoc, setPdfDoc] = useState<any>(null);
+  const [pageCount, setPageCount] = useState<number>(0);
+  const [containerWidth, setContainerWidth] = useState<number>(820);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  useEffect(() => {
+    const updateWidth = () => {
+      if (containerRef.current) {
+        const w = Math.max(280, Math.min(containerRef.current.clientWidth - 36, 880));
+        setContainerWidth(w);
+      }
+    };
+    updateWidth();
+    window.addEventListener('resize', updateWidth);
+    return () => window.removeEventListener('resize', updateWidth);
+  }, []);
+
+  useEffect(() => {
+    let isCancelled = false;
+    setIsLoading(true);
+    setErrorMsg(null);
+
+    const loadPdf = async () => {
+      try {
+        const loadingTask = pdfjsLib.getDocument({ url });
+        const pdf = await loadingTask.promise;
+        if (isCancelled) return;
+        setPdfDoc(pdf);
+        setPageCount(pdf.numPages);
+        setIsLoading(false);
+      } catch (err) {
+        if (isCancelled) return;
+        setErrorMsg('Unable to load PDF document.');
+        setIsLoading(false);
+      }
+    };
+
+    loadPdf();
+
+    return () => {
+      isCancelled = true;
+    };
+  }, [url]);
+
+  return (
+    <div
+      ref={containerRef}
+      className="w-full h-full overflow-y-auto bg-[#525659] py-6 px-3 sm:px-6 flex flex-col items-center gap-5"
+    >
+      {isLoading && (
+        <div className="flex flex-col items-center justify-center py-24 text-[#F7F3EB] gap-3">
+          <div className="w-8 h-8 rounded-full border-3 border-[#F7F3EB]/30 border-t-[#F7F3EB] animate-spin" />
+          <span className="text-sm font-medium tracking-wide">Loading PDF document...</span>
+        </div>
+      )}
+      {errorMsg && (
+        <div className="text-sm text-red-200 bg-red-900/40 px-4 py-3 rounded-lg">
+          {errorMsg}
+        </div>
+      )}
+      {pdfDoc &&
+        Array.from({ length: pageCount }, (_, idx) => (
+          <PdfPageCanvas
+            key={idx + 1}
+            pdf={pdfDoc}
+            pageNumber={idx + 1}
+            containerWidth={containerWidth}
+          />
+        ))}
+    </div>
+  );
+};
 
 interface TechnologyPageProps {
   onBackToHome: () => void;
@@ -161,7 +338,9 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const [hoveredCardIdx, setHoveredCardIdx] = useState<number | null>(null);
   const [isBookOpen, setIsBookOpen] = useState(false);
+  const [isReferenceOpen, setIsReferenceOpen] = useState(false);
   const [isDocModalOpen, setIsDocModalOpen] = useState(false);
+  const [isOverviewPdfModalOpen, setIsOverviewPdfModalOpen] = useState(false);
   const [selectedDoc, setSelectedDoc] = useState<TechDocumentType>('executive-summary');
 
   const handleScroll = (direction: 'left' | 'right') => {
@@ -184,6 +363,7 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         setActivePopupTool(null);
+        setIsOverviewPdfModalOpen(false);
       }
     };
     window.addEventListener('click', handleClickOutside);
@@ -915,7 +1095,9 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
                     isOpen={isBookOpen}
                     onToggle={setIsBookOpen}
                     onGalleryClick={(project) => {
-                      if (!project || project === 'letter' || project === 'executive-summary') {
+                      if (project === 'project-overview') {
+                        setIsOverviewPdfModalOpen(true);
+                      } else if (!project || project === 'letter' || project === 'executive-summary') {
                         setSelectedDoc('executive-summary');
                         setIsDocModalOpen(true);
                       } else if (project === 'methodology' || project === 'delivery-plan') {
@@ -951,10 +1133,95 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
             </div>
           </div>
 
+          {/* Section: Collapsible Reference (APA 7th Format) */}
+          <section className="w-full max-w-4xl mx-auto px-4 sm:px-6 mb-10 sm:mb-14">
+            <div className="border-t border-b border-[#4C4747]/20 py-4 -mt-[22%] mb-[4%] relative z-20">
+              <button
+                type="button"
+                onClick={() => setIsReferenceOpen((prev) => !prev)}
+                aria-expanded={isReferenceOpen}
+                className="w-full flex items-center justify-between text-left py-2 cursor-pointer select-none group"
+              >
+                <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#4C4747] group-hover:text-[#DC9BB5] transition-colors">
+                  Reference
+                </h3>
+                <motion.div
+                  animate={{ rotate: isReferenceOpen ? 180 : 0 }}
+                  transition={{ duration: 0.25, ease: 'easeInOut' }}
+                  className="w-8 h-8 rounded-full bg-[#F7F3EB] border border-[#4C4747]/15 flex items-center justify-center text-[#4C4747] group-hover:bg-[#DC9BB5] transition-colors"
+                >
+                  <ChevronDown className="w-4 h-4" />
+                </motion.div>
+              </button>
+
+              <AnimatePresence initial={false}>
+                {isReferenceOpen && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="pt-4 pb-2 space-y-3.5 text-sm sm:text-base text-[#4C4747]/90 leading-relaxed text-left font-normal">
+                      <p className="pl-8 -indent-8">
+                        CAST. (2024). <em>CAST Universal Design for Learning Guidelines version 3.0</em>.{' '}
+                        <a
+                          href="https://udlguidelines.cast.org"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline decoration-[#4C4747]/40 hover:text-[#DC9BB5] transition-colors break-all"
+                        >
+                          https://udlguidelines.cast.org
+                        </a>
+                      </p>
+
+                      <p className="pl-8 -indent-8">
+                        Florida Center for Instructional Technology. (2019). <em>Technology Integration Matrix</em> (3rd ed.). University of South Florida.{' '}
+                        <a
+                          href="https://fcit.usf.edu/matrix/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline decoration-[#4C4747]/40 hover:text-[#DC9BB5] transition-colors break-all"
+                        >
+                          https://fcit.usf.edu/matrix/
+                        </a>
+                      </p>
+
+                      <p className="pl-8 -indent-8">
+                        <em>Guidance for generative AI in education and research</em>. (2023). UNESCO.{' '}
+                        <a
+                          href="https://doi.org/10.54675/EWZM9535"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline decoration-[#4C4747]/40 hover:text-[#DC9BB5] transition-colors break-all"
+                        >
+                          https://doi.org/10.54675/EWZM9535
+                        </a>
+                      </p>
+
+                      <p className="pl-8 -indent-8">
+                        Mayer, R. E. (2009). <em>Multimedia learning</em> (2nd ed.). Cambridge University Press.{' '}
+                        <a
+                          href="http://bvbm2.bib-bvb.de:8993/F?func=service&doc_library=BVB01&doc_number=017607859&line_number=0002&func_code=DB_RECORDS&service_type=MEDIA"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline decoration-[#4C4747]/40 hover:text-[#DC9BB5] transition-colors break-all"
+                        >
+                          http://bvbm2.bib-bvb.de:8993/F?func=service&amp;doc_library=BVB01&amp;doc_number=017607859&amp;line_number=0002&amp;func_code=DB_RECORDS&amp;service_type=MEDIA
+                        </a>
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          </section>
+
           {/* 6. Bottom Navigation Buttons */}
           <section 
             id="technology-bottom-nav-section"
-            className="w-full max-w-4xl mx-auto px-6 mt-12 sm:mt-14 mb-2 flex flex-wrap items-center justify-center gap-4 z-10"
+            className="w-full max-w-4xl mx-auto px-6 mt-12 sm:mt-14 pb-10 sm:pb-14 flex flex-wrap items-center justify-center gap-4 z-10"
           >
             <button
               id="technology-to-research-btn"
@@ -982,6 +1249,53 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
         onClose={() => setIsDocModalOpen(false)}
         initialDoc={selectedDoc}
       />
+
+      {/* Project Overview Original PDF In-Page Modal */}
+      <AnimatePresence>
+        {isOverviewPdfModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-[#EFE8DC]/90 backdrop-blur-md"
+            onClick={() => setIsOverviewPdfModalOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.92, opacity: 0, y: 15 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.94, opacity: 0, y: 15 }}
+              transition={{ type: 'spring', stiffness: 350, damping: 25 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-5xl h-[90vh] bg-[#F7F3EB] rounded-2xl border border-[#4C4747]/20 shadow-[0_25px_50px_rgba(76,71,71,0.22)] flex flex-col overflow-hidden"
+            >
+              {/* Modal Header */}
+              <div className="flex items-center justify-between px-4 sm:px-6 py-3 bg-[#F7F3EB] border-b border-[#4C4747]/15 shrink-0">
+                <div className="flex items-center gap-2.5">
+                  <span className="text-sm sm:text-base font-extrabold text-[#4C4747] tracking-tight">
+                    Project Overview
+                  </span>
+                  <span className="text-xs font-medium text-[#9D988F] hidden sm:inline">
+                    • 2026 Nissan Z Heritage Sales Training
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setIsOverviewPdfModalOpen(false)}
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#4C4747] hover:bg-[#3a3636] text-[#EFE8DC] flex items-center justify-center shadow-md transition-all cursor-pointer select-none hover:scale-105 active:scale-95"
+                  aria-label="Close Project Overview Modal"
+                >
+                  <X className="w-4 h-4 sm:w-5 sm:h-5" />
+                </button>
+              </div>
+
+              {/* Embedded Original PDF File (Unmodified, rendered via PDF.js Canvas to bypass Chrome iframe extension block) */}
+              <div className="w-full flex-1 bg-[#525659] overflow-hidden">
+                <OriginalPdfCanvasViewer url="/2026-nissan-z-heritage-sales-training-9ic9Aqu8.pdf" />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 };

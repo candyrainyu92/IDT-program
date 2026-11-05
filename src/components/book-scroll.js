@@ -1182,6 +1182,112 @@ template.innerHTML = `<style>
   width: 100%;
   height: 100%;
 }
+:host([cover-theme="rose"]) .leaf-gallery-grid,
+:host([mode="projects"]) .leaf-gallery-grid {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 1.5vh, 16px);
+  padding: 2px 4px 4px 4px;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  box-sizing: border-box;
+}
+:host([cover-theme="rose"]) .rose-rect-gallery-card,
+:host([mode="projects"]) .rose-rect-gallery-card {
+  aspect-ratio: 16 / 10 !important;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  max-height: 54%;
+  transform: none !important;
+  border: 2px solid #C58997;
+  border-radius: clamp(8px, 1.1vw, 12px);
+  box-shadow: 0 4px 14px rgba(197, 137, 151, 0.25);
+}
+:host([mode="projects"]) .rose-rect-gallery-card {
+  border-color: #709A02;
+  box-shadow: 0 4px 14px rgba(112, 154, 2, 0.22);
+}
+:host([cover-theme="rose"]) .rose-rect-gallery-card:hover {
+  transform: translateY(-3px) scale(1.015) !important;
+  border-color: #8c3f52;
+  box-shadow: 0 10px 22px rgba(140, 63, 82, 0.32);
+}
+:host([mode="projects"]) .rose-rect-gallery-card:hover {
+  transform: translateY(-3px) scale(1.015) !important;
+  border-color: #557601;
+  box-shadow: 0 10px 22px rgba(112, 154, 2, 0.32);
+}
+:host([cover-theme="rose"]) .rose-rect-gallery-card .square-title,
+:host([mode="projects"]) .rose-rect-gallery-card .square-title {
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  font-size: clamp(9.5px, 0.98vw, 12.5px);
+}
+.rose-doc-buttons-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(7px, 1.1vh, 11px);
+  width: 100%;
+  flex-shrink: 0;
+}
+:host([cover-theme="rose"]) .rose-pink-btn,
+:host([mode="projects"]) .rose-pink-btn {
+  aspect-ratio: auto !important;
+  width: 100%;
+  background: linear-gradient(135deg, #F5DCE6 0%, #E6B5C9 100%) !important;
+  border: 1.5px solid #C58997 !important;
+  border-radius: 9999px;
+  padding: clamp(7px, 1.05vh, 11px) clamp(12px, 1.5vw, 18px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  transform: none !important;
+  box-shadow: 0 3px 10px rgba(197, 137, 151, 0.24) !important;
+  transition: all 0.22s ease;
+}
+:host([cover-theme="rose"]) .rose-pink-btn:hover,
+:host([cover-theme="rose"]) .rose-pink-btn.active,
+:host([mode="projects"]) .rose-pink-btn:hover,
+:host([mode="projects"]) .rose-pink-btn.active {
+  background: linear-gradient(135deg, #E8B8CB 0%, #DC9BB5 100%) !important;
+  border-color: #8c3f52 !important;
+  transform: translateY(-2px) scale(1.015) !important;
+  box-shadow: 0 6px 16px rgba(140, 63, 82, 0.32) !important;
+}
+.rose-pink-btn-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(10px, 1.02vw, 13px);
+  font-weight: 800;
+  color: #4C4747;
+  line-height: 1.25;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  text-align: left;
+  flex: 1;
+}
+:host([cover-theme="rose"]) .rose-pink-btn:hover .rose-pink-btn-title,
+:host([cover-theme="rose"]) .rose-pink-btn.active .rose-pink-btn-title,
+:host([mode="projects"]) .rose-pink-btn:hover .rose-pink-btn-title,
+:host([mode="projects"]) .rose-pink-btn.active .rose-pink-btn-title {
+  color: #2d1f23;
+}
+.rose-pink-btn-arrow {
+  font-size: clamp(11px, 1.1vw, 14px);
+  font-weight: 900;
+  color: #8c3f52;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+:host([cover-theme="rose"]) .rose-pink-btn:hover .rose-pink-btn-arrow,
+:host([mode="projects"]) .rose-pink-btn:hover .rose-pink-btn-arrow {
+  transform: translate(2px, -2px);
+}
 @media (max-width: 1024px) {
   :host { 
     --w: min(250px, 32vw, 40vh); 
@@ -1926,7 +2032,23 @@ export class BookScroll extends HTMLElement {
           </div>
         `;
 
-        const fourthCardHtml = isRoseTheme ? '' : `
+        const fourthCardHtml = isRoseTheme ? `
+          <div class="square-card" data-project="project-overview" title="Project Overview: 2026 Nissan Z Heritage Sales Training">
+            <div class="square-cover">
+              <div class="mini-page" style="padding: 0; overflow: hidden;">
+                <img
+                  src="/project-overview-cover.png"
+                  alt="Project Overview - 2026 Nissan Z Heritage Sales Training"
+                  style="width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;"
+                />
+              </div>
+            </div>
+            <div class="square-bottom-bar">
+              <span class="square-title">Project Overview</span>
+              <span class="square-arrow">↗</span>
+            </div>
+          </div>
+        ` : `
           <div class="square-card square-card-all" data-project="letter-all" title="Presentation Slides">
             <div class="square-cover">
               <div class="mini-slide">
@@ -1959,7 +2081,40 @@ export class BookScroll extends HTMLElement {
         `;
         if (isRoseTheme && leafGrid) {
           grid.innerHTML = '';
-          leafGrid.innerHTML = cardsHtml;
+          leafGrid.innerHTML = `
+            <div class="square-card rose-rect-gallery-card active" data-project="project-overview" title="Project Overview: 2026 Nissan Z Heritage Sales Training">
+              <div class="square-cover">
+                <div class="mini-page" style="padding: 0; overflow: hidden;">
+                  <img
+                    src="/project-overview-cover.png"
+                    alt="Project Overview - 2026 Nissan Z Heritage Sales Training"
+                    style="width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;"
+                  />
+                </div>
+              </div>
+              <div class="square-bottom-bar">
+                <span class="square-title">Project Overview</span>
+                <span class="square-arrow">↗</span>
+              </div>
+            </div>
+
+            <div class="rose-doc-buttons-list">
+              <div class="square-card rose-pink-btn" data-project="letter" title="Executive Summary">
+                <span class="rose-pink-btn-title">Executive Summary</span>
+                <span class="rose-pink-btn-arrow">↗</span>
+              </div>
+
+              <div class="square-card rose-pink-btn" data-project="methodology" title="E-Learning Delivery Plan">
+                <span class="rose-pink-btn-title">E-Learning Delivery Plan</span>
+                <span class="rose-pink-btn-arrow">↗</span>
+              </div>
+
+              <div class="square-card rose-pink-btn" data-project="evidence" title="E-Learning Assessment Plan">
+                <span class="rose-pink-btn-title">E-Learning Assessment Plan</span>
+                <span class="rose-pink-btn-arrow">↗</span>
+              </div>
+            </div>
+          `;
         } else {
           if (leafGrid) leafGrid.innerHTML = '';
           grid.innerHTML = cardsHtml;
@@ -1968,74 +2123,47 @@ export class BookScroll extends HTMLElement {
         grid.innerHTML = '';
         const targetGrid = leafGrid || grid;
         targetGrid.innerHTML = `
-          <div class="square-card active" data-project="interactive-microlearning" title="Client &amp; Topic Report + Model Selection">
-            <div class="square-cover">
-              <div class="mini-page">
-                <div class="mini-da-tag">2 Documents Embedded</div>
-                <div class="mini-da-title">Client &amp; Topic Report</div>
-                <div class="mini-da-sub">Milestone 2: Model Selection</div>
-                <div class="mini-da-header">QiYao EdTech • Mr. Zhao</div>
-                <div class="mini-da-p">Instructional problem diagnosis, learner description, Backward Design &amp; Gagné Nine Events hybrid...</div>
-                <div class="mini-da-box">2 Documents Embedded ↗</div>
-              </div>
-            </div>
-            <div class="square-bottom-bar">
-              <span class="square-title">Client &amp; Model Report</span>
-              <span class="square-arrow">↗</span>
-            </div>
-          </div>
-
-          <div class="square-card" data-project="gamified-onboarding" title="Analysis Report">
-            <div class="square-cover">
-              <div class="mini-page">
-                <div class="mini-da-tag">Analysis Deliverable</div>
-                <div class="mini-da-title">Analysis Report</div>
-                <div class="mini-da-sub">Goals, Skills &amp; Learners</div>
-                <div class="mini-da-header">5 Major Performance Steps</div>
-                <div class="mini-da-p">Entry skills validation, Grades 2–5 learner profiles, 5 key misconceptions &amp; Notion context...</div>
-                <div class="mini-da-box">Full Report Embedded ↗</div>
-              </div>
-            </div>
-            <div class="square-bottom-bar">
-              <span class="square-title">Analysis Report</span>
-              <span class="square-arrow">↗</span>
-            </div>
-          </div>
-
-          <div class="square-card" data-project="accessible-stem" title="Design Report (Objectives, Assessment & Flow)">
-            <div class="square-cover">
-              <div class="mini-page">
-                <div class="mini-da-tag">Design Specification</div>
-                <div class="mini-da-title">Design Report</div>
-                <div class="mini-da-sub">Objectives &amp; Assessment Flow</div>
-                <div class="mini-da-header">6 Mager Objectives (B/C/Cr)</div>
-                <div class="mini-da-p">Authentic assessment alignment, 4-phase Gagné flow, and evidence-based decision matrix...</div>
-                <div class="mini-da-box">Full Report Embedded ↗</div>
-              </div>
-            </div>
-            <div class="square-bottom-bar">
-              <span class="square-title">Design Report</span>
-              <span class="square-arrow">↗</span>
-            </div>
-          </div>
-
-          <div class="square-card square-card-all" data-project="all" title="ETEC 6440 Presentation Slides">
-            <div class="square-cover">
-              <div class="mini-slide">
-                <div class="mini-slide-top">
-                  <span class="mini-slide-badge">Slide 1 of 11</span>
-                  <span style="font-size: clamp(4px, 0.48vw, 5.2px); color: #709A02; font-weight: 700;">PPTX Presentation</span>
+          <div class="square-card square-card-all rose-rect-gallery-card active" data-project="all" title="Project Overview / Presentation Slides">
+            <div class="square-cover" style="background: #FFFFFF; padding: 0;">
+              <div style="position: relative; width: 100%; height: 100%; background: #FFFFFF; overflow: hidden; container-type: inline-size; font-family: 'Poppins', Arial, sans-serif;">
+                <div style="position: absolute; left: 59.85%; top: 32.40%; width: 15.51%; height: 27.75%; border-radius: 50%; background: rgba(68, 114, 196, 0.62);"></div>
+                <div style="position: absolute; left: 52.87%; top: 36.52%; width: 30.01%; height: 53.70%; border-radius: 50%; background: rgba(255, 0, 0, 0.62);"></div>
+                <div style="position: absolute; left: 48.82%; top: 32.58%; width: 25.96%; height: 46.46%; border-radius: 50%; background: rgba(255, 192, 0, 0.62);"></div>
+                <div style="position: absolute; left: 5.45%; top: 14.73%; font-size: 2.8cqw; font-weight: 600; color: #000000; line-height: 1;">Yu Liu</div>
+                <div style="position: absolute; left: 5.98%; top: 21.04%; font-size: 1.25cqw; font-weight: 400; color: #221E1F; line-height: 1;">ETEC 6440</div>
+                <div style="position: absolute; left: 5.45%; top: 56.26%; font-family: Impact, 'Arial Black', sans-serif; font-size: 5.97cqw; color: #000000; line-height: 1.05;">
+                  <div>Designing for</div>
+                  <div>Grammar Transfer</div>
                 </div>
-                <div class="mini-slide-center">
-                  <div class="mini-slide-title">Designing for Grammar Transfer</div>
-                  <div class="mini-slide-author">Yu Liu • ETEC 6440</div>
+                <div style="position: absolute; left: 5.98%; top: 82.54%; font-size: 1.66cqw; color: #221E1F; line-height: 1;">California State University San Bernardino</div>
+                <div style="position: absolute; left: 70.11%; top: 13.18%; width: 9.34%; height: 7.86%; background: #000000; color: #FFFFFF; font-size: 2.8cqw; font-weight: 600; display: flex; align-items: center; justify-content: center;">Client</div>
+                <div style="position: absolute; left: 73.85%; top: 21.14%; font-size: 2.08cqw; color: #000000; line-height: 1.15;">
+                  <div>/Qi Yao Educational</div>
+                  <div>Technology</div>
                 </div>
-                <div class="mini-slide-footer">CSUSB • QiYao EdTech</div>
+                <div style="position: absolute; left: 72.80%; top: 30.21%; width: 23.34%; text-align: right; font-size: 1.25cqw; color: #221E1F; line-height: 1;">Focus: Tense Application in Writing</div>
               </div>
             </div>
             <div class="square-bottom-bar">
               <span class="square-title">Presentation Slides</span>
               <span class="square-arrow">↗</span>
+            </div>
+          </div>
+
+          <div class="rose-doc-buttons-list">
+            <div class="square-card rose-pink-btn" data-project="interactive-microlearning" title="Client &amp; Topic Report + Model Selection">
+              <span class="rose-pink-btn-title">Client &amp; Model Report</span>
+              <span class="rose-pink-btn-arrow">↗</span>
+            </div>
+
+            <div class="square-card rose-pink-btn" data-project="gamified-onboarding" title="Analysis Report">
+              <span class="rose-pink-btn-title">Analysis Report</span>
+              <span class="rose-pink-btn-arrow">↗</span>
+            </div>
+
+            <div class="square-card rose-pink-btn" data-project="accessible-stem" title="Design Report (Objectives, Assessment &amp; Flow)">
+              <span class="rose-pink-btn-title">Design Report</span>
+              <span class="rose-pink-btn-arrow">↗</span>
             </div>
           </div>
         `;

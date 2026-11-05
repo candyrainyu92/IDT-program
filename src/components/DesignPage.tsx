@@ -9,6 +9,7 @@ import notebookCoverImg from '../assets/images/Notebook 2.png';
 import { PaperTear } from './PaperTear';
 import { BookScroll } from './BookScroll';
 import { ClientProjectDocumentsModal } from './ClientProjectDocumentsModal';
+import { OriginalPresentationSlidesViewer } from './OriginalPresentationSlidesViewer';
 import { caseStudies } from '../data/portfolioData';
 import { ChevronDown, ChevronUp, RotateCw, CheckCircle2, ArrowLeft, ArrowRight, X, Sparkles, Layers, FileText } from 'lucide-react';
 
@@ -153,8 +154,10 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
 
   // Section 3: Interactive Book & Gallery Modal State (From Model to Practice)
   const [isBookOpen, setIsBookOpen] = useState(false);
+  const [isReferenceOpen, setIsReferenceOpen] = useState(false);
   const [isGalleryModalOpen, setIsGalleryModalOpen] = useState(false);
   const [isDocModalOpen, setIsDocModalOpen] = useState(false);
+  const [isPresentationModalOpen, setIsPresentationModalOpen] = useState(false);
   const [docModalTab, setDocModalTab] = useState<'client-topic' | 'model-selection' | 'goals-skills-analysis' | 'design-report' | 'presentation-slides'>('client-topic');
   const [activeGalleryProjectId, setActiveGalleryProjectId] = useState<string>('interactive-microlearning');
 
@@ -171,10 +174,9 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
       setActiveGalleryProjectId('accessible-stem');
       setDocModalTab('design-report');
       setIsDocModalOpen(true);
-    } else if (projectId === 'all' || projectId === 'presentation-slides') {
+    } else if (projectId === 'all' || projectId === 'presentation-slides' || projectId === 'project-overview') {
       setActiveGalleryProjectId('presentation-slides');
-      setDocModalTab('presentation-slides');
-      setIsDocModalOpen(true);
+      setIsPresentationModalOpen(true);
     } else if (projectId) {
       setActiveGalleryProjectId(projectId);
       setIsGalleryModalOpen(true);
@@ -1445,12 +1447,82 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
               </div>
             </div>
 
+            {/* Section: Collapsible Reference (APA 7th Format) */}
+            <section className="w-full max-w-4xl mx-auto px-4 sm:px-6 mb-10 sm:mb-14">
+              <div className="border-t border-b border-[#4C4747]/20 py-4 -mt-[22%] mb-[4%] relative z-20">
+                <button
+                  type="button"
+                  onClick={() => setIsReferenceOpen((prev) => !prev)}
+                  aria-expanded={isReferenceOpen}
+                  className="w-full flex items-center justify-between text-left py-2 cursor-pointer select-none group"
+                >
+                  <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#4C4747] group-hover:text-[#DC9BB5] transition-colors">
+                    Reference
+                  </h3>
+                  <motion.div
+                    animate={{ rotate: isReferenceOpen ? 180 : 0 }}
+                    transition={{ duration: 0.25, ease: 'easeInOut' }}
+                    className="w-8 h-8 rounded-full bg-[#F7F3EB] border border-[#4C4747]/15 flex items-center justify-center text-[#4C4747] group-hover:bg-[#DC9BB5] transition-colors"
+                  >
+                    <ChevronDown className="w-4 h-4" />
+                  </motion.div>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isReferenceOpen && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <div className="pt-4 pb-2 space-y-3.5 text-sm sm:text-base text-[#4C4747]/90 leading-relaxed text-left font-normal">
+                        <p className="pl-8 -indent-8">
+                          Allen, M. W., Sites, R., &amp; American Society for Training and Development. (2012). <em>Leaving Addie for SAM: An Agile Model for Developing the Best Learning Experiences</em> (1st ed.). ASTD Press.
+                        </p>
+
+                        <p className="pl-8 -indent-8">
+                          Dávila Rubio, A. M. (2017). Wiggins, G., &amp; McTighe, J. (2005) Understanding by design (2nd ed.). Alexandria, VA: Association for Supervision and Curriculum Development ASCD. <em>Colombian Applied Linguistics Journal</em>, <em>19</em>(1), 140–142.{' '}
+                          <a
+                            href="https://doi.org/10.14483/calj.v19n1.11490"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline decoration-[#4C4747]/40 hover:text-[#DC9BB5] transition-colors break-all"
+                          >
+                            https://doi.org/10.14483/calj.v19n1.11490
+                          </a>
+                        </p>
+
+                        <p className="pl-8 -indent-8">
+                          Gagné, R. M. (1985). <em>The conditions of learning and theory of instruction</em> (4th ed.). Holt, Rinehart and Winston.
+                        </p>
+
+                        <p className="pl-8 -indent-8">
+                          Molenda, M. (2003). In search of the elusive ADDIE model. <em>Performance Improvement (International Society for Performance Improvement)</em>, <em>42</em>(5), 34–36.{' '}
+                          <a
+                            href="https://doi.org/10.1002/pfi.4930420508"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline decoration-[#4C4747]/40 hover:text-[#DC9BB5] transition-colors break-all"
+                          >
+                            https://doi.org/10.1002/pfi.4930420508
+                          </a>
+                        </p>
+
+                        <p className="pl-8 -indent-8">
+                          Reiser, R. A., Carr-Chellman, A. A., &amp; Dempsey, J. V. (Eds.). (2025). <em>Trends and Issues in Instructional Design and Technology</em> (5th ed.). Routledge.
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </section>
+
             {/* Bottom Actions: Navigation */}
-            <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-14 mb-2">
-              <div 
-                className="flex flex-wrap items-center justify-center gap-4 -translate-y-[7vh]"
-                style={{ transform: 'translateY(-7vh)' }}
-              >
+            <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-14 pb-10 sm:pb-14">
+              <div className="flex flex-wrap items-center justify-center gap-4">
                 <button
                   id="design-to-foundation-btn"
                   onClick={() => onNavigate?.('foundation')}
@@ -1641,8 +1713,7 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                         type="button"
                         onClick={() => {
                           setIsGalleryModalOpen(false);
-                          setDocModalTab('presentation-slides');
-                          setIsDocModalOpen(true);
+                          setIsPresentationModalOpen(true);
                         }}
                         className="w-full py-3.5 px-5 rounded-2xl bg-[#709A02] hover:bg-[#5d8102] text-white font-extrabold text-sm sm:text-base flex items-center justify-center gap-2 shadow-xl transition-all cursor-pointer active:scale-98"
                       >
@@ -1677,6 +1748,53 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
         onClose={() => setIsDocModalOpen(false)}
         initialDoc={docModalTab}
       />
+
+      {/* Project Overview / Presentation Slides Original In-Page Modal */}
+      <AnimatePresence>
+        {isPresentationModalOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-[#EFE8DC]/90 backdrop-blur-md"
+            onClick={() => setIsPresentationModalOpen(false)}
+          >
+            <motion.div
+              initial={{ scale: 0.92, opacity: 0, y: 15 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.94, opacity: 0, y: 15 }}
+              transition={{ type: 'spring', stiffness: 350, damping: 25 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-5xl h-[90vh] bg-[#F7F3EB] rounded-2xl border border-[#4C4747]/20 shadow-[0_25px_50px_rgba(76,71,71,0.22)] flex flex-col overflow-hidden"
+            >
+              {/* Modal Header */}
+              <div className="flex items-center justify-between px-4 sm:px-6 py-3 bg-[#F7F3EB] border-b border-[#4C4747]/15 shrink-0">
+                <div className="flex items-center gap-2.5">
+                  <span className="text-sm sm:text-base font-extrabold text-[#4C4747] tracking-tight">
+                    Project Overview
+                  </span>
+                  <span className="text-xs font-medium text-[#9D988F] hidden sm:inline">
+                    • Designing for Grammar Transfer (ETEC 6440)
+                  </span>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setIsPresentationModalOpen(false)}
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#4C4747] hover:bg-[#3a3636] text-[#EFE8DC] flex items-center justify-center shadow-md transition-all cursor-pointer select-none hover:scale-105 active:scale-95"
+                  aria-label="Close Presentation Modal"
+                >
+                  <X className="w-4 h-4 sm:w-5 sm:h-5" />
+                </button>
+              </div>
+
+              {/* Direct Unmodified Original Presentation Slides */}
+              <div className="w-full flex-1 bg-[#525659] overflow-hidden">
+                <OriginalPresentationSlidesViewer />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </motion.div>
   );

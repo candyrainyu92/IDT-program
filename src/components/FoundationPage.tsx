@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect, useMemo } from 'react';
-import { motion, useMotionValue, useSpring, useTransform, useScroll, useInView, type MotionValue } from 'motion/react';
+import { motion, AnimatePresence, useMotionValue, useSpring, useTransform, useScroll, useInView, type MotionValue } from 'motion/react';
 import folderImg from '../assets/images/Untitled_Artwork_6.png';
 import artworkFolderImg from '../assets/images/Untitled_Artwork_transparent.png';
 import gagneImg from '../assets/images/pioneer_gagne_1790044588787.jpg';
@@ -541,6 +541,7 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
 
   // Scroll Pinned Animation for Section 2 (What is IDT?)
   const [isMobile, setIsMobile] = useState(false);
+  const [isReferenceOpen, setIsReferenceOpen] = useState(false);
   useEffect(() => {
     const checkMobile = () => setIsMobile(window.innerWidth < 768);
     checkMobile();
@@ -1111,16 +1112,18 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
 
           {/* "View My Work" Button Overlapping Bottom Edge of Folder with Hover Scale, Tilt (-3deg), and Pink Background */}
           <div className="-mt-8 sm:-mt-12 md:-mt-14 ml-4 sm:ml-8 relative z-20">
-            <motion.button
-              onClick={onNavigateToWork}
+            <motion.a
+              href="https://docs.google.com/document/d/1i3ZWD107rVvpInXEoQ-2BCYs2huC6FYV2-5SmELqE-c/edit?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
               id="foundation-view-work-btn"
               whileHover={{ scale: 1.08, rotate: -3, backgroundColor: "#DC9BB5" }}
               whileTap={{ scale: 0.96 }}
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
-              className="px-7 py-2.5 bg-[#F7F3EB] text-[#4C4747] border border-[#4C4747]/15 font-inter font-bold text-sm rounded-full shadow-[0_10px_24px_rgba(76,71,71,0.18)] cursor-pointer select-none origin-center"
+              className="inline-block px-7 py-2.5 bg-[#F7F3EB] text-[#4C4747] border border-[#4C4747]/15 font-inter font-bold text-sm rounded-full shadow-[0_10px_24px_rgba(76,71,71,0.18)] cursor-pointer select-none origin-center no-underline"
             >
               View My Work
-            </motion.button>
+            </motion.a>
           </div>
 
         </motion.div>
@@ -1209,7 +1212,7 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
                 From Learning Theory <span className="text-[#DC9BB5]">to Design Practice</span>
               </h2>
               <h3 className="text-lg sm:text-xl md:text-2xl font-semibold font-inter text-[#DC9BB5]">
-                Reflection on IDT Foundation
+                My Reflection on IDT Foundation
               </h3>
             </div>
 
@@ -1223,6 +1226,83 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
                   For me, becoming an instructional designer also means becoming an intentional learner. Working with SMEs may require me to enter unfamiliar domains, make sense of large amounts of information, identify what matters, and connect new knowledge before I can design meaningful learning experiences for others.
                 </p>
               </div>
+            </div>
+          </section>
+
+          {/* 9. Section: Collapsible Reference (APA 7th Format) */}
+          <section className="w-full max-w-4xl mx-auto px-4 sm:px-6 mb-10 sm:mb-14">
+            <div className="border-t border-b border-[#4C4747]/20 py-4">
+              <button
+                type="button"
+                onClick={() => setIsReferenceOpen((prev) => !prev)}
+                aria-expanded={isReferenceOpen}
+                className="w-full flex items-center justify-between text-left py-2 cursor-pointer select-none group"
+              >
+                <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#4C4747] group-hover:text-[#DC9BB5] transition-colors">
+                  Reference
+                </h3>
+                <motion.div
+                  animate={{ rotate: isReferenceOpen ? 180 : 0 }}
+                  transition={{ duration: 0.25, ease: 'easeInOut' }}
+                  className="w-8 h-8 rounded-full bg-[#F7F3EB] border border-[#4C4747]/15 flex items-center justify-center text-[#4C4747] group-hover:bg-[#DC9BB5] transition-colors"
+                >
+                  <ChevronDown className="w-4 h-4" />
+                </motion.div>
+              </button>
+
+              <AnimatePresence initial={false}>
+                {isReferenceOpen && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="pt-4 pb-2 space-y-3.5 text-sm sm:text-base text-[#4C4747]/90 leading-relaxed text-left font-normal">
+                      <p className="pl-8 -indent-8">
+                        Association for Educational Communications and Technology. (n.d.). <em>AECT definition of educational technology</em> [Web page].{' '}
+                        <a
+                          href="https://www.aect.org"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline decoration-[#4C4747]/40 hover:text-[#DC9BB5] transition-colors"
+                        >
+                          www.aect.org
+                        </a>
+                      </p>
+
+                      <p className="pl-8 -indent-8">
+                        Dick, W., &amp; Carey, L. (1978). <em>The systematic design of instruction</em>. Scott, Foresman.
+                      </p>
+
+                      <p className="pl-8 -indent-8">
+                        Ertmer, P. A., &amp; Newby, T. J. (2013). Behaviorism, Cognitivism, Constructivism: Comparing Critical Features From an Instructional Design Perspective. <em>Performance Improvement Quarterly</em>, <em>26</em>(2), 43–71.{' '}
+                        <a
+                          href="https://doi.org/10.1002/piq.21143"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="underline decoration-[#4C4747]/40 hover:text-[#DC9BB5] transition-colors break-all"
+                        >
+                          https://doi.org/10.1002/piq.21143
+                        </a>
+                      </p>
+
+                      <p className="pl-8 -indent-8">
+                        Prensky, M. (2001). Digital Natives, Digital Immigrants. <em>On the Horizon</em>, <em>9</em>(5), 1–6. NCB University Press.
+                      </p>
+
+                      <p className="pl-8 -indent-8">
+                        Reiser, R. A., Carr-Chellman, A. A., &amp; Dempsey, J. V. (Eds.). (2025). <em>Trends and Issues in Instructional Design and Technology</em> (5th ed.). Routledge.
+                      </p>
+
+                      <p className="pl-8 -indent-8">
+                        Siemens, G. (2005). Connectivism: A learning theory for the digital age. <em>International Journal of Instructional Technology and Distance Learning</em>, <em>2</em>(1).
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </section>
 
