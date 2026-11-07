@@ -1379,7 +1379,7 @@ template.innerHTML = `<style>
               <div class="back-header">
                 <div class="back-title">My Project</div>
                 <div class="back-divider"></div>
-                <div class="back-subtitle">ETEC 6440 project</div>
+                <div class="back-subtitle">ETEC 6920 project</div>
               </div>
               <div class="back-projects-overview">
                 <div class="back-projects-steps">
@@ -1509,32 +1509,32 @@ template.innerHTML = `<style>
 
 const PROJECT_DETAILS = {
   'interactive-microlearning': {
-    title: 'Client & Topic Report + Model Selection',
-    category: 'QiYao EdTech • K-12 English Grammar E-Learning',
-    summary: 'Comprehensive Client & Topic Report addressing Mr. Zhao’s English department performance gap, paired with Milestone 2: Comparative Model Selection (Backward Design + Gagné’s Nine Events hybrid).',
-    tags: ['Client Report', 'Model Selection', 'Backward Design', 'Gagné Nine Events', 'Performance Gap'],
-    impact: 'Impact: 2 Embedded Documents: Problem Diagnosis, Learner Analysis & Hybrid Instructional Architecture.'
+    title: 'Analysis Report',
+    category: 'QiYao EdTech • Think Supplementary E-Learning Project',
+    summary: 'Comprehensive Analysis Report covering Instructional Context, Learner Analysis (N=67 Pre-Test & CEFR), Performance Gap, Evidence, Cause Analysis, Instructional Factors, Key Findings, and Design Implications.',
+    tags: ['Analysis Report', 'Learner Analysis', 'Performance Gap', 'CEFR', 'Design Implications'],
+    impact: 'Impact: 8-Section Analysis Report for the Think Supplementary E-Learning Project.'
   },
   'gamified-onboarding': {
-    title: 'Analysis Report',
-    category: 'QiYao EdTech • Systematic ID Foundation',
-    summary: 'A comprehensive analytical foundation decomposing the 5-step instructional hierarchy, subordinate skills, entry behaviors validation, learner characteristics (Grades 2–5), and contextual constraints.',
-    tags: ['Analysis Report', 'Skill Hierarchy', 'Entry Behaviors', 'Misconceptions', 'Notion Context'],
-    impact: 'Impact: Decomposed 5-step procedural hierarchy, validated 4 entry behaviors & 5 cognitive misconceptions.'
+    title: 'Design Report',
+    category: 'QiYao EdTech • ETEC 6920 Design Report',
+    summary: 'Comprehensive Design Report covering Project Scope, Integrated Design Framework, Course Outcomes, 36-Module Grammar Map, 90 Student-Learning Modules, Assessment & Feedback, Notion Delivery, Prototype Specification, Implementation, and Formative Evaluation.',
+    tags: ['Design Report', '36-Module Map', '90 Learning Modules', 'Assessment Plan', 'Prototype Spec'],
+    impact: 'Impact: Complete 10-Section Design Report & Curriculum Architecture across THINK Starter to Level 5.'
   },
   'accessible-stem': {
-    title: 'Design Report (Objectives, Assessment & Flow)',
-    category: 'QiYao EdTech • Systematic ID Design Specification',
-    summary: 'Mager B/C/Cr performance objectives, formative & summative assessment alignment, 4-phase cognitive instructional flow, and evidence-based reasoning matrix.',
-    tags: ['Performance Objectives', 'Assessment Alignment', '4-Phase Flow', 'Gagné Nine Events', 'Evidence Matrix'],
-    impact: 'Impact: 6 criterion-referenced objectives, authentic transfer paragraph assessment & 4-phase cognitive load sequence.'
+    title: 'Revision Development Plan',
+    category: 'QiYao EdTech • ETEC 6920 Prototype Revision Plan',
+    summary: 'Revision Development Plan documenting revisions to the THINK prototype based on teacher-reviewed formative assessment and formative evaluation observations from the two-week tryout of the first 15 learner-facing modules across Grades 2–3 and Grades 4–5.',
+    tags: ['Revision Plan', 'Formative Evaluation', 'Bilingual Support', 'Print & Notion Pathways', 'Interactive Step 4'],
+    impact: 'Impact: Evidence-driven revision priorities, verification methods, and 8-step revision workflow following the 2-week tryout.'
   },
   'all': {
-    title: 'ETEC 6440 Presentation Slides',
-    category: 'QiYao EdTech • Executive Project Presentation',
-    summary: 'Designing for Grammar Transfer: 11-slide executive presentation covering performance gap diagnosis, hybrid instructional design (Backward Design + Gagné), and Notion implementation.',
-    tags: ['Presentation Slides', 'ETEC 6440', 'Grammar Transfer', 'Scaffolding', 'Notion Delivery'],
-    impact: 'Impact: 11-slide executive deck with high-resolution visual scaffolds, hybrid model synthesis, and implementation architecture.'
+    title: 'ETEC 6920 Project Overview',
+    category: 'QiYao EdTech • ETEC 6920 Project Overview',
+    summary: 'ETEC 6920 Project Overview covering client and context background, problem diagnosis, hybrid instructional design, and implementation.',
+    tags: ['Project Overview', 'ETEC 6920', 'Grammar Transfer', 'Scaffolding', 'Notion Delivery'],
+    impact: 'Impact: Comprehensive ETEC 6920 Project Overview document.'
   }
 };
 
@@ -1834,7 +1834,7 @@ export class BookScroll extends HTMLElement {
     const isRoseTheme = this.getAttribute('cover-theme') === 'rose';
     const backSubtitle = this.$('.back-subtitle');
     if (backSubtitle) {
-      backSubtitle.textContent = isRoseTheme ? 'ETEC 6480 Project' : 'ETEC 6440 project';
+      backSubtitle.textContent = isRoseTheme ? 'ETEC 6480 Project' : 'ETEC 6920 project';
     }
     const stepsContainer = this.$('.back-projects-steps');
     if (stepsContainer) {
@@ -2123,46 +2123,35 @@ export class BookScroll extends HTMLElement {
         grid.innerHTML = '';
         const targetGrid = leafGrid || grid;
         targetGrid.innerHTML = `
-          <div class="square-card square-card-all rose-rect-gallery-card active" data-project="all" title="Project Overview / Presentation Slides">
-            <div class="square-cover" style="background: #FFFFFF; padding: 0;">
-              <div style="position: relative; width: 100%; height: 100%; background: #FFFFFF; overflow: hidden; container-type: inline-size; font-family: 'Poppins', Arial, sans-serif;">
-                <div style="position: absolute; left: 59.85%; top: 32.40%; width: 15.51%; height: 27.75%; border-radius: 50%; background: rgba(68, 114, 196, 0.62);"></div>
-                <div style="position: absolute; left: 52.87%; top: 36.52%; width: 30.01%; height: 53.70%; border-radius: 50%; background: rgba(255, 0, 0, 0.62);"></div>
-                <div style="position: absolute; left: 48.82%; top: 32.58%; width: 25.96%; height: 46.46%; border-radius: 50%; background: rgba(255, 192, 0, 0.62);"></div>
-                <div style="position: absolute; left: 5.45%; top: 14.73%; font-size: 2.8cqw; font-weight: 600; color: #000000; line-height: 1;">Yu Liu</div>
-                <div style="position: absolute; left: 5.98%; top: 21.04%; font-size: 1.25cqw; font-weight: 400; color: #221E1F; line-height: 1;">ETEC 6440</div>
-                <div style="position: absolute; left: 5.45%; top: 56.26%; font-family: Impact, 'Arial Black', sans-serif; font-size: 5.97cqw; color: #000000; line-height: 1.05;">
-                  <div>Designing for</div>
-                  <div>Grammar Transfer</div>
-                </div>
-                <div style="position: absolute; left: 5.98%; top: 82.54%; font-size: 1.66cqw; color: #221E1F; line-height: 1;">California State University San Bernardino</div>
-                <div style="position: absolute; left: 70.11%; top: 13.18%; width: 9.34%; height: 7.86%; background: #000000; color: #FFFFFF; font-size: 2.8cqw; font-weight: 600; display: flex; align-items: center; justify-content: center;">Client</div>
-                <div style="position: absolute; left: 73.85%; top: 21.14%; font-size: 2.08cqw; color: #000000; line-height: 1.15;">
-                  <div>/Qi Yao Educational</div>
-                  <div>Technology</div>
-                </div>
-                <div style="position: absolute; left: 72.80%; top: 30.21%; width: 23.34%; text-align: right; font-size: 1.25cqw; color: #221E1F; line-height: 1;">Focus: Tense Application in Writing</div>
+          <div class="square-card square-card-all rose-rect-gallery-card active" data-project="all" title="ETEC 6920 Project Overview.pdf">
+            <div class="square-cover">
+              <div class="mini-page" style="padding: 0; overflow: hidden;">
+                <img
+                  src="/etec-6920-project-overview-cover.png"
+                  alt="ETEC 6920 Project Overview"
+                  style="width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;"
+                />
               </div>
             </div>
             <div class="square-bottom-bar">
-              <span class="square-title">Presentation Slides</span>
+              <span class="square-title">Project Overview</span>
               <span class="square-arrow">↗</span>
             </div>
           </div>
 
           <div class="rose-doc-buttons-list">
-            <div class="square-card rose-pink-btn" data-project="interactive-microlearning" title="Client &amp; Topic Report + Model Selection">
-              <span class="rose-pink-btn-title">Client &amp; Model Report</span>
-              <span class="rose-pink-btn-arrow">↗</span>
-            </div>
-
-            <div class="square-card rose-pink-btn" data-project="gamified-onboarding" title="Analysis Report">
+            <div class="square-card rose-pink-btn" data-project="interactive-microlearning" title="Analysis Report: Think Supplementary E-Learning Project">
               <span class="rose-pink-btn-title">Analysis Report</span>
               <span class="rose-pink-btn-arrow">↗</span>
             </div>
 
-            <div class="square-card rose-pink-btn" data-project="accessible-stem" title="Design Report (Objectives, Assessment &amp; Flow)">
+            <div class="square-card rose-pink-btn" data-project="gamified-onboarding" title="Design Report">
               <span class="rose-pink-btn-title">Design Report</span>
+              <span class="rose-pink-btn-arrow">↗</span>
+            </div>
+
+            <div class="square-card rose-pink-btn" data-project="accessible-stem" title="Revision Development Plan">
+              <span class="rose-pink-btn-title">Revision Development Plan</span>
               <span class="rose-pink-btn-arrow">↗</span>
             </div>
           </div>

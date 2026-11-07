@@ -1,0 +1,103 @@
+﻿Revision Development Plan
+1. Purpose and Tryout Context
+This plan documents revisions to the THINK prototype based on teacher-reviewed formative assessment and formative evaluation observations from the two-week tryout of the first 15 learner-facing modules. The prototype includes two pathways: Grades 2–3 and Grades 4–5. The purpose of revision is to preserve instructional elements that appear to support learning and address barriers related to platform usability, language support, and activity design.
+The findings are encouraging, but they do not establish that the prototype alone caused the observed learning gains. In particular, students may have studied some or all of the first 15 modules before the tryout.
+2. Formative Assessment Findings and Revision Decisions
+Tasks 1–4: Strong performance and score improvement
+The teacher-reviewed formative assessment showed that students performed well on Tasks 1–4 after the two-week tryout, with substantial improvement in assessment scores. Because students may already have studied the content covered in the first 15 modules, prior familiarity may have contributed to their performance.
+Revision decisions
+* Retain the current instructional sequence, explanations, and practice activities supporting Tasks 1–4.
+* Avoid unnecessary redesign where learners have demonstrated good performance.
+* Review item-level errors and teacher comments to identify concepts that still need clarification or additional practice.
+* In a future tryout, use parallel items or an unfamiliar context where possible to check application beyond previously studied examples.
+Task 5: Improved sentence construction
+Teacher observation indicated that students improved their sentence-construction skills during Task 5. Students appeared confident and were able to produce correct sentences quickly.
+Revision decisions
+* Retain the sentence-building activities and supports that appear to help learners construct accurate sentences.
+* Preserve opportunities for independent sentence production, not only recognition-based questions.
+* Continue monitoring accuracy, confidence, speed, and independence with new prompts to check transfer.
+Writing task: More sentences and fewer grammatical errors
+During the writing task, students produced noticeably more sentences, and grammatical errors occurred less frequently.
+Revision decisions
+* Retain the current writing-task structure and language supports.
+* Maintain the connection between grammar practice in earlier modules and the integrated writing task in M15.
+* Continue evaluating writing quality as well as quantity, including grammatical accuracy, relevance to the prompt, and organization.
+* Use a comparable but different writing prompt in a future tryout to check whether the improvement is maintained.
+3. Formative Evaluation Findings and Revision Decisions
+Notion usability across grade-level pathways
+Grades 2–3 students were not comfortable navigating the Notion platform. After discussion with the client, the team plans to provide printed copies of the learning materials as an additional option. Grades 4–5 students did not show the same difficulty using Notion.
+Revision decisions
+* Develop printable versions of the learning materials for Grades 2–3.
+* Continue using Notion for Grades 4–5, where students used the platform without reported difficulty.
+* Ensure that printed materials preserve the same objectives, examples, practice tasks, and sequence as the digital version.
+* Review print readability, page order, writing space, and ease of teacher distribution.
+* Treat printing as an alternative delivery format, not a change to learning objectives or assessment criteria.
+Positive engagement with the digital platform
+Teacher observation indicated that students liked using the digital platform and were able to maintain their attention during learning activities.
+Revision decisions
+* Retain the digital learning experience for Grades 4–5.
+* Preserve platform features and activity formats that supported engagement.
+* Continue monitoring attention and task completion, while distinguishing visible engagement from evidence of learning.
+* Avoid adding decorative or unnecessary interactions that may distract from the objectives.
+Bilingual support in selected sections
+The evaluation identified a need for Chinese bilingual support in selected areas, particularly learning objectives and checklists.
+Revision decisions
+* Add concise Chinese translations alongside the English objectives and checklists.
+* Keep English as the primary language for instructional content and target-language practice.
+* Use Chinese strategically to clarify expectations and help students understand what they are expected to learn or check.
+* Ask the client or a qualified bilingual reviewer to check translation accuracy, consistency, and age appropriateness.
+Step 4, “Think About the Meaning”: Cognitive load
+Step 4, “Think About the Meaning,” is intended to assess students’ thinking and understanding. Although it currently uses multiple-choice questions, students were unfamiliar with this question type. The format therefore added cognitive load and made it harder for students to focus on the intended meaning-making process.
+Revision decisions
+* Redesign Step 4 as an interactive activity rather than relying on the current multiple-choice format.
+* Use a concrete, guided interaction that allows students to demonstrate their understanding of meaning.
+* Preserve the learning purpose of the step while reducing unnecessary reading and test-taking demands.
+* Pilot the revised activity with both pathways and adjust scaffolding and complexity to suit each group.
+4. Revision Priorities
+Priority
+	Planned revision
+	Rationale
+	High
+	Provide printed materials for Grades 2–3
+	Notion navigation created a usability barrier for this age group; the client has discussed the print option.
+	High
+	Redesign Step 4 as an interactive activity
+	The multiple-choice format increased cognitive load for students unfamiliar with this question type.
+	Moderate
+	Add Chinese support to objectives and checklists
+	Bilingual clarification may improve understanding of expectations while keeping English-language practice central.
+	Maintain and monitor
+	Retain sentence-building and writing supports
+	Teacher observations indicate stronger sentence construction, increased writing output, and fewer grammatical errors.
+	Maintain and monitor
+	Retain Notion for Grades 4–5
+	Students in this pathway did not show difficulty using the platform and responded positively to digital learning.
+	Maintain and monitor
+	Retain content assessed in Tasks 1–4, with targeted adjustments only where needed
+	Students performed well, although prior exposure may have contributed to the results.
+	5. Implementation and Verification
+Revision
+	Verification method
+	Printable materials for Grades 2–3
+	Ask the teacher to review the print version; observe whether students can follow the sequence and complete tasks without platform navigation. Check readability and writing space.
+	Notion for Grades 4–5
+	Conduct a brief walkthrough to confirm that students can access materials, navigate between steps, and complete activities.
+	Bilingual objectives and checklists
+	Ask the client or a qualified reviewer to check translation accuracy and clarity; observe whether students understand the objectives and checklist items.
+	Interactive Step 4
+	Pilot the revised activity with both pathways; observe whether students understand the interaction and demonstrate the intended meaning-making process with less unnecessary cognitive effort.
+	Sentence-building activities
+	Use a new prompt and observe correctness, confidence, speed, and independence.
+	Writing task
+	Use a comparable but different prompt; review sentence quantity, grammatical accuracy, relevance, and organization.
+	Tasks 1–4
+	Use parallel items or an unfamiliar context where possible to check application beyond previously studied examples.
+	6. Revision Workflow
+1. Organize teacher-reviewed assessment results and evaluation notes by task, pathway, and issue.
+2. Separate direct observations from interpretations. For example, record strong performance on Tasks 1–4 while noting prior exposure as a possible explanation.
+3. Prioritize revisions according to their impact on access, cognitive load, learning alignment, and implementation feasibility.
+4. Revise the relevant materials while keeping both pathways aligned with the learning objectives.
+5. Ask the client or teacher to review the revised materials before the next tryout.
+6. Conduct a focused retest of the print materials, bilingual supports, and interactive Step 4.
+7. Record the prototype version, changes, review feedback, and verification results.
+8. Mark each issue as resolved, requiring further adjustment, or needing additional evidence.

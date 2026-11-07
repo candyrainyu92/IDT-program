@@ -1,0 +1,2229 @@
+﻿Design Report
+Section 1. Project Scope and Design Priorities
+1.1 Project Purpose
+The project will develop a supplementary e-learning product that supports independent grammar application and written production within QiYao’s THINK program.
+The design responds to findings from client meetings, teacher questionnaires, student assignments, textbook analysis, and course-placement results. Identified needs include complete sentence construction, grammatical accuracy, contextual grammar selection, task relevance, and reduced dependence on teacher prompts.
+1.2 Project Scope
+The curriculum framework will cover THINK Starter through Level 5. The product will include:
+* Modules integrating related content across textbook units and levels.
+* Age-responsive pathways for Grades 2–3 and Grades 4–5.
+* Explicit grammar explanations and contextual examples.
+* Sentence-construction and writing activities.
+* Vocabulary and grammar reference resources.
+* Self-checking practice, teacher-reviewed writing, and revision opportunities.
+* Learner and teacher guidance.
+The supplement will retain clear textbook connections while using its own prerequisite-based learning sequences. Existing classroom instruction will continue.
+1.3 Development Priorities
+Initial development will prioritize sentence construction and grammar-to-writing application in Starter and Level 1, where assignment evidence is currently available.
+The first prototype will address personal-information responses using affirmative forms of be. Later development will extend to other modules following teacher review and formative evaluation.
+The framework covers all six levels. Completion dates, release scope, budget, and production capacity require agreement with the client and management.
+Section 2. Design Approach and Rationale
+2.1 Integrated Design Framework
+Design Responsibility
+	Approach
+	Application
+	Overall project organization
+	ADDIE
+	Coordinate analysis, design, development, implementation, and evaluation
+	Collaborative iteration
+	SAM-informed workflow
+	Explore alternatives, prototype early, gather feedback, and revise
+	Outcome–assessment alignment
+	Backward Design
+	Define intended performance, determine evidence, then select learning experiences
+	Module learning experiences
+	Gagné’s Nine Events
+	Organize attention, recall, explanation, guidance, practice, feedback, assessment, and transfer
+	These approaches will operate within one coordinated process.
+2.2 ADDIE
+Analysis findings will guide objectives, content priorities, and implementation arrangements. Design decisions will guide development, while testing and implementation evidence may require changes to earlier decisions.
+2.3 SAM-Informed Iteration
+The designer and participating teachers will examine alternative explanations, activities, and feedback procedures before expanding production.
+A functional prototype will be reviewed and tested early. Findings will inform both the prototype and the reusable module structure.
+2.4 Backward Design
+Planning will begin with the performance learners should demonstrate. Assessment tasks will then establish what counts as evidence of achievement. Explanations and practice will prepare learners for those tasks.
+Textbook coverage will inform content selection. Learner evidence will determine instructional emphasis and support.
+2.5 Gagné’s Nine Events
+The Nine Events will guide module experiences without requiring nine separate pages or a rigid sequence in every lesson. Events may extend across several short lessons within a module.
+Section 3. Project Goals and Course Outcomes
+3.1 Project Goals
+The project aims to:
+1. Establish a curriculum connecting grammar understanding, sentence construction, and writing development.
+2. Define course outcomes and aligned assessment practices.
+3. Provide two age-responsive pathways with adjustments for proficiency and writing readiness.
+4. Support movement from guided practice to independent application.
+5. Establish manageable self-checking, teacher feedback, and revision procedures.
+6. Develop and evaluate a reusable module structure for expansion across the series.
+Project success will be examined through instructional alignment, usability, implementation feasibility, and learner performance during formative evaluation.
+Examination improvement and commercial adoption remain broader stakeholder expectations.
+3.2 Shared Course Outcomes
+After completing the relevant learning sequence, learners will be able to:
+Outcome
+	Expected Performance
+	CO1. Interpret task requirements
+	Identify contextual meaning and the information required in a response
+	CO2. Apply grammar in context
+	Select and use taught structures according to meaning, including mixed-structure tasks
+	CO3. Construct complete sentences
+	Produce meaningful sentences with necessary elements, appropriate forms, and word order
+	CO4. Produce relevant writing
+	Address required content and organize sentences into an appropriate response
+	CO5. Review and revise
+	Improve selected grammatical, sentence-level, and organizational problems
+	CO6. Apply learning independently
+	Use targeted skills in new tasks under the conditions specified in module objectives
+	3.3 Age-Responsive Pathway Outcomes
+Pathway
+	Intended Performance
+	Grades 2–3
+	Interpret familiar prompts, construct complete sentences, address required information, connect related sentences when ready, and revise selected errors
+	Grades 4–5
+	Interpret and plan responses, select grammar across contexts, produce connected texts, maintain relevance and organization, and revise independently
+	Age will inform presentation, task organization, and support. Grammar coverage and assessment difficulty will also depend on demonstrated readiness.
+Older learners may need sentence-level preparation. Younger learners demonstrating readiness may access more demanding content.
+3.4 Content-Level Expectations
+Starter and Level 1 modules will emphasize foundational sentence production and short connected writing. Level 2 modules will extend grammatical choices and relationships between ideas. Levels 3–5 will progressively address complex sentences, precision, stance, and genre requirements.
+Textbook CEFR associations will inform coverage without establishing individual proficiency.
+The client’s aspiration for a 150-word composition will apply only where suitable for the learner group, purpose, and genre.
+3.5 Alignment
+The design will connect:
+Course outcome → Age-pathway objective → Module assessment → Learning activities and feedback
+Project goals will be evaluated through product and implementation evidence; learning objectives will be evaluated through learner performance.
+Section 4. Content Organization, Module Structure, and Objectives
+4.1 Organization Principles
+The course will use ten content strands containing thirty proposed modules.
+Modules will integrate content when it shares a communicative function and prerequisite foundation. Repeated textbook content will be consolidated into a common explanation, followed by progressively more demanding application.
+Each module will include:
+* A defined performance focus.
+* Included and excluded content.
+* Prerequisite checks.
+* Short lessons and practice.
+* An independent application task.
+* Feedback and revision.
+* Textbook references.
+The thirty modules are curriculum containers. Their lesson counts and completion times will be established during detailed development and testing.
+4.2 Full-Series Grammar Content and Module Map
+The supplementary course will organize the supplied grammar content from THINK Starter through Level 5 into eleven strands and thirty-six modules.
+Repeated content will be consolidated, while level-specific extensions will remain identifiable through separate lessons. Each module will contain a sequence of manageable lessons rather than present all listed structures at once.
+Textbook Connections identifies where the included grammar appears in the supplied mapping. Coverage refers to the recorded grammar topics; it does not imply coverage of every textbook exercise or all listening, speaking, and vocabulary content.
+Abbreviations: S = Starter; L1–L5 = Levels 1–5; U = Unit.
+Strand A. Sentence Foundations and Reference
+Strand / Module
+	Included Content and Intended Application
+	Textbook Connections
+	Boundary and Prerequisites
+	A / M01. Personal Information and Be Statements
+	Subject pronouns; affirmative am/is/are; contractions; complete sentences expressing identity, age, origin, and states.
+	S U1: affirmative be and contracted forms.
+L1 Welcome: nationalities and be.
+	Begins with affirmative sentence construction. Requires familiar vocabulary. Negative and question forms belong to M02.
+	A / M02. Questions, Negatives, and Answers
+	Question words; why/because; be negatives, questions, and short answers; distinguishing full responses from short answers.
+	S U1: question words and because.
+S U2: negative and question forms of be.
+L2 Welcome: asking questions.
+L3 Welcome: question-tag review is linked to M23.
+	Starts with be patterns after M01. Questions with do/does/did are taught in the relevant tense modules.
+	A / M03. Pronouns, Possession, and Demonstratives
+	Subject/object pronoun distinctions; possessive adjectives and pronouns; possessive ’s; whose; demonstratives; double genitive.
+	S U2: object pronouns.
+S U3: possessive ’s, possessive adjectives, this/that/these/those.
+L1 U4: possessive adjectives/pronouns, whose, possessive ’s.
+L1 U6: double genitive.
+	Requires basic sentence roles and singular/plural recognition. Advanced reference through substitution and ellipsis belongs to M35.
+	A / M04. Possession and Existence
+	Have/has got in affirmative, negative, question, and short-answer forms; there is/are and there was/were.
+	S U4: there is/are.
+S U6: have/has got.
+S U10: there was/were.
+L1 Welcome: have got.
+	Distinguishes owning something from something existing. Past existence follows past be preparation in M12.
+	Strand B. Nouns, Articles, and Quantity
+Strand / Module
+	Included Content and Intended Application
+	Textbook Connections
+	Boundary and Prerequisites
+	B / M05. Nouns and Articles
+	Singular/plural nouns; countable/uncountable nouns; a/an; definite the; zero article; specific versus general reference.
+	S Welcome: a/an, plural nouns.
+S U6: countable/uncountable nouns.
+L1 Welcome: articles.
+L1 U3: countability and a/an.
+L2 U2: a/an/the and zero article.
+	Progresses from concrete nouns to reference distinctions. Requires noun recognition. Quantity expressions belong to M06.
+	B / M06. Quantity and Sufficiency
+	Some/any; much/many; a lot of/lots of; too much/many; enough; too + adjective and adjective + enough; broader quantifiers.
+	S U4: some/any.
+S U6: some with plural and uncountable nouns.
+L1 U3: quantity expressions, offers/requests with some, and too/enough.
+L4 U3: quantifiers ranging from none to all.
+	Requires M05. Distinguishes noun quantity from adjective degree. Group-reference expressions belong to M07.
+	B / M07. Indefinite and Group Reference
+	Someone/anyone/no one/everyone and related thing/place forms; all/some/none/any of them.
+	L2 U4: indefinite pronouns and group-reference expressions.
+	Requires pronoun reference and familiarity with noun groups. Focuses on identifying unspecified people, things, places, and subsets.
+	Strand C. Present-Time Expression
+Strand / Module
+	Included Content and Intended Application
+	Textbook Connections
+	Boundary and Prerequisites
+	C / M08. Routines and General Truths
+	Present simple statements, negatives, questions, and short answers; third-person agreement; spelling changes; frequency adverbs and expressions; time prepositions.
+	S U5: present simple and frequency.
+S U7: at/in/on for time.
+L1 U1: present simple and frequency review.
+L3 U1: present simple review.
+	Distinguishes lexical verbs from be. Requires complete sentence construction. Current activities belong to M09.
+	C / M09. Current and Temporary Activities
+	Present continuous forms; be + -ing; relevant spelling rules; affirmative, negative, and question construction.
+	S U8: present continuous.
+L1 U2: present continuous.
+L3 U1: present continuous review.
+	Requires forms of be. Separates continuous constructions from verb-complement -ing patterns in M29.
+	C / M10. Routines versus Current Activities
+	Meaning-based selection between present simple and continuous; verbs of perception used for opinions and descriptions; adjective complements.
+	L1 U2: present simple/continuous contrast and verbs of perception.
+L3 U1: integrated present-tense review.
+	Requires M08–09. Perfect forms are revisited through M14–15 rather than introduced here.
+	Strand D. Past Events, Experiences, and Habits
+
+
+Strand / Module
+	Included Content and Intended Application
+	Textbook Connections
+	Boundary and Prerequisites
+	D / M11. Completed Past Actions
+	Regular and irregular past verbs; spelling; past simple negatives and questions; did + base verb.
+	S U10: regular past verbs.
+S U11: irregular verbs, negatives, questions.
+L1 U5: regular verbs and negatives.
+L1 U6: irregular verbs and questions.
+L2 U8: past simple review.
+L3 U2: completed events in narrative review.
+	Requires lexical-verb sentence patterns. Past be is distinguished in M12. Past participles are not treated as identical to past forms.
+	D / M12. Past States and Background Actions
+	Was/were statements, negatives, questions, and answers; past continuous; background versus completed events; when/while.
+	S U10: past be forms.
+L1 U4: was/were.
+L1 U8: past continuous, past simple contrast, when/while.
+L2 U8: past simple/continuous review.
+L3 U2: narrative background review.
+	Requires be and M11. Earlier past events belong to M16.
+	D / M13. Past Habits and Current Familiarity
+	Used to/didn’t use to; habitual would; action/state distinctions; be/get used to + noun/-ing; tend to.
+	L2 U8: used to.
+L3 U2: used to/would.
+L3 U7: be/get used to.
+L4 U4: past habits versus familiarity.
+L4 Welcome: past routines.
+L5 Welcome: get used to and past habits.
+L5 U1: used to/would/tend to.
+	Uses separate lessons for past repetition, present tendency, and familiarity. Requires past simple and recognition of noun/-ing complements.
+	D / M14. Experiences, Results, and Duration
+	Present perfect forms; past participles; ever/never; just/already/yet; for/since; contrast with past simple.
+	L1 U12: present perfect forms, experience, past simple contrast.
+L2 Welcome: irregular past participles.
+L2 U1: just/already/yet and past simple contrast.
+L2 U2: for/since.
+L3 Welcome/U1: present perfect review.
+	Requires M11 and forms of have. Focuses on experiences, results, and duration before continuous perfect forms.
+	D / M15. Continuing Activities and Completed Results
+	Present perfect continuous; ongoing/recent activities; duration; contrast with present perfect simple and amount completed.
+	L2 U5: present perfect continuous and simple/continuous contrast.
+L3 U1: present perfect continuous review.
+	Requires M09 and M14. Past reference points belong to M16.
+	D / M16. Earlier Events and Integrated Narration
+	Past perfect simple/continuous; earlier-event relationships; duration before a past point; integrated simple/continuous/perfect choices.
+	L2 U10: past perfect simple/continuous and aspect contrast.
+L3 U2: four narrative tenses.
+	Requires M11–12 and relevant perfect-form knowledge. Focuses on timeline relationships and narrative application.
+	Strand E. Future Expression
+Strand / Module
+	Included Content and Intended Application
+	Textbook Connections
+	Boundary and Prerequisites
+	E / M17. Future Plans, Arrangements, and Predictions
+	Going to; present continuous arrangements; present simple schedules; will/won’t; evidence/opinion predictions; spontaneous decisions and offers; may/might possibility.
+	L1 U10: intentions and arrangements.
+L1 U11: predictions.
+L2 Welcome: future plans.
+L2 U6: certainty/possibility.
+L2 U7: future forms.
+L3 U1: future review.
+L4 U7: differentiated future functions.
+L5 Welcome: future expression review.
+	Requires present forms. Conditional consequences belong to M24; advanced future time relationships belong to M18.
+	E / M18. Future Progress, Completion, and Past Perspectives
+	Future continuous/perfect; by/by the time; about to/due to; was/were going to and would as future in the past.
+	L3 U10: future continuous/perfect.
+L4 Welcome/U7: review and additional future phrases.
+L5 U12: future in the past and future continuous/perfect review.
+	Requires M17 and relevant aspect knowledge. Distinguishes future reference from whether a past plan was ultimately fulfilled.
+	Strand F. Ability, Permission, Advice, and Deduction
+
+
+Strand / Module
+	Included Content and Intended Application
+	Textbook Connections
+	Boundary and Prerequisites
+	F / M19. Ability and Achievement
+	Can/can’t; could/couldn’t; questions/answers; general past ability versus specific success; was/were able to, managed to, succeeded in.
+	S U7: present ability.
+S U11: past ability.
+L1 U9: ability review.
+L4 U5: general/specific past ability.
+	Requires base-verb patterns. Permission uses of can belong to M20.
+	F / M20. Permission, Rules, and Requests
+	Can permission; must/mustn’t rules; imperatives and negative imperatives; let/make/be allowed to; I’d like/Would you like; I like/I’d like distinction.
+	S U4: imperatives.
+S U9: rules, permission, polite requests/offers.
+L1 Welcome: I like/I’d like.
+L2 U12: let/be allowed to.
+L3 Welcome: permission review.
+L3 U3: permission/prohibition.
+L3 U7: permission/compulsion.
+L4 U5: permission/prohibition review.
+	Separates permission, compulsion, commands, and polite requests into lessons. Absence of obligation belongs to M21.
+	F / M21. Obligation, Advice, and Necessity
+	Must/have to; don’t have to/don’t need to; should/shouldn’t/ought to; had better; didn’t need to/needn’t have.
+	S U9: necessity with must.
+L1 U7: obligation, advice, prohibition distinction.
+L2 Welcome: have to.
+L2 U4: advice expressions.
+L3 U3: necessity, advice, warnings.
+L4 U5: necessity review and unnecessary past actions.
+L5 U6: relevant modal uses.
+	Requires modal/base-verb patterns. Past necessity extensions require participles. Past criticism belongs to M22.
+	F / M22. Deduction, Evaluation, and Modal Precision
+	Present/past deduction; should/shouldn’t have; possibility and certainty; bound/certain/likely to; broader modal meanings.
+	L3 U9: deduction and past criticism.
+L4 U11: speculation across time and likelihood.
+L5 U6: both recorded modal groups, including may/might/can/could/will/won’t/should/must/mustn’t/can’t.
+	Requires relevant modal meanings and participles. Level 5’s exact meaning distinctions will be verified during lesson development.
+	Strand G. Interaction and Conditional Relationships
+Strand / Module
+	Included Content and Intended Application
+	Textbook Connections
+	Boundary and Prerequisites
+	G / M23. Checking Information and Expressing Agreement
+	Question tags; matching auxiliaries; polarity; so/neither/nor agreement; subject–auxiliary order.
+	L2 U7: question tags and agreement expressions.
+L3 Welcome: question-tag review.
+	Requires statements, negatives, and relevant auxiliaries. Tags and agreement receive separate lessons before mixed practice.
+	G / M24. Real Conditions and Future Time Clauses
+	Zero/first conditionals; unless; when/as soon as/until and related time conjunctions; clause order.
+	L1 U11: first conditional and future time clauses.
+L2 U6: first conditional and unless.
+L3 U4: first conditional/time conjunctions.
+L4 U8: zero/first conditional review.
+	Requires present and future expression. Hypothetical conditions belong to M25.
+	G / M25. Hypothetical Situations, Wishes, and Preferences
+	Second conditional; present wishes; wish/if only + past/could/would; it’s time; rather/sooner/prefer.
+	L2 U8: second conditional; I wish appears in the earlier overview.
+L3 U4: second conditional and present wishes.
+L4 U9: wishes/preferences.
+L5 U2: past forms with hypothetical meaning.
+	Distinguishes grammatical past forms from past-time reference. Past regret belongs to M26.
+	G / M26. Past Alternatives and Mixed Conditions
+	Third conditional; mixed conditionals; wish/if only + past perfect; alternatives to if.
+	L2 U12: third conditional.
+L3 U4: third conditional review.
+L3 U12: past regret.
+L4 Welcome: regret review.
+L4 U8: mixed conditionals; alternatives to if recorded in the earlier overview.
+L4 U9: past wishes.
+L5 U3: mixed conditionals and alternatives.
+	Requires M25 and past perfect. Mixed-time relationships follow separate third-conditional preparation.
+	Strand H. Passive Voice and Reporting
+Strand / Module
+	Included Content and Intended Application
+	Textbook Connections
+	Boundary and Prerequisites
+	H / M27. Passive Descriptions and Processes
+	Passive voice in present/past simple, present continuous, present perfect, and future; agent phrases; verbs with two objects.
+	L2 U9: four passive forms.
+L3 Welcome/U6: passive review and future passive.
+L4 U12: two-object passives.
+	Requires sentence roles, be, and participles. Formal passive reporting belongs to M30.
+	H / M28. Services and Extended Passive Forms
+	Have/get something done; get passive; modal passives.
+	L3 U6: causative constructions.
+L5 U11: get passive, causatives, modal passives.
+	Requires M27. Distinguishes arranging an action from performing or experiencing it.
+	H / M29. Reported Speech and Reporting-Verb Patterns
+	Reported statements/questions/requests/imperatives; backshift; contextual reference; say/tell; reporting verbs with infinitives, objects, clauses, and gerunds.
+	L2 U11: statements and object + infinitive.
+L3 Welcome/U8: reporting review and expanded patterns.
+L4 Welcome/U10: reporting verbs, tense/reference changes, questions/requests.
+L5 U10: reported-verb patterns.
+	Requires relevant tenses and statement word order. Distinguishes reporting patterns from general verb complements in M31.
+	H / M30. Formal Reporting and Hedging
+	Passive report structures; to-infinitive/to have + participle; cautious claims using seem/appear and recorded hedging expressions.
+	L4 U12: passive reporting.
+L5 U10: passive reporting and hedging.
+	Requires M27 and M29. Focuses on reported information, time relationships, and degree of commitment.
+	Strand I. Verb Patterns and Sentence Expansion
+Strand / Module
+	Included Content and Intended Application
+	Textbook Connections
+	Boundary and Prerequisites
+	I / M31. Verb Complements and Meaning Contrasts
+	Likes/dislikes + -ing; verbs taking gerunds/infinitives; verbs taking either; meaning contrasts; object + infinitive; perception verbs with infinitive/-ing; activity patterns play/go/do.
+	S U8: likes/dislikes + -ing.
+L1 U1: expanded preference verbs and spelling.
+L1 U8: play/go/do patterns.
+L2 U11: object + infinitive.
+L3 Welcome: perception verbs.
+L3 U11: gerund/infinitive groups.
+L4 U1: complement groups and meaning contrasts.
+L5 U5: perception complements.
+	Distinguishes complements from tense forms. Advanced meaning contrasts follow basic patterns.
+	I / M32. Phrasal Verbs and Object Placement
+	Separable/inseparable phrasal verbs; noun/pronoun object placement; dictionary notation.
+	L3 U12: phrasal verbs.
+	Requires object recognition and M03. Vocabulary selection remains limited to relevant tasks.
+	I / M33. Relative and Participle Clauses
+	Relative words; defining/non-defining clauses; whole-clause which; omission; reduction; determiners/prepositions in relatives; participle clauses; -ever clauses.
+	L3 U5: relative clauses and whole-clause reference.
+L4 U2: review, omission, reduction.
+L5 U5: participle clauses.
+L5 U8: advanced relatives and -ever clauses.
+	Requires complete clauses. Separate lessons distinguish expansion, reduction, and advanced clause relationships.
+	Strand J. Modification, Comparison, and Emphasis
+
+
+Strand / Module
+	Included Content and Intended Application
+	Textbook Connections
+	Boundary and Prerequisites
+	J / M34. Comparison, Modification, and Adverbials
+	Comparative/superlative forms; (not) as … as; degree modifiers; comparative adverbs; progressive/correlated comparisons; quite/very/really; adverb formation/placement; adverbial phrases.
+	S U12: comparatives.
+L1 U5: modifiers.
+L1 U9: comparatives/superlatives.
+L1 U10: adverbs.
+L2 U3: equality, comparison modification, comparative adverbs.
+L4 U4: adverbial phrases and recorded fluency expressions.
+L4 U6: intensified/progressive/correlated comparisons.
+L5 U2: comparative modifiers.
+	Contains separate descriptive-modification and comparison lesson sequences. Requires adjective/adverb distinctions.
+	J / M35. Reference, Emphasis, and Stance
+	One/ones; substitution and ellipsis; emphatic do/does/did; clefts; negative inversion; attitude/boosting adverbs; spoken discourse markers.
+	S U12: one/ones.
+L4 U3: emphatic auxiliaries.
+L5 U1: attitude adverbs.
+L5 U4: clefts and boosting adverbs.
+L5 U7: substitution/ellipsis.
+L5 U9: inversion/discourse markers.
+	Basic reference precedes advanced emphasis. Advanced lessons require clause and auxiliary control; spoken markers support interaction rather than automatically becoming writing requirements.
+	Strand K. Connections Between Ideas
+Strand / Module
+	Included Content and Intended Application
+	Textbook Connections
+	Boundary and Prerequisites
+	K / M36. Purpose, Result, Contrast, and Cause
+	Purpose infinitives; so/such emphasis and result clauses; contrast linkers; cause/effect linkers; selecting connectors according to meaning and structure.
+	S U1: because as a foundational reason expression.
+L3 U11: to/in order to/so as to, so/such … that.
+L4 Welcome/U3: so/such review.
+L4 U6: contrast linkers.
+L4 U11: cause/effect linkers.
+	Requires complete sentences and clause/noun-phrase distinctions. Conditional and time connectors remain in M24–26.
+	
+
+Coverage and Use of the Map
+The map assigns a location to the grammar topics recorded in the supplied six-level summaries, including the previously omitted interaction, reference, request, and sentence-pattern content.
+Welcome-unit connections follow the earlier overview. Topics appearing only in that overview, and Level 5’s detailed rule boundaries, will be checked against the source pages during development. Expressions listed only as “phrases for fluency” will be recorded individually when their lessons are prepared.
+The same age pathway may include different textbook-level lessons. Neither pathway requires every learner to complete all thirty-six modules.
+Module numbers identify content locations. Prerequisite relationships will determine recommended learning sequences, while documented learner needs and production capacity will determine development priorities.
+4.3 Cross-Unit Integration
+Integration will follow three procedures:
+1. Consolidate repeated foundations.
+
+ For example, Starter U5 and Level 1 U1 will contribute to a shared routine-expression sequence.
+
+2. Preserve meaningful extensions.
+
+ Level 1’s present simple/continuous contrast will remain a distinct module after separate preparation in both forms.
+
+3. Separate similar forms with different meanings.
+
+ Used to do, be used to doing, and get used to doing will be explicitly contrasted. Likewise, mustn’t and don’t have to will receive different contextual examples.
+
+The course will not require students to complete every module simply because they are enrolled at a particular textbook level. Entry evidence and teacher guidance will inform selection.
+4.4 Age-Differentiated Module Objectives
+Age differentiation will inform task complexity, presentation, and instructional support. Access to particular content will depend on demonstrated prerequisites and writing readiness. Advanced modules will therefore not be compulsory for every learner in either pathway.
+Module
+	Grades 2–3 Objective
+	Grades 4–5 Objective
+	M01. Personal Information and Be Statements
+	Given familiar personal-information prompts, write complete affirmative sentences using appropriate subjects and forms of be.
+	Given a personal-profile task, organize relevant information into a short response using complete affirmative be sentences.
+	M02. Questions, Negatives, and Answers
+	Given familiar situations, form basic be questions and negatives and provide relevant short or complete answers.
+	Given an information-exchange task, construct appropriate questions, negative statements, and complete responses using the sentence patterns taught.
+	M03. Pronouns, Possession, and Demonstratives
+	Given people and objects in a familiar context, use targeted pronouns, possessive forms, and demonstratives to identify them clearly.
+	Given a descriptive task, use targeted reference and possessive forms, including extension structures where appropriate, to make ownership and reference clear.
+	M04. Possession and Existence
+	Given pictures or familiar descriptions, write complete sentences expressing possession and the presence or absence of people or things.
+	Given a place or personal-description task, select appropriate possession and existence structures, including past forms when required.
+	M05. Nouns and Articles
+	Given familiar nouns and sentence contexts, distinguish countable and uncountable uses and apply the articles and plural forms taught.
+	Given contextualized writing tasks, select appropriate noun forms and definite, indefinite, or zero articles according to meaning.
+	M06. Quantity and Sufficiency
+	Given familiar quantities or situations, write sentences expressing amount, excess, or sufficiency using targeted structures.
+	Given a comparison or explanation task, use appropriate quantifiers and sufficiency expressions to communicate precise amounts and needs.
+	M07. Indefinite and Group Reference
+	Given short familiar situations, select and use indefinite pronouns and group-reference expressions to communicate the intended meaning.
+	Given a short report or advisory task, use indefinite pronouns and group-reference expressions with clear reference to people, things, or places.
+	M08. Routines and General Truths
+	Given routine prompts, write complete present-simple sentences with appropriate agreement and frequency expressions.
+	Given a routine-description task, produce a connected response using present-simple statements, negatives, and relevant frequency expressions.
+	M09. Current and Temporary Activities
+	Given a scene or current situation, write complete present-continuous sentences with appropriate forms of be and -ing.
+	Given a current or temporary situation, produce a connected description using appropriate present-continuous forms.
+	M10. Routines and Current Activities in Contrast
+	Given contrasting familiar situations, distinguish habitual from current actions and express each using the appropriate present form.
+	Given a task combining routines, temporary activities, and perception statements, select appropriate forms according to context.
+	M11. Completed Past Actions
+	Given a familiar past-event prompt, write complete past-simple sentences using targeted regular and irregular verbs.
+	Given a past-event task, produce a relevant connected account using appropriate past-simple statements, negatives, and questions where required.
+	M12. Past States and Background Actions
+	Given a past scene, describe states and distinguish an ongoing background action from a completed event.
+	Given a narrative task, combine past states, background actions, and completed events using appropriate forms and time connections.
+	M13. Past Habits and Familiarity
+	Given familiar examples, express past habits or familiarity using the targeted structures and distinguish their meanings.
+	Given a comparison of past and present experience, distinguish and use used to, habitual would, be/get used to, and other included habit expressions.
+	M14. Experiences, Results, and Duration
+	Given familiar experience or duration prompts, write sentences using targeted present-perfect forms and time expressions.
+	Given a personal-experience task, distinguish present-perfect meanings from specific past events and select appropriate forms and time expressions.
+	M15. Continuing Activities and Completion
+	Given clearly contrasting situations, express an ongoing activity or completed result using the targeted perfect forms.
+	Given a contextualized account, distinguish duration, ongoing activity, completed results, and amounts completed using appropriate perfect forms.
+	M16. Earlier Events and Integrated Narration
+	Given a supported event sequence, independently write sentences showing which event occurred earlier and which activity had continued.
+	Given a narrative task, organize past events using appropriate past-simple, continuous, and perfect forms to make chronology clear.
+	M17. Plans, Arrangements, and Predictions
+	Given familiar future situations, express plans, arrangements, or predictions using the forms taught.
+	Given a future-oriented writing task, select appropriate forms for intentions, arrangements, schedules, and predictions according to meaning.
+	M18. Future Progress, Completion, and Past Perspective
+	Given a clear timeline and familiar prompts, express a future action in progress or completed by a specified time using targeted forms.
+	Given a future or retrospective task, distinguish future progress, future completion, and future viewed from the past using appropriate structures.
+	M19. Ability and Achievement
+	Given familiar ability prompts, express present or past ability using the targeted forms.
+	Given an achievement account, distinguish general ability from success or inability on a specific occasion and select appropriate expressions.
+	M20. Permission, Rules, and Requests
+	Given familiar classroom or everyday situations, write appropriate rules, permission questions, and polite requests using targeted forms.
+	Given a rules or interaction task, distinguish permission, prohibition, requests, and compulsion using appropriate structures.
+	M21. Obligation, Advice, and Necessity
+	Given familiar problems or responsibilities, express advice, obligation, or lack of necessity using the targeted forms.
+	Given an advisory or reflective task, distinguish obligation, advice, prohibition, and unnecessary past actions using appropriate expressions.
+	M22. Deduction, Evaluation, and Modal Precision
+	Given explicit evidence in short situations, express certainty or possibility using the modal forms taught.
+	Given evidence about present or past events, communicate deductions, possibilities, and evaluations using appropriate modal structures and degrees of certainty.
+	M23. Checking Information and Agreement
+	Given familiar statements, construct appropriate question tags or agreement responses using targeted auxiliaries.
+	Given a short dialogue task, use question tags and agreement structures with appropriate polarity, auxiliary forms, and reference.
+	M24. Real Conditions and Future Time
+	Given familiar cause-and-consequence situations, write real conditional or future-time sentences using the targeted patterns.
+	Given a practical planning task, express conditions and future consequences using appropriate clauses and conjunctions.
+	M25. Hypothetical Situations, Wishes, and Preferences
+	Given familiar imaginary situations, express a hypothetical choice, wish, or preference using the targeted pattern.
+	Given a dilemma or preference task, distinguish hypothetical situations, present wishes, desired changes, and preferences using appropriate structures.
+	M26. Past Alternatives and Mixed Conditions
+	Given an explicit past-event timeline, express an imagined alternative and its result using the selected conditional pattern.
+	Given a reflective task, express unreal past alternatives, regrets, and mixed-time consequences using appropriate conditional and wish structures.
+	M27. Passive Descriptions and Processes
+	Given a familiar process or event, write passive sentences using the tense forms taught.
+	Given a process or event-description task, select active or passive structures according to the intended focus and use appropriate tense forms.
+	M28. Services and Extended Passives
+	Given familiar service situations, express an arranged service using the targeted causative structure.
+	Given a service or event account, distinguish and apply causative, get-passive, and modal-passive structures according to meaning.
+	M29. Reported Speech and Reporting Patterns
+	Given short familiar statements or instructions, report their meaning using the selected reporting patterns.
+	Given a reporting task, report statements, questions, requests, and instructions with appropriate word order, verb patterns, and reference changes.
+	M30. Formal Reporting and Hedging
+	Given short information statements, use a selected reporting or hedging pattern to distinguish a claim from a certain fact.
+	Given a formal reporting task, use passive reporting structures and hedging expressions to represent claims and degrees of certainty accurately.
+	M31. Verb Complements and Meaning Contrasts
+	Given familiar sentence contexts, use the required -ing, infinitive, or object-plus-verb pattern after the verbs taught.
+	Given contextualized writing tasks, select appropriate verb complements and distinguish meaning changes associated with alternative patterns.
+	M32. Phrasal Verbs and Object Placement
+	Given familiar phrasal verbs, construct sentences with appropriate noun or pronoun placement.
+	Given a short writing task and permitted dictionary support, use targeted phrasal verbs with appropriate meaning, separability, and object placement.
+	M33. Relative and Participle Clauses
+	Given familiar people, things, or places, combine information using the relative-clause patterns taught.
+	Given a descriptive task, use appropriate relative clauses and, in extension tasks, reduced or participle clauses to add information clearly.
+	M34. Comparison, Modification, and Adverbials
+	Given familiar descriptions or comparisons, use targeted adjectives, adverbs, and comparative forms to express the intended meaning.
+	Given a descriptive or comparative task, use appropriate comparison patterns, modifiers, and adverbials to communicate degree, manner, and change.
+	M35. Reference, Emphasis, and Stance
+	Given a short familiar response, use selected reference expressions to avoid repetition and selected emphasis forms to highlight meaning.
+	Given a text for production or revision, use appropriate substitution, ellipsis, emphasis, and stance expressions while maintaining clarity.
+	M36. Purpose, Result, Contrast, and Cause
+	Given related familiar ideas, connect them using targeted expressions of reason, purpose, or result.
+	Given an explanatory or argumentative task, connect ideas using appropriate purpose, result, contrast, and cause expressions with correct clause or phrase structures.
+	4.5 Conditions and Proposed Achievement Criteria
+Each objective will be paired with a task specification identifying vocabulary demands, length, resources, and support.
+The following are proposed starting criteria for teacher review and pilot testing:
+Assessment Dimension
+	Grades 2–3
+	Grades 4–5
+	Task size
+	Sentence responses or a brief connected text, according to module objectives and demonstrated readiness
+	Sentence responses, a paragraph, or another appropriate text, according to module objectives, readiness, and genre
+	Target grammar
+	Meet the module-specific criterion across required opportunities to use the target structures
+	Meet the module-specific criterion across required opportunities to use the target structures
+	Sentence completeness
+	Meet the specified number or proportion of complete sentences; fragment responses are acceptable only where the task explicitly permits them
+	Meet the specified number or proportion of complete sentences; fragment responses are acceptable only where the task explicitly permits them
+	Required content
+	Address all specified content points
+	Address all specified content points
+	Relevance
+	Provide information relevant to each prompt
+	Maintain topic focus and exclude unrelated information
+	Organization
+	Order related sentences meaningfully when a connected response is required
+	Meet the specified organization and genre criteria when a connected text is required
+	Independence
+	Complete the assessment without teacher prompts, sentence frames, or model answers; permitted resources will be specified
+	Complete the assessment without teacher prompts, sentence frames, or model answers; permitted resources will be specified
+	Proposed criteria: Numerical thresholds will be specified for each assessment and reviewed through teacher consultation and formative evaluation. An initial 80% accuracy threshold may be considered for tasks with sufficient scorable opportunities. For short tasks, criteria will use explicit counts—for example, at least three of four responses meeting the specified requirements. Target-structure opportunities and the treatment of omissions will be defined in the scoring guide.
+Section 5. Assessment and Feedback Plan
+5.1 Entry Checks
+Module-specific entry checks will examine prerequisite skills through short recognition and production tasks. Results will guide access to the selected module stage, preparatory support, or an alternative starting point.
+The THINK Pre-Test will inform course placement. It will not establish writing readiness or replace module-specific evidence.
+5.2 Assessment During Learning
+Checks will include:
+   * Contextual selection.
+   * Sentence construction and transformation.
+   * Error identification and correction.
+   * Short written application.
+   * Comparison of examples.
+   * Revision following feedback.
+Responses will inform whether learners need additional explanation, guided practice, or progression toward independent application.
+Understanding can be demonstrated through examples and corrections without requiring technical terminology.
+5.3 Independent Assessment
+Independent tasks will use new prompts or information while retaining the language demands specified in the module objectives.
+Permitted resources will be stated explicitly. Tasks assessing independent production will exclude teacher prompts, sentence frames, and model answers. Performance will be judged against the module-specific conditions and criteria described in Section 4.5.
+Where feasible, comparable before-and-after tasks will examine changes in performance. A delayed task using a different context will examine retention and application.
+5.4 Writing Assessment
+A shared rubric framework will examine:
+   1. Target grammar.
+   2. Sentence completeness.
+   3. Task coverage and relevance.
+   4. Organization, where connected writing is required.
+Module-specific descriptors will clarify expectations for each age pathway and content level.
+5.5 Feedback and Revision
+Self-checking materials will explain why an answer is appropriate. Open-ended writing will receive teacher judgment.
+Teacher feedback will identify a manageable number of priorities and require a subsequent correction or revision. Review workload and response times will be agreed before implementation.
+Section 6. Subskill Analysis and Lesson Structure
+(update 4/29/2026)
+6.1 Purpose and Alignment
+This section identifies the skills learners need to achieve the module objectives in Section 4.4 and contribute to the shared course outcomes in Section 3.2.
+Subskills are derived from the intended performance and assessment task, rather than from grammar headings alone. The analysis examines how learners interpret a task, make grammatical choices, construct a response, and review their work.
+6.2 Module Subskills, Course Alignment, and Proposed Lessons
+Within each pathway, numbers identify subskills for reference; they do not represent lesson or development order. Lesson titles indicate proposed instructional groupings. Their sequence and boundaries will be established through prerequisite analysis.
+For modules spanning several textbook levels, the relevant content stage must be specified before detailed lesson development. The listed lessons represent the module’s overall scope rather than a compulsory sequence for every learner.
+A. Sentence Foundations and Reference
+Module
+	Principal Subskills
+	Course Alignment
+	Proposed Lesson Titles
+	M01. Personal Information and Be Statements
+	Grades 2–3
+	
+
+	
+
+	   1. Identify the information requested by familiar personal-information questions.
+   2. Select a subject and match it with am/is/are.
+   3. Supply relevant information to construct a complete affirmative sentence.
+Grades 4–5
+   4. Identify the information required for a personal profile.
+   5. Construct complete affirmative be sentences with appropriate subjects and complements.
+   6. Arrange relevant sentences into a short personal response. | CO1, CO2, CO3, CO4 | Understanding Personal-Information Questions
+Subjects and Forms of Be
+ Building Complete Personal-Information Sentences
+Organizing a Short Personal Profile |
+| M02. Questions, Negatives, and Answers | Grades 2–3
+   7. Match question words with the information requested.
+   8. Construct basic be questions and negative statements.
+   9. Select short or complete answers appropriate to the task.
+Grades 4–5
+   10. Identify missing information in an exchange.
+   11. Form appropriate questions and negatives using the patterns taught.
+   12. Produce complete responses that address the requested information. | CO1, CO2, CO3 | Question Words and Information
+Forming Questions with Be
+ Making Negative Statements
+Choosing and Constructing Answers |
+| M03. Pronouns, Possession, and Demonstratives | Grades 2–3
+   13. Identify the person or object being referred to.
+   14. Select appropriate subject, object, and possessive forms within the stage scope.
+   15. Use demonstratives according to number and distance.
+Grades 4–5
+   16. Distinguish subject, object, ownership, and demonstrative reference.
+   17. Construct the possessive patterns taught, including double genitives at the extension stage.
+   18. Maintain clear reference throughout a descriptive response. | CO2, CO3, CO4 | Subject and Object Pronouns
+Expressing Ownership
+Possessive Adjectives and Pronouns
+Demonstratives and Distance
+Double Genitives and Clear Reference |
+| M04. Possession and Existence | Grades 2–3
+   19. Distinguish having something from something being present.
+   20. Select possession or existence structures according to subject and number.
+   21. Construct relevant statements, negatives, or questions within the stage scope.
+Grades 4–5
+   22. Determine whether a description requires possession or existence.
+   23. Select forms according to number and present or past reference.
+   24. Integrate the appropriate structures into a personal or place description. | CO1, CO2, CO3, CO4 | Describing Possession with Have Got
+ Describing Existence with There Is/Are
+ Past Existence with There Was/Were
+ Choosing Possession or Existence |
+B. Nouns, Articles, and Quantity
+Module
+	Principal Subskills
+	Course Alignment
+	Proposed Lesson Titles
+	M05. Nouns and Articles
+	Grades 2–3
+	
+
+	
+
+	      1. Distinguish countable and uncountable noun uses in familiar contexts.
+      2. Form singular and plural nouns.
+      3. Select the articles taught for the intended noun reference.
+Grades 4–5
+      4. Identify countability, number, and general or specific reference.
+      5. Select definite, indefinite, or zero articles according to context.
+      6. Apply appropriate noun and article forms in written responses. | CO2, CO3 | Singular and Plural Nouns
+Countable and Uncountable Uses
+Introducing Things with A/An
+ Specific and General Reference |
+| M06. Quantity and Sufficiency | Grades 2–3
+      7. Identify noun countability and the intended amount.
+      8. Select appropriate quantity expressions.
+      9. Construct sentences expressing excess or sufficiency.
+Grades 4–5
+      10. Distinguish amount, degree, excess, and sufficiency.
+      11. Select precise quantifiers for the context.
+      12. Position quantity and sufficiency expressions appropriately in explanations or comparisons. | CO1, CO2, CO3 | Quantities with Some/Any
+ Countability and Quantity Expressions
+Expressing Excess and Sufficiency
+Choosing Precise Quantifiers |
+| M07. Indefinite and Group Reference | Grades 2–3
+      13. Distinguish reference to people, things, and places.
+      14. Interpret the meanings of the indefinite forms taught.
+      15. Use an appropriate indefinite or group-reference expression in a familiar sentence.
+Grades 4–5
+      16. Identify the intended scope of reference.
+      17. Select indefinite pronouns and expressions referring back to a group.
+      18. Maintain clear reference in a short report or advisory response. | CO1, CO2, CO3, CO4 | Indefinite Reference to People, Things, and Places
+Choosing Every-, Some-, Any-, and No- Forms
+Referring Back to Groups |
+C. Present-Time Expression
+Module
+	Principal Subskills
+	Course Alignment
+	Proposed Lesson Titles
+	M08. Routines and General Truths
+	Grades 2–3
+	
+
+	
+
+	         1. Recognize habitual or generally true meaning.
+         2. Form present-simple statements, negatives, and questions with appropriate agreement.
+         3. Add relevant frequency and time expressions to complete sentences.
+Grades 4–5
+         4. Select information relevant to a routine-description task.
+         5. Apply present-simple forms and appropriate frequency expressions.
+         6. Organize routine information into a connected response. | CO1, CO2, CO3, CO4 | Present Simple for Routines and General Truths
+Subject–Verb Agreement
+Present-Simple Negatives and Questions
+Frequency and Time Expressions
+Writing About Routines |
+| M09. Current and Temporary Activities | Grades 2–3
+         7. Identify actions happening now or around the present time.
+         8. Combine an appropriate form of be with an -ing verb.
+         9. Construct complete sentences describing a familiar scene.
+Grades 4–5
+         10. Identify current or temporary situations relevant to the prompt.
+         11. Form appropriate present-continuous statements, negatives, and questions.
+         12. Organize a connected description of the situation. | CO1, CO2, CO3, CO4 | Current and Temporary Activities
+Building Present-Continuous Forms
+Present-Continuous Negatives and Questions
+Describing a Scene |
+| M10. Routines and Current Activities in Contrast | Grades 2–3
+         13. Distinguish habitual from current or temporary meaning.
+         14. Select the appropriate present form.
+         15. Construct contrasting sentences about familiar situations.
+Grades 4–5
+         16. Interpret contexts combining routines, temporary activities, and perception statements.
+         17. Select appropriate forms according to meaning.
+         18. Maintain those distinctions in a connected written response. | CO1, CO2, CO3, CO4 | Routines or Current Activities?
+Perception Verbs and Descriptions
+Choosing Present Forms in Mixed Contexts
+Writing About Usual and Temporary Situations |
+D. Past Events, Perfect Forms, and Habits
+Module
+	Principal Subskills
+	Course Alignment
+	Proposed Lesson Titles
+	M11. Completed Past Actions
+	Grades 2–3
+	
+
+	
+
+	            1. Identify completed past actions.
+            2. Form targeted regular and irregular past verbs.
+            3. Construct complete past-simple sentences, including base forms after did/didn’t.
+Grades 4–5
+            4. Select events relevant to a past-event task.
+            5. Apply appropriate past-simple forms.
+            6. Organize events into a connected account. | CO1, CO2, CO3, CO4 | Completed Actions in the Past
+Regular Past Forms
+Irregular Past Forms
+Past-Simple Negatives and Questions
+Writing a Past-Event Account |
+| M12. Past States and Background Actions | Grades 2–3
+            7. Distinguish a past state from an action.
+            8. Distinguish an ongoing background action from a completed event.
+            9. Express the relationship using the targeted forms and connections.
+Grades 4–5
+            10. Identify states, background actions, and completed events in a narrative.
+            11. Select appropriate past forms.
+            12. Connect the information to establish a clear narrative setting and event relationship. | CO1, CO2, CO3, CO4 | Describing Past States
+Actions in Progress in the Past
+Background Actions and Completed Events
+Connecting Events with When/While |
+| M13. Past Habits and Familiarity | Grades 2–3
+            13. Distinguish past habits from present familiarity.
+            14. Select the targeted habit or familiarity expression.
+            15. Use its required verb form in a complete sentence.
+Grades 4–5
+            16. Distinguish past routines, repeated actions, familiarity, and becoming accustomed.
+            17. Select appropriate structures according to action or state meaning.
+            18. Compare past and present experience in a written response. | CO1, CO2, CO3, CO4 | Past Habits with Used To
+ Repeated Past Actions with Would
+ Familiarity with Be/Get Used To
+ Describing Typical Behaviour with Tend To
+ Comparing Habits and Familiarity |
+| M14. Experiences, Results, and Duration | Grades 2–3
+            19. Identify the experience, result, or duration expressed in a familiar prompt.
+            20. Form present-perfect sentences using targeted participles.
+            21. Select appropriate time expressions.
+Grades 4–5
+            22. Distinguish experience, present result, duration, and specific past events.
+            23. Select present perfect or past simple according to context.
+            24. Combine appropriate forms and time expressions in a personal account. | CO1, CO2, CO3, CO4 | Building Present-Perfect Forms
+Life Experiences with Ever/Never
+ Recent Results with Just/Already/Yet
+ Duration with For/Since
+ Present Perfect or Past Simple? |
+| M15. Continuing Activities and Completion | Grades 2–3
+            25. Distinguish an ongoing activity from a completed result.
+            26. Form the perfect structures taught.
+            27. Express the intended meaning in familiar sentences.
+Grades 4–5
+            28. Identify whether the focus is duration, activity, result, or amount completed.
+            29. Select appropriate perfect-simple or perfect-continuous forms.
+            30. Maintain those distinctions in a contextualized account. | CO1, CO2, CO3, CO4 | Present-Perfect Continuous Forms
+Duration and Continuing Activity
+Activity or Completed Result?
+Choosing Perfect Forms in Context |
+| M16. Earlier Events and Integrated Narration | Grades 2–3
+            31. Interpret a supplied past-event timeline.
+            32. Identify an earlier event or prior continuing activity.
+            33. Construct sentences showing the temporal relationship.
+Grades 4–5
+            34. Establish the narrative reference point and event sequence.
+            35. Select appropriate past-simple, continuous, and perfect forms.
+            36. Organize a narrative with clear chronology. | CO1, CO2, CO3, CO4 | Earlier Events with Past Perfect
+Prior Activities with Past-Perfect Continuous
+Choosing Narrative Tenses
+Organizing Past Events |
+E. Future-Time Expression
+Module
+	Principal Subskills
+	Course Alignment
+	Proposed Lesson Titles
+	M17. Plans, Arrangements, and Predictions
+	Grades 2–3
+	
+
+	
+
+	               1. Identify a plan, arrangement, or prediction.
+               2. Select the targeted future expression.
+               3. Construct complete sentences expressing the intended meaning.
+Grades 4–5
+               4. Distinguish intentions, arrangements, schedules, and prediction types.
+               5. Select appropriate future forms.
+               6. Integrate those forms into a future-oriented response. | CO1, CO2, CO3, CO4 | Plans and Intentions
+Future Arrangements and Schedules
+Predictions and Future Possibility
+Decisions and Offers
+Choosing Future Forms |
+| M18. Future Progress, Completion, and Past Perspective | Grades 2–3
+               7. Identify the future reference point on a clear timeline.
+               8. Distinguish an action in progress from one completed by that time.
+               9. Construct sentences using the targeted future forms.
+Grades 4–5
+               10. Distinguish future progress, completion, and future viewed from a past position.
+               11. Select appropriate structures and time expressions.
+               12. Express these relationships in a future or retrospective response. | CO1, CO2, CO3, CO4 | Future Actions in Progress
+Completion by a Future Time
+Immediate and Scheduled Future Expressions
+Future Viewed from the Past |
+F. Ability, Permission, Obligation, and Deduction
+Module
+	Principal Subskills
+	Course Alignment
+	Proposed Lesson Titles
+	M19. Ability and Achievement
+	Grades 2–3
+	
+
+	
+
+	                  1. Identify present or past ability.
+                  2. Select the appropriate ability expression.
+                  3. Construct affirmative or negative ability sentences.
+Grades 4–5
+                  4. Distinguish general ability from achievement on a particular occasion.
+                  5. Select appropriate expressions of success or inability.
+                  6. Apply these distinctions in an achievement account. | CO1, CO2, CO3, CO4 | Present Ability
+General Past Ability
+Achievement on Specific Occasions
+Describing Success and Inability |
+| M20. Permission, Rules, and Requests | Grades 2–3
+                  7. Identify whether the situation requires a rule, permission question, request, or offer.
+                  8. Select the targeted structure.
+                  9. Construct a clear and appropriate response.
+Grades 4–5
+                  10. Distinguish permission, prohibition, requests, and compulsion.
+                  11. Identify who gives or receives permission.
+                  12. Select and construct appropriate patterns for the interaction. | CO1, CO2, CO3, CO4 | Giving Instructions and Rules
+Asking for Permission
+Polite Requests and Offers
+Permission with Let/Be Allowed To
+ Compulsion with Make |
+| M21. Obligation, Advice, and Necessity | Grades 2–3
+                  13. Distinguish advice, obligation, and lack of necessity.
+                  14. Select an appropriate expression.
+                  15. Construct a relevant response to a familiar problem or responsibility.
+Grades 4–5
+                  16. Distinguish obligation, recommendation, prohibition, and necessity.
+                  17. Interpret the meaning of the past-necessity forms taught.
+                  18. Apply appropriate expressions in an advisory or reflective response. | CO1, CO2, CO3, CO4 | Obligation and Lack of Necessity
+Advice and Warnings
+Prohibition or No Obligation?
+Unnecessary Past Actions |
+| M22. Deduction, Evaluation, and Modal Precision | Grades 2–3
+                  19. Identify evidence in a short situation.
+                  20. Distinguish certainty from possibility.
+                  21. Express the conclusion using the targeted modal form.
+Grades 4–5
+                  22. Identify evidence and time reference.
+                  23. Distinguish possibility, certainty, impossibility, and evaluation.
+                  24. Construct appropriate present or past modal expressions. | CO1, CO2, CO3, CO4 | Present Deductions
+Past Deductions
+Evaluating Past Actions
+Degrees of Certainty and Possibility |
+G. Interaction, Conditions, Wishes, and Preferences
+Module
+	Principal Subskills
+	Course Alignment
+	Proposed Lesson Titles
+	M23. Checking Information and Agreement
+	Grades 2–3
+	
+
+	
+
+	                     1. Identify statement polarity and its subject.
+                     2. Select the required auxiliary.
+                     3. Construct an appropriate tag or agreement response.
+Grades 4–5
+                     4. Identify the purpose and grammatical structure of a statement.
+                     5. Coordinate polarity, subject, and auxiliary in tags and agreement responses.
+                     6. Use these forms appropriately in a short dialogue. | CO1, CO2, CO3 | Checking Information with Question Tags
+Choosing Tag Auxiliaries
+Positive and Negative Agreement |
+| M24. Real Conditions and Future Time | Grades 2–3
+                     7. Identify a condition and its consequence.
+                     8. Select the targeted clause pattern.
+                     9. Connect familiar ideas using appropriate forms.
+Grades 4–5
+                     10. Distinguish general relationships from future possibilities.
+                     11. Select suitable conditional and time conjunctions.
+                     12. Construct clear conditions and consequences in a planning response. | CO1, CO2, CO3, CO4 | General Conditions and Results
+Possible Future Conditions
+Conditions with Unless
+ Future-Time Clauses |
+| M25. Hypothetical Situations, Wishes, and Preferences | Grades 2–3
+                     13. Recognize an imaginary situation or desired change.
+                     14. Select the targeted hypothetical, wish, or preference pattern.
+                     15. Express a familiar choice in a complete sentence.
+Grades 4–5
+                     16. Distinguish hypothetical situations, present wishes, desired actions, and preferences.
+                     17. Select appropriate patterns and subject relationships.
+                     18. Apply them in a dilemma or preference response. | CO1, CO2, CO3, CO4 | Hypothetical Situations
+Wishes for Present Change
+Desired Abilities and Actions
+Preferences and It’s Time |
+| M26. Past Alternatives and Mixed Conditions | Grades 2–3
+                     19. Interpret the actual event on a supplied timeline.
+                     20. Identify an imagined past alternative and result.
+                     21. Construct the selected conditional pattern.
+Grades 4–5
+                     22. Distinguish actual events from imagined alternatives.
+                     23. Identify past and present consequence relationships.
+                     24. Express alternatives, regrets, and mixed-time results using the patterns taught. | CO1, CO2, CO3, CO4 | Imagined Past Alternatives
+Expressing Past Regret
+Mixed-Time Conditions
+Alternatives to If |
+H. Passive and Reported Language
+Module
+	Principal Subskills
+	Course Alignment
+	Proposed Lesson Titles
+	M27. Passive Descriptions and Processes
+	Grades 2–3
+	
+
+	
+
+	                        1. Identify the action and affected participant.
+                        2. Form the passive using the tense taught.
+                        3. Construct a relevant sentence about a familiar process or event.
+Grades 4–5
+                        4. Determine whether the task should focus on the agent or affected participant.
+                        5. Select active or passive voice while retaining time meaning.
+                        6. Construct a process or event description using the passive patterns taught. | CO1, CO2, CO3, CO4 | Active and Passive Focus
+Building Passive Forms
+Passive Forms Across Tenses
+Describing Processes
+Passives with Two Objects |
+| M28. Services and Extended Passives | Grades 2–3
+                        7. Identify an arranged service and its affected object.
+                        8. Select the targeted causative pattern.
+                        9. Construct a complete service-related sentence.
+Grades 4–5
+                        10. Distinguish arranged services from other events.
+                        11. Select causative, get-passive, or modal-passive forms according to meaning.
+                        12. Apply the selected structures in a service or event account. | CO1, CO2, CO3, CO4 | Arranging Services with Have/Get
+ Events with the Get Passive
+Modal Passive Structures |
+| M29. Reported Speech and Reporting Patterns | Grades 2–3
+                        13. Identify the meaning of a short original message.
+                        14. Select the reporting pattern taught.
+                        15. Report a familiar statement or instruction with appropriate reference.
+Grades 4–5
+                        16. Distinguish statements, questions, requests, and instructions.
+                        17. Select reporting verbs and their complements.
+                        18. Adjust word order, tense, pronouns, and contextual reference where required. | CO1, CO2, CO3, CO4 | Reporting Statements
+Changes in Tense and Reference
+Reporting Questions
+Reporting Requests and Instructions
+Reporting-Verb Patterns |
+| M30. Formal Reporting and Hedging | Grades 2–3
+                        19. Distinguish a claim from a certain fact in a familiar example.
+                        20. Select a reporting or hedging pattern.
+                        21. Construct a sentence preserving the intended certainty.
+Grades 4–5
+                        22. Identify the status and certainty of the information.
+                        23. Select a formal reporting or hedging structure.
+                        24. Distinguish current from prior actions and report them accurately. | CO1, CO2, CO3, CO4 | Formal Passive Reporting
+Reporting Current and Prior Actions
+Hedging Claims and Interpretations |
+I. Verb Complements and Clause Expansion
+Module
+	Principal Subskills
+	Course Alignment
+	Proposed Lesson Titles
+	M31. Verb Complements and Meaning Contrasts
+	Grades 2–3
+	
+
+	
+
+	                           1. Identify the governing verb.
+                           2. Select its required complement form.
+                           3. Construct a complete sentence using the pattern taught.
+Grades 4–5
+                           4. Identify the complement required by the verb and context.
+                           5. Distinguish meanings associated with alternative complement forms.
+                           6. Apply appropriate -ing, infinitive, and object-plus-complement patterns. | CO1, CO2, CO3 | Likes and Dislikes with -ing
+ Activity Patterns with Play/Go/Do
+ Gerund and Infinitive Complements
+Object and Infinitive Patterns
+Complements That Change Meaning
+Perception Verbs and Action Meaning |
+| M32. Phrasal Verbs and Object Placement | Grades 2–3
+                           7. Interpret the targeted phrasal verb.
+                           8. Identify its noun or pronoun object.
+                           9. Place the object appropriately in the sentence.
+Grades 4–5
+                           10. Determine meaning and separability, using permitted dictionary support.
+                           11. Distinguish noun-object from pronoun-object placement.
+                           12. Use targeted phrasal verbs appropriately in a written response. | CO1, CO2, CO3 | Understanding Phrasal Verbs
+Separable and Inseparable Patterns
+Noun and Pronoun Object Placement |
+| M33. Relative and Participle Clauses | Grades 2–3
+                           13. Identify the person, thing, or place being described.
+                           14. Select the relative expression taught.
+                           15. Combine information into a meaningful sentence.
+Grades 4–5
+                           16. Distinguish identifying information from additional information.
+                           17. Construct relative clauses with appropriate reference and punctuation.
+                           18. Apply omission, reduction, advanced relative, or participle patterns at the relevant stage. | CO2, CO3, CO4 | Connecting Information with Relative Clauses
+Defining and Non-Defining Information
+Referring to a Whole Clause
+Omitting and Reducing Relative Clauses
+Advanced Relative and -ever Clauses
+Participle Clauses |
+J. Modification, Reference, and Connections
+Module
+	Principal Subskills
+	Course Alignment
+	Proposed Lesson Titles
+	M34. Comparison, Modification, and Adverbials
+	Grades 2–3
+	
+
+	
+
+	                              1. Identify what is being described or compared.
+                              2. Form the targeted adjective, adverb, or comparative pattern.
+                              3. Position the expression to communicate the intended meaning.
+Grades 4–5
+                              4. Distinguish noun description from modification of actions or degrees.
+                              5. Select appropriate comparison and modification patterns.
+                              6. Express degree, manner, and change accurately in a written task. | CO1, CO2, CO3, CO4 | Comparative and Superlative Forms
+Equality and Degrees of Comparison
+Adjectives, Adverbs, and Modifiers
+Adverbial Phrases
+Progressive and Correlative Comparisons |
+| M35. Reference, Emphasis, and Stance | Grades 2–3
+                              7. Identify repeated information and its referent.
+                              8. Select a reference expression to avoid unnecessary repetition.
+                              9. Use the emphasis form taught to highlight intended meaning.
+Grades 4–5
+                              10. Identify opportunities for clear substitution or ellipsis.
+                              11. Select emphasis and stance expressions appropriate to purpose and register.
+                              12. Construct or revise a text without losing clarity. | CO2, CO3, CO4; CO5 when revision is assessed | Reference with One/Ones
+ Substitution and Ellipsis
+Emphasis with Do/Does/Did
+ Cleft Sentences and Boosting Adverbs
+Attitude and Discourse Markers
+Negative Inversion |
+| M36. Purpose, Result, Contrast, and Cause | Grades 2–3
+                              13. Identify a reason, purpose, or result relationship.
+                              14. Select an appropriate connector from those taught.
+                              15. Combine related familiar ideas into a meaningful response.
+Grades 4–5
+                              16. Distinguish purpose, result, contrast, and cause.
+                              17. Select connectors with appropriate clause or phrase complements.
+                              18. Connect ideas coherently using suitable word order and punctuation. | CO1, CO2, CO3, CO4 | Giving Reasons
+Expressing Purpose
+Connecting Actions and Results
+Contrasting Ideas
+Explaining Causes and Effects |
+Shared Lessons for Review and Transfer
+The following lesson titles may be adapted and integrated into individual modules. They are not additional compulsory modules.
+Principal Subskills
+	Course Alignment
+	Proposed Lesson Titles
+	Grades 2–3
+	
+
+	
+
+	                                 1. Compare each response with the required information.
+                                 2. Identify a selected grammar or sentence-completeness problem.
+                                 3. Correct the problem and apply the skill to a new familiar prompt.
+Grades 4–5
+                                 4. Check task coverage, grammatical choices, completeness, and relevant organization.
+                                 5. Revise selected problems while preserving meaning.
+                                 6. Apply the targeted skills independently in a different context. | CO5, CO6 | Checking My Response
+Using Feedback to Revise
+Applying the Skill in a New Context |
+CO5 and CO6 will be attached to individual module stages only when their objectives and assessments explicitly include revision or independent application in a new context. Proposed lesson titles will be assigned an order after confirming prerequisites and the selected stage objectives.
+6.3 **Proposed Student-learning Module Sequence
+(update 5/3-5/6/2026)**
+Structure and Pathway Application
+The supplementary course will contain 90 provisionally defined learning modules, arranged in a continuous sequence.
+Each module will provide:
+                                    * A clear learning objective.
+                                    * Brief review of required prior learning.
+                                    * Contextualized explanation and examples.
+                                    * Guided practice with feedback.
+                                    * Independent application.
+                                    * Checking and revision where relevant.
+Both age pathways will use the same module sequence. Tasks, examples, scaffolding, and written-production requirements will be adapted for Grades 2–3 and Grades 4–5.
+Learners will complete the agreed portion of the sequence appropriate to their readiness. The full series represents the product’s curriculum scope; it does not require every current elementary learner to complete advanced content immediately.
+Modules 1–15: Sentence Foundations and Personal Description
+Module
+	Student-Facing Title
+	Included Content
+	Written Application
+	Original Content Category
+	1
+	I Am…
+	Identifying who or what a sentence is about; subject pronouns; affirmative am/is/are; completing meaning; contractions
+	Write complete sentences about identity, age, or states
+	M01
+	2
+	About Me
+	Interpreting what, who, where, and how questions; matching questions with relevant information; complete affirmative responses
+	Answer personal-information questions
+	M01
+	M02
+	
+
+	
+
+	
+
+	
+
+	3
+	Are You?
+	
+
+	
+
+	
+
+	I Am Not…?
+	Be question order; be + not; short answers versus complete responses
+	Ask and answer familiar information questions
+	M02
+	
+
+	4
+	One Thing, Two Things
+	A/an; singular and plural nouns; regular plural formation
+	Describe familiar objects
+	M05
+	5
+	I, Me, He, Him
+	Subject and object pronouns; identifying reference and sentence role
+	Describe people without unclear repetition
+	M03
+	6
+	My Things, Your Things
+	Possessive adjectives; possessive ’s and apostrophe patterns
+	Describe family members and possessions
+	M03
+	7
+	Whose is it?
+	Possessive pronouns versus adjectives; whose questions
+	Identify ownership in complete responses
+	M03
+	8
+	This, That, These, Those
+	Number and distance; demonstrative reference
+	Describe objects in a familiar setting
+	M03
+	9
+	I Have Got
+	Have/has got; affirmative, negative, question, and short-answer forms
+	Describe possessions or appearance
+	M04
+	10
+	What is in the Room?
+	Singular/plural existence; statements, negatives, and questions; distinction from possession
+	Describe a room or familiar place
+	M04
+	11
+	Can We Count it?
+	Countability in context; singular/plural distinctions; basic noun combinations
+	Describe food or everyday items
+	M05
+	12
+	How Much? How many?
+	Some/any, much/many, a lot of/lots of; offers and requests with some
+	Describe amounts in familiar situations
+	M06
+	13
+	Do this!
+	
+
+	
+
+	
+
+	Don’t Do That!
+	Positive and negative imperatives; must/mustn’t for basic rules
+	Write simple instructions or rules
+	M20
+	
+
+	14
+	Why? Because…
+	Why questions; reasons with because; relevant explanation
+	Explain a preference or choice
+	M20
+	15
+	Write About Me or My Room
+	Integration of complete sentences, reference, possession, existence, and reasons; prompt coverage; relevance; basic ordering and revision
+	Produce and revise a personal profile or place description
+	M01
+	Modules 16–30: Routines, Current Activities, Comparison, and Basic Past Events
+Module
+	Student-Facing Title
+	Included Content
+	Written Application
+	Original Content Category
+	16
+	What I Do Every Day
+	Present-simple meaning; affirmative forms; third-person agreement and spelling
+	Describe everyday activities
+	M08
+	17
+	Do You…? I Don’t…
+	Do/does; don’t/doesn’t + base form; short answers
+	Ask about and describe routines
+	M08
+	18
+	When? How Often?
+	Frequency adverb placement; frequency phrases; at/in/on for time
+	Add frequency and time information to a routine
+	M08
+	19
+	What I Like Doing
+	Like/love/hate/enjoy/can’t stand + -ing; relevant -ing spelling
+	Describe preferred activities
+	M31
+	20
+	I Can…
+	Can/can’t + base form; questions and short answers
+	Describe abilities
+	M19
+	21
+	Can I…? I’d Like…
+	Permission with can; I’d like/Would you like; distinction from I like
+	Write a short request, offer, or exchange
+	M20
+	22
+	What Are You Doing?
+	Present-continuous meaning and formation; -ing spelling; statements, negatives, and questions
+	Describe a scene or current activity
+	M09
+	23
+	Every Day or Right Now?
+	Present simple versus continuous; habitual versus temporary meaning; perception verbs with adjectives
+	Compare usual and current situations
+	M10
+	24
+	Too Much or Not Enough?
+	Too much/many; (not) enough + noun; too + adjective; adjective + enough
+	Explain an everyday problem
+	M06
+	25
+	Which Is Bigger?
+	Comparative forms; spelling and irregular forms; than; one/ones
+	Compare familiar objects or places
+	M34
+	M35
+	
+
+	
+
+	
+
+	
+
+	26
+	Which Is the Biggest?
+	Superlative forms and reference to a group
+	Describe a favourite or outstanding example
+	M34
+	27
+	How Do You Do It?
+	Adjective/adverb distinction; adverb formation and placement; quite/very/really; play/go/do activity patterns
+	Describe activities with appropriate detail
+	M31
+	M34
+	
+
+	
+
+	
+
+	
+
+	28
+	What Was It Like?
+	Was/were; negatives, questions, and short answers; there was/were
+	Describe a past situation
+	M04
+	M12
+	
+
+	
+
+	
+
+	
+
+	29
+	What Happened?
+	Past-simple meaning; regular spelling; targeted irregular verbs
+	Write sentences about a past event
+	M11
+	30
+	Write About the Past
+	Did/didn’t + base form; past ability with could/couldn’t; event ordering; prompt coverage and revision
+	Produce a short past-event account
+	M11
+	Modules 31–45: Future Choices, Conditions, Past Background, and Present Perfect
+Module
+	Student-Facing Title
+	Included Content
+	Written Application
+	Original Content Category
+	31
+	What Should I Do?
+	Have to/don’t have to; should/shouldn’t; mustn’t versus don’t have to
+	Give advice or describe responsibilities
+	M21
+	32
+	My Plans
+	Be going to for intentions; present continuous for arrangements
+	Write about upcoming plans
+	M17
+	33
+	What Will Happen?
+	Will/won’t; predictions; spontaneous decisions and offers
+	Describe expectations or respond to a situation
+	M17
+	34
+	Ways to Talk About the Future
+	Present simple for schedules; going to for evidence-based predictions; may/might for possibility; integrated future-form choices
+	Write a future-oriented response
+	M17
+	35
+	If This Happens…
+	Zero and first conditionals; unless; future-time clauses with when/as soon as/until; clause order
+	Explain conditions and consequences
+	M24
+	36
+	What Were You Doing?
+	Past-continuous formation and meaning; contrast with past simple; when/while
+	Describe a past event and its background
+	M12
+	37
+	What I Used to Do
+	Used to statements, negatives, and questions; habitual would; action/state distinctions
+	Compare past and present habits
+	M13
+	38
+	I Have Done…
+	Have/has + past participle; targeted irregular participles; statements, negatives, questions, and short answers
+	Express an experience or present result
+	M14
+	39
+	Have You Ever…?
+	Ever/never; just/already/yet; placement and meaning
+	Describe experiences or recent changes
+	M14
+	40
+	I Did or I Have Done?
+	Specific past time versus experience or current relevance
+	Write about an experience and its past details
+	M14
+	41
+	How Long?
+	Period versus starting point; present-perfect duration
+	Describe a situation continuing to the present
+	M14
+	42
+	A, An, The—or No Word?
+	A/an, the, and zero article; countability and reference
+	Write a description with clear noun reference
+	M05
+	43
+	Someone, Everyone, No One
+	Indefinite pronouns; every-/some-/any-/no-; all/some/none/any of them
+	Describe or advise a group
+	M07
+	44
+	You’d Better… / A Friend of Mine
+	Ought to/had better; negative patterns; double genitives
+	Give contextualized advice and identify relationships clearly
+	M03
+	45
+	The Same or Different?
+	(Not) as … as; stronger/weaker comparisons; comparative adverbs
+	Produce and revise a comparative response
+	M34
+	Modules 46–60: Perfect Contrasts, Clause Connections, Passive, and Reporting
+Module
+	Student-Facing Title
+	Included Content
+	Written Application
+	Original Content Category
+	46
+	Still Doing or All Done?
+	Present-perfect continuous; duration, continuing activity, and present results; contrast with present-perfect simple
+	Explain activity and completion
+	M15
+	47
+	What Happened First?
+	Past-perfect simple; earlier event relationships
+	Explain what happened before another event
+	M16
+	48
+	Tell a Story About the Past
+	Past-perfect continuous; duration before a past point; integrated narrative tense choices
+	Produce a chronologically clear story
+	M16
+	49
+	Is That Right? Me Too!
+	Question tags; polarity and auxiliary selection; so/nor/neither agreement
+	Construct an appropriate dialogue
+	M23
+	50
+	Getting Used to It
+	Be/get used to + noun/-ing; contrast with used to + base form
+	Describe adjustment or changed experience
+	M13
+	51
+	To Do or Doing?
+	Verb groups requiring -ing or to-infinitive; object-plus-infinitive patterns
+	Construct responses using appropriate complements
+	M31
+	52
+	Look Up, Put On, and More
+	Meaning; separability; noun/pronoun object placement; dictionary use
+	Use targeted phrasal verbs in a response
+	M32
+	53
+	Tell Me More About It
+	Who/which/that/whose/where; defining/non-defining clauses; commas; which referring to a whole clause
+	Expand a description
+	M33
+	54
+	Why Do It? What Happens Next?
+	To/in order to/so as to; so/such patterns; so/such … that
+	Explain actions and consequences
+	M36
+	55
+	It Is Made…
+	Active/passive focus; present-simple and past-simple passive; optional agent with by
+	Describe a familiar process or event
+	M27
+	56
+	It Was Made. It Will Be Made.
+	Present-continuous, present-perfect, and future passive
+	Describe ongoing, completed, or future processes
+	M27
+	57
+	Can We Do It?
+	Let/make + object + base form; be allowed to; permission/prohibition distinctions
+	Write rules or describe permissions
+	M20
+	58
+	What Did They Say?
+	Say/tell; backshift where appropriate; changes in pronouns, place, and time reference
+	Report another person’s statement
+	M29
+	59
+	What Did They Ask?
+	If/whether and question words; statement word order; asked/told + object + infinitive
+	Produce a short report of an exchange
+	M29
+	60
+	Write About How It Works or What They Said
+	Integration of passive or reported language; relevant selection; organization; checking and revision
+	Produce a task-appropriate process description or report
+	M27
+	Modules 61–75: Hypothetical Meaning and Advanced Grammatical Choices
+Module
+	Student-Facing Title
+	Included Content
+	Written Application
+	Original Content Category
+	61
+	What Would You Do?
+	Second conditional; hypothetical meaning; condition/result clause forms
+	Explain an imagined situation
+	M25
+	62
+	I Wish…
+	Wish/if only + past form/could/would; distinctions in meaning
+	Describe desired changes
+	M25
+	63
+	What Would You Rather Do?
+	It’s time; would rather/sooner; would prefer to/it if; same/different subject patterns
+	Explain a preference or proposed change
+	M25
+	64
+	If I Had…
+	Third conditional; wish/if only + past perfect
+	Reflect on an imagined past alternative
+	M26
+	65
+	What If Things Were Different?
+	Mixed conditionals; alternatives to if, including provided/as long as/suppose within the selected scope
+	Explain mixed-time consequences
+	M26
+	66
+	What Do You Think Happened?
+	Present deduction modals; modal + have + past participle; certainty, possibility, and impossibility
+	Explain a conclusion from evidence
+	M22
+	67
+	Was It the Right Choice?
+	Should/shouldn’t have; needn’t have/didn’t need to; was able to/managed to/succeeded in; general versus specific ability
+	Evaluate a past situation
+	M19
+	M21
+	
+
+	
+
+	
+
+	
+
+	M22
+	
+
+	
+
+	
+
+	
+
+	68
+	What Will Be Happening? What Will Be Done?
+	Future continuous and perfect; by/by the time; about to/due to
+	Describe a future timeline
+	M18
+	69
+	Someone Does It for Me
+	Causative have/get something done; get passive; modal passive
+	Describe services or affected events
+	M28
+	70
+	More Ways to Say What They Said
+	Reporting verb + infinitive, object + infinitive, that clause, or gerund
+	Report information with appropriate verb patterns
+	M29
+	71
+	How Sure Are We?
+	Passive reporting; simple/perfect infinitives; seem/appear and hedging
+	Produce a cautious formal statement
+	M30
+	72
+	Say It in Fewer Words
+	Object-relative omission; subject-relative restrictions; reduced clauses
+	Revise a description without losing meaning
+	M33
+	73
+	Same Word, Different Meaning
+	Verbs accepting either form without meaning change; remember/forget/regret/try/stop contrasts
+	Express the intended action meaning
+	M31
+	74
+	More and More…
+	Intensifiers; just as/not nearly as/nowhere near as; progressive and correlative comparisons
+	Explain degree and change
+	M34
+	75
+	Why? But… So…
+	Although/even though/however/nevertheless/despite/in spite of; due to/as a result of/because of/consequently; phrase/clause complements
+	Produce and revise an explanatory or balanced response
+	M36
+	Modules 76–90: Advanced Expression, Precision, and Integrated Writing
+Module
+	Student-Facing Title
+	Included Content
+	Written Application
+	Original Content Category
+	76
+	How Much? Make It Clear!
+	Extended quantifiers; hardly any/a few/a little/most/almost all, and related expressions; emphatic do/does/did
+	Communicate amount and emphasize a point
+	M06
+	77
+	How Does It Happen? Will It Happen?
+	Adverbial phrases; in a … way/with/without patterns; bound to/certain to/likely to; speculation across time
+	Describe manner and degrees of likelihood
+	M22
+	78
+	What I Often Do and Think
+	Used to/would/tend to; attitude adverbs
+	Describe typical behaviour and stance
+	M13
+	79
+	Wishes, Choices, and Changes
+	Integrated hypothetical past forms; advanced comparison modifiers; wishes and preferences
+	Develop a precise proposal or reflective response
+	M25
+	80
+	It Was You Who…
+	Cleft structures; boosting adverbs
+	Emphasize selected information
+	M35
+	81
+	Two Ideas in One Sentence
+	Participle clauses; perception verb + infinitive versus -ing
+	Produce a concise narrative or description
+	M31
+	M33
+	
+
+	
+
+	
+
+	
+
+	82
+	Can, Could, May, Might, and More
+	Integrated meanings of may/might/can/could/will/won’t/should/must/mustn’t/can’t
+	Express possibility, expectation, advice, or deduction precisely
+	M22
+	83
+	Don’t Say It Twice
+	The ones/so/that of/do and relevant substitution patterns; ellipsis; preservation of clear reference
+	Revise a text for clarity and economy
+	M35
+	84
+	Add More Details
+	Relative clauses with determiners/prepositions; -ever clauses
+	Add precise qualifications or unrestricted meaning
+	M33
+	85
+	Never Have I…
+	Negative introductory expressions; auxiliary inversion; contrast with ordinary word order
+	Emphasize a point in an appropriate register
+	M35
+	86
+	How Do I Say It?
+	Spoken discourse markers; attitude and emphasis choices; differences between conversational and written use
+	Adapt a response to its audience and purpose
+	M35
+	87
+	Make My Writing Clear
+	Integrated reporting, hedging, causative and modal passives; passive verbs with two objects
+	Revise a formal account for focus and precision
+	M27
+	88
+	I Was Going to…
+	Was/were going to; would; past intentions and expectations; future continuous/perfect review
+	Explain earlier plans and later outcomes
+	M18
+	89
+	Plan and Write
+	Genre-specific organization; paragraph development; task coverage; coherence; integrated grammar selection
+	Plan and produce a selected extended text
+	
+
+	90
+	Check, Fix, and Try Again
+	Grammar, sentence completeness, relevance, organization, and register; integrated self-review; new-context application
+	Revise an extended response and complete an independent transfer task
+	
+
+	Age-Differentiated Production Expectations
+Aspect
+	Grades 2–3
+	Grades 4–5
+	Sentence-focused modules
+	Produce complete, relevant sentences using the targeted structures
+	Produce complete sentences and integrate them into a short response where appropriate
+	Integrated writing modules
+	Progress from guided content planning to brief connected writing
+	Develop relevant paragraphs or other suitable texts with clearer organization
+	Practice support
+	Concrete examples, brief instructions, oral rehearsal, and temporary frames as needed
+	Model analysis, planning support, contextual comparisons, and guided revision as needed
+	Independent assessment
+	Remove instructional prompts and assess the agreed sentence or text performance
+	Remove instructional prompts and assess the agreed sentence or text performance
+	Advanced content
+	Introduce only when prerequisites and task readiness are demonstrated
+	Introduce only when prerequisites and task readiness are demonstrated
+	Section 7. Instructional Strategies and Learning Experience
+7.1 Explanation and Application
+Instruction will connect form, meaning, and use through contextual examples, sentence-part highlighting, meaningful contrasts, and guided construction.
+Brief Chinese explanations may support difficult concepts or instructions where appropriate.
+7.2 Age-Responsive Support
+Grades 2–3
+	Grades 4–5
+	Concrete topics and visuals
+	Context comparisons and model-text analysis
+	Short instructions and smaller task sets
+	Planning and organization procedures
+	Optional oral rehearsal
+	Sentence and paragraph revision
+	Temporary word banks and sentence frames
+	Guided choices among multiple structures
+	Simple checking procedures
+	More detailed self-review criteria
+	These are starting approaches. Actual support will respond to performance evidence.
+7.3 Reading–Grammar–Writing Connection
+Short readings will demonstrate the target structures in meaningful use. Learners will identify how language expresses information, examine the sentence patterns, and apply them in their own responses.
+Reading length and vocabulary will support the module’s purpose rather than introduce unnecessary demands.
+7.4 Application of the Nine Events
+Event
+	Planned Application
+	Gain attention
+	Present a meaningful situation or communication problem
+	State objectives
+	Explain the performance in learner-friendly language
+	Recall prior learning
+	Activate relevant vocabulary and prerequisite patterns
+	Present content
+	Demonstrate form, meaning, and use
+	Provide guidance
+	Offer worked examples and temporary support
+	Elicit performance
+	Require learners to construct new responses
+	Provide feedback
+	Explain choices and support correction
+	Assess performance
+	Use a new task under stated independent conditions
+	Support retention and transfer
+	Revisit the skill in a later or different context
+	7.5 Module Learning Objectives and Required Prior Learning
+(update 5/8-5/13)
+The following table connects each proposed module with its intended learning performance and required prior knowledge. At the beginning of each module, a brief review will activate the listed vocabulary, sentence patterns, or grammatical distinctions.
+These are provisional objectives. Assessment conditions and achievement criteria will be specified before development. The module count and boundaries remain subject to consolidation and prototype findings.
+Module
+	Learning Objectives
+	Prior Knowledge
+	01. I Am
+	Shared: Construct complete affirmative sentences using a subject, the appropriate form of be, and information about a person or thing.
+	Familiar personal-information vocabulary; recognition of I, you, he, she, it, we, and they.
+	02. About Me
+	G2–3: Answer familiar personal-information questions in complete sentences.
+	
+
+	G4–5: Organize personal-information answers into a brief introduction.
+	Affirmative be sentences; vocabulary for names, ages, places, and preferences.
+	
+
+	03. Are You? I’m Not
+	Shared: Form questions, negative sentences, and short answers using be.
+	Subject pronouns; affirmative be sentences; basic sentence order.
+	04. One Thing, Two Things
+	Shared: Distinguish singular and plural nouns and use a/an appropriately with singular countable nouns.
+	Familiar object vocabulary; recognition of quantities and initial sounds.
+	05. I, Me, He, Him
+	Shared: Select subject and object pronouns according to their roles in a sentence.
+	Subject pronouns; complete sentence patterns; familiar verbs taking an object.
+	06. My Things, Your Things
+	Shared: Express possession using possessive adjectives and possessive ’s.
+	Personal pronouns; familiar people and object nouns; basic noun phrases.
+	07. Whose Is It?
+	Shared: Ask about ownership and replace possessive adjective–noun combinations with possessive pronouns.
+	Possessive adjectives; possessive ’s; be questions.
+	08. This, That, These, Those
+	Shared: Select demonstratives according to number and distance and use them in complete responses.
+	Singular and plural nouns; is/are; familiar object vocabulary.
+	09. I Have Got
+	Shared: Describe possession using affirmative and negative have/has got, and form questions and short answers.
+	Subject pronouns; singular and plural nouns; question and negative sentence concepts.
+	10. What Is in the Room?
+	G2–3: Describe what is present or absent using there is/are.
+	
+
+	G4–5: Organize these descriptions into a brief account of a place.
+	Singular and plural nouns; be forms; vocabulary for places and objects.
+	
+
+	11. Can We Count It?
+	Shared: Distinguish countable and uncountable uses of familiar nouns and select a/an or some appropriately.
+	Singular and plural nouns; articles; familiar food and object vocabulary.
+	12. How Much? How Many?
+	Shared: Ask and answer quantity questions using much, many, some, any, and a lot of.
+	Countable and uncountable nouns; basic questions and negative sentences.
+	13. Do This. Don’t Do That
+	Shared: Write instructions and rules using imperatives, don’t, and must/mustn’t.
+	Base verb forms; familiar action vocabulary; complete affirmative sentences.
+	14. Why? Because
+	Shared: Interpret why questions and give relevant reasons using because.
+	Familiar question words; complete statements; vocabulary needed to express simple reasons.
+	15. Write About Me or My Room
+	G2–3: Write complete, relevant responses addressing each prompt.
+	
+
+	G4–5: Combine relevant responses into an organized personal or room description.
+	Personal-information patterns; possession or existence patterns required by the selected task; giving reasons.
+	
+
+	16. What I Do Every Day
+	Shared: Describe routines using present simple affirmative forms, including third-person singular agreement.
+	Subjects; base verbs; complete sentence construction; familiar routine vocabulary.
+	17. Do You? I Don’t
+	Shared: Construct present simple questions, negative sentences, and short answers using do/does.
+	Present simple affirmative sentences; subject–verb agreement; base verb forms.
+	18. When? How Often?
+	Shared: Add time expressions and frequency adverbs in appropriate positions when describing routines.
+	Present simple sentences; be sentences; familiar days, months, seasons, and times.
+	19. What I Like Doing
+	Shared: Express likes and dislikes using appropriate verbs followed by the -ing form.
+	Present simple affirmative and negative forms; familiar activity verbs.
+	20. I Can
+	Shared: Express ability using can/can’t and construct ability questions and short answers.
+	Subjects; base verbs; familiar activity vocabulary.
+	21. Can I? I’d Like…
+	Shared: Ask for permission, make polite requests, and offer something using can, I’d like, and Would you like…?
+	Can questions; basic noun phrases; vocabulary for the request or offer.
+	22. What Are You Doing?
+	Shared: Describe current actions using present continuous affirmative, negative, and question forms.
+	Be forms; action verbs; basic question order; recognition of -ing forms.
+	23. Every Day or Right Now?
+	Shared: Distinguish routines from current or temporary actions and select present simple or present continuous appropriately; use familiar perception verbs with adjectives.
+	Present simple; present continuous; familiar adjectives and perception verbs.
+	24. Too Much or Not Enough
+	Shared: Express excess and insufficiency using too much/many, too + adjective, and enough.
+	Countability; quantity expressions; adjectives; basic sentence construction.
+	25. Which Is Bigger?
+	Shared: Compare people or things using comparative adjectives and use one/ones to avoid repeating nouns.
+	Adjectives; singular and plural nouns; be sentences.
+	26. Which Is the Biggest?
+	Shared: Identify an extreme within a group using appropriate superlative forms.
+	Comparative adjectives; familiar adjective spelling patterns; recognition of groups.
+	27. How Do You Do It?
+	Shared: Describe actions using appropriate adverbs and select familiar play/go/do activity combinations.
+	Action verbs; adjectives; basic object placement; present simple sentences.
+	28. What Was It Like?
+	Shared: Describe past states and existence using was/were and there was/were, including negatives and questions.
+	Present be forms; there is/are; recognition of past time references.
+	29. What Happened?
+	Shared: Describe completed past actions using regular and familiar irregular past simple forms.
+	Base verbs; complete affirmative sentences; past time references.
+	30. Write About the Past
+	G2–3: Write relevant past-event sentences and use did/didn’t and could/couldn’t where required.
+	
+
+	G4–5: Organize a brief past account using appropriate past forms.
+	Past simple affirmative forms; past be; present can; relevant event vocabulary.
+	
+
+	31. What Should I Do?
+	Shared: Distinguish advice, obligation, prohibition, and lack of obligation using should, have to, must, and their relevant negative forms.
+	Base verbs; modal sentence patterns; imperative rules.
+	32. My Plans
+	Shared: Describe intentions using be going to and arrangements using present continuous.
+	Be forms; present continuous; base verbs; future time expressions.
+	33. What Will Happen?
+	Shared: Use will/won’t to express predictions, spontaneous decisions, and offers in appropriate contexts.
+	Base verbs; affirmative, negative, and question patterns; future time references.
+	34. Ways to Talk About the Future
+	Shared: Select appropriate forms for schedules, intentions, arrangements, predictions, and future possibilities.
+	Present simple; present continuous; be going to; will/won’t; basic modal patterns.
+	35. If This Happens…
+	Shared: Express general conditions and possible future consequences using zero and first conditionals and appropriate future time clauses.
+	Present simple; will; complete clauses; recognition of condition and result.
+	36. What Were You Doing?
+	Shared: Contrast past actions in progress with completed events using past continuous and past simple, including when/while.
+	Past be; -ing forms; past simple; event sequence vocabulary.
+	37. What I Used to Do
+	Shared: Describe past habits and states using used to and repeated past actions using would where appropriate.
+	Past simple; base verbs; distinction between actions and states.
+	38. I Have Done…
+	Shared: Construct present perfect affirmative and negative sentences, questions, and short answers using appropriate past participles.
+	Have/has forms; base and past verb forms; familiar irregular verbs.
+	39. Have You Ever…?
+	Shared: Express experiences and recent results using present perfect with ever, never, just, already, and yet.
+	Present perfect formation; relevant question and negative patterns.
+	40. I Did or I Have Done?
+	Shared: Select past simple or present perfect according to time reference and the intended connection with the present.
+	Past simple; present perfect; explicit and unspecified past time references.
+	41. How Long?
+	Shared: Describe duration using present perfect with for and since.
+	Present perfect; periods and starting points; time expressions.
+	42. A, An, The, or No Word?
+	Shared: Select indefinite, definite, or zero articles according to noun type and whether the reference is general or specific.
+	Countability; singular and plural nouns; basic a/an use.
+	43. Someone, Everyone, No One
+	Shared: Use indefinite pronouns and expressions such as all/some/none/any of them to refer to people, things, places, and groups.
+	Pronouns; singular and plural reference; basic quantity expressions.
+	44. You’d Better… / A Friend of Mine
+	Shared: Express advice using had better/ought to and express “one of several” relationships using the double genitive.
+	Advice with should; possessive adjectives and pronouns; possessive ’s.
+	45. Same or Different?
+	Shared: Express equality and difference using (not) as…as, modified comparisons, and comparative adverbs.
+	Comparative and superlative adjectives; adverb formation; adjective–adverb distinction.
+	46. Still Doing or All Done?
+	Shared: Select present perfect simple or continuous to express duration, ongoing activity, present evidence, or completed results.
+	Present perfect simple; continuous forms; for/since; distinction between activity and result.
+	47. What Happened First?
+	Shared: Use past perfect simple with other past forms to clarify which event happened earlier.
+	Past simple; past participles; sequencing two past events.
+	48. Tell a Story About the Past
+	G2–3: Describe a short event sequence using the targeted past forms.
+	
+
+	G4–5: Construct a connected narrative using past simple, continuous, and perfect forms as required, including past perfect continuous.
+	Past simple and continuous; past perfect simple; continuous formation; event sequencing.
+	
+
+	49. Is That Right? Me Too!
+	Shared: Form question tags and use so/neither/nor responses with an appropriate auxiliary.
+	Positive and negative sentences; be, do, have, and modal auxiliaries.
+	50. Getting Used to It
+	Shared: Distinguish used to do, be used to, and get used to when describing past habits, familiarity, and adjustment.
+	Past habits with used to; be forms; nouns and -ing forms.
+	51. To Do or Doing?
+	Shared: Select a gerund or infinitive after targeted verbs and use object-plus-infinitive patterns where required.
+	Base and -ing forms; object pronouns; complete sentence patterns.
+	52. Look Up, Put On, and More
+	Shared: Use selected phrasal verbs and place noun or pronoun objects appropriately in separable constructions.
+	Verbs and objects; object pronouns; basic sentence order.
+	53. Tell Me More About It
+	Shared: Add identifying or supplementary information using appropriate relative clauses, including which referring to a whole clause.
+	Complete clauses; nouns and pronouns; basic possession and place reference.
+	54. Why Do It? What Happens Next?
+	Shared: Express purpose using infinitive constructions and consequences using so/such…that.
+	Infinitives; adjectives, adverbs, and noun phrases; complete clauses.
+	55. It Is Made…
+	Shared: Construct present and past simple passive sentences and select an agent phrase when it contributes necessary information.
+	Present and past be; past participles; recognition of the person or thing affected by an action.
+	56. It Was Made. It Will Be Made
+	Shared: Construct continuous, perfect, and future passive forms appropriate to the intended time relationship.
+	Basic passive structure; continuous, perfect, and future auxiliary patterns.
+	57. Can We Do It?
+	Shared: Distinguish permission and compulsion using let, make, and be allowed to.
+	Permission with can; objects; base verbs; passive structure.
+	58. What Did They Say?
+	Shared: Report statements using appropriate reporting verbs, pronouns, and tense changes when required by context.
+	Relevant tense forms; subject and object pronouns; direct statement interpretation.
+	59. What Did They Ask?
+	Shared: Report questions, requests, and instructions using statement word order or object-plus-infinitive constructions.
+	Reported statements; direct questions; if/whether; infinitives and objects.
+	60. Write About How It Works or What They Said
+	G2–3: Produce a relevant sequence of sentences describing a process or reporting information.
+	
+
+	G4–5: Organize a process description or reported account using appropriate passive or reporting structures.
+	Passive forms or reported speech required by the selected task; sequencing; prompt interpretation.
+	
+
+	61. What Would You Do?
+	Shared: Express hypothetical present or unlikely future situations using second conditionals and distinguish them from first conditionals.
+	Past simple forms; would + base verb; first conditional; condition–result relationships.
+	62. I Wish…
+	Shared: Express desired changes using wish/if only with past forms, could, or would, according to meaning.
+	Past forms; could/would; recognition of actual and desired situations.
+	63. What Would You Rather Do?
+	Shared: Express preferences and desired actions using would rather/sooner, would prefer, and it’s time.
+	Infinitives; base verbs; hypothetical past forms; same-subject and different-subject sentences.
+	64. If I Had…
+	Shared: Express unreal past conditions and results using third conditionals and past regrets using wish/if only + past perfect.
+	Past perfect; past participles; would have; hypothetical condition–result relationships.
+	65. What If Things Were Different?
+	Shared: Express mixed-time hypothetical relationships and select appropriate alternatives to if in context.
+	Second and third conditionals; present and past time relationships; complete clauses.
+	66. What Do You Think Happened?
+	Shared: Express present and past deductions using modal forms that reflect the strength of available evidence.
+	Modal-plus-base patterns; have + past participle; distinction between certainty and possibility.
+	67. Was It the Right Choice?
+	Shared: Evaluate past actions using should/shouldn’t have, distinguish unnecessary actions from lack of necessity, and describe general or specific past ability.
+	Past modals; past participles; could; infinitive and gerund patterns.
+	68. What Will Be Happening? What Will Be Done?
+	Shared: Distinguish future actions in progress from actions completed by a future point, and use about to/due to where appropriate.
+	Will; be + -ing; have + past participle; future time points and by.
+	69. Someone Does It for Me
+	Shared: Describe arranged services using have/get something done and distinguish these from relevant get and modal passive constructions.
+	Passive structures; objects; past participles; modal auxiliaries.
+	70. More Ways to Say What They Said
+	Shared: Select appropriate reporting verbs and their required infinitive, object-plus-infinitive, gerund, or clause patterns.
+	Reported speech; infinitives and gerunds; objects; complete clauses.
+	71. How Sure Are We?
+	Shared: Report information using passive reporting structures and qualify claims through appropriate hedging.
+	Passive voice; reporting verbs; infinitives and perfect infinitives; certainty distinctions.
+	72. Say It in Fewer Words
+	Shared: Omit object relative pronouns or reduce suitable relative clauses while preserving the intended meaning.
+	Defining and non-defining relative clauses; subject–object distinction; auxiliary be.
+	73. Same Word, Different Meaning
+	Shared: Select gerund or infinitive complements after verbs such as remember, forget, regret, try, and stop according to the intended meaning.
+	Gerund and infinitive complements; interpretation of event order and purpose.
+	74. More and More
+	Shared: Express intensified, changing, and interdependent comparisons using appropriate comparative constructions.
+	Comparatives; (not) as…as; adjectives; complete clauses.
+	75. Why? But? So?
+	Shared: Connect reasons, contrasts, and consequences using linkers with appropriate noun-phrase or clause structures.
+	Complete clauses; noun phrases; gerunds; basic because and result relationships.
+	76. How Much? Make It Clear
+	Shared: Express quantities precisely and emphasize affirmative statements using do/does/did.
+	Countability; basic quantifiers; present and past simple; auxiliary-plus-base patterns.
+	77. How Does It Happen? Will It Happen?
+	Shared: Describe actions using adverbial phrases and express likelihood using be bound/certain/likely to.
+	Adjectives and adverbs; prepositional phrases; infinitives; certainty and possibility.
+	78. What I Often Do and Think
+	Shared: Describe habits using used to, would, and tend to, and express stance through appropriate attitude adverbs.
+	Habit expressions; present and past reference; adverbs; infinitives.
+	79. Wishes, Choices, and Changes
+	Shared: Combine hypothetical forms, preference expressions, and modified comparisons to explain a desired change.
+	Wishes and preferences; hypothetical past forms; comparative modifiers.
+	80. It Was You Who…
+	Shared: Focus attention using cleft sentences and strengthen claims with appropriate boosting adverbs.
+	Complete clauses; relative-clause patterns; be forms; adverbs.
+	81. Two Ideas in One Sentence
+	Shared: Combine information using suitable participle clauses and distinguish perception-verb complements expressing complete or ongoing actions.
+	Clause relationships; -ing forms; past participles; subjects; verb complements.
+	82. Can, Could, May, Might, and More
+	Shared: Select modal forms according to meanings such as possibility, expectation, advice, certainty, and willingness in context.
+	Foundational modal uses; deductions; base verbs; perfect modal patterns where required.
+	83. Don’t Say It Twice
+	Shared: Use substitution and ellipsis to avoid repetition while keeping references and meaning clear.
+	Pronoun reference; noun phrases; auxiliaries; connected sentence interpretation.
+	84. Add More Details
+	Shared: Add precise information using relative clauses with determiners or prepositions and express unrestricted choices using -ever clauses.
+	Relative clauses; prepositions; quantifiers; complete clauses.
+	85. Never Have I…
+	Shared: Construct appropriate negative-inversion patterns to emphasize information in suitable written contexts.
+	Auxiliary verbs; statement and question order; relevant tense forms; negative expressions.
+	86. How Do I Say It?
+	Shared: Select discourse markers and expressions suited to the purpose, audience, and spoken or written context.
+	Connected responses; basic linking; recognition of formal and informal contexts.
+	87. Make My Writing Clear
+	Shared: Revise formal accounts using appropriate reporting structures and passive constructions, including passives with two-object verbs.
+	Passive voice; indirect and direct objects; reported information; hedging.
+	88. I Was Going to…
+	Shared: Express future events viewed from a past point and distinguish intentions from subsequent outcomes.
+	Past narration; was/were going to; would; relevant future continuous and perfect forms.
+	89. Plan and Write
+	G2–3: Plan and produce a manageable response addressing the selected task and genre.
+	
+
+	G4–5: Plan and produce a connected text meeting the selected genre, content, and organization requirements.
+	Grammar required by the chosen task; complete sentences; relevance; organization; familiarity with the selected genre.
+	
+
+	90. Check, Fix, Try Again
+	G2–3: Identify and revise selected errors using a short checking procedure, then complete a new application task.
+	
+
+	G4–5: Revise grammar, task coverage, relevance, and organization, then apply the targeted skills independently in a new task.
+	Previously taught target structures; understanding of assessment criteria; experience interpreting feedback and revising.
+	
+
+	6.5 Progression Toward Independence
+Support will decrease from worked examples to partially supported construction and independent application.
+Learners who perform poorly after support is removed will receive targeted preparation and another opportunity to apply the skill.
+Section 7. Delivery Platform and Learner Navigation
+7.1 Planned Platform
+Notion is the planned delivery platform. A technical prototype will verify access, navigation, response submission, and feedback procedures on learners’ usual devices.
+7.2 Navigation Structure
+The product will provide:
+                                    * A starting guide.
+                                    * Grades 2–3 and Grades 4–5 pathway pages.
+                                    * Suggested module sequences.
+                                    * A textbook-to-module index.
+                                    * Grammar and vocabulary references.
+                                    * Practice, assessment, and feedback areas.
+Readiness information and teacher guidance will help students choose an appropriate starting point.
+7.3 Participation
+Participation is intended to be optional and self-paced. Modules will contain clear pause points and recommended next steps.
+Account arrangements, access permissions, assistance needs, and submission procedures will be confirmed before learner testing.
+Section 8. Prototype Design Specification
+8.1 Prototype Scope
+The first prototype will implement M01: Personal Information and States, drawing primarily on Starter Unit 1.
+It will focus on affirmative be sentences and interpreting personal-information questions. Negative sentences and productive question formation will remain in M02.
+8.2 Prototype Objectives
+Grades 2–3
+Given four familiar personal-information questions, learners will independently write four responses, with at least three meeting all of the following:
+                                    * Complete sentence structure.
+                                    * Appropriate affirmative form of be.
+                                    * Relevant information.
+Grades 4–5
+Given a profile prompt with four required information points, learners will independently write a short introduction that:
+                                    * Addresses all four points.
+                                    * Contains at least three accurate, complete affirmative be sentences.
+                                    * Presents information in a logical order.
+Vocabulary for the prototype will be selected so that the required responses can reasonably use be. Preferences requiring other verb patterns will be excluded.
+8.3 Learning Sequence
+                                    1. Examine a short personal profile.
+                                    2. Interpret the information requested by familiar questions.
+                                    3. Identify the subject, be, and completing information in examples.
+                                    4. Match forms of be to subjects.
+                                    5. Construct responses using temporary frames.
+                                    6. Correct missing or mismatched forms.
+                                    7. Complete the independent pathway task.
+                                    8. Receive feedback and revise.
+                                    9. Apply the pattern to a different person or context.
+8.4 Prototype Materials
+Materials will include a model profile, explanation pages, guided activities, self-checking feedback, independent tasks, scoring guidance, and teacher instructions.
+Section 9. Development and Implementation Plan
+9.1 Development Sequence
+                                    1. Review the proposed curriculum with teachers and the client.
+                                    2. Confirm initial production scope and responsibilities.
+                                    3. Refine prototype objectives and assessment criteria.
+                                    4. Develop and review M01.
+                                    5. Conduct learner testing and revise.
+                                    6. Develop priority foundation and present-time modules.
+                                    7. Expand other strands according to learner needs and capacity.
+9.2 Responsibilities
+Role
+	Responsibility
+	Instructional designer
+	Coordinate curriculum organization, alignment, materials, platform design, and evaluation
+	Participating teachers
+	Review language accuracy, examples, prerequisites, scoring, and classroom feasibility
+	Client
+	Coordinate management approval, staffing, resources, and learner access
+	Teachers during implementation
+	Recommend starting points, review writing, and support revision
+	9.3 Deliverables
+Initial deliverables will include:
+                                    * Full-series curriculum and module map.
+                                    * Age-differentiated objectives.
+                                    * Prototype learning and assessment materials.
+                                    * A functional Notion prototype.
+                                    * Teacher and learner guidance.
+                                    * Formative evaluation findings.
+                                    * A revision record.
+Section 10. Formative Evaluation and Revision Plan
+10.1 Teacher Review
+Teachers will review content accuracy, prerequisite assumptions, explanation clarity, task relevance, age appropriateness, and assessment criteria.
+10.2 Learner Testing
+A small group will test the prototype after necessary arrangements and parental permissions.
+Selection will represent different sentence-writing abilities within the age pathways.
+10.3 Evidence Collected
+Evaluation will examine:
+                                    * Understanding of instructions and explanations.
+                                    * Navigation and submission.
+                                    * Supported and independent performance.
+                                    * Types of errors.
+                                    * Completion time.
+                                    * Use of feedback.
+                                    * Teacher scoring consistency and workload.
+10.4 Revision Decisions
+Finding
+	Design Response
+	Instructions are misunderstood
+	Simplify wording or add a demonstration
+	Guided practice succeeds but independent performance remains weak
+	Strengthen intermediate practice and examine prerequisite needs
+	Task completion takes excessive time
+	Reduce task load or divide lessons
+	Learners repeatedly omit sentence elements
+	Improve sentence-pattern explanations and construction practice
+	Teachers score responses differently
+	Clarify criteria and review sample responses together
+	Feedback does not lead to correction
+	Revise feedback and require a focused follow-up task
+	The evaluated prototype will inform subsequent modules. Pilot findings will guide improvement without being treated as evidence of effectiveness across the entire series.
+Appendices
+                                    * Appendix A: Textbook Content Mapping and Cross-Level Progression
+                                    * Appendix B: Course Outcome–Module Objective Alignment Matrix
+                                    * Appendix C: Prototype Assessments and Scoring Criteria
+                                    * Appendix D: Formative Evaluation Instruments

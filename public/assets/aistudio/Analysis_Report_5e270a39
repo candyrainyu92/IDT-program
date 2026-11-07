@@ -1,0 +1,463 @@
+﻿Analysis Report
+Think Supplementary E-Learning Project
+Section 1. Instructional Context
+1.1 Client and Program Background
+The client is Ms. Zhao, Director of English Language at QiYao Educational Technology Company in China. She oversees the English program and coordinates curriculum improvement, teacher support, and instructional quality.
+The Think program provides supplementary English instruction to students in Grades 2–5. It currently includes five classes with 67 students. Classes generally last approximately two hours, including a break. Instruction is primarily conducted in English, with some Chinese support for younger learners.
+The program was introduced quickly in response to market demand. According to the client, formal placement procedures, explicit learning outcomes, and a coordinated assessment framework were not fully established before implementation. Teachers generally follow the textbook sequence, while arranging additional practice, homework, and tests according to their class progress.
+1.2 Stakeholder Priorities
+The first client interview identified grammar improvement as an immediate priority and independent writing as a longer-term aspiration. Parents primarily expect improved school examination performance. The client is concerned about the effects of limited progress on parent satisfaction, course reputation, and enrollment.
+During the second meeting, the client clarified that the supplementary project should follow Think content rather than mirror the pace of school English courses. The intended educational direction is sustained language development. Improved school performance remains a stakeholder expectation, but immediate examination gains are not the sole basis for the proposed product.
+The client’s aspiration for a 150-word piece of academic writing requires further definition. It does not yet constitute an agreed performance standard across all textbook levels.
+1.3 Proposed Project Scope
+The client envisions a supplementary e-learning product covering the complete Think series, from Starter through Level 5.
+The proposed resource would:
+* Supplement existing classroom instruction.
+* Strengthen grammar application and written production.
+* Retain connections between reading, grammar, and writing.
+* Allow supplementary content to be reorganized rather than strictly following textbook units.
+* Include reference resources, such as vocabulary lists and grammar rules.
+* Support self-paced learning, self-checking of grammar practice, and teacher feedback on writing.
+The client prefers Notion as the delivery platform. However, technical suitability, learner access, submission procedures, and permissions require verification.
+The complete series represents the client’s long-term product vision. The initial development scope, prototype coverage, and implementation schedule still require agreement and management approval.
+________________
+
+
+Section 2. Learner Analysis
+2.1 Current Learner Groups
+The current learners are elementary students in Grades 2–5 receiving English instruction outside their regular school program.
+Class
+	Students
+	Grades
+	Current Textbook
+	Reported Unit
+	Think 1
+	15
+	Grade 3
+	Level 1
+	Unit 4
+	Think 2
+	15
+	Grades 4–5
+	Level 2
+	Unit 2
+	Think 3
+	12
+	Grades 4–5
+	Level 1
+	Unit 8
+	Think 4
+	11
+	Grades 4–5
+	Level 1
+	Unit 9
+	Think 5
+	14
+	Grades 2–3
+	Starter
+	Unit 9
+	Total
+	67
+	Grades 2–5
+	—
+	—
+	Grade level alone does not explain English proficiency. Teacher A reported that some younger students demonstrate stronger oral language and vocabulary than older classmates. The pre-test results also show different placement profiles among classes containing the same grades.
+Instructional grouping should therefore consider demonstrated skills, textbook experience, and support needs alongside age.
+2.2 Pre-Test Results
+The supplied Think Second Edition Pre-Test guidance describes the assessment as a tool for selecting an appropriate course-book level and identifying students who may need additional support.
+The reported results for 67 students are:
+Think Pre-Test Placement Band
+	Score Range
+	Students
+	Percentage
+	A1
+	0–15
+	1
+	1.5%
+	A2
+	16–33
+	45
+	67.2%
+	B1
+	34–51
+	20
+	29.9%
+	B1+
+	52–69
+	1
+	1.5%
+	B2
+	70–87
+	0
+	0%
+	C1
+	88–112
+	0
+	0%
+	Total
+	—
+	67
+	100%
+	Percentages are rounded.
+The reported overall mean is 30.52 out of 112, with a median of 30, a standard deviation of 8.02, and a range of 15–55.
+These figures describe performance on a course-placement assessment. The maximum score covers a wide range of textbook levels; consequently, a mean of 30.52 should not be interpreted as a low achievement percentage or a course failure.
+2.3 Placement Patterns by Class
+Classroom
+	Mean
+	Score Range
+	Placement Distribution
+	Preliminary Interpretation
+	1
+	31.07
+	25–35
+	A2: 11; B1: 4
+	Most results fall within the band associated with Level 1; some students may need additional challenges.
+	2
+	42.00
+	35–55
+	B1: 14; B1+: 1
+	Results are broadly consistent with placement in Level 2.
+	3
+	27.75
+	23–31
+	A2: 12
+	All results fall within the band associated with Level 1.
+	4
+	29.55
+	25–36
+	A2: 9; B1: 2
+	Most results support Level 1 placement, with some variation.
+	5
+	20.79
+	15–25
+	A1: 1; A2: 13
+	Most results suggest consideration of Level 1 placement; writing readiness requires separate examination.
+	These interpretations replace categorical judgments such as “extremely matched.” They indicate broad consistency with the publisher’s placement recommendations, rather than confirmed mastery.
+Think 5 classroom requires particular attention. Most students fall within the A2 placement band, while the reviewed Starter assignments show difficulties constructing complete sentences and responding fully to writing prompts. This combination suggests that course-placement performance and independent writing ability may differ. It does not automatically establish that the class is incorrectly placed.
+Because students have already received Think instruction, the assessment represents their current placement profile. It cannot establish whether their original placement was appropriate when they entered the program.
+2.4 CEFR Coverage and Demonstrated Proficiency
+Cambridge’s official Think Starter CEFR guide states that the book “covers level A1 of the CEFR.” This describes the curriculum’s coverage and alignment. It does not, by itself, establish the proficiency attained by an individual learner.
+The supplied Second Edition materials identify the following course-level associations:
+Think Level
+	Associated CEFR Level
+	Starter
+	A1
+	Level 1
+	A2
+	Level 2
+	B1
+	Level 3
+	B1+
+	Level 4
+	B2
+	Level 5
+	C1
+	For this project, three concepts must remain distinct:
+* Curriculum coverage: the language content and performance expectations addressed by a textbook.
+* Course placement: the textbook level suggested by the Think Pre-Test.
+* Demonstrated proficiency: what a learner can independently perform across relevant language tasks.
+The available pre-test summary supports course-placement analysis. It does not independently verify each learner’s complete CEFR proficiency or writing competence.
+2.5 Learning Experience and Support Needs
+Teachers report that students are familiar with textbook activities, workbook exercises, and teacher-led answer review. Some students perform adequately when tasks target one grammar structure, but experience difficulty when structures are combined or teacher prompts are removed.
+Writing support needs differ:
+* Reviewed Starter work indicates difficulty with basic sentence construction and complete responses to prompts.
+* Reviewed Level 1 work indicates greater paragraph production, with continuing problems in accuracy, sentence completeness, and relevance.
+* Level 2 writing needs have not been established through the assignment evidence currently available.
+Students’ own motivations have not been directly investigated. Parental expectations and the client’s commercial objectives should not be presented as confirmed learner motivations.
+2.6 Age, Language Background
+The target learners are elementary students in Grades 2–5 learning English in a predominantly Chinese-language environment. Their experience is therefore situated primarily within an English as a Foreign Language (EFL) context.
+________________
+
+
+Section 3. Performance Gap
+3.1 Current Performance
+The available evidence indicates that students do not consistently transfer grammar knowledge into independent written performance.
+Reported and observed difficulties include:
+* Selecting and maintaining appropriate tense forms.
+* Forming grammatically complete sentences.
+* Using subject–verb agreement and auxiliary verbs correctly.
+* Answering reading questions with complete written responses.
+* Addressing all parts of a writing prompt.
+* Maintaining relevance and organization in short texts.
+* Applying grammar when multiple structures are combined.
+Teacher accounts also indicate that supported performance may exceed independent performance.
+3.2 Desired Performance
+A preliminary instructional goal is:
+After completing an appropriate supplementary learning sequence, learners will be able to independently apply level-appropriate grammar to produce complete, relevant sentences and connected written texts in response to contextualized tasks.
+This goal reflects the broader project rather than limiting instruction to three simple tenses.
+Level-specific expectations should be developed from textbook targets, demonstrated learner needs, and agreed assessment criteria. Potential dimensions include:
+* Grammatical accuracy.
+* Sentence completeness.
+* Coverage of task requirements.
+* Relevance to the topic.
+* Organization and connections between ideas.
+* Independent revision.
+Exact task lengths, accuracy thresholds, support conditions, and mastery criteria have not yet been established.
+3.3 Preliminary Gap Statement
+There is a preliminary discrepancy between the demands of the reviewed grammar and writing tasks and students’ demonstrated ability to complete those tasks independently.
+For Starter learners, the discrepancy is particularly evident in sentence formation and full responses to guided writing prompts. For Level 1 learners, it is evident in mixed grammar application and the production of accurate, complete, and relevant paragraphs.
+The gap is currently qualitative. It cannot yet be quantified against a common performance standard because assignment samples have not been consistently scored using agreed criteria.
+Current unit coverage must also be considered. For example, the supplied curriculum map introduces Starter past-tense content in Units 10–11, while Think 5 is reported to be studying Unit 9. Errors involving content not yet taught should not automatically be classified as failure to retain or transfer prior instruction.
+________________
+
+
+Section 4. Evidence
+4.1 Information Sources
+This analysis draws on:
+* Two client meeting records.
+* Questionnaire responses from three teachers.
+* The provided review of student assignments and teacher markings.
+* The supplied Think grammar and writing curriculum analysis.
+* Think Second Edition Pre-Test guidance.
+* Reported pre-test statistics for 67 students.
+* Cambridge’s official Think Starter CEFR guide.
+Client and teacher statements provide stakeholder perspectives. Assignment findings provide evidence of written performance. Placement results provide an additional view of course-level readiness.
+4.2 Student Assignment Findings
+Area
+	Starter Findings
+	Level 1 Findings
+	Grammar application
+	Tense errors, incorrect verb forms, missing auxiliaries, and word-order errors
+	Frequent errors in mixed grammar exercises and inconsistent tense use
+	Sentence completeness
+	Incomplete answers to reading questions and difficulty constructing sentences
+	Sentence fragments within compositions
+	Writing-task coverage
+	Responses omit guiding questions and generally contain fewer than five sentences
+	Paragraphs are produced, but may include irrelevant sentences
+	Organization
+	Disorganized responses and off-topic content
+	Relatively clear overall direction, with inconsistent topic focus
+	These findings support differentiated instructional needs. They do not establish the prevalence of each error across all students because sample numbers and representativeness have not been documented.
+4.3 Teacher Observations
+Teacher responses provide converging evidence that:
+* Oral participation and some reading performance have improved.
+* Independent writing remains difficult.
+* Mixed grammar tasks are more challenging than single-structure exercises.
+* Teacher prompts and task breakdowns can help students produce responses.
+* Writing homework completion is limited.
+* Correcting an answer does not necessarily demonstrate understanding.
+Teacher B’s example of students retaining a third-person singular ending after does or doesn’t identifies one specific issue for further diagnostic examination.
+Teacher C’s observation that some students can explain ideas in Chinese but struggle to express them in English suggests that idea generation and English expression should be examined separately.
+4.4 Curriculum Findings
+The supplied curriculum analysis shows progression from foundational sentence structures and short written responses to more complex grammar and extended genres.
+Textbook Range
+	Broad Grammar Progression
+	Broad Writing Progression
+	Starter
+	Basic sentence patterns, present forms, introductory past forms, and common modal expressions
+	Personal information, descriptions, and short guided texts
+	Level 1
+	Contrasts among present and past forms, future expressions, and introductory present perfect
+	Paragraphs, emails, messages, and short articles
+	Level 2
+	Expanded perfect forms, conditionals, passive structures, and reported language
+	Stories, reports, articles, and short essays
+	Levels 3–5
+	Increasingly complex clauses, modality, discourse structures, and advanced grammatical choices
+	More varied and extended writing, including essays, proposals, reviews, and reports
+	The earlier review raised concerns about brief explanations, workbook demands, and writing scaffolding. These remain potential areas for supplementation.
+Unit-Level Example Analysis: Starter Unit 1
+The designer’s review of Starter Unit 1 identifies question words and the verb be as the principal grammar content, including:
+* a grammar rap video
+* brief rule explanation
+* elected-response exercises
+* an oral question-and-answer activity.
+The writing task asks learners to provide personal information in response to questions. According to the review, no written model or explicit sequence connecting the grammar exercises to the final writing task was identified.
+There is a plausible content connection: question words support understanding personal-information questions, and be supports responses such as “I am nine years old.” However, practice selecting question words or forms of be does not necessarily provide sufficient preparation for independently constructing those responses.
+The example does not establish that the grammar sequence is inappropriate across the series. It identifies a specific area where the materials may require supplementation for the current learners.
+Addition to Section 4.4: Curriculum Findings (4/22/2026)
+Cross-Level Grammar Progression
+The content mapping of THINK Starter through Level 5 identifies a progression in which grammatical structures are introduced, revisited, contrasted, and extended.
+For example, present simple and present continuous are introduced separately in Starter, contrasted in Level 1, and included in a broader present-tense review in Level 3. Past-time expression develops from past simple to past continuous, past perfect, and integrated narrative use. Conditional structures progress from the first conditional to second, third, and mixed conditionals.
+These findings revise the earlier concern about an unclear grammar sequence. The series demonstrates an identifiable progression, although related content is distributed across different units and levels. The mapping alone does not establish whether the connections between successive topics are sufficiently explicit for the current learners.
+Prerequisite Knowledge and Instructional Continuity
+Later structures depend on earlier grammatical and sentence-level knowledge. Passive constructions require understanding of sentence roles, forms of be, and past participles. Reported speech requires control of relevant tense forms, pronoun reference, and statement word order. Mixed conditionals require understanding of conditional patterns and relationships between past and present situations.
+The content mapping identifies these prerequisite relationships but does not establish whether they are consistently checked or reinforced before more complex content is introduced.
+Given the sentence-completeness, auxiliary-verb, agreement, and word-order errors observed in student assignments, prerequisite preparation warrants attention in the supplementary course. This finding does not establish that these foundations are absent from the textbook or classroom instruction.
+Connections Between Grammar and Writing
+The mapping identifies functional connections between grammar content and writing topics. Examples include present simple for routines, narrative tenses for past events, modal expressions for advice, passive constructions for processes, and cause-and-effect expressions for problem reports.
+However, a content connection does not establish an adequate instructional transition. Writing also requires prompt comprehension, vocabulary selection, sentence construction, relevance, organization, and revision.
+The Starter Unit 1 review provides a specific example of a possible gap between controlled grammar practice and independent sentence production. Teacher observations and student assignments support examining this transition more closely. The same gap has not yet been established across every unit or level.
+Increasing Writing Demands
+Writing tasks across the series involve increasingly varied purposes, grammatical choices, and organizational demands. Later levels include argumentation, evaluation, formal correspondence, and data reporting.
+This progression cannot be evaluated through word count or genre labels alone. Task difficulty also depends on required content, vocabulary, sentence complexity, available models, and instructional support.
+For the current learners, textbook placement should therefore be considered alongside demonstrated writing readiness when determining suitable task demands.
+Scope of the Curriculum Evidence
+The mapping supports an overview of content progression across all six levels. Detailed rule extraction is more complete for Starter through Level 4 than for Level 5.
+Student assignment findings currently concern Starter and Level 1. Consequently, the analysis does not establish learner performance gaps across Levels 2–5 or the adequacy of practice throughout the complete series.
+4.5 Evidence Limitations
+The present evidence does not establish:
+* Each learner’s complete CEFR proficiency.
+* The frequency of every grammar error.
+* Level 2–5 writing needs.
+* The effectiveness of existing oral feedback.
+* A causal relationship between a particular teaching practice and student errors.
+* The likely improvement produced by the proposed e-learning resource.
+The pre-test summary also lacks item-level results and documented administration conditions. These limitations should inform subsequent diagnostic work.
+________________
+
+
+Section 5. Cause Analysis
+The evidence identifies several plausible contributors. These are working explanations rather than confirmed causes.
+5.1 Unclear Performance Expectations
+The client and teachers report a lack of explicit course and level-specific outcomes. This may make it difficult to determine what learners should demonstrate independently and when additional support is required.
+5.2 Limited Transfer Opportunities
+Teachers describe limited writing practice and greater difficulty with mixed grammar tasks. Students may receive insufficient opportunities to move from practicing an identified structure to choosing and applying structures independently.
+5.3 Insufficient Support for Written Production
+Assignment findings and teacher observations suggest difficulty moving from prompts or examples to complete written responses.
+Support may be needed for sentence construction, prompt interpretation, idea selection, and organization. These needs should be distinguished rather than treated as a single grammar problem.
+5.4 Feedback and Follow-Up
+Some reviewed corrections are difficult to distinguish or lack detail. Teachers also report that checking whether students can apply corrections in a new task is not consistently built into instruction.
+This may limit opportunities to identify persistent misunderstandings. However, visible markings alone do not establish the absence of oral feedback.
+5.5 Variation in Prerequisite Skills
+Vocabulary, reading comprehension, sentence construction, and independence vary among learners. A student’s difficulty may arise from misunderstanding the prompt, lacking an expression, or applying a grammar rule incorrectly.
+Further diagnosis should distinguish these possibilities before selecting instructional responses.
+5.6 Explanatory Support and Learner–Task Fit
+The unit-level review raises a concern about whether grammar explanations and demonstrations sufficiently support understanding and independent application.
+In this project, greater instructional depth should mean clearer relationships, contextualized examples, contrasting errors, and guided application. It does not necessarily require more advanced grammar content or extensive grammatical terminology.
+Writing tasks may also require several skills simultaneously: prompt comprehension, vocabulary retrieval, sentence construction, spelling, and organization. Where these prerequisite skills are not yet stable, limited scaffolding may make independent writing difficult.
+Teacher reports of dependence on prompts and assignment findings involving incomplete sentences are consistent with this explanation. However, they do not establish that brief textbook explanations caused the observed difficulties. Prior knowledge, actual classroom instruction, practice opportunities, and feedback remain relevant influences.
+________________
+
+
+Section 6. Instructional and Non-Instructional Factors
+6.1 Is Instruction Part of the Solution?
+Instruction is a justified part of the response because the available evidence shows difficulties in grammar application and written production.
+Supplementary instruction could address:
+* Explicit explanation of selected grammar relationships.
+* Contextualized and mixed practice.
+* Sentence construction.
+* Guided progression toward independent writing.
+* Feedback followed by correction and reapplication.
+* Review of previously taught content.
+The evidence does not establish that instruction alone will resolve the problem.
+6.2 Non-Instructional Factors
+Relevant contextual and organizational factors include:
+* Heavy school homework demands.
+* Limited completion of optional supplementary work.
+* Parents’ requests to reduce additional homework.
+* Limited parental capacity to support English learning.
+* Restricted classroom time.
+* Teacher turnover and incomplete preparation.
+* Unconfirmed technology budget and teacher availability.
+* Management approval requirements.
+The proposed product would also be optional to purchase. Access, participation, and completion may therefore differ among students. These differences must be considered when interpreting later evaluation results.
+6.3 Learning and Performance Contexts
+The proposed learning context is self-paced, supplementary study outside scheduled lessons. Grammar work may be self-checked, while writing may receive teacher feedback.
+The intended performance contexts include independent textbook-related tasks, writing activities, and examinations. Examination conditions and scoring requirements have not yet been documented sufficiently to define a single assessment environment.
+Supplementary learning should therefore progressively reduce support and include independent application tasks, while preserving assistance during learning.
+6.4 Implementation Feasibility
+The client has expressed willingness to provide two teachers and arrange small-group formative evaluation, subject to management approval and necessary parental permission.
+Before implementation, the project needs confirmation of:
+* Initial development scope and schedule.
+* Teacher responsibilities and available time.
+* Technology costs.
+* Student access and usability.
+* Feedback procedures.
+* Evaluation arrangements.
+Notion access permissions should not be described as guaranteed copyright protection or as preventing all sharing. Platform capabilities and practical access controls require verification.
+________________
+
+
+Section 7. Key Findings
+The analysis establishes the following:
+1. The primary instructional concern is independent application.
+
+ Assignment findings and teacher accounts indicate difficulty applying grammar accurately within written tasks.
+
+2. Course placement and writing competence are different questions.
+
+ Most pre-test results are broadly consistent with current textbook levels, but this does not demonstrate independent writing mastery.
+
+3. Think 5 requires closer examination.
+
+ Placement results suggest potential readiness for Level 1, while reviewed writing indicates continuing foundational needs.
+
+4. Learner needs differ by demonstrated performance.
+
+ Starter and Level 1 samples show different patterns. Grade alone is insufficient for determining instructional support.
+
+5. The project has expanded beyond supplementary exercises.
+
+ The client now envisions a self-paced product with instructional sequences, reference resources, and feedback.
+
+6. The evidence supports initial design, with limits.
+
+ It supports a prototype addressing documented Starter and Level 1 needs. It does not yet justify detailed learner claims across all six levels.
+
+7. Sentence-construction support warrants closer attention.
+
+ The review of Starter Unit 1 suggests a possible gap between controlled grammar practice and the support provided for independent written responses.
+
+8. Textbook suitability depends on learner readiness as well as level coverage.
+
+ Age, EFL learning experience, reading ability, and prior writing practice should inform task demands and scaffolding. Placement results alone do not establish readiness for every writing task.
+
+Addition to Section 7: Key Findings (4/22/2026)
+
+   * The textbook series has an identifiable grammar progression. Related structures are revisited and extended across levels; their distribution across units does not by itself establish an inappropriate sequence.
+   * Prerequisite preparation requires attention. Existing sentence-level errors suggest a need to check foundational knowledge before introducing more complex applications.
+   * Grammar and writing are connected at the content level. The adequacy of the transition from grammar exercises to independent writing remains a separate instructional concern.
+   * Writing expectations require readiness-based interpretation. Textbook level, task length, and genre labels alone do not establish what individual learners can produce independently.
+________________
+
+
+Section 8. Design Implications
+8.1 Establish Level-Specific Outcomes
+Develop measurable outcomes that connect textbook content with independent performance. Assessment tasks should follow those outcomes, with criteria addressing grammar, sentence completeness, relevance, and task coverage.
+The client’s suggested score of approximately 90 should be treated as a proposed criterion requiring agreement about the assessment’s content and difficulty.
+8.2 Develop a Prerequisite-Based Content Map
+Map grammar and writing requirements across the series before reorganizing supplementary content.
+The map should distinguish:
+   * Prerequisite skills.
+   * Newly introduced content.
+   * Review and extension.
+   * Grammar contrasts requiring explicit practice.
+   * Writing tasks requiring particular language resources.
+Initial modules should prioritize documented needs and content learners have already encountered.
+8.3 Use a Provisional Performance Sequence
+A working instructional analysis for contextualized writing is:
+   1. Interpret the task and identify required content.
+   2. Determine the intended meaning and relevant time relationships.
+   3. Select appropriate grammatical structures.
+   4. Construct complete sentences.
+   5. Organize relevant sentences into a connected response.
+   6. Review and revise the response.
+This sequence requires different levels of complexity and support. It should not be restricted by grade without evidence of individual readiness.
+8.4 Validate Entry Skills
+Potential entry requirements include understanding task instructions, recognizing basic sentence elements, using necessary vocabulary, and navigating the learning resource.
+These should be verified for the selected prototype learners. Enrollment, prior exposure, and a total placement score do not establish mastery of every prerequisite.
+8.5 Provide Differentiated Explanations and Wrting Scaffolding
+Supplementary instruction should respond to learners’ demonstrated English literacy and writing readiness while considering age, task length, and independence.
+For learners with foundational needs, provide contextualized explanations of complete sentence patterns, worked examples, relevant vocabulary, and guided sentence construction. Grammar practice should help learners connect forms with meaning and use.
+Support should gradually decrease so that evaluation captures independent performance.
+A possible progression for personal-information writing is:
+   1. Construct a response with a sentence frame.
+   2. Connect responses into a short text when this is part of the objective.
+   3. Review the response using a manageable checklist.
+The amount of guidance should decrease as learners demonstrate independent performance. Familiar topics and short tasks can make participation more manageable, but should not replace checks of understanding and application.
+Prototype evaluation should examine whether learners understand the explanations, can move from supported to independent responses, and can complete tasks within a feasible amount of time.
+8.6 Connect Reading, Grammar, and Writing
+Use manageable reading examples to demonstrate grammatical choices and provide models for written production.
+Supplementary reading difficulty can be adjusted without removing reading from the learning sequence. This reflects the client’s preference to maintain connections among language skills.
+8.7 Design Feedback for Reapplication
+Grammar answer keys should explain relevant choices and common errors. Writing feedback should identify selected priorities and provide an opportunity to revise.
+Where feasible, a subsequent task should examine whether learners can apply the feedback independently.
+8.8 Prototype and Evaluate Before Scaling
+Begin with a manageable prototype grounded in the documented Starter and Level 1 needs.
+Formative evaluation should examine:
+   * Independent task performance.
+   * Clarity of instructions and navigation.
+   * Completion time and workload.
+   * Use of feedback.
+   * Teacher review demands.
+Further development should use these findings alongside additional level-specific evidence. Claims about effectiveness across the full series should follow evaluation rather than precede it.
+Addition to Section 8.9: Design Implications (4/22/2026)
+Organize Related Content into Explicit Learning Progressions
+The supplementary course should make relationships among grammatical structures visible through connected explanations, contextual comparisons, and cumulative application.
+Related textbook content may be grouped into instructional sequences while retaining references to the original levels and units. Final module boundaries will be determined during design through intended performance, prerequisite requirements, and feasible workload.
+Check and Support Prerequisite Skills
+Brief entry checks should identify whether learners possess the sentence-level and grammatical knowledge required for a module. Preparatory activities should address identified needs before learners attempt more complex tasks.
+Strengthen the Transition to Writing
+Supplementary activities should connect grammatical form and meaning with complete sentence construction and relevant written responses. Models, guided construction, contextual choices, and revision should prepare learners for progressively independent performance.

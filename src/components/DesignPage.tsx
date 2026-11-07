@@ -1774,22 +1774,22 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
                     Project Overview
                   </span>
                   <span className="text-xs font-medium text-[#9D988F] hidden sm:inline">
-                    • Designing for Grammar Transfer (ETEC 6440)
+                    • ETEC 6920 Project Overview.pdf
                   </span>
                 </div>
                 <button
                   type="button"
                   onClick={() => setIsPresentationModalOpen(false)}
                   className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#4C4747] hover:bg-[#3a3636] text-[#EFE8DC] flex items-center justify-center shadow-md transition-all cursor-pointer select-none hover:scale-105 active:scale-95"
-                  aria-label="Close Presentation Modal"
+                  aria-label="Close Project Overview Modal"
                 >
                   <X className="w-4 h-4 sm:w-5 sm:h-5" />
                 </button>
               </div>
 
-              {/* Direct Unmodified Original Presentation Slides */}
+              {/* Direct Unmodified Original PDF File */}
               <div className="w-full flex-1 bg-[#525659] overflow-hidden">
-                <OriginalPresentationSlidesViewer />
+                <OriginalPresentationSlidesViewer url="/ETEC-6920-Project-Overview.pdf" />
               </div>
             </motion.div>
           </motion.div>
