@@ -1,5 +1,5 @@
-import React, { useRef, useState, useEffect, useMemo } from 'react';
-import { motion, AnimatePresence, useMotionValue, useSpring, useTransform, useScroll, useInView, type MotionValue } from 'motion/react';
+import React, { useRef, useState, useEffect } from 'react';
+import { motion, AnimatePresence, useMotionValue, useSpring, useTransform, useScroll, type MotionValue } from 'motion/react';
 import folderImg from '../assets/images/Untitled_Artwork_6.png';
 import artworkFolderImg from '../assets/images/Untitled_Artwork_transparent.png';
 import gagneImg from '../assets/images/pioneer_gagne_1790044588787.jpg';
@@ -11,7 +11,7 @@ import siemensImg from '../assets/images/pioneer_siemens_real.jpg';
 import tornImg from '../assets/images/torn.png';
 import tornJpg from '../assets/images/torn.jpg';
 import { PaperTear } from './PaperTear';
-import { ChevronDown, ArrowRight } from 'lucide-react';
+import { ChevronDown, ArrowRight, ExternalLink, X, FileText } from 'lucide-react';
 
 interface FoundationPageProps {
   onBackToHome: () => void;
@@ -457,54 +457,6 @@ const LearningTheoryRow: React.FC<{
   );
 };
 
-interface TypingBoldProps {
-  children: string;
-}
-
-const TypingBold: React.FC<TypingBoldProps> = ({ children }) => {
-  const ref = useRef<HTMLElement>(null);
-  // Trigger exactly when the element scrolls to the viewport's y-axis midline (50% from bottom)
-  const isInView = useInView(ref, { margin: "1000px 0px -50% 0px", once: false });
-  const [boldCount, setBoldCount] = useState(0);
-
-  useEffect(() => {
-    if (isInView) {
-      setBoldCount(0);
-      let current = 0;
-      const interval = setInterval(() => {
-        current += 1;
-        setBoldCount(current);
-        if (current >= children.length) {
-          clearInterval(interval);
-        }
-      }, 62);
-      return () => clearInterval(interval);
-    } else {
-      setBoldCount(0);
-    }
-  }, [isInView, children]);
-
-  return (
-    <strong ref={ref} className="inline font-normal">
-      {children.split('').map((char, index) => {
-        const isBold = index < boldCount;
-        return (
-          <span
-            key={index}
-            className={
-              isBold
-                ? 'font-bold text-[#4C4747] transition-colors duration-200'
-                : 'font-normal text-[#9D988F] transition-colors duration-200'
-            }
-          >
-            {char}
-          </span>
-        );
-      })}
-    </strong>
-  );
-};
-
 export const FoundationPage: React.FC<FoundationPageProps> = ({ 
   onBackToHome,
   onNavigateToWork = () => {
@@ -716,45 +668,25 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
       title: 'AI-Augmented Learning & Design',
       titleLine1: 'AI-Augmented',
       titleLine2: 'Learning & Design',
-      body: (
-        <>
-          Instructional designers increasingly need to consider both how AI can support learning and how AI can be integrated responsibly into the{' '}
-          <TypingBold>design process</TypingBold>. This raises questions about accuracy, learner agency, human oversight, accessibility, and ethical use.
-        </>
-      ),
+      body: 'Instructional designers increasingly need to consider both how AI can support learning and how AI can be integrated responsibly into the design process. This raises questions about accuracy, learner agency, human oversight, accessibility, and ethical use.',
     },
     {
       title: 'Adaptive & Personalized Learning',
       titleLine1: 'Adaptive & Personalized',
       titleLine2: 'Learning',
-      body: (
-        <>
-          Personalization shifts instructional design from designing one pathway for all learners toward designing{' '}
-          <TypingBold>flexible pathways</TypingBold> that respond to learner differences and performance.
-        </>
-      ),
+      body: 'Personalization shifts instructional design from designing one pathway for all learners toward designing flexible pathways that respond to learner differences and performance.',
     },
     {
       title: 'Inclusive & Accessible Learning',
       titleLine1: 'Inclusive & Accessible',
       titleLine2: 'Learning',
-      body: (
-        <>
-          Designers need to consider accessibility, language, prior knowledge, cognitive differences, and{' '}
-          <TypingBold>multiple ways</TypingBold> of engaging with and demonstrating learning from the beginning of the design process.
-        </>
-      ),
+      body: 'Designers need to consider accessibility, language, prior knowledge, cognitive differences, and multiple ways of engaging with and demonstrating learning from the beginning of the design process.',
     },
     {
       title: 'Competency-Based & Performance-Oriented Learning',
       titleLine1: 'Competency-Based &',
       titleLine2: 'Performance-Oriented Learning',
-      body: (
-        <>
-          This shift places greater emphasis on authentic performance, meaningful assessment, feedback, and alignment between learning goals and{' '}
-          <TypingBold>real-world application</TypingBold>.
-        </>
-      ),
+      body: 'This shift places greater emphasis on authentic performance, meaningful assessment, feedback, and alignment between learning goals and real-world application.',
     },
   ];
 
@@ -796,6 +728,24 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
       body: 'I apply what I have learned to instructional design and research projects, using theory and evidence to inform design decisions.',
     },
   ];
+
+  const [activeGoogleDoc, setActiveGoogleDoc] = useState<{
+    title: string;
+    subtitle: string;
+    previewUrl: string;
+  } | null>(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setActiveGoogleDoc(null);
+      }
+    };
+    if (activeGoogleDoc) {
+      window.addEventListener('keydown', handleKeyDown);
+    }
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [activeGoogleDoc]);
 
   return (
     <motion.div
@@ -1110,23 +1060,182 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
             </div>
           </div>
 
-          {/* "View My Work" Button Overlapping Bottom Edge of Folder with Hover Scale, Tilt (-3deg), and Pink Background */}
-          <div className="-mt-8 sm:-mt-12 md:-mt-14 ml-4 sm:ml-8 relative z-20">
-            <motion.a
-              href="https://docs.google.com/document/d/1i3ZWD107rVvpInXEoQ-2BCYs2huC6FYV2-5SmELqE-c/edit?usp=sharing"
-              target="_blank"
-              rel="noopener noreferrer"
-              id="foundation-view-work-btn"
-              whileHover={{ scale: 1.08, rotate: -3, backgroundColor: "#DC9BB5" }}
-              whileTap={{ scale: 0.96 }}
-              transition={{ type: "spring", stiffness: 400, damping: 20 }}
-              className="inline-block px-7 py-2.5 bg-[#F7F3EB] text-[#4C4747] border border-[#4C4747]/15 font-inter font-bold text-sm rounded-full shadow-[0_10px_24px_rgba(76,71,71,0.18)] cursor-pointer select-none origin-center no-underline"
-            >
-              View My Work
-            </motion.a>
-          </div>
-
         </motion.div>
+      </section>
+
+      {/* 5b. Section: "Artifacts" Gallery View below "What do I believe about learning?" */}
+      <section
+        id="foundation-artifacts-section"
+        className="relative z-20 w-full max-w-6xl mx-auto px-4 sm:px-6 -mt-4 sm:-mt-8 md:-mt-16 mb-16 sm:mb-24"
+      >
+        <h2 className="text-3xl sm:text-5xl font-extrabold text-center mb-8 sm:mb-12 tracking-tight text-[#4C4747]">
+          Artifacts
+        </h2>
+
+        {/* 3-Column Gallery View Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-stretch w-full">
+          {/* Card 1: Educational Philosophy and The Role of Technology */}
+          <motion.button
+            type="button"
+            onClick={() =>
+              setActiveGoogleDoc({
+                title: 'Educational Philosophy and The Role of Technology',
+                subtitle: 'Yu Liu · ETEC 5000: Foundation of Instructional Design and Technology',
+                previewUrl:
+                  'https://docs.google.com/document/d/1i3ZWD107rVvpInXEoQ-2BCYs2huC6FYV2-5SmELqE-c/preview',
+              })
+            }
+            id="foundation-view-work-btn"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            whileHover={{ y: -6 }}
+            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="group relative flex flex-col text-left rounded-2xl bg-[#F7F3EB] border border-[#4C4747]/15 shadow-[0_12px_32px_rgba(76,71,71,0.12)] hover:shadow-[0_20px_48px_rgba(76,71,71,0.2)] hover:border-[#DC9BB5] overflow-hidden cursor-pointer no-underline transition-all duration-300"
+          >
+            {/* Gallery Card Cover: Center of Page 1 of the Google Doc */}
+            <div className="relative w-full h-48 sm:h-52 bg-[#E6DEC8]/75 border-b border-[#4C4747]/10 overflow-hidden p-3 sm:p-4 flex items-start justify-center">
+              <div className="relative w-full h-[112%] bg-white rounded-t-md shadow-[0_8px_24px_rgba(76,71,71,0.16)] border border-[#4C4747]/10 overflow-hidden mt-1 group-hover:-translate-y-1 transition-all duration-300 flex items-center justify-center">
+                <img
+                  src="/foundation-artifact-cover.png"
+                  alt="Educational Philosophy and The Role of Technology - Title Page"
+                  className="w-full h-full object-cover object-[50%_52%] scale-[1.18] group-hover:scale-[1.22] transition-transform duration-300 select-none pointer-events-none"
+                />
+              </div>
+
+              {/* Hover Overlay Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#4C4747]/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+            </div>
+
+            {/* Gallery Card Footer / Meta */}
+            <div className="p-4 sm:p-5 flex flex-col justify-between flex-1 gap-3.5 bg-[#F7F3EB] w-full">
+              <div className="text-left">
+                <h3 className="text-sm sm:text-base font-extrabold text-[#4C4747] group-hover:text-[#DC9BB5] transition-colors leading-snug">
+                  Educational Philosophy and The Role of Technology
+                </h3>
+                <p className="text-xs text-[#4C4747]/75 mt-1">
+                  ETEC 5000 · Foundation of IDT
+                </p>
+                <p className="text-xs sm:text-sm text-[#4C4747]/90 leading-relaxed mt-2.5">
+                  My Educational Philosophy statement reflects my ability to understand learning theories and translate them into intentional design principles.
+                </p>
+              </div>
+
+              <div className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#EFE8DC] group-hover:bg-[#DC9BB5] text-[#4C4747] font-inter font-bold text-xs transition-colors self-start shadow-sm">
+                <span>View My Work</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </div>
+            </div>
+          </motion.button>
+
+          {/* Card 2: Interview Report: Exploring Corporate Instructional Design */}
+          <motion.button
+            type="button"
+            onClick={() =>
+              setActiveGoogleDoc({
+                title: 'Interview Report: Exploring Corporate Instructional Design',
+                subtitle: 'Yu Liu · ETEC 5000 – Foundations of Instructional Design and Technology',
+                previewUrl:
+                  'https://docs.google.com/document/d/1fQ0KMDjUqqLBLFOuz5PSWfDYNvOMduJOe0I8xP04lNw/preview',
+              })
+            }
+            id="foundation-view-interview-report-btn"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            whileHover={{ y: -6 }}
+            transition={{ duration: 0.4, delay: 0.08, ease: [0.16, 1, 0.3, 1] }}
+            className="group relative flex flex-col text-left rounded-2xl bg-[#F7F3EB] border border-[#4C4747]/15 shadow-[0_12px_32px_rgba(76,71,71,0.12)] hover:shadow-[0_20px_48px_rgba(76,71,71,0.2)] hover:border-[#DC9BB5] overflow-hidden cursor-pointer no-underline transition-all duration-300"
+          >
+            {/* Gallery Card Cover: Center of Page 1 of the Interview Report */}
+            <div className="relative w-full h-48 sm:h-52 bg-[#E6DEC8]/75 border-b border-[#4C4747]/10 overflow-hidden p-3 sm:p-4 flex items-start justify-center">
+              <div className="relative w-full h-[112%] bg-white rounded-t-md shadow-[0_8px_24px_rgba(76,71,71,0.16)] border border-[#4C4747]/10 overflow-hidden mt-1 group-hover:-translate-y-1 transition-all duration-300 flex items-center justify-center">
+                <img
+                  src="/foundation-interview-cover.png"
+                  alt="Interview Report: Exploring Corporate Instructional Design - Title Page"
+                  className="w-full h-full object-cover object-[50%_46%] scale-[1.18] group-hover:scale-[1.22] transition-transform duration-300 select-none pointer-events-none"
+                />
+              </div>
+
+              {/* Hover Overlay Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#4C4747]/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+            </div>
+
+            {/* Gallery Card Footer / Meta */}
+            <div className="p-4 sm:p-5 flex flex-col justify-between flex-1 gap-3.5 bg-[#F7F3EB] w-full">
+              <div className="text-left">
+                <h3 className="text-sm sm:text-base font-extrabold text-[#4C4747] group-hover:text-[#DC9BB5] transition-colors leading-snug">
+                  Interview Report: Exploring Corporate Instructional Design
+                </h3>
+                <p className="text-xs text-[#4C4747]/75 mt-1">
+                  ETEC 5000 · Foundation of IDT
+                </p>
+                <p className="text-xs sm:text-sm text-[#4C4747]/90 leading-relaxed mt-2.5">
+                  This interview report strengthened my understanding of professional expectations and helped me reflect on my own career direction and areas for growth, including AI integration, accessibility, gamification, and communication skills.
+                </p>
+              </div>
+
+              <div className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#EFE8DC] group-hover:bg-[#DC9BB5] text-[#4C4747] font-inter font-bold text-xs transition-colors self-start shadow-sm">
+                <span>View My Work</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </div>
+            </div>
+          </motion.button>
+
+          {/* Card 3: Glossary of Key Terminologies in the Field of IDT */}
+          <motion.button
+            type="button"
+            onClick={() =>
+              setActiveGoogleDoc({
+                title: 'Glossary of Key Terminologies in the Field of IDT',
+                subtitle: 'Team 4 InstructHer · ETEC 5000: Foundations in Instructional Design and Technology',
+                previewUrl:
+                  'https://docs.google.com/document/d/1UVPmDQuOchb1ycZiU5ZwLvxLnT9Q9vREg_0Q0JOmtJ4/preview',
+              })
+            }
+            id="foundation-view-glossary-btn"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            whileHover={{ y: -6 }}
+            transition={{ duration: 0.4, delay: 0.16, ease: [0.16, 1, 0.3, 1] }}
+            className="group relative flex flex-col text-left rounded-2xl bg-[#F7F3EB] border border-[#4C4747]/15 shadow-[0_12px_32px_rgba(76,71,71,0.12)] hover:shadow-[0_20px_48px_rgba(76,71,71,0.2)] hover:border-[#DC9BB5] overflow-hidden cursor-pointer no-underline transition-all duration-300"
+          >
+            {/* Gallery Card Cover: Center of Page 1 of the Glossary Document */}
+            <div className="relative w-full h-48 sm:h-52 bg-[#E6DEC8]/75 border-b border-[#4C4747]/10 overflow-hidden p-3 sm:p-4 flex items-start justify-center">
+              <div className="relative w-full h-[112%] bg-white rounded-t-md shadow-[0_8px_24px_rgba(76,71,71,0.16)] border border-[#4C4747]/10 overflow-hidden mt-1 group-hover:-translate-y-1 transition-all duration-300 flex items-center justify-center">
+                <img
+                  src="/foundation-glossary-cover.png"
+                  alt="Glossary of Key Terminologies in the Field of IDT - Title Page"
+                  className="w-full h-full object-cover object-[50%_46%] scale-[1.15] group-hover:scale-[1.19] transition-transform duration-300 select-none pointer-events-none"
+                />
+              </div>
+
+              {/* Hover Overlay Gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#4C4747]/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+            </div>
+
+            {/* Gallery Card Footer / Meta */}
+            <div className="p-4 sm:p-5 flex flex-col justify-between flex-1 gap-3.5 bg-[#F7F3EB] w-full">
+              <div className="text-left">
+                <h3 className="text-sm sm:text-base font-extrabold text-[#4C4747] group-hover:text-[#DC9BB5] transition-colors leading-snug">
+                  Glossary of Key Terminologies in the Field of IDT
+                </h3>
+                <p className="text-xs text-[#4C4747]/75 mt-1">
+                  ETEC 5000 · Foundation of IDT
+                </p>
+                <p className="text-xs sm:text-sm text-[#4C4747]/90 leading-relaxed mt-2.5">
+                  This artifact demonstrates my understanding of key concepts, theories, and terminology in Instructional Design and Technology. More importantly, this was a collaborative project that allowed me to develop my teamwork and communication skills.
+                </p>
+              </div>
+
+              <div className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#EFE8DC] group-hover:bg-[#DC9BB5] text-[#4C4747] font-inter font-bold text-xs transition-colors self-start shadow-sm">
+                <span>View My Work</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </div>
+            </div>
+          </motion.button>
+        </div>
       </section>
 
       {/* 6. Dynamic WebGL Paper Tear Transition & 7. Section in #E6DEC8 */}
@@ -1327,6 +1436,65 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
           </div>
         </div>
       </div>
+
+      {/* In-App Google Doc Preview Modal (Preserves 100% Original Google Doc Content & Formatting) */}
+      <AnimatePresence>
+        {activeGoogleDoc && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            onClick={() => setActiveGoogleDoc(null)}
+            className="fixed inset-0 z-[120] bg-black/60 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6"
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96, y: 16 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.96, y: 16 }}
+              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative w-full max-w-5xl h-[90vh] bg-[#EFE8DC] rounded-2xl shadow-2xl border border-[#4C4747]/20 flex flex-col overflow-hidden"
+            >
+              {/* Modal Header */}
+              <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 bg-[#F7F3EB] border-b border-[#4C4747]/15 flex-shrink-0">
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <div className="w-8 h-8 rounded-lg bg-[#DC9BB5]/30 flex items-center justify-center text-[#4C4747] flex-shrink-0">
+                    <FileText className="w-4 h-4" />
+                  </div>
+                  <div className="min-w-0 text-left">
+                    <h3 className="text-sm sm:text-base font-extrabold text-[#4C4747] truncate">
+                      {activeGoogleDoc.title}
+                    </h3>
+                    <p className="text-[11px] sm:text-xs text-[#4C4747]/70 truncate">
+                      {activeGoogleDoc.subtitle}
+                    </p>
+                  </div>
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => setActiveGoogleDoc(null)}
+                  aria-label="Close document preview"
+                  className="w-8 h-8 rounded-full bg-[#EFE8DC] hover:bg-[#DC9BB5] text-[#4C4747] flex items-center justify-center transition-colors cursor-pointer flex-shrink-0"
+                >
+                  <X className="w-4 h-4" />
+                </button>
+              </div>
+
+              {/* Embedded Original Google Doc View */}
+              <div className="flex-1 w-full bg-white overflow-hidden">
+                <iframe
+                  src={activeGoogleDoc.previewUrl}
+                  title={activeGoogleDoc.title}
+                  className="w-full h-full border-0"
+                  allow="autoplay"
+                />
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
     </motion.div>
   );

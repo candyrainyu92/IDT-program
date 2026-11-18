@@ -11,7 +11,7 @@ import { BookScroll } from './BookScroll';
 import { ClientProjectDocumentsModal } from './ClientProjectDocumentsModal';
 import { OriginalPresentationSlidesViewer } from './OriginalPresentationSlidesViewer';
 import { caseStudies } from '../data/portfolioData';
-import { ChevronDown, ChevronUp, RotateCw, CheckCircle2, ArrowLeft, ArrowRight, X, Sparkles, Layers, FileText } from 'lucide-react';
+import { ChevronDown, ChevronUp, RotateCw, CheckCircle2, ArrowLeft, ArrowRight, X, Sparkles, Layers, FileText, ExternalLink } from 'lucide-react';
 
 interface DesignPageProps {
   onBackToHome: () => void;
@@ -97,6 +97,133 @@ const ADDIE_STEPS: StepItem[] = [
     color: '#93C5FD'
   }
 ];
+
+interface DesignModelItem {
+  id: string;
+  name: string;
+  coreStrength: string;
+  howIUseIt: string;
+  myPerspective: string;
+}
+
+const DESIGN_MODELS: DesignModelItem[] = [
+  {
+    id: 'addie-model',
+    name: 'ADDIE Model',
+    coreStrength:
+      'Provides a systematic structure for analyzing needs, designing instruction, developing materials, implementing solutions, and evaluating outcomes.',
+    howIUseIt:
+      'I use ADDIE as an overarching framework to keep the instructional design process organized and ensure that important stages are considered.',
+    myPerspective:
+      'I see ADDIE as a flexible structure rather than a strictly linear sequence. Evaluation and feedback can inform revisions throughout the process.',
+  },
+  {
+    id: 'sam-model',
+    name: 'SAM Model',
+    coreStrength:
+      'SAM supports an iterative and collaborative development process through early prototyping, frequent feedback, and continuous refinement.',
+    howIUseIt:
+      'I apply SAM during the design and development phases. It helps me identify potential issues, respond to evolving stakeholder needs, and make evidence-informed improvements early in the process, reducing unnecessary rework.',
+    myPerspective:
+      'I value SAM as a practical approach to professional instructional design because it encourages flexibility, collaboration, and responsiveness. Rather than waiting until the entire product is completed, I can use feedback to guide ongoing decisions and develop a more effective learning solution.',
+  },
+  {
+    id: 'backward-design',
+    name: 'Backward Design',
+    coreStrength:
+      'Starts with desired learning outcomes and aligns assessment evidence and learning experiences with those outcomes.',
+    howIUseIt:
+      'I use Backward Design to clarify what learners should achieve, determine how their learning will be demonstrated, and then plan appropriate learning activities.',
+    myPerspective:
+      'It helps me avoid designing activities simply because they are engaging. Every learning experience should serve a meaningful learning outcome.',
+  },
+];
+
+const DesignModelRow: React.FC<{ model: DesignModelItem }> = ({ model }) => {
+  const rowRef = useRef<HTMLDivElement>(null);
+
+  // Track scroll progress of each individual row as it enters the viewport
+  const { scrollYProgress } = useScroll({
+    target: rowRef,
+    offset: ["start 88%", "start 46%"],
+  });
+
+  // Smooth spring physics so the line extends and retracts fluidly with scroll
+  const scaleY = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 24,
+    restDelta: 0.001,
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.15, 1], [0, 1, 1]);
+
+  return (
+    <div
+      ref={rowRef}
+      className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 lg:gap-12 items-start md:items-center"
+    >
+      {/* Left Column: Model Name */}
+      <div className="md:col-span-4 min-w-0 text-left">
+        <h3
+          className="text-[#DC9BB5] text-2xl sm:text-3xl md:text-3xl lg:text-[clamp(1.75rem,2.3vw,2.75rem)] xl:text-[2.75rem] font-extrabold tracking-tight whitespace-nowrap"
+          style={{ fontFamily: "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" }}
+        >
+          {model.name}
+        </h3>
+      </div>
+
+      {/* Right Column: Structured Breakdown with Scroll-Driven Vertical Line */}
+      <div className="md:col-span-8 relative text-left">
+        {/* Desktop Scroll-Animated Vertical Divider Line */}
+        <motion.div
+          style={{ scaleY, opacity, transformOrigin: 'top' }}
+          className="hidden md:block absolute left-[10%] top-0 bottom-0 w-[0.5px] bg-[#4C4747]/40 pointer-events-none origin-top"
+          aria-hidden="true"
+        />
+
+        {/* Mobile Scroll-Animated Vertical Divider Line */}
+        <motion.div
+          style={{ scaleY, opacity, transformOrigin: 'top' }}
+          className="md:hidden absolute left-0 top-0 bottom-0 w-[0.5px] bg-[#4C4747]/40 pointer-events-none origin-top"
+          aria-hidden="true"
+        />
+
+        {/* Structured Text Box */}
+        <div className="pl-4 md:pl-[25%] space-y-4">
+          {/* Core Strength */}
+          <div>
+            <h4 className="text-[#4C4747] font-extrabold text-xs tracking-wider uppercase mb-1">
+              CORE STRENGTH
+            </h4>
+            <p className="text-[#9D988F] text-sm sm:text-base leading-relaxed">
+              {model.coreStrength}
+            </p>
+          </div>
+
+          {/* How I Use It */}
+          <div>
+            <h4 className="text-[#4C4747] font-extrabold text-xs tracking-wider uppercase mb-1">
+              HOW I USE IT
+            </h4>
+            <p className="text-[#9D988F] text-sm sm:text-base leading-relaxed">
+              {model.howIUseIt}
+            </p>
+          </div>
+
+          {/* My Perspective */}
+          <div>
+            <h4 className="text-[#4C4747] font-extrabold text-xs tracking-wider uppercase mb-1">
+              MY PERSPECTIVE
+            </h4>
+            <p className="text-[#9D988F] text-sm sm:text-base leading-relaxed">
+              {model.myPerspective}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate }) => {
   // Mouse Parallax Physics for Hero Title Green Folder Icon (identical to Foundation)
@@ -1321,7 +1448,7 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
 
       {/* 3. Transition Statement before Torn Paper */}
       <section 
-        className="w-full max-w-5xl mx-auto px-6 sm:px-8 mt-20 sm:mt-28 mb-10 sm:mb-14 z-10 text-center"
+        className="w-full max-w-6xl mx-auto px-6 sm:px-8 mt-20 sm:mt-28 mb-10 sm:mb-14 z-10 text-center"
       >
         <div className="inline-block bg-[#6A9F68] text-white font-black text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 rounded-lg shadow-xl border border-[#568754] select-none rotate-[-1deg] hover:rotate-0 transition-transform">
           No single model fits every project.
@@ -1330,8 +1457,15 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
           className="text-[#4C4747] font-normal leading-relaxed text-left max-w-4xl mx-auto mt-10 sm:mt-14"
           style={{ fontFamily: "'Inter', sans-serif", fontSize: '20px', lineHeight: '36px' }}
         >
-          Models provide structure, but the learner, problem, context, and constraints should guide how the process is applied.
+          I don&apos;t design by the model; I design with the model. I believe instructional design models should guide, not restrict, the design process. By understanding their strengths and limitations, I can adapt and integrate different approaches to respond to learners&apos; needs, instructional goals, and project contexts.
         </p>
+
+        {/* Instructional Design Models Breakdown (matching Foundation Learning Theories row layout) */}
+        <div className="w-full mt-16 sm:mt-20 space-y-20 sm:space-y-24">
+          {DESIGN_MODELS.map((model) => (
+            <DesignModelRow key={model.id} model={model} />
+          ))}
+        </div>
       </section>
 
       {/* 4. Realistic WebGL Torn Paper Section Transition */}
@@ -1356,92 +1490,163 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
           />
         </div>
 
-        {/* 5. Bottom Section in #E6DEC8 (From Model to Practice) */}
+        {/* 5. Bottom Section in #E6DEC8 */}
         <div 
           className="w-full bg-[#E6DEC8] text-[#4C4747] pt-8 sm:pt-12 pb-8 sm:pb-10 relative -mt-16 sm:-mt-24"
         >
-          <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-2">
-            {/* H2 Title: "From Model to Practice" */}
+          {/* Artifacts Heading & Two-Column Layout (All 4 links in Left Column) */}
+          <section
+            id="design-artifacts-section"
+            className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-10 sm:mb-14"
+          >
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-center mb-8 sm:mb-12 tracking-tight text-[#4C4747]">
+              Artifacts
+            </h2>
+
+            {/* Two-Column Layout: First Column (Left) takes 40% width, stretched so Right Column aligns top & bottom */}
+            <div className="grid grid-cols-1 md:grid-cols-[38%_1fr] gap-10 md:gap-16 lg:gap-24 items-stretch">
+              {/* First Column (Left, 38%): Gallery View Card + 3 Solid Pink Pill Buttons */}
+              <div className="w-full flex flex-col justify-between">
+                <motion.button
+                  type="button"
+                  id="design-view-project-overview-btn"
+                  onClick={() => setIsPresentationModalOpen(true)}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  whileHover={{ y: -6 }}
+                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                  className="w-full group relative flex flex-col text-left rounded-2xl bg-[#F7F3EB] border border-[#4C4747]/15 shadow-[0_12px_32px_rgba(76,71,71,0.12)] hover:shadow-[0_20px_48px_rgba(76,71,71,0.2)] hover:border-[#DC9BB5] overflow-hidden cursor-pointer no-underline transition-all duration-300"
+                >
+                  {/* Gallery Card Cover: Rendered Page 1 content of Design Project Overview.pdf */}
+                  <div className="relative w-full h-52 sm:h-60 bg-[#EFE8DC]/85 border-b border-[#4C4747]/10 overflow-hidden p-3 sm:p-4 flex items-start justify-center">
+                    <div className="relative w-full h-[112%] bg-white rounded-t-md shadow-[0_8px_24px_rgba(76,71,71,0.16)] border border-[#4C4747]/10 overflow-hidden mt-1 group-hover:-translate-y-1 transition-all duration-300 flex items-start justify-center">
+                      <img
+                        src="/design-project-overview-cover.png?v=2"
+                        alt="Design Project Overview - Supplementary English Grammar & Writing Course"
+                        className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-300 select-none pointer-events-none"
+                      />
+                    </div>
+
+                    {/* Hover Overlay Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#4C4747]/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  </div>
+
+                  {/* Gallery Card Footer / Meta */}
+                  <div className="p-4 sm:p-5 flex flex-col justify-between flex-1 gap-3.5 bg-[#F7F3EB] w-full">
+                    <div className="text-left">
+                      <h3 className="text-sm sm:text-base font-extrabold text-[#4C4747] group-hover:text-[#DC9BB5] transition-colors leading-snug">
+                        Design Project Overview
+                      </h3>
+                      <p className="text-xs text-[#4C4747]/75 mt-1">
+                        Supplementary English Grammar &amp; Writing Course (90 Modules)
+                      </p>
+                    </div>
+
+                    <div className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#EFE8DC] group-hover:bg-[#DC9BB5] text-[#4C4747] font-inter font-bold text-xs transition-colors self-start shadow-sm">
+                      <span>View My Work</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </div>
+                  </div>
+                </motion.button>
+
+                {/* Three Pill Buttons matching Gallery View Card colors */}
+                <div className="mt-4 flex flex-col gap-3 w-full">
+                  <button
+                    type="button"
+                    id="design-analysis-report-btn"
+                    onClick={() => handleGalleryClick('interactive-microlearning')}
+                    title="Analysis Report: Think Supplementary E-Learning Project"
+                    className="group w-full rounded-full px-5 py-3 bg-[#F7F3EB] border border-[#4C4747]/15 hover:border-[#DC9BB5] shadow-[0_12px_32px_rgba(76,71,71,0.12)] hover:shadow-[0_20px_48px_rgba(76,71,71,0.2)] flex items-center justify-between gap-2 transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
+                  >
+                    <span className="font-inter text-sm sm:text-[15px] font-extrabold text-[#4C4747] group-hover:text-[#DC9BB5] transition-colors text-left">
+                      Analysis Report
+                    </span>
+                    <span className="text-sm sm:text-base font-bold text-[#4C4747] group-hover:text-[#DC9BB5] transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                      ↗
+                    </span>
+                  </button>
+
+                  <button
+                    type="button"
+                    id="design-report-btn"
+                    onClick={() => handleGalleryClick('gamified-onboarding')}
+                    title="Design Report"
+                    className="group w-full rounded-full px-5 py-3 bg-[#F7F3EB] border border-[#4C4747]/15 hover:border-[#DC9BB5] shadow-[0_12px_32px_rgba(76,71,71,0.12)] hover:shadow-[0_20px_48px_rgba(76,71,71,0.2)] flex items-center justify-between gap-2 transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
+                  >
+                    <span className="font-inter text-sm sm:text-[15px] font-extrabold text-[#4C4747] group-hover:text-[#DC9BB5] transition-colors text-left">
+                      Design Report
+                    </span>
+                    <span className="text-sm sm:text-base font-bold text-[#4C4747] group-hover:text-[#DC9BB5] transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                      ↗
+                    </span>
+                  </button>
+
+                  <button
+                    type="button"
+                    id="design-revision-plan-btn"
+                    onClick={() => handleGalleryClick('accessible-stem')}
+                    title="Revision Development Plan"
+                    className="group w-full rounded-full px-5 py-3 bg-[#F7F3EB] border border-[#4C4747]/15 hover:border-[#DC9BB5] shadow-[0_12px_32px_rgba(76,71,71,0.12)] hover:shadow-[0_20px_48px_rgba(76,71,71,0.2)] flex items-center justify-between gap-2 transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
+                  >
+                    <span className="font-inter text-sm sm:text-[15px] font-extrabold text-[#4C4747] group-hover:text-[#DC9BB5] transition-colors text-left">
+                      Revision Development Plan
+                    </span>
+                    <span className="text-sm sm:text-base font-bold text-[#4C4747] group-hover:text-[#DC9BB5] transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                      ↗
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Second Column (Right): Wider spacing from left column & bottom-aligned with left column */}
+              <div
+                className="w-full h-full flex flex-col justify-between text-left text-[#4C4747] md:pl-4 lg:pl-8 text-base sm:text-lg lg:text-[19px] leading-[1.85] lg:leading-[1.95] gap-6"
+                style={{ fontFamily: "'Inter', sans-serif" }}
+              >
+                <p>
+                  This project demonstrates my ability to integrate instructional design models and learning theories into practical design decisions, create aligned learning experiences, and select appropriate approaches based on learner needs and project goals.
+                </p>
+                <p>
+                  I used ADDIE as the overall framework to organize the project, SAM to support prototyping, feedback, and iterative refinement, and Backward Design to align learning objectives, assessments, and instructional activities. Rather than following a single model mechanically, I drew on the strengths of each to address different project needs.
+                </p>
+                <p>
+                  I also applied Cognitive Load Theory to organize grammar content into manageable learning steps and reduce unnecessary cognitive demands. Additionally, I drew on constructivist principles to design scaffolded writing activities that encouraged learners to develop their writing skills through guided practice, and gradually become more independent as instructional support was reduced.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-16 sm:mt-20 mb-8 sm:mb-10 relative z-20">
+            {/* H2 Title: "From Theory to Design" */}
             <h2 
               id="design-from-model-to-practice-title"
               className="text-3xl sm:text-5xl md:text-[50px] font-black text-center mb-3 sm:mb-4 tracking-tight text-[#4C4747]"
               style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif" }}
             >
-              From Model <span className="text-[#DC9BB5]">to Practice</span>
+              From Theory <span className="text-[#DC9BB5]">to Design</span>
             </h2>
             <h3 className="text-lg sm:text-xl md:text-2xl font-semibold font-inter text-[#DC9BB5]">
               My Reflection on Instructional Design
             </h3>
           </section>
 
-          {/* Group container for the statement box and all subsequent elements */}
+          {/* Group container for the reflection text and subsequent elements */}
           <div 
-            className="w-full relative translate-y-[3%]"
-            style={{ transform: 'translateY(3%)' }}
+            className="w-full relative"
           >
-            <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-4 sm:-mt-6">
+            <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
               {/* Design Practice Reflection Text */}
-              <div className="max-w-6xl mx-auto text-left mb-12">
+              <div className="max-w-6xl mx-auto text-left mb-12 sm:mb-16">
                 <div className="text-base sm:text-lg md:text-xl text-[#4C4747] font-normal leading-relaxed space-y-5 text-left">
                   <p>
-                    Instructional design changed how I think about models. I no longer see them as fixed procedures to follow step by step, but as frameworks and strategies that help me make intentional design decisions.
+                    I believe effective instructional design begins with being a learner before being a designer. Understanding how people learn helps me approach design from the learner&apos;s perspective rather than simply focusing on content or technology.
                   </p>
                   <p>
-                    In my future practice, I want to adapt the design process to the learner, problem, context, and available evidence rather than force every project into the same model. For me, effective instructional design is not about following a model perfectly, but knowing how and why to use it.
+                    Instructional models and learning theories provide a foundation for systematic design. I no longer see them as fixed procedures or formulas to follow step by step, but as frameworks and tools that guide systematic thinking and intentional design decisions.
                   </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Book & Statement Text Container (Symmetrically aligned 2-column grid when closed, centers & fades out text when open) */}
-            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative min-h-[560px] lg:min-h-[740px]">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                {/* Left Column: 3D Interactive Notebook (Glides smoothly to screen center when open) */}
-                <div 
-                  className={`w-full flex items-center justify-center relative transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.4,1)] ${
-                    isBookOpen 
-                      ? 'lg:translate-x-[calc(50%+1.5rem)] z-40' 
-                      : 'lg:translate-x-0 z-10'
-                  }`}
-                >
-                  <div className="w-full">
-                    <BookScroll 
-                      openWidth={75} 
-                      background="#E6DEC8" 
-                      scrollHeight={300}
-                      coverSrc={notebookCoverImg}
-                      showLabels={false}
-                      title="Design Project"
-                      leafTitle="Project Gallery"
-                      author="Yu Liu"
-                      textColor="#709A02"
-                      mode="projects"
-                      isOpen={isBookOpen}
-                      onToggle={setIsBookOpen}
-                      onGalleryClick={handleGalleryClick}
-                    />
-                  </div>
-                </div>
-
-                {/* Right Column: Projects Statement Text Box (Swapped to right, fades out when book opens) */}
-                <div 
-                  className={`w-full relative z-10 transition-opacity duration-500 ease-in-out ${
-                    isBookOpen 
-                      ? 'opacity-0 pointer-events-none select-none' 
-                      : 'opacity-100 pointer-events-auto'
-                  }`}
-                  aria-hidden={isBookOpen}
-                >
-                  <p 
-                    className="text-base sm:text-lg md:text-xl text-[#4C4747] font-normal leading-relaxed bg-[#F7F3EB]/85 border border-[#4C4747]/15 rounded-2xl py-6 px-7 sm:px-10 shadow-lg text-left"
-                    style={{ fontFamily: "'Inter', sans-serif" }}
-                  >
-                    <span className="block mb-4">
-                      This ETEC 6440 independent project is part of a larger supplementary English e-learning curriculum developed for QiYao, an English education program in China. It focuses on five modules covering three basic verb tenses: simple present, simple past, and simple future.
-                    </span>
-                    <span className="block">
-                      This project shows how I applied instructional design principles to analyze needs, align goals and learning experiences, develop solutions, and refine them through feedback and evaluation.
-                    </span>
+                  <p>
+                    I also believe instructional design requires creativity. Models provide structure and direction, but they should not restrict innovative solutions. Like game designers, instructional designers can transform lessons into engaging experiences through storytelling, challenges, exploration, and interaction. Learning can feel like playing a game, where learners are motivated to explore, participate, and make progress.
                   </p>
                 </div>
               </div>
@@ -1449,7 +1654,7 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
 
             {/* Section: Collapsible Reference (APA 7th Format) */}
             <section className="w-full max-w-4xl mx-auto px-4 sm:px-6 mb-10 sm:mb-14">
-              <div className="border-t border-b border-[#4C4747]/20 py-4 -mt-[22%] mb-[4%] relative z-20">
+              <div className="border-t border-b border-[#4C4747]/20 py-4 mb-[4%] relative z-20">
                 <button
                   type="button"
                   onClick={() => setIsReferenceOpen((prev) => !prev)}
@@ -1771,10 +1976,10 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
               <div className="flex items-center justify-between px-4 sm:px-6 py-3 bg-[#F7F3EB] border-b border-[#4C4747]/15 shrink-0">
                 <div className="flex items-center gap-2.5">
                   <span className="text-sm sm:text-base font-extrabold text-[#4C4747] tracking-tight">
-                    Project Overview
+                    Design Project Overview
                   </span>
                   <span className="text-xs font-medium text-[#9D988F] hidden sm:inline">
-                    • ETEC 6920 Project Overview.pdf
+                    • Design Project Overview.pdf
                   </span>
                 </div>
                 <button
@@ -1789,7 +1994,7 @@ export const DesignPage: React.FC<DesignPageProps> = ({ onBackToHome, onNavigate
 
               {/* Direct Unmodified Original PDF File */}
               <div className="w-full flex-1 bg-[#525659] overflow-hidden">
-                <OriginalPresentationSlidesViewer url="/ETEC-6920-Project-Overview.pdf" />
+                <OriginalPresentationSlidesViewer url="/Design-Project-Overview.pdf" />
               </div>
             </motion.div>
           </motion.div>

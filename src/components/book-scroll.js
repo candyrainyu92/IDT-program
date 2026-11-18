@@ -2123,12 +2123,12 @@ export class BookScroll extends HTMLElement {
         grid.innerHTML = '';
         const targetGrid = leafGrid || grid;
         targetGrid.innerHTML = `
-          <div class="square-card square-card-all rose-rect-gallery-card active" data-project="all" title="ETEC 6920 Project Overview.pdf">
+          <div class="square-card square-card-all rose-rect-gallery-card active" data-project="all" title="Design Project Overview.pdf">
             <div class="square-cover">
               <div class="mini-page" style="padding: 0; overflow: hidden;">
                 <img
-                  src="/etec-6920-project-overview-cover.png"
-                  alt="ETEC 6920 Project Overview"
+                  src="/design-project-overview-cover.png"
+                  alt="Design Project Overview"
                   style="width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block;"
                 />
               </div>
@@ -2136,23 +2136,6 @@ export class BookScroll extends HTMLElement {
             <div class="square-bottom-bar">
               <span class="square-title">Project Overview</span>
               <span class="square-arrow">↗</span>
-            </div>
-          </div>
-
-          <div class="rose-doc-buttons-list">
-            <div class="square-card rose-pink-btn" data-project="interactive-microlearning" title="Analysis Report: Think Supplementary E-Learning Project">
-              <span class="rose-pink-btn-title">Analysis Report</span>
-              <span class="rose-pink-btn-arrow">↗</span>
-            </div>
-
-            <div class="square-card rose-pink-btn" data-project="gamified-onboarding" title="Design Report">
-              <span class="rose-pink-btn-title">Design Report</span>
-              <span class="rose-pink-btn-arrow">↗</span>
-            </div>
-
-            <div class="square-card rose-pink-btn" data-project="accessible-stem" title="Revision Development Plan">
-              <span class="rose-pink-btn-title">Revision Development Plan</span>
-              <span class="rose-pink-btn-arrow">↗</span>
             </div>
           </div>
         `;

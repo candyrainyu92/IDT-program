@@ -9,7 +9,6 @@ import { TechnologyPage } from './components/TechnologyPage';
 import { CustomCursor } from './components/CustomCursor';
 
 export default function App() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string>(() => {
     const hash = window.location.hash.replace('#', '');
     if (['foundation', 'research', 'design', 'technology'].includes(hash)) {
@@ -23,14 +22,6 @@ export default function App() {
     window.location.hash = sectionId;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 250);
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -53,13 +44,11 @@ export default function App() {
       {/* Contextual & Magnetic Adaptive Custom Cursor for Desktop */}
       <CustomCursor />
 
-      {/* Fixed Floating Top Navigation (Visible on all subpages, and on Home when scrolled) */}
-      {(activeSection !== 'home' || isScrolled) && (
-        <Navbar 
-          activeSection={activeSection} 
-          onSelectSection={handleNavigate} 
-        />
-      )}
+      {/* Fixed Floating Top Navigation (Visible on Home and all subpages) */}
+      <Navbar 
+        activeSection={activeSection} 
+        onSelectSection={handleNavigate} 
+      />
 
       {/* Main Portfolio View with Seamless View Switching */}
       <main className="flex-1 w-full flex flex-col">

@@ -1,10 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion, useTransform, useSpring, useMotionValue } from 'motion/react';
-import portraitImg from '../assets/images/Untitled_Artwork_5.png';
-import folderImg from '../assets/images/Untitled_Artwork_6.png';
-import chartsImg from '../assets/images/Untitled_Artwork_2.png';
-import bookImg from '../assets/images/Untitled_Artwork_4.png';
-import laptopImg from '../assets/images/Untitled_Artwork_3.png';
+import portraitImg from '../assets/images/Yu Liu 2.png';
 import { ChevronDown } from 'lucide-react';
 
 interface HeroSectionProps {
@@ -12,14 +8,14 @@ interface HeroSectionProps {
   onNavigate?: (sectionId: string) => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ onAboutClick, onNavigate }) => {
+export const HeroSection: React.FC<HeroSectionProps> = ({ onAboutClick }) => {
   const scrollProgress = useMotionValue(0);
 
-  // Smooth spring physics providing organic drag inertia and real-time velocity tracking
+  // Smooth spring physics providing organic drag inertia and fast velocity tracking
   const smoothProgress = useSpring(scrollProgress, {
-    stiffness: 120,
-    damping: 24,
-    mass: 0.5,
+    stiffness: 260,
+    damping: 26,
+    mass: 0.3,
   });
 
   // Track mouse scroll / wheel speed and position
@@ -28,13 +24,13 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onAboutClick, onNaviga
 
     const handleWheel = (e: WheelEvent) => {
       // Modulate movement speed according to downward wheel delta
-      const sensitivity = 0.0016;
+      const sensitivity = 0.0045;
       current = Math.min(1, Math.max(0, current + e.deltaY * sensitivity));
       scrollProgress.set(current);
     };
 
     const handleScroll = () => {
-      const maxScroll = 240;
+      const maxScroll = 100;
       const val = Math.min(1, Math.max(0, window.scrollY / maxScroll));
       if (val > current) {
         current = val;
@@ -85,7 +81,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onAboutClick, onNaviga
   return (
     <section 
       id="home" 
-      className="relative w-full min-h-screen flex flex-col justify-between overflow-x-hidden bg-[#EFE8DC] pt-20 sm:pt-24"
+      className="relative w-full flex flex-col justify-start overflow-x-hidden bg-[#EFE8DC] pt-20 sm:pt-24 md:pt-28"
     >
       {/* Top Headline & Category */}
       <div className="w-full max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 pt-2 pb-6 z-20">
@@ -110,7 +106,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onAboutClick, onNaviga
       </div>
 
       {/* Center Visual Composition */}
-      <div className="relative w-full max-w-6xl mx-auto flex-1 flex items-end justify-center px-4 pt-16 sm:pt-24 md:pt-28 pb-0 z-10">
+      <div className="relative w-full max-w-6xl mx-auto flex items-end justify-center px-4 pt-0 pb-0 z-10">
         <div className="relative w-full max-w-4xl flex items-end justify-center">
           
           {/* Giant IMPACT Typography: "Yu" on the left - positioned snug against the character & layer under portrait */}
@@ -137,165 +133,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onAboutClick, onNaviga
             className="absolute left-[50%] ml-14 sm:ml-24 md:ml-36 lg:ml-[175px] bottom-4 sm:bottom-8 md:bottom-10 text-[#DC9BB5] font-impact text-[76px] sm:text-[130px] md:text-[170px] lg:text-[210px] leading-none select-none z-0 tracking-tight pointer-events-none"
           >
             Liu
-          </motion.div>
-
-          {/* 3D Floating Icon 1: Green Folder (Left, above "Yu") with Contextual Magnetic & Badge Cursor */}
-          <motion.div 
-            id="icon-folder-container"
-            data-cursor="foundation"
-            data-cursor-text="Foundation"
-            onClick={() => onNavigate?.('foundation')}
-            whileHover={{ scale: 1.08, rotate: -2, y: -4 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 350, damping: 22 }}
-            className="absolute top-2 sm:top-0 left-2 sm:left-10 md:left-16 w-16 h-16 sm:w-[90px] sm:h-[90px] md:w-[115px] md:h-[115px] z-20 cursor-pointer pointer-events-auto flex flex-col items-center"
-            aria-label="Navigate to Foundation page"
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                onNavigate?.('foundation');
-              }
-            }}
-          >
-            <motion.img 
-              src={folderImg} 
-              alt="Instructional Materials Folder" 
-              referrerPolicy="no-referrer"
-              animate={{
-                y: [-8, 8, -8],
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: 3.2,
-                ease: "easeInOut",
-              }}
-              className="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(76,71,71,0.22)] select-none"
-            />
-            <span className="md:hidden block text-[10px] font-mono font-bold tracking-tight text-[#4C4747] bg-[#F7F3EB]/90 border border-[#4C4747]/15 px-2 py-0.5 rounded-full mt-1 text-center shadow-xs whitespace-nowrap">
-              Foundation
-            </span>
-          </motion.div>
-
-          {/* 3D Floating Icon 2: Open Book & Pencil (Top-Center-Left) - Design */}
-          <motion.div 
-            id="icon-book-container"
-            data-cursor="badge"
-            data-cursor-text="Design"
-            onClick={() => onNavigate?.('design')}
-            whileHover={{ scale: 1.08, rotate: 2, y: -4 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 350, damping: 22 }}
-            className="absolute -top-16 sm:-top-[94px] md:-top-[120px] left-[30%] sm:left-[33%] -translate-x-1/2 w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 z-20 cursor-pointer pointer-events-auto flex flex-col items-center"
-            aria-label="Navigate to Design page"
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                onNavigate?.('design');
-              }
-            }}
-          >
-            <motion.img 
-              src={bookImg} 
-              alt="Learning Foundations Notebook" 
-              referrerPolicy="no-referrer"
-              animate={{
-                y: [-8, 8, -8],
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: 3.2,
-                delay: 0.4,
-                ease: "easeInOut",
-              }}
-              className="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(76,71,71,0.22)] select-none"
-            />
-            <span className="md:hidden block text-[10px] font-mono font-bold tracking-tight text-[#4C4747] bg-[#F7F3EB]/90 border border-[#4C4747]/15 px-2 py-0.5 rounded-full mt-1 text-center shadow-xs whitespace-nowrap">
-              Design
-            </span>
-          </motion.div>
-
-          {/* 3D Floating Icon 3: Analytics & Media Window (Top-Center-Right) - Research */}
-          <motion.div 
-            id="icon-charts-container"
-            data-cursor="badge"
-            data-cursor-text="Research"
-            onClick={() => onNavigate?.('research')}
-            whileHover={{ scale: 1.08, y: -4 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 350, damping: 22 }}
-            className="absolute -top-12 sm:-top-[72px] md:-top-[92px] right-[35%] sm:right-[38%] translate-x-1/2 w-16 h-16 sm:w-[90px] sm:h-[90px] md:w-[115px] md:h-[115px] z-20 cursor-pointer pointer-events-auto flex flex-col items-center"
-            aria-label="Navigate to Research page"
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                onNavigate?.('research');
-              }
-            }}
-          >
-            <motion.img 
-              src={chartsImg} 
-              alt="Learning Analytics & Video Dashboard" 
-              referrerPolicy="no-referrer"
-              animate={{
-                y: [-8, 8, -8],
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: 3.2,
-                delay: 0.8,
-                ease: "easeInOut",
-              }}
-              className="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(76,71,71,0.22)] select-none"
-            />
-            <span className="md:hidden block text-[10px] font-mono font-bold tracking-tight text-[#4C4747] bg-[#F7F3EB]/90 border border-[#4C4747]/15 px-2 py-0.5 rounded-full mt-1 text-center shadow-xs whitespace-nowrap">
-              Research
-            </span>
-          </motion.div>
-
-          {/* 3D Floating Icon 4: Laptop with Stickers (Right, above "Liu") */}
-          <motion.div 
-            id="icon-laptop-container"
-            data-cursor="badge"
-            data-cursor-text="Technology"
-            onClick={() => onNavigate?.('technology')}
-            whileHover={{ scale: 1.08, rotate: -2, y: -4 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 350, damping: 22 }}
-            className="absolute top-2 sm:top-0 right-2 sm:right-10 md:right-16 w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 z-20 cursor-pointer pointer-events-auto flex flex-col items-center"
-            aria-label="Navigate to Technology page"
-            role="button"
-            tabIndex={0}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault();
-                onNavigate?.('technology');
-              }
-            }}
-          >
-            <motion.img 
-              src={laptopImg} 
-              alt="EdTech & Simulation Laptop" 
-              referrerPolicy="no-referrer"
-              animate={{
-                y: [-8, 8, -8],
-              }}
-              transition={{
-                repeat: Infinity,
-                duration: 3.2,
-                delay: 1.2,
-                ease: "easeInOut",
-              }}
-              className="w-full h-full object-contain filter drop-shadow-[0_8px_16px_rgba(76,71,71,0.22)] select-none"
-            />
-            <span className="md:hidden block text-[10px] font-mono font-bold tracking-tight text-[#4C4747] bg-[#F7F3EB]/90 border border-[#4C4747]/15 px-2 py-0.5 rounded-full mt-1 text-center shadow-xs whitespace-nowrap">
-              Technology
-            </span>
           </motion.div>
 
           {/* Central Portrait of Yu Liu with White Sticker Contour */}

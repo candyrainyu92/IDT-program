@@ -6,7 +6,7 @@ import tornJpg from '../assets/images/torn.jpg';
 import { PaperTear } from './PaperTear';
 import { BookScroll } from './BookScroll';
 import { TechnologyDocumentsModal, TechDocumentType } from './TechnologyDocumentsModal';
-import { ArrowLeft, ArrowRight, Home, ChevronLeft, ChevronRight, ChevronDown, Layers, X } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Home, ChevronLeft, ChevronRight, ChevronDown, Layers, X, ExternalLink } from 'lucide-react';
 import * as pdfjsLib from 'pdfjs-dist';
 import pdfWorkerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url';
 
@@ -569,7 +569,7 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
       {/* 2. Subtitle Section: "My Technology Toolkit" & intro text centered, shifted down 10% */}
       <section 
         id="technology-toolkit-intro-section" 
-        className="w-full max-w-5xl mx-auto px-6 sm:px-8 lg:px-12 mt-0 sm:mt-0 mb-12 sm:mb-16 z-10 translate-y-[10%]"
+        className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-0 sm:mt-0 mb-12 sm:mb-16 z-10 translate-y-[10%]"
       >
         <div className="flex flex-col items-center justify-center text-center mx-auto w-full translate-y-[10%]">
           {/* Subtitle: "My Technology Toolkit" centered */}
@@ -581,13 +581,18 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
             <span className="text-[#DC9BB5] font-black">Toolkit</span>
           </h2>
 
-          {/* Text paragraph: Centered, Inter font, 20px, single line */}
+          {/* Text paragraphs: Inter font, aligned left & right with Tools follow Purpose reflection text */}
           <p 
             id="technology-toolkit-description"
-            className="text-[#4C4747] text-[20px] font-normal leading-relaxed text-center whitespace-nowrap max-w-none mx-auto"
-            style={{ fontFamily: "'Inter', sans-serif", fontSize: '20px' }}
+            className="text-[#4C4747] text-[17px] sm:text-[19px] md:text-[20px] font-normal leading-relaxed text-left w-full max-w-6xl mx-auto space-y-6 mt-6 sm:mt-8 mb-10 sm:mb-14"
+            style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            Turning design decisions into learning experiences through purposeful technology.
+            <span className="block">
+              I believe technology plays an important role in shaping the future of instructional design. I also embrace emerging technologies and see them as opportunities to expand how we design, develop, and deliver learning experiences.
+            </span>
+            <span className="block">
+              I see technology as an integrated toolkit that helps me turn ideas into meaningful learning experiences. I organize the tools I explore by their functions and applications, selecting and integrating them based on learner needs, project goals, and design requirements at different stages of the design process.
+            </span>
           </p>
         </div>
       </section>
@@ -1032,10 +1037,125 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
           />
         </div>
 
-        {/* Full-width #E6DEC8 background zone for Tools follow Purpose */}
+        {/* Full-width #E6DEC8 background zone for Artifacts & Tools follow Purpose */}
         <div 
           className="w-full bg-[#E6DEC8] text-[#4C4747] pt-8 sm:pt-12 pb-8 sm:pb-10 relative -mt-16 sm:-mt-24"
         >
+          {/* Artifacts Heading & Two-Column Layout (Matching Research Page Artifacts format) */}
+          <section
+            id="technology-artifacts-section"
+            className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-20"
+          >
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-center mb-8 sm:mb-12 tracking-tight text-[#4C4747]">
+              Artifacts
+            </h2>
+
+            {/* Two-Column Layout: Right column defines natural height with space-y-6; Left column matches top & bottom */}
+            <div className="grid grid-cols-1 md:grid-cols-[38%_1fr] gap-10 md:gap-16 lg:gap-24 items-stretch">
+              {/* First Column (Left, 38%): Project Overview Gallery View Card + E-Learning Delivery Plan Pink Pill Button */}
+              <div className="w-full md:h-0 md:min-h-full flex flex-col justify-between">
+                <motion.button
+                  type="button"
+                  id="technology-view-project-overview-btn"
+                  onClick={() => setIsOverviewPdfModalOpen(true)}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  whileHover={{ y: -6 }}
+                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                  className="w-full flex-1 min-h-0 group relative flex flex-col text-left rounded-2xl bg-[#F7F3EB] border border-[#4C4747]/15 shadow-[0_12px_32px_rgba(76,71,71,0.12)] hover:shadow-[0_20px_48px_rgba(76,71,71,0.2)] hover:border-[#DC9BB5] overflow-hidden cursor-pointer no-underline transition-all duration-300"
+                >
+                  {/* Gallery Card Cover: Rendered Page 1 of Project Overview PDF */}
+                  <div className="relative w-full flex-1 min-h-44 md:min-h-0 bg-[#EFE8DC]/85 border-b border-[#4C4747]/10 overflow-hidden p-3 sm:p-4 flex items-start justify-center">
+                    <div className="relative w-full h-[112%] bg-white rounded-t-md shadow-[0_8px_24px_rgba(76,71,71,0.16)] border border-[#4C4747]/10 overflow-hidden mt-1 group-hover:-translate-y-1 transition-all duration-300 flex items-start justify-center">
+                      <img
+                        src="/project-overview-cover.png"
+                        alt="Project Overview - 2026 Nissan Z Heritage Edition Sales Training"
+                        className="w-full h-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-300 select-none pointer-events-none"
+                      />
+                    </div>
+
+                    {/* Hover Overlay Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#4C4747]/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  </div>
+
+                  {/* Gallery Card Footer / Meta */}
+                  <div className="p-4 sm:p-5 flex flex-col justify-between flex-shrink-0 gap-3 bg-[#F7F3EB] w-full">
+                    <div className="text-left">
+                      <h3 className="text-sm sm:text-base font-extrabold text-[#4C4747] group-hover:text-[#DC9BB5] transition-colors leading-snug">
+                        Project Overview
+                      </h3>
+                      <p className="text-xs text-[#4C4747]/75 mt-1">
+                        2026 Nissan Z Heritage Edition Sales Training
+                      </p>
+                    </div>
+
+                    <div className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#EFE8DC] group-hover:bg-[#DC9BB5] text-[#4C4747] font-inter font-bold text-xs transition-colors self-start shadow-sm">
+                      <span>View My Work</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </div>
+                  </div>
+                </motion.button>
+
+                {/* E-Learning Delivery Plan Pink Pill Button */}
+                <div className="mt-4 flex flex-col gap-3 w-full flex-shrink-0">
+                  <button
+                    type="button"
+                    id="technology-delivery-plan-btn"
+                    onClick={() => {
+                      setSelectedDoc('delivery-plan');
+                      setIsDocModalOpen(true);
+                    }}
+                    title="E-Learning Delivery Plan"
+                    className="group w-full rounded-full px-5 py-3 bg-[#DC9BB5] hover:bg-[#cf87a4] border border-[#4C4747]/15 shadow-[0_12px_32px_rgba(76,71,71,0.12)] hover:shadow-[0_20px_48px_rgba(76,71,71,0.2)] flex items-center justify-between gap-2 transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
+                  >
+                    <span className="font-inter text-sm sm:text-[15px] font-extrabold text-[#4C4747] transition-colors text-left">
+                      E-Learning Delivery Plan
+                    </span>
+                    <span className="text-sm sm:text-base font-bold text-[#4C4747] transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                      ↗
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Second Column (Right): Natural space-y-6 spacing matching Tools follow Purpose paragraphs */}
+              <div
+                className="w-full flex flex-col justify-start text-left text-[#4C4747] md:pl-4 lg:pl-8 text-[17px] sm:text-[19px] md:text-[20px] leading-relaxed space-y-6"
+                style={{ fontFamily: "'Inter', sans-serif" }}
+              >
+                <p>
+                  I chose Articulate Rise to develop this corporate sales training course because it offers responsive access across devices, multimedia integration, and interactive features. Its AI-assisted prototyping capabilities also speed up development and allow SMEs to review content and provide feedback earlier. Using one primary authoring tool helps reduce production time.
+                </p>
+
+                <div className="space-y-1.5">
+                  <p className="font-semibold">The course integrates:</p>
+                  <ul className="list-disc pl-6 space-y-1">
+                    <li>
+                      <strong className="font-semibold">Video:</strong> Introduced vehicle heritage, features, and competitor comparisons.
+                    </li>
+                    <li>
+                      <strong className="font-semibold">Interactive Activities:</strong> Used image hotspots, audio games, and interactive comparisons.
+                    </li>
+                    <li>
+                      <strong className="font-semibold">Scenario-based Assessments:</strong> Practiced real-world customer interactions and sales decisions.
+                    </li>
+                    <li>
+                      <strong className="font-semibold">Gamification:</strong> Used virtual Nissan Z upgrades as badges to motivate learner progress.
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="space-y-1">
+                  <p className="font-semibold">Results:</p>
+                  <p>
+                    Learner engagement time increased by 48%. Most survey participants found the course engaging rather than feeling like traditional training, and considered it useful for developing practical sales skills.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <section 
             id="technology-tools-follow-purpose-section"
             className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
@@ -1053,89 +1173,27 @@ export const TechnologyPage: React.FC<TechnologyPageProps> = ({
             </h3>
 
             {/* Reflection Text (box removed, keeping only text) */}
-            <div className="max-w-6xl mx-auto mb-12">
+            <div className="max-w-6xl mx-auto mb-12 sm:mb-16">
               <div 
                 className="space-y-6 text-[#4C4747] font-normal leading-relaxed text-left"
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 <p className="text-[17px] sm:text-[19px] md:text-[20px] leading-relaxed">
-                  Learning new technologies has expanded what I can create, but it has also taught me that knowing how to use a tool is different from knowing when and why to use it. Effective technology use begins with the learner and the design need, not with the tool itself.
+                  Learning new technologies has expanded what I can create, but it has also taught me that knowing how to use a tool is different from knowing when and why to use it.
                 </p>
                 <p className="text-[17px] sm:text-[19px] md:text-[20px] leading-relaxed">
-                  As an instructional designer, I want to continue exploring new technologies while evaluating how each one can support learning, improve the design process, and solve specific problems. My goal is not to use more technology, but to use the right technology with purpose.
+                  Beyond traditional authoring tools, I continue to explore emerging technologies that offer new possibilities for creating learning experiences. AI has changed the game by allowing me to build my own tools based on specific needs.
+                </p>
+                <p className="text-[17px] sm:text-[19px] md:text-[20px] leading-relaxed">
+                  As I continue exploring new technologies, I want to evaluate how each one can support learning, improve the design process, and solve specific problems. Ultimately, technology should expand what we can create and how we approach instructional design, but it should always serve a clear purpose.
                 </p>
               </div>
             </div>
           </section>
 
-          {/* Book & Statement Text Container (Symmetrically aligned 2-column grid when closed, centers & fades out text when open) */}
-          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative min-h-[560px] lg:min-h-[740px]">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-              {/* Left Column: 3D Interactive Notebook (Glides smoothly to screen center when open) */}
-              <div 
-                className={`w-full flex items-center justify-center relative transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.4,1)] ${
-                  isBookOpen 
-                    ? 'lg:translate-x-[calc(50%+1.5rem)] z-40' 
-                    : 'lg:translate-x-0 z-10'
-                }`}
-              >
-                <div className="w-full">
-                  <BookScroll 
-                    openWidth={75} 
-                    background="#E6DEC8" 
-                    scrollHeight={300}
-                    coverSrc="/book.jpg"
-                    showLabels={false}
-                    title="Technology Artifacts"
-                    leafTitle="Attached Letter"
-                    author="Yu Liu"
-                    textColor="#5E2B3B"
-                    mode="letter"
-                    coverTheme="rose"
-                    isOpen={isBookOpen}
-                    onToggle={setIsBookOpen}
-                    onGalleryClick={(project) => {
-                      if (project === 'project-overview') {
-                        setIsOverviewPdfModalOpen(true);
-                      } else if (!project || project === 'letter' || project === 'executive-summary') {
-                        setSelectedDoc('executive-summary');
-                        setIsDocModalOpen(true);
-                      } else if (project === 'methodology' || project === 'delivery-plan') {
-                        setSelectedDoc('delivery-plan');
-                        setIsDocModalOpen(true);
-                      } else if (project === 'evidence' || project === 'assessment-plan') {
-                        setSelectedDoc('assessment-plan');
-                        setIsDocModalOpen(true);
-                      }
-                    }}
-                  />
-                </div>
-              </div>
-
-              {/* Right Column: Artifacts Statement Text Box (Swapped to right, fades out when book opens) */}
-              <div 
-                className={`w-full relative z-10 transition-opacity duration-500 ease-in-out ${
-                  isBookOpen 
-                    ? 'opacity-0 pointer-events-none select-none' 
-                    : 'opacity-100 pointer-events-auto'
-                }`}
-                aria-hidden={isBookOpen}
-              >
-                <p className="text-base sm:text-lg md:text-xl text-[#4C4747] font-normal leading-relaxed bg-[#F7F3EB]/85 border border-[#4C4747]/15 rounded-2xl py-6 px-7 sm:px-10 shadow-md text-left">
-                  <span className="block mb-4">
-                    I developed a self-paced e-learning course for Nissan sales consultants using Articulate Rise, transforming provided training resources into three interactive modules focused on the 2026 Nissan Z Heritage Edition.
-                  </span>
-                  <span className="block">
-                    The course integrates storytelling, multimedia, gamification, and scenario-based activities to help sales consultants communicate vehicle features, compare competitors, and recommend suitable options to customers. SME review and pilot testing provided feedback on the course's usability, engagement, and practical relevance.
-                  </span>
-                </p>
-              </div>
-            </div>
-          </div>
-
           {/* Section: Collapsible Reference (APA 7th Format) */}
           <section className="w-full max-w-4xl mx-auto px-4 sm:px-6 mb-10 sm:mb-14">
-            <div className="border-t border-b border-[#4C4747]/20 py-4 -mt-[22%] mb-[4%] relative z-20">
+            <div className="border-t border-b border-[#4C4747]/20 py-4 mb-[4%] relative z-20">
               <button
                 type="button"
                 onClick={() => setIsReferenceOpen((prev) => !prev)}

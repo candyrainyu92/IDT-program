@@ -314,120 +314,63 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
       {/* 2. Research Problem & Inquiry Framing Section (placed outside hero section to maintain exact title-to-nav position) */}
       <section 
         id="research-framing-section" 
-        className="w-full max-w-5xl mx-auto px-6 flex flex-col items-center mt-[10vh] sm:mt-[8vh] mb-16 sm:mb-20 z-10"
+        className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center mt-8 sm:mt-12 mb-16 sm:mb-20 z-10"
       >
-        <div className="inline-flex flex-col items-start text-left max-w-5xl w-fit translate-x-[5%] translate-y-[20%] relative">
-          {/* Subtitle: "Why do people tend to skip the instructions?" in Inter, one single line, pink highlight */}
-          <h2 
-            id="research-subtitle-question"
-            className="text-2xl sm:text-3xl md:text-[44px] md:leading-[55px] font-extrabold tracking-tight text-[#4C4747] mb-6 sm:mb-8 sm:whitespace-nowrap relative z-10"
+        {/* Section Heading: "Research Mindset: Evidence Over Assumptions" & Subtitle */}
+        <div className="mb-9 w-full flex flex-col items-center justify-center text-center">
+          <h2
+            id="research-mindset-title"
+            className="text-2xl sm:text-3xl md:text-[44px] md:leading-[55px] font-extrabold tracking-tight text-[#4C4747] mb-3 sm:mb-4 sm:whitespace-nowrap"
             style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            Why do people tend to <span className="text-[#DC9BB5]">skip the instructions?</span>
+            Research Mindset: <span className="text-[#DC9BB5]">Evidence Over Assumptions</span>
           </h2>
+          <h3 className="text-lg sm:text-xl md:text-2xl font-semibold font-inter text-[#DC9BB5]">
+            Research in Instructional Design
+          </h3>
+        </div>
 
-          {/* Floating assumption buttons popping in on scroll around the question */}
-          {[
-            {
-              text: "They're impatient.",
-              posClass: "top-[-60px] sm:top-[-75px] md:top-[-85px] left-[70px] sm:left-[110px] md:left-[140px]",
-              floatY: [-5, 6, -5],
-              floatRotate: [-11, -6, -11], // 向左倾斜 ~-8.5°
-              duration: 3.8,
-              delay: 0.15,
-              x: 0,
-            },
-            {
-              text: "They're not interested.",
-              posClass: "top-[-55px] sm:top-[-70px] md:top-[-80px] right-[90px] sm:right-[130px] md:right-[175px]",
-              floatY: [6, -5, 6],
-              floatRotate: [6, 11, 6], // 向右倾斜 ~+8.5°
-              duration: 4.4,
-              delay: 0.35,
-              x: 0,
-            },
-            {
-              text: "The instructions are too long.",
-              posClass: "top-[75px] sm:top-[90px] md:top-[105px] -left-8 sm:left-[-20px] md:left-[-5px]",
-              floatY: [-6, 5, -6],
-              floatRotate: [4, 8, 4], // 向右倾斜 +6°
-              duration: 4.0,
-              delay: 0.55,
-              x: 0,
-            },
-            {
-              text: "It's hard to find what they need.",
-              posClass: "top-[165px] sm:top-[184px] md:top-[202px] left-[22%] sm:left-[25%] md:left-[28%]",
-              floatY: [-5, 5, -5],
-              floatRotate: [0.5, 3.5, 0.5], // 向右倾斜 +2°
-              duration: 4.3,
-              delay: 0.65,
-              x: 0,
-            },
-            {
-              text: "They think they already know what to do.",
-              posClass: "top-[85px] sm:top-[100px] md:top-[115px] -right-4 sm:right-[10px] md:right-[30px]",
-              floatY: [5, -7, 5],
-              floatRotate: [-12, -8, -12], // 向左倾斜 -10°
-              duration: 4.8,
-              delay: 0.75,
-              x: 0,
-            },
-          ].map((badge, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, scale: 0.3, y: 24, x: badge.x }}
-              whileInView={{ opacity: 1, scale: 1, y: 0, x: badge.x }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{
-                type: "spring",
-                stiffness: 280,
-                damping: 18,
-                delay: badge.delay,
-              }}
-              className={`absolute z-20 pointer-events-auto ${badge.posClass}`}
-            >
-              <motion.div
-                animate={{
-                  y: badge.floatY,
-                  rotate: badge.floatRotate,
-                }}
-                transition={{
-                  duration: badge.duration,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  repeatType: "mirror",
-                }}
-                className="bg-[#F7F3EB] text-[#4C4747] font-bold text-xs sm:text-sm md:text-[15px] px-4 sm:px-5 py-2 sm:py-2.5 rounded-full shadow-[0_10px_25px_rgba(76,71,71,0.14)] border border-[#4C4747]/15 whitespace-nowrap select-none hover:scale-105 hover:shadow-[0_14px_30px_rgba(76,71,71,0.2)] transition-transform duration-200 cursor-default flex items-center justify-center"
-              >
-                {badge.text}
-              </motion.div>
-            </motion.div>
-          ))}
-
-          {/* Framing Text: Aligned with the left edge of the card below */}
+        {/* Framing Text: Research Mindset explanation (Aligned left & right with Research Reflection text below) */}
+        <div 
+          ref={framingContainerRef}
+          className="w-full max-w-6xl mx-auto text-left"
+        >
           <div 
-            ref={framingContainerRef}
-            className="w-full text-[#4C4747] text-left text-[20px] leading-[32.5px] mt-[40vh]"
-            style={
-              framingAlignOffset !== null
-                ? { transform: `translateX(${framingAlignOffset}px)` }
-                : undefined
-            }
+            className="text-base sm:text-lg md:text-xl text-[#4C4747] font-normal leading-relaxed space-y-5 text-left"
+            style={{ fontFamily: "'Inter', sans-serif" }}
           >
-            <p 
-              className={`font-normal text-[#4C4747] tracking-normal relative -top-[2vh] ${
-                framingAlignOffset === null ? '-translate-x-[40px] sm:-translate-x-[75px] lg:-translate-x-[128px]' : ''
-              }`}
-            >
-              <span className="block font-medium text-[#4C4747]">
-                Different purposes call for different approaches to inquiry.
-              </span>
-              <span className="block text-[#9D988F] font-normal">
-                Their differences lie not only in purpose, but also in the researcher&apos;s role, scope, process, and relationship to action.
-              </span>
+            <p>
+              Our assumptions and common sense can offer possible explanations, but they do not necessarily reveal the real problem.
+            </p>
+            <p>
+              Before making any design decision, I ask myself:
+            </p>
+            <ul className="list-disc pl-6 space-y-1">
+              <li>What evidence tells me what is happening and why?</li>
+              <li>What problem am I actually trying to solve?</li>
+              <li>Is a solution really needed?</li>
+            </ul>
+            <p>
+              By collecting and analyzing evidence, I can move beyond assumptions, identify actual needs, and make informed design decisions rather than addressing perceived problems.
+            </p>
+            <p>
+              For me, research means understanding the real need before deciding on the solution.
             </p>
           </div>
+        </div>
+
+        {/* Second Heading Block: "One Question, Two Research Approaches" & Subtitle */}
+        <div className="mt-[calc(2.75rem+3.5vh)] sm:mt-[calc(3.75rem+3.5vh)] mb-[calc(1.25rem-3.5vh)] w-full flex flex-col items-center justify-center text-center">
+          <h2
+            id="research-approaches-title"
+            className="text-2xl sm:text-3xl md:text-[44px] md:leading-[55px] font-extrabold tracking-tight text-[#4C4747] mb-3 sm:mb-4 sm:whitespace-nowrap"
+            style={{ fontFamily: "'Inter', sans-serif" }}
+          >
+            One Question, <span className="text-[#DC9BB5]">Two Research Approaches</span>
+          </h2>
+          <h3 className="text-lg sm:text-xl md:text-2xl font-semibold font-inter text-[#DC9BB5]">
+            A practical example: Why do people tend to skip the instructions?
+          </h3>
         </div>
       </section>
 
@@ -887,16 +830,9 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
           </div>
 
         </div>
-
-        {/* Callout Statement Box between sections */}
-        <div className="mt-12 pt-[10vh] max-w-3xl mx-auto text-center">
-          <div className="inline-block bg-[#6A9F68] text-white font-black text-sm sm:text-base md:text-lg px-6 sm:px-8 py-3 rounded-lg shadow-xl border border-[#568754] select-none rotate-[-1deg] hover:rotate-0 transition-transform">
-            Same problem. Different purpose. Different relationship to practice.
-          </div>
-        </div>
       </section>
 
-      {/* 3. Section: "Either way, we still need evidence." (Quantitative vs Qualitative) */}
+      {/* 3. Section: "Understanding Research Methods" (Quantitative vs Qualitative) */}
       <section className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-4 mb-24 pb-[15vh]">
         {/* Section Header */}
         <div className="text-center mb-10 pt-[10vh]">
@@ -908,12 +844,9 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
             viewport={{ once: true, amount: 0.7 }}
           >
             {[
-              { text: 'Either', highlight: false },
-              { text: 'way,', highlight: false },
-              { text: 'we', highlight: false },
-              { text: 'still', highlight: true },
-              { text: 'need', highlight: true },
-              { text: 'evidence.', highlight: true },
+              { text: 'Understanding', highlight: false },
+              { text: 'Research', highlight: true },
+              { text: 'Methods', highlight: true },
             ].map((word, idx) => (
               <motion.span
                 key={idx}
@@ -942,19 +875,6 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
               </motion.span>
             ))}
           </motion.h2>
-
-          <motion.p 
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.7 }}
-            transition={{ duration: 0.8, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
-            className="text-[#4C4747] w-fit mx-auto text-[20px] leading-[32px] text-left"
-            style={{ fontSize: '20px', lineHeight: '32px', textAlign: 'left', color: '#4C4747' }}
-          >
-            Whether investigating broad psychological patterns or diagnosing an onboarding friction point,
-            <br className="hidden md:inline" />
-            {' '}rigorous evidence is what transforms assumptions into design intelligence.
-          </motion.p>
 
           {/* Toggle between Card Comparison and Clean Matrix */}
           <div className="inline-flex items-center p-1 rounded-full bg-[#4C4747]/10 border border-[#4C4747]/20 mt-6 shadow-inner translate-y-[15vh]">
@@ -1406,91 +1326,148 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
           }
         />
 
-        {/* 5. Bottom Section in #EAE4D8 (From Knowing to Doing) */}
+        {/* 5. Bottom Section in #EAE4D8 (Artifacts & From Knowing to Doing) */}
         <div 
           className="w-full bg-[#EAE4D8] text-[#4C4747] pt-8 sm:pt-12 pb-8 sm:pb-10 relative -mt-8 sm:-mt-12"
         >
+          {/* Artifacts Heading & Two-Column Layout (Matching Design Page Artifacts format) */}
+          <section
+            id="research-artifacts-section"
+            className="relative z-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 sm:mb-20"
+          >
+            <h2 className="text-3xl sm:text-5xl font-extrabold text-center mb-8 sm:mb-12 tracking-tight text-[#4C4747]">
+              Artifacts
+            </h2>
+
+            {/* Two-Column Layout: First Column (Left) takes 38% width, stretched so Right Column aligns top & bottom */}
+            <div className="grid grid-cols-1 md:grid-cols-[38%_1fr] gap-10 md:gap-16 lg:gap-24 items-stretch">
+              {/* First Column (Left, 38%): Research Overall Gallery View Card + Final Research Report Pink Pill Button */}
+              <div className="w-full flex flex-col justify-between">
+                <motion.button
+                  type="button"
+                  id="research-view-overall-btn"
+                  onClick={() => handleGalleryClick('letter-all')}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.2 }}
+                  whileHover={{ y: -6 }}
+                  transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                  className="w-full group relative flex flex-col text-left rounded-2xl bg-[#F7F3EB] border border-[#4C4747]/15 shadow-[0_12px_32px_rgba(76,71,71,0.12)] hover:shadow-[0_20px_48px_rgba(76,71,71,0.2)] hover:border-[#DC9BB5] overflow-hidden cursor-pointer no-underline transition-all duration-300"
+                >
+                  {/* Gallery Card Cover: Rendered Slide 1 of Research Presentation */}
+                  <div className="relative w-full h-52 sm:h-60 bg-[#EFE8DC]/85 border-b border-[#4C4747]/10 overflow-hidden p-3 sm:p-4 flex items-start justify-center">
+                    <div className="relative w-full h-[112%] bg-white rounded-t-md shadow-[0_8px_24px_rgba(76,71,71,0.16)] border border-[#4C4747]/10 overflow-hidden mt-1 group-hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between p-4 sm:p-5 select-none pointer-events-none">
+                      <div className="flex items-center justify-between border-b border-slate-200 pb-2 w-full">
+                        <span className="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider text-[#C58997]">
+                          Slide 1 of 11
+                        </span>
+                        <span className="text-[10px] sm:text-[11px] font-mono text-slate-400">
+                          Presentation
+                        </span>
+                      </div>
+
+                      <div className="my-auto py-2 text-center space-y-1.5">
+                        <div className="text-sm sm:text-base font-extrabold text-[#1D2440] font-serif leading-snug px-2">
+                          The Effect of AI-Generated Feedback on ESL Writing Performance
+                        </div>
+                        <div className="text-[11px] sm:text-xs text-slate-600 font-semibold">
+                          Yu Liu • ETEC 6430
+                        </div>
+                      </div>
+
+                      <div className="border-t border-slate-200/80 pt-1.5 pb-3 text-center">
+                        <span className="text-[10px] font-mono text-slate-400">
+                          CSUSB Educational Technology
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Hover Overlay Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#4C4747]/15 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                  </div>
+
+                  {/* Gallery Card Footer / Meta */}
+                  <div className="p-4 sm:p-5 flex flex-col justify-between flex-1 gap-3.5 bg-[#F7F3EB] w-full">
+                    <div className="text-left">
+                      <h3 className="text-sm sm:text-base font-extrabold text-[#4C4747] group-hover:text-[#DC9BB5] transition-colors leading-snug">
+                        Research Overall
+                      </h3>
+                      <p className="text-xs text-[#4C4747]/75 mt-1">
+                        The Effect of AI-Generated Feedback on ESL Writing Performance
+                      </p>
+                    </div>
+
+                    <div className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-[#EFE8DC] group-hover:bg-[#DC9BB5] text-[#4C4747] font-inter font-bold text-xs transition-colors self-start shadow-sm">
+                      <span>View My Work</span>
+                      <ExternalLink className="w-3.5 h-3.5" />
+                    </div>
+                  </div>
+                </motion.button>
+
+                {/* Final Research Report Pink Pill Button */}
+                <div className="mt-4 flex flex-col gap-3 w-full">
+                  <button
+                    type="button"
+                    id="research-final-report-btn"
+                    onClick={() => handleGalleryClick('evidence')}
+                    title="Final Research Report"
+                    className="group w-full rounded-full px-5 py-3 bg-[#DC9BB5] hover:bg-[#cf87a4] border border-[#4C4747]/15 shadow-[0_12px_32px_rgba(76,71,71,0.12)] hover:shadow-[0_20px_48px_rgba(76,71,71,0.2)] flex items-center justify-between gap-2 transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
+                  >
+                    <span className="font-inter text-sm sm:text-[15px] font-extrabold text-[#4C4747] transition-colors text-left">
+                      Final Research Report
+                    </span>
+                    <span className="text-sm sm:text-base font-bold text-[#4C4747] transition-all duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
+                      ↗
+                    </span>
+                  </button>
+                </div>
+              </div>
+
+              {/* Second Column (Right): Wider spacing from left column & bottom-aligned with left column */}
+              <div
+                className="w-full h-full flex flex-col justify-between text-left text-[#4C4747] md:pl-4 lg:pl-8 text-base sm:text-lg lg:text-[19px] leading-[1.85] lg:leading-[1.95] gap-6"
+                style={{ fontFamily: "'Inter', sans-serif" }}
+              >
+                <p>
+                  This quantitative study explored whether AI-generated feedback could improve adult ESL learners’ writing compared with traditional instructor feedback. Through this project, I strengthened my ability to design research, analyze data, and use evidence to evaluate learning outcomes.
+                </p>
+                <p>
+                  The findings showed that AI feedback was most effective for intermediate learners, while beginners and advanced learners had different feedback needs. These insights can help instructional designers develop more personalized feedback strategies for English learning apps, rather than applying a one-size-fits-all approach.
+                </p>
+              </div>
+            </div>
+          </section>
+
           <section className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-2">
-            {/* Subtitle: "From Knowing to Doing" */}
+            {/* Subtitle: "From Research to Better Design Decisions" */}
             <h2 
               className="text-3xl sm:text-5xl md:text-[50px] font-black text-center mb-3 sm:mb-4 tracking-tight text-[#4C4747]"
               style={{ fontFamily: "Impact, 'Arial Black', -apple-system, sans-serif" }}
             >
-              From Knowing <span className="text-[#DC9BB5]">to Doing</span>
+              From Research <span className="text-[#DC9BB5]">to Better Design Decisions</span>
             </h2>
             <h3 className="text-lg sm:text-xl md:text-2xl font-semibold font-inter text-[#DC9BB5]">
               My Reflection on Research
             </h3>
           </section>
 
-          {/* Group container for the statement box and all subsequent elements (adjusted up by 2% to 3%) */}
+          {/* Group container for the reflection text and subsequent elements */}
           <div 
             className="w-full relative translate-y-[3%]"
             style={{ transform: 'translateY(3%)' }}
           >
             <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
               {/* Research Reflection Text (Swapped to top, box removed, keeping only text) */}
-              <div className="max-w-6xl mx-auto text-left mb-12">
+              <div className="max-w-6xl mx-auto text-left mb-12 sm:mb-16">
                 <div className="text-base sm:text-lg md:text-xl text-[#4C4747] font-normal leading-relaxed space-y-5 text-left">
                   <p>
-                    Experience can help me recognize possible explanations, but even a reasonable explanation is still an assumption until it is examined through evidence.
+                    I have learned that different research approaches and methods serve different purposes in instructional design. The key is knowing how to choose the right approach based on the research question, learning context, and available resources.
                   </p>
                   <p>
-                    For me, research is not separate from design, and it strengthens the decisions behind the design. In my future practice as an instructional designer, I want to bring this research mindset into the design process.
+                    Research methods help me turn questions into evidence. Quantitative methods allow me to measure learning outcomes and identify patterns, while qualitative methods help me explore learners’ experiences and understand why certain problems occur. Combining both can provide a more complete understanding.
                   </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Book & Statement Text Container (Symmetrically aligned 2-column grid when closed, centers & fades out text when open) */}
-            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative min-h-[560px] lg:min-h-[740px]">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                {/* Left Column: 3D Interactive Notebook (Glides smoothly to screen center when open) */}
-                <div 
-                  className={`w-full flex items-center justify-center relative transition-transform duration-1000 ease-[cubic-bezier(0.25,1,0.4,1)] ${
-                    isBookOpen 
-                      ? 'lg:translate-x-[calc(50%+1.5rem)] z-40' 
-                      : 'lg:translate-x-0 z-10'
-                  }`}
-                >
-                  <div className="w-full">
-                    <BookScroll 
-                      openWidth={75} 
-                      background="#EAE4D8" 
-                      scrollHeight={300}
-                      coverSrc="/book.jpg"
-                      showLabels={false}
-                      title="Research Artifacts"
-                      leafTitle="Attached Letter"
-                      author="Yu Liu"
-                      textColor="#691B1F"
-                      mode="letter"
-                      isOpen={isBookOpen}
-                      onToggle={setIsBookOpen}
-                      onGalleryClick={handleGalleryClick}
-                    />
-                  </div>
-                </div>
-
-                {/* Right Column: Artifacts Statement Text Box (Swapped to right, fades out when book opens) */}
-                <div 
-                  className={`w-full relative z-10 transition-opacity duration-500 ease-in-out ${
-                    isBookOpen 
-                      ? 'opacity-0 pointer-events-none select-none' 
-                      : 'opacity-100 pointer-events-auto'
-                  }`}
-                  aria-hidden={isBookOpen}
-                >
-                  <p className="text-base sm:text-lg md:text-xl text-[#4C4747] font-normal leading-relaxed bg-[#F7F3EB]/85 border border-[#4C4747]/15 rounded-2xl py-6 px-7 sm:px-10 shadow-md text-left">
-                    <span className="block mb-4">
-                      This research project examined whether AI-generated feedback could improve adult ESL learners’ writing performance compared to traditional instructor feedback.
-                    </span>
-                    <span className="block mb-4">
-                      With support from an online learning platform, 800 adult ESL learners were recruited and randomly assigned to two feedback groups. The study compared changes in writing performance and explored whether AI feedback worked differently across English proficiency levels.
-                    </span>
-                    <span className="block">
-                      These artifacts show how I began applying research thinking to questions, evidence, analysis, and inquiry.
-                    </span>
+                  <p>
+                    In instructional design, research goes beyond identifying problems. It helps me analyze learning needs, assess learning progress, and evaluate the effectiveness of instructional solutions. By using appropriate approaches and methods throughout the design process, I can make evidence-informed decisions and continuously improve learning experiences.
                   </p>
                 </div>
               </div>
@@ -1498,7 +1475,7 @@ export const ResearchPage: React.FC<ResearchPageProps> = ({
 
             {/* Section: Collapsible Reference (APA 7th Format) */}
             <section className="w-full max-w-4xl mx-auto px-4 sm:px-6 mb-10 sm:mb-14">
-              <div className="border-t border-b border-[#4C4747]/20 py-4 -mt-[22%] mb-[4%] relative z-20">
+              <div className="border-t border-b border-[#4C4747]/20 py-4 mb-[4%] relative z-20">
                 <button
                   type="button"
                   onClick={() => setIsReferenceOpen((prev) => !prev)}
